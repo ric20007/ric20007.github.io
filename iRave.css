@@ -1,0 +1,197 @@
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+
+.imgEntrada
+{
+	height:16px;
+	width:16px;
+}
+
+.imgTitulo
+{
+	height:16px;
+	width:16px;
+	text-align: center;
+	margin-top: -5px;
+} 
+
+
+* {
+    cursor: url(cursor.png), auto;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+#botoes {
+    z-index:998;
+    height: 1.9in;
+    width: 1.9in;
+    border: 3px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #f5f5f5;
+    background-image: url("background_test.png");
+    background-size: 1.9in 1.9in;
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+
+
+#moldura {
+    z-index:999;
+    height:1.5in;
+    width:1.5in;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: relative;
+    top: 10.15%;
+    left: 10.12%;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+#barra_horas {
+    z-index:998;
+    border: 3px solid black;
+    //width:1.5in;
+    height:0.307in;
+    position: relative;
+    top:-3px;
+    left:-2px;
+    background-color: #1f1f1f;
+    color: black;
+}
+
+#horas {
+    position: relative;
+    text-align: center;
+    font-size:11px;
+    color:#f5f5f5;
+}
+
+#titulo_menu {
+  padding-top:2px;
+    text-align: center;
+    font-size:13px;
+    font-family: 'khmerui';
+    color:#f5f5f5;
+}
+
+
+#menu {
+    margin-top: -5px;
+    width: 1.6in;
+    height: 10in;
+}
+
+#body {
+    background-color: #f5f5f5;
+}
+
+.menu_entrada {
+    text-align: center;
+    border: 1px solid #e8e8e8;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    position: relative;
+    width: 1.35in;
+    height: 0.18in;
+    padding: 8px;
+    left: -3px;
+    font-family: 'khmerui';
+}
+
+.perfil_entrada {
+    text-align: center;
+    border: 1px solid #e8e8e8;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    position: relative;
+    width: 1.35in;
+    height: 0.18in;
+    padding: 8px;
+    left: -3px;
+    font-family: 'khmerui';
+    
+    font-size: 11px;
+
+}
+
+
+.highlighted {
+
+    font-size: 14px;
+    font-weight: bold;
+    border-left: none;
+    border-right: none;
+    background-color:#ccc;
+}
+
+.text_add_amigos{
+     text-align: center;
+     
+     font-size:15px;
+
+      border-top: 1px solid #e8e8e8;
+    border-left: 1px solid #e8e8e8;
+    font-family: 'khmerui';
+    
+     padding-top:1.3em;
+
+    
+}
+
+
+
+
+.joao_add_amigos{
+     text-align: center;
+     
+     font-size:15px;
+
+      border-top: 1px solid #e8e8e8;
+    border-left: 1px solid #e8e8e8;
+    font-family: 'khmerui';
+    
+     padding-top:0.5em;
+
+    
+}
+
+
+
+
+
+#menu ul {
+    font-size: 15px;
+}
+
+#menu ul li {
+    border: 1px solid black;
+    border-left: 10px;
+    font-size: 15px;
+}
+
+@font-face {
+  font-family: 'khmerui';
+  src: url('KhmerUI.ttf') format('truetype');
+}
