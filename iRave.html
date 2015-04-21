@@ -34,9 +34,9 @@
         
         <div id='botoes'>
             
-            <div id='bot_back'>aaa </div>
-            <div id='bot_ajuda'>bbb </div>
-            <div id='bot_menu'>ccc </div>
+            <div id='bot_back' onclick="prev();return false;"> </div>
+            <div id='bot_ajuda' onclick="next();return false;"> </div>
+            <div id='bot_menu' onclick="goToMenu();return false;"> </div>
            
            
             
@@ -61,10 +61,48 @@
                     <div id='slider' style='max-width:500px;margin:0 auto' class='swipe'>
                     <div class='swipe-wrap'>
                         
+                         <div id='menu' class="draggable ui-widget-content">
+                             
+                             <ul class="list">
+                                
+                                <li>
+                					 <img src="img/map-2.png" class="imgEntrada">
+                                                Mapa
+                                </li>
+                                
+                                <li>
+                                    <img src="img/active-search.png" class="imgEntrada" >
+                                                Procurar
+                                    
+                                </li>
+                                
+                                <li>
+                					<img src="img/Agenda.png" class="imgEntrada">
+                                                Horário
+                                </li>
+                					 
+                                 <li  onclick="next();return false;" >
+                                    
+                                        <img src="img/user1.png" class="imgEntrada">
+                                         Perfil
+                                   
+                                </li>            
+                                
+                                
+                                <li>
+                					<img src="img/hands-free.png" class="imgEntrada">
+                                                Mãos Livres
+                                </li>
+                                
+                               
+                            </ul>
+                         </div>
+                        
+                        
                         
                         <div id='menu' class="draggable ui-widget-content">
                         
-                            <div class='menu_entrada' style='padding-top: 12px'>
+                            <div class='menu_entrada'>     <!--  mudado de padding 12 para margin 4   style='margin-top: 4px' -->
                                 <img src="img/map-2.png" class="imgEntrada">
                                 Mapa
                             </div>
@@ -124,7 +162,7 @@
                         
                         
                         <div class='text_add_amigos'>
-                                Toque no iRave na mão do seu amigo.
+                                Encoste o seu iRave ao do seu amigo.
                           </div>
                         
                         <div class='joao_add_amigos'>

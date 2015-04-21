@@ -1,4 +1,5 @@
 var isDragging = false;
+var nope = false;
 
 $(document).ready(function() {
 
@@ -9,55 +10,81 @@ $(document).ready(function() {
     //    $("#body").load("activities.html");
     //    $('div img').draggable();
     //});
-
-
+    
+    
+    var menu_offset = $('#menu').offset();
+    var altura_entrada_menu = $(".menu_entrada").height();
+                                         //so funciona num ecra
+    var menu_offset_top1 = menu_offset.top - (5.65 * altura_entrada_menu);
+    var menu_offset_top2 = menu_offset.top;
+    
+    //var nope = false;
    //ajuda a nao clicar quando se faz drag    
-   $('.draggable').draggable({
+    $('.draggable').draggable({
+        axis: "y", containment: [0, menu_offset_top1, 0, menu_offset_top2],
+        start: function() {
+            nope = true;
+        },
         stop: function(event, ui) {
             $( event.toElement ).one('click', function(e){ e.stopImmediatePropagation(); } );
+            setTimeout(function() {
+             nope = false;
+          }, 200);
         }
     });
     
+    
+    $('ul.list > li ').click(function() {
+       
+        if (nope == false) {
+            var _that =  $(this);
+            $(this).addClass('highlighted');
+            setTimeout(function() {
+                  _that.removeClass('highlighted');
+              }, 200);
+        }
+    });
+    
+    
+    //add highlight no menu
     $('.menu_entrada').click(function() {
-        $(this).addClass('highlighted');
-        setTimeout(function() {
-              $('.menu_entrada').removeClass('highlighted');
-          }, 200);
+        if (nope == false) {
+            var _that =  $(this);
+            $(this).addClass('highlighted');
+            setTimeout(function() {
+                  _that.removeClass('highlighted');
+              }, 200);
+        }
     });
     
+    //add highlight no perfil
     $('.perfil_entrada').click(function() {
-        $(this).addClass('highlighted');
-        
-        setTimeout(function() {
-              $('.perfil_entrada').removeClass('highlighted');
-          }, 200);
+        if (nope == false) {
+            var _that =  $(this);
+            $(this).addClass('highlighted');
+            setTimeout(function() {
+                  _that.removeClass('highlighted');
+              }, 200);
+        }
     });
     
+    
+    //add highlight no botao para add. amigos
     $('.joao_add_amigos').click(function() {
-        $(this).addClass('highlighted');
-        
-        setTimeout(function() {
-              $('.joao_add_amigos').removeClass('highlighted');
-          }, 200);
+        if (nope == false) {
+            var _that =  $(this);
+            $(this).addClass('highlighted');
+            setTimeout(function() {
+                  _that.removeClass('highlighted');
+              }, 200);
+        }
     });
     
      
     
     
-        
-    var menu_offset = $('#menu').offset();
     
-        
-    var altura_entrada_menu = $(".menu_entrada").height();
     
-    //alert(altura_entrada_menu);
-    
-                                         //so funciona num ecra
-    var menu_offset_top1 = menu_offset.top - (5.65 * altura_entrada_menu);
-    
-    var menu_offset_top2 = menu_offset.top;
-    
-    $('.draggable').draggable({axis: "y", containment: [0, menu_offset_top1, 0, menu_offset_top2]});
     
 //funcao que mostra o tempo
    
@@ -83,7 +110,8 @@ $(document).ready(function() {
 
 
     
-var nome = ["Menu", "<img src='img/user1.png' class='imgTitulo' align='center'> Perfil", 
+var nome = ["Menu", 
+            "<img src='img/user1.png' class='imgTitulo' align='center'> Perfil", 
             "<img src='img/add-user.png' class='imgEntrada' align='center' > Add. Amigos",
             "<img src='img/add-user.png' class='imgEntrada' align='center' > Add. Amigos",
             "<img src='img/add-user.png' class='imgEntrada' align='center' > Add. Amigos", 
@@ -98,6 +126,11 @@ function mudarNome(i) {
 }
 
 function prev() {
+    if (nope != false) {
+        return false;
+    }
+    
+    
     if (previous_i == -1){
         
         current_i = 1;
@@ -117,6 +150,11 @@ function prev() {
 }
 
 function next() {
+    
+      if (nope != false) {
+        return false;
+    }
+    
     //if(!wasDragging){
        if(current_i < nome.length -1) {
            current_i = current_i +1;
@@ -147,7 +185,11 @@ function goToSix() {
         $("#lista_joao").html("<p style=\"text-align:center\" >Não tem amigos" );
     
      
-    
+}
+
+function goToMenu() {
+    goToSlide(0);
+        
 }
 
 
@@ -169,7 +211,7 @@ $(document).keydown(function(e){
         case 40:
             break;
         case 38:
-            goToSlide(0);
+            goToMenu();
             break;
         case 39:
             next();
