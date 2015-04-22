@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>IPM14/15 - iRAVE grupo 56</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="iRave.css" type="text/css" />
-        <!--<script src="jquery-1.11.2.js" ></script> -->
-        <!--<script src="//code.jquery.com/jquery-1.11.2.min.js"></script> -->
-        <script src="jquery.min.js"></script>
-        <script src="jquery-migrate-1.2.1.min.js"></script>
-        <script src="jquery-ui.js"></script>
-        
-        
-        
-        <script src='swipe.js'></script>
-        
-        <script src='iRave.js'></script>
-        
-    </head>
-    <body>
-         <!--
+
+<head>
+    <title>IPM14/15 - iRAVE grupo 56</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="iRave.css" type="text/css" />
+    <!--<script src="jquery-1.11.2.js" ></script> -->
+    <!--<script src="//code.jquery.com/jquery-1.11.2.min.js"></script> -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery-migrate-1.2.1.min.js"></script>
+    <script src="jquery-ui.js"></script>
+
+
+
+    <script src='swipe.js'></script>
+
+    <script src='iRave.js'></script>
+
+</head>
+
+<body>
+    <!--
         <div style='text-align:center;padding-top:20px;'>
           
             <button onclick='prev()'>prev</button> 
@@ -30,136 +32,101 @@
        <a href="#" id="activities">Activities</a>
        <a href="#"  onclick="mySwipe.next();return false;" >Esconder Fotos</a>
        -->
-        
-        
-        <div id='botoes'>
-            
-            <div id='bot_back' onclick="prev();return false;"> </div>
-            <div id='bot_ajuda' onclick="next();return false;"> </div>
-            <div id='bot_menu' onclick="goToMenu();return false;"> </div>
-           
-           
-            
 
-            <div id='moldura'>
-        
-                <div id='barra_horas'>
-                    <div id='horas'>
-                        <div id='display_horas'></div>
-                    </div>
-                    
-                    
-                    <div id='titulo_menu' style='font-size: 14px'>
-                        Menu
-                    </div>
-                    
-                    
+
+    <div id='botoes'>
+
+        <div id='bot_back' onclick="prev();return false;"> </div>
+        <div id='bot_ajuda' onclick="next();return false;"> </div>
+        <div id='bot_menu' onclick="goToMenu();return false;"> </div>
+
+
+
+
+        <div id='moldura'>
+
+            <div id='barra_horas'>
+                <div id='horas'>
+                    <div id='display_horas'></div>
                 </div>
-                
-                <div id='body'>
-                    
-                    <div id='slider' style='max-width:500px;margin:0 auto' class='swipe'>
+
+                <div id='titulo_menu' style='font-size: 14px'>
+                    Menu
+                </div>
+
+            </div>
+
+            <div id='body'>
+
+                <div id='slider' style='max-width:500px;margin:0 auto' class='swipe'>
                     <div class='swipe-wrap'>
-                        
-                         <div id='menu' class="draggable ui-widget-content">
-                             
-                             <ul class="list">
-                                
+
+                        <div id='menu' class="draggable ui-widget-content">
+
+                            <ul class="list">
+
                                 <li>
-                					 <img src="img/map-2.png" class="imgEntrada">
-                                                Mapa
+                                    <img src="img/map-2.png" class="imgEntrada"> Mapa
+                                </li>
+
+                                <li>
+                                    <img src="img/active-search.png" class="imgEntrada"> Procurar
+
+                                </li>
+
+                                <li>
+                                    <img src="img/Agenda.png" class="imgEntrada"> Horário
+                                </li>
+
+                                <li onclick="next();return false;">
+
+                                    <img src="img/user1.png" class="imgEntrada"> Perfil
+
+                                </li>
+
+
+                                <li>
+                                    <img src="img/hands-free.png" class="imgEntrada"> Mãos Livres
+                                </li>
+
+
+                            </ul>
+                        </div>
+
+
+
+                        <div id='menu' class="draggable ui-widget-content">
+                            <ul class="list" style="font-size:10.25pt"  >
+
+                                <li onclick=goToSix();return false; " >
+
+                                        <img src="img/multy-user.png " class="imgEntrada " align="center " >
+                                        Lista de Amigos
+
                                 </li>
                                 
-                                <li>
-                                    <img src="img/active-search.png" class="imgEntrada" >
-                                                Procurar
-                                    
-                                </li>
-                                
-                                <li>
-                					<img src="img/Agenda.png" class="imgEntrada">
-                                                Horário
-                                </li>
-                					 
-                                 <li  onclick="next();return false;" >
-                                    
-                                        <img src="img/user1.png" class="imgEntrada">
-                                         Perfil
+                                <li onclick="next();return false; " >
+                 
+                                        <img src="img/add-user.png " class="imgEntrada " align="center " >
+                                        Adicionar Amigo
                                    
-                                </li>            
-                                
-                                
-                                <li>
-                					<img src="img/hands-free.png" class="imgEntrada">
-                                                Mãos Livres
                                 </li>
                                 
-                               
+                                <li style="font-size:8.25pt"  >
+                                 <img src="img/Agenda.png " class="imgEntrada " align="center ">
+                                                Histórico de Transações
+                
+                                </li>
+                                
+                                <li>
+                                 <img src="img/euro_1.png " class="imgEntrada " align="center ">
+                                                 Adicionar Saldo
+                
+                                </li>
+                                
                             </ul>
                          </div>
-                        
-                        
-                        
-                        <div id='menu' class="draggable ui-widget-content">
-                        
-                            <div class='menu_entrada'>     <!--  mudado de padding 12 para margin 4   style='margin-top: 4px' -->
-                                <img src="img/map-2.png" class="imgEntrada">
-                                Mapa
-                            </div>
-                            <div class='menu_entrada'>
-                                <img src="img/active-search.png" class="imgEntrada" >
-                                Procurar
-                            </div>
-                            
-                            <div class='menu_entrada'>
-                                <img src="img/Agenda.png" class="imgEntrada">
-                                Horário
-                            </div>
-                            
-                            <a href="#"  onclick="next();return false;" >
-                            <div class='menu_entrada'>
-                                
-                                <img src="img/user1.png" class="imgEntrada">
-                                 Perfil
-                            </div> </a>
-                            
-                            <div class='menu_entrada'>
-                                <img src="img/hands-free.png" class="imgEntrada">
-                                Mãos Livres
-                            </div>
-                        </div>
-                        
-                        
-                        <div id='menu' class="draggable ui-widget-content">
-                        
-                            <a href="#"  onclick=goToSix();return false;" >
-                                <div class='perfil_entrada' style='padding-top: 12px'>
-                                    <img src="img/multy-user.png" class="imgEntrada" align="center" >
-                                    Lista de Amigos
-                                </div>
-                             </a>
-                            
-                            <a href="#"  onclick="next();return false;" >
-                                <div class='perfil_entrada'>
-                                    <img src="img/add-user.png" class="imgEntrada" align="center" >
-                                    Adicionar Amigo
-                                </div>
-                            </a>
-                            
-                            <div class='perfil_entrada'>
-                                <img src="img/Agenda.png" class="imgEntrada" align="center">
-                                Histórico de Transações
-                            </div>
-                            
-                            
-                            <div class='perfil_entrada'>
-                                
-                                <img src="img/euro_1.png" class="imgEntrada" align="center">
-                                 Adicionar Saldo
-                            </div> 
-    
-                        </div>
-                        
+                
                         
                         <div class='text_add_amigos'>
                                 Encoste o seu iRave ao do seu amigo.
@@ -169,16 +136,16 @@
                                 João detectado.
                                 <p>Quer adicioná-lo ?</p>
                                 
-                                <a href="#"  onclick="adicionarJoao();next();return false;" >
+                                <a href="# "  onclick="adicionarJoao();next();return false; " >
                                 
-                                    <img src="img/check.png" class="imgEntrada">
+                                    <img src="img/check.png " class="imgEntrada ">
                                      Sim
                                 </a>
                                 
                                 
-                                <a href="#"  onclick="prev();return false;" >
+                                <a href="# "  onclick="prev();return false; " >
                                 
-                                    <img src="img/cross.png" class="imgEntrada">
+                                    <img src="img/cross.png " class="imgEntrada ">
                                      Não
                                 </a>
                           </div>
@@ -187,9 +154,9 @@
                           <div class='joao_add_amigos'>
                                 O João foi adicionado com sucesso.
                                <p></p>
-                                <a href="#"  onclick=" mySwipe.slide(1, 300);return false;" >
+                                <a href="# "  onclick=" mySwipe.slide(1, 300);return false; " >
                                 
-                                    <img src="img/user1.png" class="imgEntrada">
+                                    <img src="img/user1.png " class="imgEntrada ">
                                      OK
                                 </a>
                                 
@@ -206,11 +173,11 @@
                             <div id='lista_joao'> </div>
                             
                     
-                            <div class='joao_add_amigos' style="left:-5px;position: relative;  bottom: 0; ">
+                            <div class='joao_add_amigos' style="left:-5px;position: relative; bottom: 0; ">
                                 Adicionar amigos ?
-                                <a href="#"  onclick=" goToSlide(2);return false;" >
+                                <a href="# "  onclick=" goToSlide(2);return false; " >
                                 
-                                    <img src="img/user1.png" class="imgEntrada">
+                                    <img src="img/user1.png " class="imgEntrada ">
                                      OK
                                 </a>
                                 

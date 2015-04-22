@@ -13,7 +13,7 @@ $(document).ready(function() {
     
     
     var menu_offset = $('#menu').offset();
-    var altura_entrada_menu = $(".menu_entrada").height();
+    var altura_entrada_menu = $("ul.list > li ").height();
                                          //so funciona num ecra
     var menu_offset_top1 = menu_offset.top - (5.65 * altura_entrada_menu);
     var menu_offset_top2 = menu_offset.top;
