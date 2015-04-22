@@ -1,3 +1,50 @@
+
+    .swiper-container-v {
+       
+        width: 1.5in;
+    
+        height: 1.1in;
+        margin: 15pt auto;
+        padding: 0;
+    }
+   .swiper-slide {
+        
+        text-align: center;
+        font-size: 11pt;
+        background: #fff;
+        //height: 7.5pt;
+        
+        
+        /* Center slide text vertically */
+          display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+
+.menu_entrada {
+    text-align: center;
+    border: 0.75pt solid #e8e8e8;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    //position: relative;
+    //width: 1.35in;
+    //height: 0.18in;
+    //padding: 6pt;
+    //left: -2.25pt;
+    font-family: 'khmerui';
+}
+
 ul.list {
     padding: 0;
     list-style-type: none;
@@ -23,8 +70,8 @@ ul.list > li {
 
     //border-collapse: collapse;
 }
-
-.swipe {
+/*
+  .swipe {
   overflow: hidden;
   visibility: hidden;
   position: relative;
@@ -38,7 +85,7 @@ ul.list > li {
   width:100%;
   position: relative;
 }
-
+*/
 .imgEntrada
 {
 	height: 12pt;
@@ -52,8 +99,9 @@ ul.list > li {
 {
 	height: 12pt;
 	width: 12pt;
+	
 	text-align: center;
-	margin-top: -3.75pt;
+	margin-top: -3.75pt;	
 } 
 
 
@@ -170,11 +218,11 @@ a {
 
 #barra_horas {
     z-index:998;
-    border: 2.25pt solid black;
-  
+    border: 2.25pt solid #d70;
+    border-top-color: transparent;
     height: 0.307in;
 
-    background-color: #1f1f1f;
+    background-color: #353535;
     /*
           //width:1.5in;
     //position: relative;
@@ -192,13 +240,16 @@ a {
 }
 
 #titulo_menu {
-  padding-top: 1.5pt;
+    padding-top: 1.5pt;
     text-align: center;
     font-size: 9.75pt;
     font-family: 'khmerui';
     color: #f5f5f5;
 }
 
+#titulo_menu img{
+    vertical-align: middle;
+}
 
 #menu {
     //margin-top: -3.75pt;
@@ -210,20 +261,8 @@ a {
     background-color: #f5f5f5;
 }
 
+
 /*
-.menu_entrada {
-    text-align: center;
-    border: 0.75pt solid #e8e8e8;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    position: relative;
-    width: 1.35in;
-    height: 0.18in;
-    padding: 6pt;
-    left: -2.25pt;
-    font-family: 'khmerui';
-}
 
 .perfil_entrada {
     text-align: center;

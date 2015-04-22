@@ -1,17 +1,35 @@
 var isDragging = false;
 var nope = false;
-
+ var swiperH;
+var swiperV;
 $(document).ready(function() {
 
-   var elem = document.getElementById('slider');   
-    window.mySwipe = new Swipe(elem, {});
+   //var elem = document.getElementById('slider');   
+    //window.mySwipe = new Swipe(elem, {});
 
     //$("#activities").click(function(){
     //    $("#body").load("activities.html");
     //    $('div img').draggable();
     //});
     
+    swiperH = new Swiper('.swiper-container-h', {
+        onlyExternal: true
+    });
     
+    swiperV = new Swiper('.swiper-container-v', {
+        pagination: '.swiper-pagination-v',
+        paginationClickable: true,
+        direction: 'vertical',
+        slidesPerView:3,
+        slidesPerScroll:1,
+ 
+        
+        freeMode: true,
+        freeModeMomentum: false
+        
+    });
+    
+    /*
     var menu_offset = $('#menu').offset();
     var altura_entrada_menu = $("ul.list > li ").height();
                                          //so funciona num ecra
@@ -32,7 +50,7 @@ $(document).ready(function() {
           }, 200);
         }
     });
-    
+    */
     
     $('ul.list > li ').click(function() {
        
@@ -111,11 +129,11 @@ $(document).ready(function() {
 
     
 var nome = ["Menu", 
-            "<img src='img/user1.png' class='imgTitulo' align='center'> Perfil", 
-            "<img src='img/add-user.png' class='imgEntrada' align='center' > Add. Amigos",
-            "<img src='img/add-user.png' class='imgEntrada' align='center' > Add. Amigos",
-            "<img src='img/add-user.png' class='imgEntrada' align='center' > Add. Amigos", 
-            "<img src='img/multy-user.png' class='imgEntrada' align='center' > Lista Amigos"];
+            "<img src='img/user1.png' class='imgTitulo'> Perfil", 
+            "<img src='img/add-user.png' class='imgEntrada'> Add. Amigos",
+            "<img src='img/add-user.png' class='imgEntrada'> Add. Amigos",
+            "<img src='img/add-user.png' class='imgEntrada'> Add. Amigos", 
+            "<img src='img/multy-user.png' class='imgEntrada'> Lista Amigos"];
             
 var current_i = 0;
 var previous_i = 0;
@@ -144,7 +162,8 @@ function prev() {
     else if(current_i !== 0){
         current_i = current_i -1;
         mudarNome(current_i);
-    mySwipe.prev();
+      swiperH.slidePrev();  
+    // mySwipe.prev();
     }
         
 }
@@ -159,7 +178,8 @@ function next() {
        if(current_i < nome.length -1) {
            current_i = current_i +1;
            mudarNome(current_i);
-         mySwipe.next();
+           swiperH.slideNext();
+         //mySwipe.next();
        }
     //}
 }
@@ -168,7 +188,9 @@ function goToSlide(i) {
     if(i >= 0 && i < nome.length -1 ){
         current_i = i;
          mudarNome(current_i);
-    mySwipe.slide(i, 300);
+         
+         swiperH.slideTo(i);
+    //mySwipe.slide(i, 300);
     }
         
 }
@@ -176,7 +198,8 @@ function goToSlide(i) {
 function goToSix() {
     current_i = 5;
     mudarNome(current_i);
-    mySwipe.slide(current_i, 300);
+     swiperH.slideTo(current_i);
+    //mySwipe.slide(current_i, 300);
     previous_i = -1;
     
     if (joao_added === 1)
