@@ -161,7 +161,8 @@ var nome = ["Menu",
             "<img src='img/add-user.png' class='imgEntrada'> Add. Amigos",
             "<img src='img/add-user.png' class='imgEntrada'> Add. Amigos", 
             "<img src='img/multy-user.png' class='imgEntrada'> Lista Amigos",
-            "João"];
+            "João",
+            "Placeholder"];
             
 var current_i = 0;
 var previous_i = 0;
@@ -213,7 +214,7 @@ function next() {
 }
 
 function goToSlide(i) {
-    if(i >= 0 && i < nome.length -1 ){
+    if(i >= 0 && i <= nome.length -1 ){
         current_i = i;
          mudarNome(current_i);
          
@@ -233,7 +234,7 @@ function goToSix() {
     if (joao_added === 1){
         //$("#lista_joao").html("<p style=\"text-align:center\" >João" );
  
-        $("#lista_joao").html("<div class='menu_entrada'> \
+        $("#lista_joao").html("<div onclick='next();return false;' class='menu_entrada'> \
                   <img src='img/user1.png ' class='imgEntrada '> \
             João \
        </div>  " );
@@ -261,6 +262,13 @@ function adicionarJoao() {
 
 function removerJoao() {
     joao_added = 0;
+        
+}
+function mapa() {
+    $( '.placeholder').load( 'mapa.html' );
+    
+    goToSlide(7);
+    $("#titulo_menu").html("Mapa");
         
 }
 
