@@ -16,10 +16,11 @@ $(document).ready(function() {
     
     swiperH = new Swiper('.swiper-container-h', {
         onlyExternal: true,
-        setWrapperSize:true
+        //setWrapperSize:true
     });
     
     swiperV = new Swiper('.swiper-container-v', {
+
         pagination: '.swiper-pagination-v',
         paginationClickable: true,
         direction: 'vertical',
@@ -159,7 +160,8 @@ var nome = ["Menu",
             "<img src='img/add-user.png' class='imgEntrada'> Add. Amigos",
             "<img src='img/add-user.png' class='imgEntrada'> Add. Amigos",
             "<img src='img/add-user.png' class='imgEntrada'> Add. Amigos", 
-            "<img src='img/multy-user.png' class='imgEntrada'> Lista Amigos"];
+            "<img src='img/multy-user.png' class='imgEntrada'> Lista Amigos",
+            "João"];
             
 var current_i = 0;
 var previous_i = 0;
@@ -179,7 +181,7 @@ function prev() {
         
         current_i = 1;
         mudarNome(current_i);
-        mySwipe.slide(current_i, 300);
+        swiperH.slideTo(current_i);
         
         previous_i = 0;
     }
@@ -228,12 +230,22 @@ function goToSix() {
     //mySwipe.slide(current_i, 300);
     previous_i = -1;
     
-    if (joao_added === 1)
-        $("#lista_joao").html("<p style=\"text-align:center\" >João" );
+    if (joao_added === 1){
+        //$("#lista_joao").html("<p style=\"text-align:center\" >João" );
+ 
+        $("#lista_joao").html("<div class='menu_entrada'> \
+                  <img src='img/user1.png ' class='imgEntrada '> \
+            João \
+       </div>  " );
+        
+    }
+        
+        
+        
+        
     else
         $("#lista_joao").html("<p style=\"text-align:center\" >Não tem amigos" );
     
-     
 }
 
 function goToMenu() {
