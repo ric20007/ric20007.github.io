@@ -1,7 +1,9 @@
-var isDragging = false;
 var nope = false;
- var swiperH;
+var swiperH;
 var swiperV;
+
+var swiperV2;
+
 $(document).ready(function() {
 
    //var elem = document.getElementById('slider');   
@@ -13,7 +15,8 @@ $(document).ready(function() {
     //});
     
     swiperH = new Swiper('.swiper-container-h', {
-        onlyExternal: true
+        onlyExternal: true,
+        setWrapperSize:true
     });
     
     swiperV = new Swiper('.swiper-container-v', {
@@ -22,8 +25,19 @@ $(document).ready(function() {
         direction: 'vertical',
         slidesPerView:3,
         slidesPerScroll:1,
- 
+
+        freeMode: true,
+        freeModeMomentum: false
         
+    });
+    
+        swiperV2 = new Swiper('.swiper-container-v2', {
+        pagination: '.swiper-pagination-v2',
+        paginationClickable: true,
+        direction: 'vertical',
+        slidesPerView:3,
+        slidesPerScroll:1,
+ 
         freeMode: true,
         freeModeMomentum: false
         
@@ -88,6 +102,18 @@ $(document).ready(function() {
     
     
     //add highlight no botao para add. amigos
+    $('.botao').click(function() {
+        if (nope == false) {
+            var _that =  $(this);
+            $(this).addClass('highlighted');
+            setTimeout(function() {
+                  _that.removeClass('highlighted');
+              }, 200);
+        }
+    });
+    
+    /*
+    //add highlight no botao para add. amigos
     $('.joao_add_amigos').click(function() {
         if (nope == false) {
             var _that =  $(this);
@@ -98,7 +124,7 @@ $(document).ready(function() {
         }
     });
     
-     
+    */
     
     
     

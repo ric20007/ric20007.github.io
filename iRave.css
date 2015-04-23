@@ -1,14 +1,11 @@
 
     .swiper-container-v {
-       
         width: 1.5in;
-    
         height: 1.1in;
         margin: 15pt auto;
         padding: 0;
     }
-   .swiper-slide {
-        
+   .swiper-slide  {
         text-align: center;
         font-size: 11pt;
         background: #fff;
@@ -30,6 +27,22 @@
         align-items: center;
     }
 
+    .swiper-pagination{
+        width: 3%;
+        height: 75%;
+        opacity: 1;
+    }
+    
+    /* bullet nao seleccionada */
+    .swiper-pagination .swiper-pagination-bullet {
+        background: #d70;
+    }
+    
+    
+    .swiper-pagination .swiper-pagination-bullet-active {
+        background: #d70;
+    }
+    
 
 .menu_entrada {
     text-align: center;
@@ -310,6 +323,7 @@ a {
 
 .joao_add_amigos{
      text-align: center;
+     display: block;
      
      font-size: 11.25pt;
 

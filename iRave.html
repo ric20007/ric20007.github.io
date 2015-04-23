@@ -71,7 +71,7 @@
                             
                                     
                                     <div class="swiper-slide  menu_entrada"> 
-                                         <img src="img/map-2.png" class="imgEntrada"> <pre> Mapa</pre>  </div>
+                                         <img src="img/map-2.png" class="imgEntrada">  &nbsp; Mapa  </div>
                                          
                                     <div class="swiper-slide menu_entrada">
                                                <img src="img/active-search.png" class="imgEntrada"> Procurar  </div>
@@ -119,23 +119,98 @@
                                                  Adicionar Saldo
                                     </div>
        
-                                    <div class="swiper-slide" style="height:5pt"></div>
-                                    
-                                    
-                                
-                                   
+                                    <div class="swiper-slide"></div>
+ 
                                 </div>
                                 
                                 
-                                <div class="swiper-pagination swiper-pagination-v"></div>
+                                <div class="swiper-pagination swiper-pagination-v2"></div>
                             </div>
+                        </div>
+   
+                        <div class="swiper-slide text_add_amigos">Encoste o seu iRave ao do seu amigo.</div>
+                    
+                        <div class=" swiper-slide joao_add_amigos">
+                                João detectado.
+                                <p>Quer adicioná-lo ?</p>
+                                
+                                <a href="# " class= "botao"  onclick="adicionarJoao();next();return false; " >
+                                
+                                    <img src="img/check.png " class="imgEntrada ">
+                                     Sim
+                                </a>
+                                
+                                <a href="# "   class= "botao"  onclick="prev();return false; " >
+                                
+                                    <img src="img/cross.png " class="imgEntrada ">
+                                     Não
+                                </a>
+                          </div>
+                        
+                        
+                        
+                        
+                        <!-- 4 added joao -->
+                          <div class="swiper-slide joao_add_amigos">
+                                O João foi adicionado com sucesso.
+                               <p></p>
+                                <a href="# "  class= "botao"   onclick=" goToSlide(1);return false; " >
+                                
+                                    <img src="img/user1.png " class="imgEntrada ">
+                                     OK
+                                </a>
+                                
+                          </div>
+                            
+                     
+    
+                        
+                        
+                        <!-- 5 lista amigos -->
+                        <div  class="swiper-slide" >  
+                        
+                            <div id='lista_joao'> </div>
+                            
+                    
+                            <div class='joao_add_amigos' style="left:-5px;position: relative; bottom: 0; ">
+                                Adicionar amigos ?
+                                <a href="# "  onclick=" goToSlide(2);return false; " >
+                                
+                                    <img src="img/user1.png " class="imgEntrada ">
+                                     OK
+                                </a>
+                                
+                            </div>
+                            
                         </div>
                         
                         
-                        <div class="swiper-slide">Horizontal Slide 1</div>
+                        <!-- 6 opcoes joao 
+                        <div  class="swiper-slide" >  
                         
-                        <div class="swiper-slide">Horizontal Slide 3</div>
+                            <div id='opcoes_joao'> </div>
+                            
+                    
+                            <div onclick="goToSix();return false;" class="swiper-slide  menu_entrada"> 
+                                         <img src="img/multy-user.png " class="imgEntrada " >
+                                        Proteger  </div>
+                                        
+                                     <div  onclick="next();return false; " class="swiper-slide menu_entrada">
+                                              <img src="img/add-user.png " class="imgEntrada " align="center " >
+                                        Localizar
+                                    </div>    
+           
+                                    <div class="swiper-slide menu_entrada" style="font-size:8.25pt" >
+                                               <img src="img/Agenda.png " class="imgEntrada " align="center ">
+                                                Remover  </div>
+                            
+                        </div> -->
                         
+                        
+                        
+                        
+                        <div class="swiper-slide">Horizontal Slide 4</div>
+                        <div class="swiper-slide">Horizontal Slide 4</div>
                         <div class="swiper-slide">Horizontal Slide 4</div>
                     </div>
 
