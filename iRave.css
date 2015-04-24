@@ -1,192 +1,75 @@
-.menu_entrada {
-    border: 0.75pt solid #e8e8e8;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    font-family: 'khmerui';
-    text-align: center;
-}
-
-ul.list {
-    z-index: -1;
-    margin: 0;
-    border: none;
-    padding: 0;
-    list-style-type: none;
-}
-
-ul.list > li {
-    height: 0.18in;
-    left: -2.25pt;
-    border: 0.75pt solid #e8e8e8;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    padding: 6pt;
-
-    font-family: 'khmerui';
-    text-align: center;
-}
-
-.imgEntrada
-{
-	height: 12pt;
-	width: 12pt;
-    vertical-align: middle;	
-	display: inline-block;
-}
-
-.imgTitulo
-{
-	height: 12pt;
-	width: 12pt;
-	margin-top: -3.75pt;		
-	text-align: center;
-} 
-
-
-* {
-    cursor: url(cursor.png), auto;
-}
-
-a {
-    color: #000000;
-    text-decoration: none;
-}
-
-#botoes {
-    z-index:998;
-    height: 1.9in;
-    width: 1.9in;
-    border: 2.25pt solid black;
-    border-radius: 50%;
+ #botContinuar {
+    display:none;
+    padding-top:2px;
+    height: 25.75pt; 
+    width: 95.5pt;
     
-    /*centra na pagina*/
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+    background-color:#D70;
     
-    background-image: url("background_test.png");
-    background-size: 1.9in 1.9in;
-}
-
-#bot_back {
-    z-index:1000;
-    height: 37.5pt; 
-    width: 18.75pt;
-    top: 50%;
     position: fixed;
-    transform: translate(-10%, -50%);
-}
 
-#bot_menu {
-    z-index:1000;
-    height: 18.75pt; 
-    width: 30pt;
-    left:50%;
+   left:50%;
     top: 50%;
-    position: fixed;
-    transform: translate(-50%, -400%);
-}
-
-#bot_ajuda {
+    transform: translate(-50%, 120%);
+    
     z-index:1000;
-    height: 37.5pt; 
-    width: 18.75pt;
-    left: 50%;
-    top: 50%;
+    font-size:11pt;
+    font-family: 'khmerui';
+    color:white;
+    text-align:center;
+    
+}
+
+ #botVoltarConfirmar    {
+    display:none;
+    padding-top:2px;
+    height: 25.75pt; 
+    width: 105.5pt;
+    
+    background-color:#D70;
+    
     position: fixed;
-    transform: translate(300%, -50%);
-}
 
-
-#moldura {
-    z-index: 999;
-    height: 1.5in;
-    width: 1.5in;
-    border: 0.75pt solid black;
-    border-radius: 50%;
-    position: relative;
-    top: 10.15%;
-    left: 10.12%;
-    overflow: hidden;
-    background-color: #f5f5f5;
-}
-
-#barra_horas {
-    z-index:998;
-    border: 2.25pt solid #d70;
-    border-top-color: transparent;
-    height: 0.307in;
-    background-color: #353535;
-}
-
-#horas {
-    position: relative;
-    text-align: center;
-    font-size: 8.25pt;
-    color: #f5f5f5;
-}
-
-#titulo_menu {
-    padding-top: 1.5pt;
-    text-align: center;
+   left:50%;
+    top: 50%;
+    transform: translate(-50%, 110%);
     
+    z-index:1000;
+    font-size:10pt;
     font-family: 'khmerui';
-    font-size: 9.75pt;
-    color: #f5f5f5;
-}
-
-#titulo_menu img{
-    vertical-align: middle;
-}
-
-#menu {
-    width: 1.6in;
-    height: 10in;
-}
-
-#body {
-    background-color: #f5f5f5;
-}
-
-.highlighted {
-    font-size: 10.5pt;
-    font-weight: bold;
-    border-left: none;
-    border-right: none;
-    background-color:#ccc;
-}
-
-.text_add_amigos {
-    text-align: center;
-    border-top: 0.75pt solid #e8e8e8;
-    border-left: 0.75pt solid #e8e8e8;
-    padding-top: 1.3em;
-    display: block;
+    color:white;
+    text-align:center;
     
-    font-family: 'khmerui';
-    font-size: 11.25pt;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    
 }
 
-.joao_add_amigos{
-    text-align: center;
-    border-top: 0.75pt solid #e8e8e8;
-    border-left: 0.75pt solid #e8e8e8;
-    padding-top: 0.5em;
-    display: block;
-     
-    font-family: 'khmerui';
-    font-size: 11.25pt;
-}
+ #voltarCompra      {
 
+     float:left;
 
+ }
+ 
+  #efectuarCompra    {
 
-    /* swiper stuff */
+     float:right;
+
+ }
     .swiper-container-v {
+        width: 1.5in;
+        height: 1.1in;
+        margin: 15pt auto;
+        padding: 0;
+    }
+
+    .swiper-container-vProcurar{
         width: 1.5in;
         height: 1.1in;
         margin: 15pt auto;
@@ -197,6 +80,7 @@ a {
         text-align: center;
         font-size: 11pt;
         background: #fff;
+        
         
         /* Center slide text vertically */
         display: -webkit-box;
@@ -228,6 +112,271 @@ a {
     .swiper-pagination .swiper-pagination-bullet-active {
         background: #d70;
     }
+    
+
+.menu_entrada {
+    text-align: center;
+    border: 0.75pt solid #e8e8e8;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: 'khmerui';
+}
+
+ul.list {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    border: none;
+    z-index: -1;
+
+}
+
+ul.list > li {
+    text-align: center;
+    border: 0.75pt solid #e8e8e8;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    
+
+    height: 0.18in;
+    padding: 6pt;
+    left: -2.25pt;
+    font-family: 'khmerui';
+
+
+}
+
+.imgEntrada
+{
+	height: 12pt;
+	width: 12pt;
+	
+	display: inline-block;
+    vertical-align: middle;
+}
+
+.imgTitulo
+{
+	height: 12pt;
+	width: 12pt;
+	
+	text-align: center;
+	margin-top: -3.75pt;	
+} 
+
+
+* {
+    cursor: url(cursor.png), auto;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+#botoes {
+    z-index:998;
+    height: 1.9in;
+    width: 1.9in;
+    border: 2.25pt solid black;
+    border-radius: 50%;
+    
+    /*centra na pagina*/
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+    
+    background-image: url("background_test.png");
+    background-size: 1.9in 1.9in;
+
+}
+
+
+
+
+
+#bot_back {
+
+    height: 37.5pt; 
+    width: 18.75pt;
+    
+    position: fixed;
+
+    top: 50%;
+    transform: translate(-10%, -50%);
+    
+    z-index:1000;
+    
+}
+#bot_menu {
+
+    height: 18.75pt; 
+    width: 30pt;
+
+    
+    position: fixed;
+
+    left:50%;
+    top: 50%;
+    transform: translate(-50%, -400%);
+    
+    z-index:1000;
+    
+}
+
+#bot_ajuda {
+
+    height: 37.5pt; 
+    width: 18.75pt;
+
+    
+    position: fixed;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(300%, -50%);
+    
+    z-index:1000;
+    
+}
+
+
+#moldura {
+    z-index: 999;
+    height: 1.5in;
+    width: 1.5in;
+    border: 0.75pt solid black;
+    border-radius: 50%;
+    position: relative;
+    top: 10.15%;
+    left: 10.12%;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+#barra_horas {
+    z-index:998;
+    border: 2.25pt solid #d70;
+    border-top-color: transparent;
+    height: 0.307in;
+
+    background-color: #353535;
+
+}
+
+#horas {
+    position: relative;
+    text-align: center;
+    font-size: 8.25pt;
+    color: #f5f5f5;
+}
+
+#titulo_menu {
+    padding-top: 1.5pt;
+    text-align: center;
+    font-size: 9.75pt;
+    font-family: 'khmerui';
+    color: #f5f5f5;
+}
+
+#titulo_menu img{
+    vertical-align: middle;
+}
+
+#menu {
+
+    width: 1.6in;
+    height: 10in;
+}
+
+#body {
+    background-color: #f5f5f5;
+}
+
+
+
+
+.highlighted {
+
+    font-size: 10.5pt;
+    font-weight: bold;
+    border-left: none;
+    border-right: none;
+    background-color:#ccc;
+}
+
+.text_add_amigos{
+     text-align: center;
+     display: block;
+     
+     font-size: 11.25pt;
+
+      border-top: 0.75pt solid #e8e8e8;
+    border-left: 0.75pt solid #e8e8e8;
+    font-family: 'khmerui';
+    
+     padding-top: 1.3em;
+
+    
+}
+
+
+
+
+.joao_add_amigos{
+     text-align: center;
+     display: block;
+     
+     font-size: 11.25pt;
+
+      border-top: 0.75pt solid #e8e8e8;
+    border-left: 0.75pt solid #e8e8e8;
+    font-family: 'khmerui';
+    
+     padding-top: 0.5em;
+
+    
+}
+
+#imgMapa {
+    z-index:1;
+    position: relative;
+    top: -100pt;
+}
+
+#iconWC {
+    z-index: 2;
+    position: absolute;
+    top: 123pt;
+    left: 63pt;
+    height:15pt;
+    width: 15pt;
+}
+
+#iconFood {
+    z-index: 2;
+    position: absolute;
+    top: 51pt;
+    left: 75pt;
+    height:15pt;
+    width: 15pt;
+}
+
+#iconMerch {
+    z-index: 2;
+    position: absolute;
+    top: 28pt;
+    left: 166pt;
+    height:15pt;
+    width: 15pt;
+}
+
 
 @font-face {
   font-family: 'khmerui';
