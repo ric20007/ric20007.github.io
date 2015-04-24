@@ -41,8 +41,13 @@
         <div id='bot_ajuda' class="shinybot"  onclick="next();return false;"> </div>
         <div id='bot_menu' class="shinybot"  onclick="goToMenu();return false;"> </div>
         
-
-
+        <!-- botoes maos livres  -->
+        <div onclick="hf_mapa();return false;"> 
+            <img src="img/gesto_abrir_mapa.png" class="botaoHandsFree" style="top: 50%;transform: translate(-150%, -50%);"> 
+        </div>
+        
+        
+        
 
         <div id='moldura'>
             <div onclick="continuarCompra();return false;" id="botContinuar">Continuar</div>
@@ -363,7 +368,7 @@
                         <div class="swiper-slide joao_add_amigos">
                                 Toque para activar o modo mãos livres!
                                 <p></p>
-                                <a href="# "  class= "botao"   onclick=" goToSlide(0);return false; " >
+                                <a href="# "  class= "botao"   onclick="hf_on = 1;goToSlide(0);return false; " >
                                 
                                     <img src="img/user1.png " class="imgEntrada ">
                                      OK

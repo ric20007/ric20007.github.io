@@ -222,6 +222,7 @@ var previous_i = 0;
 
 var joao_added = 0;
 var joao_protected = 0;
+var hf_on = 0;
 function mudarNome(i) {
         $("#titulo_menu").html(nome[i]);
 }
@@ -270,7 +271,7 @@ function next() {
 function goToSlide(i) {
     if(i >= 0 && i <= nome.length -1 ){
         if (i !== 12) {
-            $('#mapa').css("display", "none");
+            $('#mapa').css("opacity", 0);
         }
         else {
             $('#mapa').css("opacity", 1);
@@ -452,6 +453,12 @@ function voltarCompra  () {
 function efectuarCompra() {
     $("#botVoltarConfirmar").css("display", "none");
     next();
+}
+
+function hf_mapa(){
+    if (hf_on == 1) {
+        mapa();
+    }
 }
 
 
