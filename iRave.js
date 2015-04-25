@@ -19,6 +19,19 @@ $(document).ready(function() {
     //    $('div img').draggable();
     //});
     
+    // fix checkbox detect
+     var el=$('input:checkbox[name="compra"]');
+    el.each(function()
+    {
+        $(this).on('click',function(event){
+            event.stopPropagation();         
+    
+        });
+        
+    });
+            
+   
+    
     
     swiperH = new Swiper('.swiper-container-h', {
         onlyExternal: true,
