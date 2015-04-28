@@ -79,6 +79,13 @@
     padding: 0;
 }
 
+.swiper-container-vCartaz{
+    width: 1.5in;
+    height: 1.1in;
+    //margin: 15pt auto;
+    padding: 0;
+}
+
 .swiper-slide  {
   
     text-align: center;

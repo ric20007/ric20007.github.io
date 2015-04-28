@@ -236,8 +236,8 @@
                                     <div onclick="cartaz(1); return false;" class="swiper-slide menu_entrada">
                                         <img src="img/cartaz.png" class="imgEntrada"> &nbsp; Cartaz </div>
                                     
-                                    <div onclick="eventos(); return false;" class="swiper-slide menu_entrada">
-                                        <img src="img/pointer.png" class="imgEntrada"> &nbsp; Eventos </div>
+                                    <div onclick="encontros(); return false;" class="swiper-slide menu_entrada">
+                                        <img src="img/pointer.png" class="imgEntrada"> &nbsp; Encontros </div>
 
                                     <div class="swiper-slide"></div>
                                     <div class="swiper-slide"></div>
@@ -432,26 +432,121 @@
                                 <img src="img/cartaz.png " class="imgEntrada "> Cartaz
                             </div>
 
-                            <div onclick="eventos();return false;" class="menu_entrada">
-                                <img src="img/pointer.png " class="imgEntrada "> Eventos
+                            <div onclick="encontros();return false;" class="menu_entrada">
+                                <img src="img/pointer.png " class="imgEntrada "> Encontros
                             </div>
                         </div>
 
 
-                        <!-- 18 cartaz 1 -->
+                        <!-- 18 cartaz -->
+                        <div class="swiper-slide" style="position:absolute">
+                            
+                            <div style="background:#d70; height:18pt; width:100pt; position:absolute; border:2px solid black">
+                                <img id='cartaz-previous' onclick="cartazPrevious(); return false;" src="img/previous.png" class="imgEntrada" style="float:left; visibility:hidden;">
+                                <img id='cartaz-next' onclick="cartazNext(); return false;" src="img/next.png" class="imgEntrada" style="float:right;">
+                                <div id='cartaz-dia'>&nbsp; &nbsp; Dia 1 &nbsp; &nbsp;</div>
+                            </div>
+                            
+                            <div style="position:absolute; top:22pt; left:0pt">
+                                <div class="swiper-container swiper-container-hCartaz">
+                                    
+                                    <div class="swiper-wrapper">
+                                        
+                                        <!-- dia 1  -->
+                                        <div class="swiper-slide">
+                                            <div class="swiper-container swiper-container-vCartaz">
+                                                <div class="swiper-wrapper">
+                                                    
+                
+                                                    <div onclick="return false;" class="swiper-slide  menu_entrada">
+                                                        <img src="img/multy-user.png " class="imgEntrada "> Lista de Amigos 
+                                                    </div>
+                
+                                                    <div onclick="return false;" class="swiper-slide menu_entrada">
+                                                        <img src="img/add-user.png " class="imgEntrada " align="center "> Adicionar Amigo
+                                                    </div>
+                
+                                                    <div class="swiper-slide menu_entrada" style="font-size:8.25pt">
+                                                        <img src="img/Agenda.png " class="imgEntrada " align="center "> Histórico de Transações 
+                                                    </div>
+                
+                                                    <div class="swiper-slide"></div>
+                
+                                                </div>
+                
+                                                <div class="swiper-pagination swiper-pagination-vCartaz"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- dia 2  -->
+                                        <div class="swiper-slide">
+                                            <div class="swiper-container swiper-container-vCartaz">
+                                                <div class="swiper-wrapper">
+                                                    
+                
+                                                    <div onclick="return false;" class="swiper-slide  menu_entrada">
+                                                        <img src="img/multy-user.png " class="imgEntrada "> Lista de Amigos 
+                                                    </div>
+                
+                                                    <div onclick="return false;" class="swiper-slide menu_entrada">
+                                                        <img src="img/add-user.png " class="imgEntrada " align="center "> Adicionar Amigo
+                                                    </div>
+                
+                                                    <div class="swiper-slide menu_entrada" style="font-size:8.25pt">
+                                                        <img src="img/Agenda.png " class="imgEntrada " align="center "> Histórico de Transações 
+                                                    </div>
+                
+                                                    <div class="swiper-slide"></div>
+                
+                                                </div>
+                
+                                                <div class="swiper-pagination swiper-pagination-vCartaz"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- dia 3  -->
+                                        <div class="swiper-slide">
+                                            <div class="swiper-container swiper-container-vCartaz">
+                                                <div class="swiper-wrapper">
+                                                    
+                
+                                                    <div onclick="return false;" class="swiper-slide  menu_entrada">
+                                                        <img src="img/wc.png " class="imgEntrada "> Lista de Amigos 
+                                                    </div>
+                
+                                                    <div onclick="return false;" class="swiper-slide menu_entrada">
+                                                        <img src="img/wc.png " class="imgEntrada " align="center "> Adicionar Amigo
+                                                    </div>
+                
+                                                    <div class="swiper-slide menu_entrada" style="font-size:8.25pt">
+                                                        <img src="img/wc.png " class="imgEntrada " align="center "> Histórico de Transações 
+                                                    </div>
+                
+                                                    <div class="swiper-slide"></div>
+                
+                                                </div>
+                
+                                                <div class="swiper-pagination swiper-pagination-vCartaz"></div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        
+                        <!-- 19 cartaz 1 -->
                         <div class="swiper-slide">
                             <div class="swiper-container swiper-container-vCartaz">
                                 <div class="swiper-wrapper">
-                                    
-                                    <div class="swiper-slide  menu_entrada" style="background:#ddd">
-                                        <img src="img/map-2.png" class="imgEntrada"> Dia 1
-                                    </div>
 
-                                    <div onclick="amigos();return false;" class="swiper-slide  menu_entrada">
+                                    <div onclick="return false;" class="swiper-slide  menu_entrada">
                                         <img src="img/multy-user.png " class="imgEntrada "> Lista de Amigos 
                                     </div>
 
-                                    <div onclick="addAmigos();return false; " class="swiper-slide menu_entrada">
+                                    <div onclick="return false; " class="swiper-slide menu_entrada">
                                         <img src="img/add-user.png " class="imgEntrada " align="center "> Adicionar Amigo
                                     </div>
 
@@ -466,9 +561,6 @@
                                 <div class="swiper-pagination swiper-pagination-vCartaz"></div>
                             </div>
                         </div>
-                        
-                        <!-- 19 -->
-                        <div class="swiper-slide">Horizontal Slide 4</div>
                         
                         <!-- 20 -->
                         <div class="swiper-slide">Horizontal Slide 4</div>

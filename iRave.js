@@ -81,6 +81,18 @@ $(document).ready(function() {
 
     });
     
+    swiperV3 = new Swiper('.swiper-container-v3', {
+        pagination: '.swiper-pagination-v3',
+
+        direction: 'vertical',
+        slidesPerView: 1,
+        slidesPerScroll: 1,
+
+        freeMode: true,
+        freeModeMomentum: false
+
+    });
+    
     swiperVCartaz = new Swiper('.swiper-container-vCartaz', {
         pagination: '.swiper-pagination-vCartaz',
         paginationClickable: true,
@@ -92,17 +104,10 @@ $(document).ready(function() {
         freeModeMomentum: false
 
     });
-
-    swiperV3 = new Swiper('.swiper-container-v3', {
-        pagination: '.swiper-pagination-v3',
-
-        direction: 'vertical',
-        slidesPerView: 1,
-        slidesPerScroll: 1,
-
-        freeMode: true,
-        freeModeMomentum: false
-
+    
+    swiperHCartaz = new Swiper('.swiper-container-hCartaz', {
+        onlyExternal: true,
+        //setWrapperSize:true
     });
 
     elSlides = swiperH.slides;
@@ -255,6 +260,9 @@ $(document).ready(function() {
 });
 
 
+var cartazTitulo = ["&nbsp; &nbsp; Dia 1 &nbsp; &nbsp;", 
+                    "&nbsp; &nbsp; Dia 2 &nbsp; &nbsp;", 
+                    "&nbsp; &nbsp; Dia 3 &nbsp; &nbsp;"];
 
 var nome = ["Menu",
     "<img src='img/user1.png' class='imgTitulo'> Perfil",              //1
@@ -277,7 +285,7 @@ var nome = ["Menu",
     "<img src='img/cartaz.png' class='imgEntrada'> Cartaz",               //18
     "<img src='img/cartaz.png' class='imgEntrada'> Cartaz",               //19
     "<img src='img/cartaz.png' class='imgEntrada'> Cartaz",               //20
-    "<img src='img/pointer.png' class='imgEntrada'> Eventos",          //21
+    "<img src='img/pointer.png' class='imgEntrada'> Encontros",          //21
     "<img src='img/pointer.png' class='imgEntrada'> Histórico"          //22
 ];
 
@@ -291,6 +299,8 @@ var previous_i = 0;
 var joao_added = 0;
 var joao_protected = 0;
 var hf_on = 0;
+
+var dia = 0;
 
 function mudarNome(i) {
     $("#titulo_menu").html(nome[i]);
@@ -556,7 +566,33 @@ function banho() {
     mapa();
 }
 
-function eventos() {
+function cartazNext() {
+    if (dia != 2) {
+        if (dia == 1) {
+            $('#cartaz-next').css('visibility', 'hidden');
+        } else {
+            $('#cartaz-previous').css('visibility', 'visible');
+        }
+        dia++;
+        $("#cartaz-dia").html(cartazTitulo[dia]);
+        swiperHCartaz.slideTo(dia);
+    }
+}
+
+function cartazPrevious() {
+    if (dia != 0) {
+        if (dia == 2) {
+            $('#cartaz-next').css('visibility', 'visible');
+        } else {
+            $('#cartaz-previous').css('visibility', 'hidden');
+        }
+        dia--;
+        $("#cartaz-dia").html(cartazTitulo[dia]);
+        swiperHCartaz.slideTo(dia);
+    }
+}
+
+function encontros() {
 
 }
 
