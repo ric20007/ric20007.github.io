@@ -63,18 +63,19 @@
      float:right;
 
  }
+
  
 .swiper-container-v {
     width: 1.5in;
     height: 1.1in;
-    margin: 15pt auto;
+    //margin: 15pt auto;
     padding: 0;
 }
 
 .swiper-container-vProcurar{
     width: 1.5in;
     height: 1.1in;
-    margin: 15pt auto;
+    //margin: 15pt auto;
     padding: 0;
 }
 
@@ -211,11 +212,33 @@ a {
     text-decoration: none;
 }
 
+
+#theback {
+
+    z-index:989;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    transform: translate(-50%, -50%);
+    
+    //background-image: url("mota360.png");
+ 
+    //background-size: 6in 6in;
+    //background-size:80% 80%;
+    background-repeat: no-repeat;
+
+
+}
+
+
 #botoes {
-    z-index:998;
+    z-index:990; /* prev 998*/
+    
+    
     height: 1.9in;
     width: 1.9in;
-    border: 2.25pt solid black;
+    border: 1pt solid #aaa;
     border-radius: 50%;
     
     /*centra na pagina*/
@@ -240,9 +263,6 @@ a {
  
 
     position: fixed;
-
-
-    
     z-index:1000;
 }
 
@@ -305,7 +325,7 @@ a {
 
 
 #moldura {
-    z-index: 999;
+    z-index: 995;  /* prev 999*/
     height: 1.5in;
     width: 1.5in;
     border: 0.75pt solid black;
@@ -318,7 +338,7 @@ a {
 }
 
 #barra_horas {
-    z-index:998;
+    z-index:997;  /* prev 998*/
     border: 2.25pt solid #d70;
     border-top-color: transparent;
     height: 0.307in;

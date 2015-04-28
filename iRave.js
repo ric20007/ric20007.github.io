@@ -1,14 +1,21 @@
 var nope = false;
-var swiperH;
-var swiperV;
-
-var swiperV2;
-var swiperVProcurar;
-var valorCompra;
+var swiperH,
+    swiperV,
+    swiperV2,
+    swiperVProcurar,
+    swiperVCartaz,
+    valorCompra = 0,
+    totalComprado;
+    
 var itemsCompra = [];
 var itemsComprados = [];
 var elSlides;
 
+var thePrev;
+var SpecialthePrev; 
+var  canChangePrev = 1;
+
+var wcFilaToggle = 0;
 $(document).ready(function() {
 
     //var elem = document.getElementById('slider');   
@@ -73,6 +80,18 @@ $(document).ready(function() {
         freeModeMomentum: false
 
     });
+    
+    swiperVCartaz = new Swiper('.swiper-container-vCartaz', {
+        pagination: '.swiper-pagination-vCartaz',
+        paginationClickable: true,
+        direction: 'vertical',
+        slidesPerView: 4,
+        slidesPerScroll: 2,
+
+        freeMode: true,
+        freeModeMomentum: false
+
+    });
 
     swiperV3 = new Swiper('.swiper-container-v3', {
         pagination: '.swiper-pagination-v3',
@@ -121,11 +140,15 @@ $(document).ready(function() {
         comida();
     });
     
-    $('#iconWC').mousedown(function() {
-        $('#wcFila').css('display', 'inline');
-        $('#iconWC').mouseup(function() {
+    $('#iconWC').click(function() {
+        if (wcFilaToggle == 0) {
+            $('#wcFila').css('display', 'inline');
+            wcFilaToggle = 1;
+        }
+        else{
             $('#wcFila').css('display', 'none');
-        });
+            wcFilaToggle = 0;
+        }
     });
     
     $('#iconMerch').click(function() {
@@ -146,7 +169,7 @@ $(document).ready(function() {
         checkbox.prop('checked', alerte);
     });
 
-    $('ul.list > li ').click(function() {
+    $('ul.list > li').click(function() {
 
         if (nope == false) {
             var _that = $(this);
@@ -249,11 +272,18 @@ var nome = ["Menu",
     "<img src='img/hands-free.png' class='imgEntrada'> Mão Livre",    //13
     "<img src='img/euro_1.png' class='imgEntrada'> Merchandising",    //14
     "<img src='img/euro_1.png' class='imgEntrada'> Merchandising",    //15
-    "<img src='img/euro_1.png' class='imgEntrada'> Merchandising"     //16
+    "<img src='img/euro_1.png' class='imgEntrada'> Merchandising",    //16
+    "<img src='img/Agenda.png' class='imgEntrada'> Horário",          //17
+    "<img src='img/cartaz.png' class='imgEntrada'> Cartaz",               //18
+    "<img src='img/cartaz.png' class='imgEntrada'> Cartaz",               //19
+    "<img src='img/cartaz.png' class='imgEntrada'> Cartaz",               //20
+    "<img src='img/pointer.png' class='imgEntrada'> Eventos",          //21
+    "<img src='img/pointer.png' class='imgEntrada'> Histórico"          //22
 ];
 
-//              0  1  2  3 4 5 6 7 8 9 10 11 12 13            
-var prevEcra = [0, 0, -1, 2, 1, 1, 5, 7, 0, -1, 9, 1, 0, 0];
+                                                        // -> do 14 inclusive ainda nao esta    
+//              0  1   2  3  4  5  6  7  8   9 10  11 12 13  14  15 16  17  18  19  20  21  22        
+var prevEcra = [0, 0, -1, 2, 1, 1, 5, 7, 0, -1, 9,  8, 0, 0, -1, 14, 8,  0, -1, 18, 19, 0,  0];
 
 var current_i = 0;
 var previous_i = 0;
@@ -267,9 +297,11 @@ function mudarNome(i) {
 }
 
 function prev() {
-    var thePrev;
+    canChangePrev = 0;
+
     if (nope != false) {
         return false;
+        canChangePrev = 1;
     }
 
     /*
@@ -285,7 +317,10 @@ function prev() {
 
         console.log(-1 + " $$$$$$");
         console.log(nome[current_i] + "(" + current_i + " -> " + nome[previous_i] + "(" + prevEcra[previous_i]);
+        //preserve previous_i
+
         goToSlide(previous_i);
+   
 
     } else {
         console.log(prevEcra[current_i]);
@@ -294,7 +329,8 @@ function prev() {
         goToSlide(prevEcra[current_i]);
 
     }
-
+    
+    canChangePrev = 1;
 
 }
 
@@ -325,7 +361,12 @@ function goToSlide(i) {
     else if (current_i === 10) {
         $("#botVoltarConfirmar").css("display", "none");
     }
-    
+    else if (current_i === 14) {
+        $("#botContinuar").css("display", "none");
+    }
+    else if (current_i === 15) {
+        $("#botVoltarConfirmar").css("display", "none");
+    }
    
 
 
@@ -347,15 +388,24 @@ function goToSlide(i) {
             $('#mapa').css("opacity", 1);
         }
         
-        previous_i = current_i;
-        
-        current_i = i;
-        mudarNome(current_i);
+        SpecialthePrev = prevEcra[i];
+        if (canChangePrev === 1  && SpecialthePrev === -1) {
+         
+            //console.log("tou no " +  current_i + " ir p " + i + " special " + SpecialthePrev)
+            //console.log("chanchange? " +canChangePrev);
 
+            previous_i = current_i;
+        }
+        
+        mudarNome(i);
         swiperH.slideTo(i);
-        $(elSlides[previous_i]).css("visibility", "hidden");
         
         // hide previous slide
+        $(elSlides[current_i]).css("visibility", "hidden");
+        
+        current_i = i;
+        
+        
 
     }
 
@@ -413,18 +463,19 @@ function goToMenu() {
 // opcoes do menu principal 
 function mapa() {
     // $( '.placeholder').load( 'mapa.html' );
-    //mudarNome(12);
     goToSlide(12);
 }
 
 function procurar() {
-    //mudarNome(8);
     goToSlide(8);
-
 }
 
 function horario() {
+    goToSlide(17);
+}
 
+function cartaz(i) {
+    goToSlide(17 + i);
 }
 
 function maoLivre() {
@@ -469,8 +520,22 @@ function addAmigos() {
 
 }
 
+function historico(){
+    goToSlide(22);
+    
+    if (valorCompra === 0)
+        return;
+    
+    $("#listaHistoricoCompras").html("Total Gasto: " + valorCompra + "€");
+    for (var i = 0; i < itemsComprados.length; i++) {
+        $("#listaHistoricoCompras").append(itemsComprados[i]);
+    }
+    
+    
+}
+
 function comida() {
-    valorCompra = 0;
+    //valorCompra = 0;
     itemsCompra = [];
     //mudarNome(9);
     goToSlide(9);
@@ -478,7 +543,7 @@ function comida() {
 }
 
 function merch() {
-    valorCompra = 0;
+    //valorCompra = 0;
     itemsCompra = [];
     //mudarNome(14);
     goToSlide(14);
@@ -492,10 +557,6 @@ function banho() {
 }
 
 function eventos() {
-
-}
-
-function cartaz() {
 
 }
 
@@ -527,7 +588,7 @@ function continuarCompra() {
     if (value === 0)
         return false;
 
-    valorCompra = value;
+    valorCompra += value;
     $(".exchangeCompra").html("Total Pedido: " + value + "€");
     var i;
     for (i = 0; i < itemsCompra.length; i++) {
