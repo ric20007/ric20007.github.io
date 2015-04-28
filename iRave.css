@@ -63,84 +63,90 @@
      float:right;
 
  }
-    .swiper-container-v {
-        width: 1.5in;
-        height: 1.1in;
-        margin: 15pt auto;
-        padding: 0;
-    }
+ 
+.swiper-container-v {
+    width: 1.5in;
+    height: 1.1in;
+    margin: 15pt auto;
+    padding: 0;
+}
 
-    .swiper-container-vProcurar{
-        width: 1.5in;
-        height: 1.1in;
-        margin: 15pt auto;
-        padding: 0;
-    }
-    
-   .swiper-slide  {
-      
-        text-align: center;
-        font-size: 11pt;
-        background: #fff;
-        
-        
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-    }
-    
-        
-    /*
-    .swiper-slide  {
-         visibility:hidden;
-        }
-    
-    .swiper-container-vertical .swiper-wrapper .swiper-slide-active{
-        visibility:visible;
-    }
-    
-    
+.swiper-container-vProcurar{
+    width: 1.5in;
+    height: 1.1in;
+    margin: 15pt auto;
+    padding: 0;
+}
 
-     .swiper-container-horizontal .swiper-wrapper .swiper-slide, .swiper-container-h .swiper-wrapper .swiper-slide  {
-         visibility:hidden;
-        }
+.swiper-slide  {
+  
+    text-align: center;
+    font-size: 11pt;
+    background: #fff;
     
-    .swiper-container-horizontal .swiper-slide-active, .swiper-container-h .swiper-slide-active {
-        visibility:visible;
-
-    }
+    
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
 
     
-    .swiper-container-vertical .swiper-wrapper .swiper-slide, .swiper-pagination  {
-         visibility:visible;
-        }
-    */
+/*
+.swiper-slide  {
+     visibility:hidden;
+    }
 
-    .swiper-pagination{
-        width: 3%;
-        height: 75%;
-        opacity: 1;
+.swiper-container-vertical .swiper-wrapper .swiper-slide-active{
+    visibility:visible;
+}
+
+
+
+ .swiper-container-horizontal .swiper-wrapper .swiper-slide, .swiper-container-h .swiper-wrapper .swiper-slide  {
+     visibility:hidden;
     }
-    
-    /* bullet nao seleccionada */
-    .swiper-pagination .swiper-pagination-bullet {
-        background: #d70;
+
+.swiper-container-horizontal .swiper-slide-active, .swiper-container-h .swiper-slide-active {
+    visibility:visible;
+
+}
+
+
+.swiper-container-vertical .swiper-wrapper .swiper-slide, .swiper-pagination  {
+     visibility:visible;
     }
+*/
+
+.swiper-wrapper{  /*apagar? -> ve se laranja la em baixo*/
+    //background: #d70;
     
-    
-    .swiper-pagination .swiper-pagination-bullet-active {
-        background: #d70;
-    }
+}
+
+.swiper-pagination{
+    width: 3%;
+    height: 75%;
+    opacity: 1;
+}
+
+/* bullet nao seleccionada */
+.swiper-pagination .swiper-pagination-bullet {
+    background: #d70;
+}
+
+
+.swiper-pagination .swiper-pagination-bullet-active {
+    background: #d70;
+}
     
 
 .menu_entrada {
@@ -228,7 +234,7 @@ a {
 
 .botaoHandsFree{
 
-    border: 2px solid black;
+    border: 1.5pt solid black;
     height: 40pt;
     width: 80pt;
  
@@ -240,6 +246,17 @@ a {
     z-index:1000;
 }
 
+.hf_inactivos {
+    height: 43pt;
+    width: 83pt;
+    top: 50%;
+    background-color: grey;
+    transform: translate(-150%, -50%);
+    opacity: 0.8;
+    z-index: 1001;
+
+    position: fixed;
+}
 
 #bot_back {
 
@@ -399,6 +416,16 @@ a {
     width: 15pt;
 }
 
+#wcFila {
+    z-index: 2;
+    position: absolute;
+    top: 121pt;
+    left: 80pt;
+    height:25pt;
+    width: 36pt;
+    display: none;
+}
+
 #iconFood {
     z-index: 2;
     position: absolute;
@@ -416,6 +443,17 @@ a {
     height:15pt;
     width: 15pt;
 }
+
+#iconJoao {
+    z-index: 2;
+    position: absolute;
+    top: 53pt;
+    left: 136pt;
+    height:10pt;
+    width: 10pt;
+    display: none;
+}
+
 
 
 @font-face {

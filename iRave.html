@@ -42,6 +42,7 @@
         <div id='bot_menu' class="shinybot" onclick="goToMenu();return false;"> </div>
 
         <!-- botoes maos livres  -->
+        <div class='hf_inactivos'></div>
         <div onclick="hf_mapa();return false;">
             <img src="img/gesto_abrir_mapa.png" class="botaoHandsFree" style="top: 50%;transform: translate(-150%, -50%);">
         </div>
@@ -95,7 +96,7 @@
                                     <div onclick="next();return false;" class="swiper-slide menu_entrada">
                                         <img src="img/user1.png" class="imgEntrada"> Perfil </div>
 
-                                    <div onclick=" maolivre();return false;" class="swiper-slide menu_entrada">
+                                    <div onclick=" maoLivre();return false;" class="swiper-slide menu_entrada">
                                         <img src="img/hands-free.png" class="imgEntrada"> Mãos Livres </div>
 
                                     <div class="swiper-slide" style="height:5pt"></div>
@@ -190,19 +191,14 @@
 
                             <div id='opcoes_joao'> </div>
 
-                            <div onclick="protectJoao();goToSlide(7);return false;" class="menu_entrada">
-                                <img src="img/multy-user.png " class="imgEntrada ">
-                                <!-- NOTA: MUDAR ISTO PARA DESPROTEGER QUANDO PROTEGIDO?  -->
-                                Proteger
-                            </div>
 
                             <!-- ir para: mapa no joao -->
-                            <div class="menu_entrada">
+                            <div onclick="$('#mapa').css('top', '-20pt');$('#mapa').css('left', '-90pt');mapa();return false;" class="menu_entrada">
                                 <img src="img/add-user.png " class="imgEntrada "> Localizar
                             </div>
 
                             <!-- ir para: pretende remover o joao? -->
-                            <div onclick="removerJoao();unprotectJoao();" class="menu_entrada">
+                            <div onclick="removerJoao();unprotectJoao();amigos();return false;" class="menu_entrada">
                                 <img src="img/Agenda.png " class="imgEntrada "> Remover
                             </div>
                         </div>
@@ -225,20 +221,23 @@
                                 <div class="swiper-wrapper">
 
 
-                                    <div onclick=" amigos(); return false;" class="swiper-slide  menu_entrada">
-                                        <img src="img/map-2.png" class="imgEntrada"> &nbsp; Amigos </div>
+                                    <div onclick="amigos(); return false;" class="swiper-slide  menu_entrada">
+                                        <img src="img/multy-user.png" class="imgEntrada"> &nbsp; Amigos </div>
+                                        
+                                    <div onclick="banho(); return false;" class="swiper-slide menu_entrada">
+                                        <img src="img/wc.png" class="imgEntrada"> &nbsp; WC </div>
 
                                     <div onclick="comida(); return false;" class="swiper-slide menu_entrada">
-                                        <img src="img/active-search.png" class="imgEntrada"> Comes/Bebes </div>
+                                        <img src="img/foods.png" class="imgEntrada"> &nbsp; Comes/Bebes </div>
 
-                                    <div onclick=" banho(); return false;" class="swiper-slide menu_entrada">
-                                        <img src="img/hands-free.png" class="imgEntrada"> WC </div>
+                                    <div onclick="merch(); return false;" class="swiper-slide menu_entrada">
+                                        <img src="img/euro_1.png" class="imgEntrada"> &nbsp; Merchandising </div>
 
-                                    <div onclick=" eventos(); return false;" class="swiper-slide menu_entrada">
-                                        <img src="img/Agenda.png" class="imgEntrada"> Eventos </div>
+                                    <div onclick="eventos(); return false;" class="swiper-slide menu_entrada">
+                                        <img src="img/Agenda.png" class="imgEntrada"> &nbsp; Eventos </div>
 
-                                    <div onclick=" cartaz(); return false;" class="swiper-slide menu_entrada">
-                                        <img src="img/user1.png" class="imgEntrada"> Cartaz </div>
+                                    <div onclick="cartaz(); return false;" class="swiper-slide menu_entrada">
+                                        <img src="img/Agenda.png" class="imgEntrada"> &nbsp; Cartaz </div>
 
 
 
@@ -255,36 +254,27 @@
                         </div>
 
 
-                        <!-- 9 comes/cegues NOTA: CARREGAR NA CHECKBOX NAO FUNCIONA -->
+                        <!-- 9 comes/cegues -->
                         <div class="swiper-slide">
                             <div class="swiper-container swiper-container-vProcurar">
                                 <div class="swiper-wrapper">
 
-
-
-
                                     <div class="swiper-slide  menu_entrada" style="background:#ddd">
                                         <img src="img/map-2.png" class="imgEntrada"> &nbsp; Comidas
-
                                     </div>
 
 
                                     <div class="swiper-slide  menu_entrada compras">
-
                                         <img src="img/active-search.png" class="imgEntrada"> &nbsp; Bifana 3€
                                         <input type="checkbox" name="compra" id="checkchek" produ="Bifana" value="3">
-
                                     </div>
-
 
 
                                     <div class="swiper-slide menu_entrada compras">
                                         <img src="img/active-search.png" class="imgEntrada"> Bitoque 5€
                                         <input type="checkbox" name="compra" id="checkchek" produ="Bitoque" value="5">
                                         <!--  checked="checked"-->
-
                                     </div>
-
 
 
                                     <div class="swiper-slide menu_entrada" style="background:#ddd">
@@ -300,7 +290,105 @@
                                         <img src="img/active-search.png" class="imgEntrada"> Água 1€
                                         <input type="checkbox" name="compra" id="checkchek" produ="Água" value="1">
                                         <!--  checked-->
+                                    </div>
 
+
+                                    <div class="swiper-slide"></div>
+                                    <div class="swiper-slide"></div>
+                                    <!--         
+                                        <div  onclick="continuarCompra();return false;" class="swiper-slide menu_entrada">
+                                               <img src="img/map-2.png" class="imgEntrada"> Continuar  </div>-->
+
+                                </div>
+
+                                <div class="swiper-pagination swiper-pagination-vProcurar"></div>
+                            </div>
+                        </div>
+
+                        <!-- 10 comes/cegues confirmar compra -->
+                        <div class="swiper-slide">
+                            <div class="swiper-container swiper-container-v3">
+                                <div class="exchangeCompra" class="swiper-wrapper">
+                                    #Pedido:
+
+                                </div>
+
+
+                                <div class="swiper-pagination swiper-pagination-v3"></div>
+                            </div>
+                        </div>
+
+                        <!-- 11 comes/cegues confirmada compra -->
+                        <div class="swiper-slide joao_add_amigos">
+                            Pedido efectuado. Estará pronto dentro de 5 minutos.
+                            <p></p>
+                            <a href="# " class="botao" onclick=" goToMenu();return false; ">
+
+                                <img src="img/check.png " class="imgEntrada "> OK
+                            </a>
+                        </div>
+
+                        <!-- 12 mapa -->
+                        <div class='swiper-slide'>
+                            <div id='mapa'>
+                                <img src='img/mapa.png' id='imgMapa'>
+
+                                <img src='img/wc.png' id='iconWC'>
+                                
+                                <img src='img/wc-fila.png' id='wcFila'>
+
+                                <img src='img/foods.png' id='iconFood'>
+
+                                <img src='img/merch.png' id='iconMerch'>
+                                
+                                <img src='img/user_male.png' id='iconJoao'>
+
+                            </div>
+                        </div>
+
+                        <!-- 13 tocar para activar hands-free -->
+                        <div class="swiper-slide joao_add_amigos">
+                            <div id='mao_livre'></div>
+                        </div>
+
+                        <!-- 14 merchandising -->
+                        <div class="swiper-slide">
+                            <div class="swiper-container swiper-container-vProcurar">
+                                <div class="swiper-wrapper">
+
+
+                                    <div class="swiper-slide  menu_entrada compras">
+                                        <img src="img/active-search.png" class="imgEntrada"> &nbsp; Porta-Chaves 3€
+                                        <input type="checkbox" name="compra" id="checkchek" produ="Porta-Chaves" value="3">
+                                    </div>
+
+                                    <div class="swiper-slide menu_entrada compras">
+                                        <img src="img/active-search.png" class="imgEntrada"> Postal 1€
+                                        <input type="checkbox" name="compra" id="checkchek" produ="Postal" value="1">
+                                        <!--  checked="checked"-->
+                                    </div>
+
+                                    <div class="swiper-slide  menu_entrada compras">
+                                        <img src="img/active-search.png" class="imgEntrada"> &nbsp; Corrente 2€
+                                        <input type="checkbox" name="compra" id="checkchek" produ="Corrente" value="2">
+                                    </div>
+
+                                    <div class="swiper-slide menu_entrada compras">
+                                        <img src="img/active-search.png" class="imgEntrada"> Camisola 15€
+                                        <input type="checkbox" name="compra" id="checkchek" produ="Camisola" value="15">
+                                        <!--  checked-->
+                                    </div>
+                                    
+                                    <div class="swiper-slide menu_entrada compras">
+                                        <img src="img/active-search.png" class="imgEntrada"> Pins 2€
+                                        <input type="checkbox" name="compra" id="checkchek" produ="Camisola" value="2">
+                                        <!--  checked-->
+                                    </div>
+                                    
+                                    <div class="swiper-slide menu_entrada compras">
+                                        <img src="img/active-search.png" class="imgEntrada"> Pulseira 6€
+                                        <input type="checkbox" name="compra" id="checkchek" produ="Camisola" value="6">
+                                        <!--  checked-->
                                     </div>
 
 
@@ -311,21 +399,16 @@
                                                <img src="img/map-2.png" class="imgEntrada"> Continuar  </div>-->
 
 
-
-
                                 </div>
-
 
                                 <div class="swiper-pagination swiper-pagination-vProcurar"></div>
                             </div>
                         </div>
-
-
-
-                        <!-- 10 comes/cegues confirmar compra -->
+                        
+                        <!-- 15 merchandising confirmar compra -->
                         <div class="swiper-slide">
                             <div class="swiper-container swiper-container-v3">
-                                <div id="exchangeCompra" class="swiper-wrapper">
+                                <div class="exchangeCompra" class="swiper-wrapper">
                                     #Pedido:
 
                                 </div>
@@ -335,41 +418,15 @@
                             </div>
                         </div>
 
-                        <!-- 11 comes/cegues confirmar compra -->
+                        <!-- 16 merchandising confirmada compra -->
                         <div class="swiper-slide joao_add_amigos">
-                            Pedido efectuado. Estará pronto dentro de 5 minutos.
+                            Pedido efectuado. Pode levantar a encomenda.
                             <p></p>
-                            <a href="# " class="botao" onclick=" goToSlide(8);return false; ">
+                            <a href="# " class="botao" onclick=" goToMenu();return false; ">
 
                                 <img src="img/check.png " class="imgEntrada "> OK
                             </a>
                         </div>
-
-                        <!-- 12 mapa -->
-                        <div class="swiper-slide">
-                            <div id="mapa">
-                                <img src="img/mapa.png" id="imgMapa">
-
-                                <img src="img/wc.png" id="iconWC">
-
-                                <img src="img/foods.png" id="iconFood">
-
-                                <img src="img/merch.png" id="iconMerch">
-
-                            </div>
-                        </div>
-
-                        <!-- 13 tocar para activar hands-free -->
-                        <div class="swiper-slide joao_add_amigos">
-                            Toque para activar o modo mãos livres!
-                            <p></p>
-                            <a href="# " class="botao" onclick="hf_on = 1;goToSlide(0);return false; ">
-
-                                <img src="img/user1.png " class="imgEntrada "> OK
-                            </a>
-                        </div>
-
-
 
                         <div class="swiper-slide placeholder">Horizontal Slide 4</div>
 
@@ -384,7 +441,7 @@
 
 
 
-
+            <!-- ( . Y . ) -->
 
             </div>
 

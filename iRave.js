@@ -120,8 +120,25 @@ $(document).ready(function() {
     $('#iconFood').click(function() {
         comida();
     });
+    
+    $('#iconWC').mousedown(function() {
+        $('#wcFila').css('display', 'inline');
+        $('#iconWC').mouseup(function() {
+            $('#wcFila').css('display', 'none');
+        });
+    });
+    
+    $('#iconMerch').click(function() {
+        merch();
+    });
+    
 
-
+    $('#iconJoao').click(function() {
+        goToJoaoOptions();
+    });
+    
+    
+    
     $('.compras').click(function() {
         //$('input[type=checkbox]').attr('checked', false);
         var checkbox = $('input[type=checkbox]').eq($(this).index('.compras'));
@@ -217,19 +234,22 @@ $(document).ready(function() {
 
 
 var nome = ["Menu",
-    "<img src='img/user1.png' class='imgTitulo'> Perfil", //1
-    "<img src='img/add-user.png' class='imgEntrada'> Add. Amigos", //2
-    "<img src='img/add-user.png' class='imgEntrada'> Add. Amigos", //3
-    "<img src='img/add-user.png' class='imgEntrada'> Add. Amigos",
-    "<img src='img/multy-user.png' class='imgEntrada'> Lista Amigos", //5
-    "<img src='img/user1.png' class='imgTitulo'> João",
-    "<img src='img/shield.png' class='imgEntrada'> Protegido", // 7
-    "Procurar", //8
-    "Comes/Bebes",
-    "Comes/Bebes", //10
-    "Comes/Bebes",
-    "<img src='img/map-2.png' class='imgEntrada'> Mapa",
-    "<img src='img/hands-free.png' class='imgEntrada'> Mão Livre"
+    "<img src='img/user1.png' class='imgTitulo'> Perfil",              //1
+    "<img src='img/add-user.png' class='imgEntrada'> Add. Amigos",     //2
+    "<img src='img/add-user.png' class='imgEntrada'> Add. Amigos",     //3
+    "<img src='img/add-user.png' class='imgEntrada'> Add. Amigos",     //4
+    "<img src='img/multy-user.png' class='imgEntrada'> Lista Amigos",  //5
+    "<img src='img/user1.png' class='imgTitulo'> João",                //6
+    "<img src='img/shield.png' class='imgEntrada'> Protegido",         //7
+    "<img src='img/active-search.png' class='imgEntrada'> Procurar",   //8
+    "<img src='img/foods.png' class='imgEntrada'> Comes/Bebes",        //9
+    "<img src='img/foods.png' class='imgEntrada'> Comes/Bebes",       //10
+    "<img src='img/foods.png' class='imgEntrada'> Comes/Bebes",       //11
+    "<img src='img/map-2.png' class='imgEntrada'> Mapa",              //12
+    "<img src='img/hands-free.png' class='imgEntrada'> Mão Livre",    //13
+    "<img src='img/euro_1.png' class='imgEntrada'> Merchandising",    //14
+    "<img src='img/euro_1.png' class='imgEntrada'> Merchandising",    //15
+    "<img src='img/euro_1.png' class='imgEntrada'> Merchandising"     //16
 ];
 
 //              0  1  2  3 4 5 6 7 8 9 10 11 12 13            
@@ -295,33 +315,47 @@ function next() {
 function goToSlide(i) {
 
 
+    // se tentar mudar para o mesmo ecra
+    if (current_i == i)
+        return false;
+
     // clean button
     if (current_i === 9)
         $("#botContinuar").css("display", "none");
     else if (current_i === 10) {
         $("#botVoltarConfirmar").css("display", "none");
     }
+    
+   
 
 
-    for (j = 0; j < elSlides.length; j++) {
-        if (j != i)
-            $(elSlides[j]).css("visibility", "hidden");
-        else
-            $(elSlides[j]).css("visibility", "visible");
-    }
-
-
-    previous_i = current_i;
+    
     if (i >= 0 && i <= nome.length - 1) {
+        
+         // esconder slides que nao estao active
+        for (j = 0; j < elSlides.length; j++) {
+            if (j != i && j != current_i)
+                $(elSlides[j]).css("visibility", "hidden");
+            else
+                $(elSlides[j]).css("visibility", "visible");
+        }
+        
+        
         if (i !== 12) {
             $('#mapa').css("opacity", 0);
         } else {
             $('#mapa').css("opacity", 1);
         }
+        
+        previous_i = current_i;
+        
         current_i = i;
         mudarNome(current_i);
 
         swiperH.slideTo(i);
+        $(elSlides[previous_i]).css("visibility", "hidden");
+        
+        // hide previous slide
 
     }
 
@@ -332,16 +366,16 @@ function goToSix() {
 
     //previous_i = -1;
 
-    if (joao_added === 1) {
+    if (joao_added == 1) {
         //$("#lista_joao").html("<p style=\"text-align:center\" >João" );
 
         if (joao_protected == 1) {
-            $("#lista_joao").html("<div onclick='next();return false;' class='menu_entrada'> \
+            $("#lista_joao").html("<div onclick='goToJoaoOptions();return false;' class='menu_entrada'> \
                       <img src='img/user1.png ' class='imgEntrada '> \
                 João \ <img src='img/shield.png ' class='imgEntrada '>  \
            </div>  ");
         } else {
-            $("#lista_joao").html("<div onclick='next();return false;' class='menu_entrada'> \
+            $("#lista_joao").html("<div onclick='goToJoaoOptions();return false;' class='menu_entrada'> \
                       <img src='img/user1.png ' class='imgEntrada '> \
                 João \
            </div>  ");
@@ -351,27 +385,30 @@ function goToSix() {
 
 }
 
+function goToJoaoOptions() {
+    goToSlide(6);
+    checkProtection();
+
+}
+
+function checkProtection() {
+    if (joao_protected == 1) {
+        $("#opcoes_joao").html("<div onclick='unprotectJoao();goToSlide(7);return false;' class='menu_entrada'> \
+                                <img src='img/multy-user.png ' class='imgEntrada '> \
+                                Desproteger \ </div>");
+    }
+    else {
+        $("#opcoes_joao").html("<div onclick='protectJoao();goToSlide(7);return false;' class='menu_entrada'> \
+                                <img src='img/multy-user.png ' class='imgEntrada '> \
+                                Proteger \ </div>");
+    }
+}
+
 function goToMenu() {
     goToSlide(0);
 
 }
 
-function protectJoao() {
-    joao_protected = 1;
-}
-
-function unprotectJoao() {
-    joao_protected = 0;
-}
-
-function adicionarJoao() {
-    joao_added = 1;
-}
-
-function removerJoao() {
-    joao_added = 0;
-
-}
 
 // opcoes do menu principal 
 function mapa() {
@@ -390,8 +427,30 @@ function horario() {
 
 }
 
-function maolivre() {
+function maoLivre() {
     goToSlide(13);
+    if (hf_on == 0) {
+        $("#mao_livre").html("Toque para activar o modo mãos livres! \
+                                <p></p> \
+                                <a href='# ' class='botao' onclick='hfOn();goToSlide(0);return false; '> \
+                                    <img src='img/user1.png ' class='imgEntrada '> OK \ </a>");
+    }
+    else {
+        $("#mao_livre").html("Toque para desactivar o modo mãos livres \
+                                <p></p> \
+                                <a href='# ' class='botao' onclick='hfOff();goToSlide(0);return false; '> \
+                                    <img src='img/user1.png ' class='imgEntrada '> OK \ </a>");
+    }
+}
+
+function hfOn() {
+    hf_on = 1;
+    $('.hf_inactivos').css('display', "none");
+}
+
+function hfOff() {
+    hf_on = 0;
+    $('.hf_inactivos').css('display', "inline");
 }
 
 //opcoes do procurar
@@ -418,9 +477,18 @@ function comida() {
     $("#botContinuar").css("display", "block");
 }
 
+function merch() {
+    valorCompra = 0;
+    itemsCompra = [];
+    //mudarNome(14);
+    goToSlide(14);
+    $("#botContinuar").css("display", "block");
+}
+
 function banho() {
-
-
+    $('#mapa').css('top', '-90pt');
+    $('#mapa').css('left', '-20pt');
+    mapa();
 }
 
 function eventos() {
@@ -460,14 +528,14 @@ function continuarCompra() {
         return false;
 
     valorCompra = value;
-    $("#exchangeCompra").html("Total Pedido: " + value + "€");
+    $(".exchangeCompra").html("Total Pedido: " + value + "€");
     var i;
     for (i = 0; i < itemsCompra.length; i++) {
-        $("#exchangeCompra").append(itemsCompra[i]);
+        $(".exchangeCompra").append(itemsCompra[i]);
     }
 
-    $("#exchangeCompra").append("<div class='menu_entrada '></div>");
-    $("#exchangeCompra").append("<div class='swiper-slide '></div>");
+    $(".exchangeCompra").append("<div class='menu_entrada '></div>");
+    $(".exchangeCompra").append("<div class='swiper-slide '></div>");
 
     //alert(value);
     //alert(itemsCompra);
@@ -476,8 +544,6 @@ function continuarCompra() {
 
 
     next();
-
-
 
 }
 
@@ -488,9 +554,7 @@ function voltarCompra() {
     $("#botContinuar").css("display", "block");
     $("#botVoltarConfirmar").css("display", "none");
 
-
     prev();
-
 }
 
 function efectuarCompra() {
@@ -518,6 +582,24 @@ function hf_mapa() {
     }
 }
 
+function protectJoao() {
+    joao_protected = 1;
+}
+
+function unprotectJoao() {
+    joao_protected = 0;
+}
+
+function adicionarJoao() {
+    joao_added = 1;
+    $('#iconJoao').css('display', 'inline');
+}
+
+function removerJoao() {
+    joao_added = 0;
+    $('#iconJoao').css('display', 'none');
+
+}
 
 $(document).keydown(function(e) {
     switch (e.keyCode) {
