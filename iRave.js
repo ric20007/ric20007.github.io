@@ -18,6 +18,25 @@ var  canChangePrev = 1;
 var wcFilaToggle = 0;
 var imgUserAmigo = "<img src='img/user1.png ' class='imgEntrada '>",
     imgShieldAmigo = "<img src='img/shield.png ' class='imgEntrada '>";
+    
+    
+function pessoa(_nome) {
+    this.nome = _nome;
+    this.isAdded = 0;
+    this.isProtected = 0;
+}
+var pessoas = [new pessoa("Carla"),
+                new pessoa("Carlos"),
+                new pessoa("João"),
+                new pessoa("Joana"),
+                new pessoa("Merio"),
+                new pessoa("Rita"),
+                new pessoa("Rui"),
+                new pessoa("Salvador")];
+                
+var amigosAdicionados = [];
+
+    
 
 $(document).ready(function() {
 
@@ -168,11 +187,55 @@ $(document).ready(function() {
         goToJoaoOptions();
     });
     
-    /*$('.map_nav').hover(function() {
-        if (hf_on) {
-            
-        }
-    },); !!!!!!!!!!!!!!!!!!!!!!!!!!!!! porcaria complicada a fazer para sexta se houver tempo. */
+    $('.hf_top').hover(function() {
+        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_top.png');
+        $(this).click(function() { $('#mapa').animate({top:'+=8'}, 100 ); });
+    }, function() {
+        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
+    });
+    
+    $('.hf_bot').hover(function() {
+        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_bot.png');
+        $(this).click(function() { $('#mapa').animate({top:'-=8'}, 100 ); });
+    }, function() {
+        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
+    });
+    $('.hf_right').hover(function() {
+        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_right.png');
+        $(this).click(function() { $('#mapa').animate({left:'-=8'}, 100 ); });
+    }, function() {
+        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
+    });
+    $('.hf_left').hover(function() {
+        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_left.png');
+        $(this).click(function() { $('#mapa').animate({left:'+=8'}, 100 ); });
+    }, function() {
+        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
+    });
+    $('.hf_topr').hover(function() {
+        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_topr.png');
+        $(this).click(function() { $('#mapa').animate({top:'+=8', left:'-=8'}, 100 ); });
+    }, function() {
+        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
+    });
+    $('.hf_botr').hover(function() {
+        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_botr.png');
+        $(this).click(function() { $('#mapa').animate({top:'-=8', left:'-=8'}, 100 ); });
+    }, function() {
+        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
+    });
+    $('.hf_topl').hover(function() {
+        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_topl.png');
+        $(this).click(function() { $('#mapa').animate({top:'+=8', left:'+=8'}, 100 ); });
+    }, function() {
+        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
+    });
+    $('.hf_botl').hover(function() {
+        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_botl.png');
+        $(this).click(function() { $('#mapa').animate({top:'-=8', left:'+=8'}, 100 ); });
+    }, function() {
+        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
+    });
     /* end mapa e derivados */
     
     
@@ -415,6 +478,46 @@ function goToSlide(i) {
 
 }
 
+function toggleProtection(_index) {
+    pessoas[_index].isProtected = (pessoas[_index].isProtected == 0 ? 1 : 0);
+
+}
+
+function goToOpcoesAmigo(_index){
+    var esteAmigo = pessoas[_index];
+    
+    $("#titulo_menu").html(esteAmigo.nome);
+
+    $("#opcoes_joao").html("<div onclick='toggleProtection("+_index+");goToSlide(7);return false;' class='menu_entrada'> \
+                                <img src='img/multy-user.png ' class='imgEntrada '>" +
+                                (esteAmigo.isProtected == 1 ? "Desproteger" : "Proteger") + 
+                            "</div>");
+                            
+    goToSlide(6);
+    
+
+}
+
+function goToListaAmigos() {
+    // cuidado ja ha funcao amigos()
+    
+    goToSlide(5);
+    
+    if (amigosAdicionados.length == 0)
+        $("#lista_joao").html("<p style=\"text-align:center\" >Não tem amigos");
+    else{
+        $("#lista_joao").html("");
+        $.each( amigosAdicionados, function( i, pess ){
+            console.log( "Index #" + i + ": " + pess.nome );
+            $("#lista_joao").append("<div onclick='goToOpcoesAmigo("+pess.index+");return false;' class='menu_entrada'>"
+                                        + imgUserAmigo + pess.nome + (pess.isProtected == 1 ? imgShieldAmigo : "") +
+                                    "</div>");
+        });
+    }
+    
+    
+}
+
 function goToSix() {
 
     goToSlide(5);
@@ -527,7 +630,7 @@ function historico(){
 function comida() {
     //valorCompra = 0;
     itemsCompra = [];
-    //mudarNome(9);
+
     goToSlide(9);
     $("#botContinuar").css("display", "block");
 }
@@ -535,7 +638,7 @@ function comida() {
 function merch() {
     //valorCompra = 0;
     itemsCompra = [];
-    //mudarNome(14);
+
     goToSlide(14);
     $("#botContinuar").css("display", "block");
 }
@@ -665,6 +768,9 @@ function toggleProtectionJoao() {
 }
 
 function adicionarJoao() {
+    amigosAdicionados.push(pessoas[2]);
+    pessoas[2].isAdded = 1;
+     pessoas[2].index = 2;
     joao_added = 1;
     $('#iconJoao').css('display', 'inline');
 }

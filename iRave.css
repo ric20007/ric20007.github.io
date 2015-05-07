@@ -262,27 +262,6 @@ a {
 
 }
 
-.botaoHandsFree{
-
-    border: 1.5pt solid black;
-    height: 60pt;
-    width: 120pt;
- 
-
-    position: fixed;
-    z-index:1000;
-}
-
-.hf_inactivos {
-    height: 63pt;
-    width: 123pt;
-    top: 50%;
-    background-color: grey;
-    opacity: 0.8;
-    z-index: 1001;
-
-    position: fixed;
-}
 
 #bot_back {
 
@@ -384,7 +363,6 @@ a {
 
 
 
-
 .highlighted {
 
     font-size: 10.5pt;
@@ -408,8 +386,6 @@ a {
 
     
 }
-
-
 
 
 .joao_add_amigos{
@@ -478,6 +454,32 @@ a {
     height:10pt;
     width: 10pt;
     display: none;
+}
+
+.botaoHandsFree{
+    z-index:999;
+    border: 1.5pt solid black;
+    height: 60pt;
+    width: 120pt;
+    
+    position: fixed;
+    
+}
+
+.hf_inactivos {
+    z-index: 1001;
+    height: 63pt;
+    width: 123pt;
+    top: 50%;
+    background-color: grey;
+    opacity: 0.8;
+    
+    position: fixed;
+}
+
+.hf_directions {
+    z-index: 1000;
+    position: absolute;
 }
 
 
