@@ -265,8 +265,8 @@ a {
 .botaoHandsFree{
 
     border: 1.5pt solid black;
-    height: 40pt;
-    width: 80pt;
+    height: 60pt;
+    width: 120pt;
  
 
     position: fixed;
@@ -274,11 +274,10 @@ a {
 }
 
 .hf_inactivos {
-    height: 43pt;
-    width: 83pt;
+    height: 63pt;
+    width: 123pt;
     top: 50%;
     background-color: grey;
-    transform: translate(-150%, -50%);
     opacity: 0.8;
     z-index: 1001;
 

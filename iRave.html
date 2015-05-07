@@ -43,13 +43,16 @@
         <div id='bot_menu' class="shinybot" onclick="goToMenu();return false;"> </div>
 
         <!-- botoes maos livres  -->
-        <div class='hf_inactivos'></div>
+        <div class='hf_inactivos' style='transform: translate(-150%, -200%);'></div>
         <div onclick="hf_mapa();return false;">
-            <img src="img/gesto_abrir_mapa.png" class="botaoHandsFree" style="top: 50%;transform: translate(-150%, -50%);">
+            <img src="img/gesto_abrir_mapa.png" class="botaoHandsFree" style="top: 50%;transform: translate(-150%, -200%);">
         </div>
 
-
-
+        <div class='hf_inactivos' style='transform: translate(-150%, -50%);'></div>
+        <div class='map_nav'>
+            <img src="img/hf_arrows/gesto_navegar_mapa.png" class="botaoHandsFree" style="top: 50%;transform: translate(-150%, -50%);">
+        </div>
+        <!-- end botoes maos livres -->
 
         <div id='moldura'>
             <div onclick="continuarCompra();return false;" id="botContinuar">Continuar</div>
@@ -537,7 +540,11 @@
                             
                         </div>
                         
-                        <!-- 19 cartaz 1 -->
+                        <div class="swiper-slide"></div> <!-- whyyyyyy1 -->
+                        <div class="swiper-slide"></div> <!-- whyyyyyy2 -->
+                        <div class="swiper-slide"></div> <!-- whyyyyyy3 -->
+                        
+                        <!-- 21 encontros -->
                         <div class="swiper-slide">
                             <div class="swiper-container swiper-container-vCartaz">
                                 <div class="swiper-wrapper">
@@ -562,13 +569,7 @@
                             </div>
                         </div>
                         
-                        <!-- 20 -->
-                        <div class="swiper-slide">Horizontal Slide 4</div>
-                        
-                        <!-- 21 -->
-                        <div class="swiper-slide">Horizontal Slide 4</div>
-                        
-                        <!-- 22 -->
+                        <!-- 22 historico -->
                         <div class="swiper-slide">
                             <div class="swiper-container swiper-container-v3">
                                 <div id="listaHistoricoCompras" class="swiper-wrapper">

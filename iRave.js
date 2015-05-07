@@ -16,6 +16,7 @@ var SpecialthePrev;
 var  canChangePrev = 1;
 
 var wcFilaToggle = 0;
+
 $(document).ready(function() {
 
     //var elem = document.getElementById('slider');   
@@ -165,6 +166,12 @@ $(document).ready(function() {
         goToJoaoOptions();
     });
     
+    /*$('.map_nav').hover(function() {
+        if (hf_on) {
+            
+        }
+    },); !!!!!!!!!!!!!!!!!!!!!!!!!!!!! porcaria complicada a fazer para sexta se houver tempo. */
+    /* end mapa e derivados */
     
     
     $('.compras').click(function() {
@@ -220,21 +227,6 @@ $(document).ready(function() {
         }
     });
 
-    /*
-    //add highlight no botao para add. amigos
-    $('.joao_add_amigos').click(function() {
-        if (nope == false) {
-            var _that =  $(this);
-            $(this).addClass('highlighted');
-            setTimeout(function() {
-                  _that.removeClass('highlighted');
-              }, 200);
-        }
-    });
-    
-    */
-
-
 
 
     //funcao que mostra o tempo
@@ -282,16 +274,16 @@ var nome = ["Menu",
     "<img src='img/euro_1.png' class='imgEntrada'> Merchandising",    //15
     "<img src='img/euro_1.png' class='imgEntrada'> Merchandising",    //16
     "<img src='img/Agenda.png' class='imgEntrada'> Horário",          //17
-    "<img src='img/cartaz.png' class='imgEntrada'> Cartaz",               //18
-    "<img src='img/cartaz.png' class='imgEntrada'> Cartaz",               //19
-    "<img src='img/cartaz.png' class='imgEntrada'> Cartaz",               //20
-    "<img src='img/pointer.png' class='imgEntrada'> Encontros",          //21
-    "<img src='img/pointer.png' class='imgEntrada'> Histórico"          //22
+    "<img src='img/cartaz.png' class='imgEntrada'> Cartaz",           //18
+    "<img src='img/cartaz.png' class='imgEntrada'> nooope",           //
+    "<img src='img/cartaz.png' class='imgEntrada'> nooope",           //
+    "<img src='img/pointer.png' class='imgEntrada'> Encontros",       //21
+    "<img src='img/pointer.png' class='imgEntrada'> Histórico"        //22 AINDA NAO HA ICON !!!!
 ];
 
-                                                        // -> do 14 inclusive ainda nao esta    
-//              0  1   2  3  4  5  6  7  8   9 10  11 12 13  14  15 16  17  18  19  20  21  22        
-var prevEcra = [0, 0, -1, 2, 1, 1, 5, 7, 0, -1, 9,  8, 0, 0, -1, 14, 8,  0, -1, 18, 19, 0,  0];
+
+//              0  1   2  3  4   5  6  7  8   9  10  11   12  13   14  15  16  17  18       21  22       
+var prevEcra = [0, 0, -1, 2, 1, -1, 5, 7, 0, -1,  9,  8,  -1,  0,  -1, 14,  8,  0, -1, 0,0, -1,  1];
 
 var current_i = 0;
 var previous_i = 0;
@@ -408,6 +400,8 @@ function goToSlide(i) {
         }
         
         mudarNome(i);
+        if (i==21) {$(elSlides[22]).css("visibility", "visible");} //fuck this shit.
+        if (i==22) {$(elSlides[23]).css("visibility", "visible");} //no, rly.
         swiperH.slideTo(i);
         
         // hide previous slide
@@ -593,7 +587,7 @@ function cartazPrevious() {
 }
 
 function encontros() {
-
+    goToSlide(21);
 }
 
 function continuarCompra() {
@@ -710,7 +704,8 @@ $(document).keydown(function(e) {
             next();
             break;
         case 37:
-            prev();
+            goToSlide(current_i - 1); // num funcemina bem
+            //prev();
             break;
     }
 });
