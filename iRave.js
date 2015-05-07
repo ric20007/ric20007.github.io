@@ -16,6 +16,8 @@ var SpecialthePrev;
 var  canChangePrev = 1;
 
 var wcFilaToggle = 0;
+var imgUserAmigo = "<img src='img/user1.png ' class='imgEntrada '>",
+    imgShieldAmigo = "<img src='img/shield.png ' class='imgEntrada '>";
 
 $(document).ready(function() {
 
@@ -416,24 +418,34 @@ function goToSlide(i) {
 }
 
 function goToSix() {
+
     goToSlide(5);
 
     //previous_i = -1;
 
     if (joao_added == 1) {
-        //$("#lista_joao").html("<p style=\"text-align:center\" >João" );
-
+        // usar ternary if
+         $("#lista_joao").html("<div onclick='goToJoaoOptions();return false;' class='menu_entrada'>"
+                                        + imgUserAmigo + "João" + (joao_protected == 1 ? imgShieldAmigo : "") +
+                                    "</div>");
+                                    
+                                    
+    /* 
         if (joao_protected == 1) {
-            $("#lista_joao").html("<div onclick='goToJoaoOptions();return false;' class='menu_entrada'> \
-                      <img src='img/user1.png ' class='imgEntrada '> \
-                João \ <img src='img/shield.png ' class='imgEntrada '>  \
-           </div>  ");
+
+           
         } else {
-            $("#lista_joao").html("<div onclick='goToJoaoOptions();return false;' class='menu_entrada'> \
-                      <img src='img/user1.png ' class='imgEntrada '> \
-                João \
-           </div>  ");
-        }
+             $("#lista_joao").html("<div onclick='goToJoaoOptions();return false;' class='menu_entrada'>"
+                                        + imgUserAmigo + "João"
+                                    "</div>");
+             
+             jQuery('<div/>', {
+                class: 'menu_entrada',
+                onclick: 'goToJoaoOptions();return false;',
+                content: 'Go to Google!'
+            }).appendTo('#lista_joao');    
+            
+        }*/
     } else
         $("#lista_joao").html("<p style=\"text-align:center\" >Não tem amigos");
 
