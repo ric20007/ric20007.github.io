@@ -573,37 +573,6 @@ function amigos() {
     
 }
 
-// REMOVE AFTER new feature
-function goToSix() {
-
-    goToSlide(5);
-
-    if (joao_added == 1) {
-        // usar ternary if
-         $("#lista_joao").html("<div onclick='goToJoaoOptions();return false;' class='menu_entrada'>"
-                                        + imgUserAmigo + "João" + (joao_protected == 1 ? imgShieldAmigo : "") +
-                                    "</div>");
-
-    } else
-        $("#lista_joao").html("<p style=\"text-align:center\" >Não tem amigos");
-
-}
-
-// REMOVE AFTER new feature
-function goToJoaoOptions() {
-    goToSlide(6);
-    checkProtection();
-
-}
-
-// REMOVE AFTER new feature
-function checkProtection() {
-        $("#opcoes_joao").html("<div onclick='toggleProtectionJoao();goToSlide(7);return false;' class='menu_entrada'> \
-                                    <img src='img/multy-user.png ' class='imgEntrada '>" +
-                                    (joao_protected == 1 ? "Desproteger" : "Proteger") + 
-                                "</div>");
-    
-}
 
 function goToMenu() {
     goToSlide(0);
@@ -815,26 +784,6 @@ function hf_mapa() {
     }
 }
 
-//REMOVE AFter new feature
-function toggleProtectionJoao() {
-    joao_protected = (joao_protected == 0 ? 1 : 0);
-
-}
-
-function adicionarJoao() {
-    amigosAdicionados.push(pessoas[2]);
-    pessoas[2].isAdded = 1;
-     pessoas[2].index = 2;
-    joao_added = 1;
-    $('#iconJoao').css('display', 'inline');
-}
-
-function removerJoao() {
-    joao_added = 0;
-    joao_protected = 0;
-    $('#iconJoao').css('display', 'none');
-
-}
 
 $(document).keydown(function(e) {
     switch (e.keyCode) {
