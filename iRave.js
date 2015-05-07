@@ -371,7 +371,6 @@ function goToSlide(i) {
     else if (current_i === 15) {
         $("#botVoltarConfirmar").css("display", "none");
     }
-   
 
 
     
@@ -410,8 +409,7 @@ function goToSlide(i) {
         $(elSlides[current_i]).css("visibility", "hidden");
         
         current_i = i;
-        
-        
+
 
     }
 
@@ -421,31 +419,12 @@ function goToSix() {
 
     goToSlide(5);
 
-    //previous_i = -1;
-
     if (joao_added == 1) {
         // usar ternary if
          $("#lista_joao").html("<div onclick='goToJoaoOptions();return false;' class='menu_entrada'>"
                                         + imgUserAmigo + "João" + (joao_protected == 1 ? imgShieldAmigo : "") +
                                     "</div>");
-                                    
-                                    
-    /* 
-        if (joao_protected == 1) {
 
-           
-        } else {
-             $("#lista_joao").html("<div onclick='goToJoaoOptions();return false;' class='menu_entrada'>"
-                                        + imgUserAmigo + "João"
-                                    "</div>");
-             
-             jQuery('<div/>', {
-                class: 'menu_entrada',
-                onclick: 'goToJoaoOptions();return false;',
-                content: 'Go to Google!'
-            }).appendTo('#lista_joao');    
-            
-        }*/
     } else
         $("#lista_joao").html("<p style=\"text-align:center\" >Não tem amigos");
 
@@ -458,16 +437,11 @@ function goToJoaoOptions() {
 }
 
 function checkProtection() {
-    if (joao_protected == 1) {
-        $("#opcoes_joao").html("<div onclick='unprotectJoao();goToSlide(7);return false;' class='menu_entrada'> \
-                                <img src='img/multy-user.png ' class='imgEntrada '> \
-                                Desproteger \ </div>");
-    }
-    else {
-        $("#opcoes_joao").html("<div onclick='protectJoao();goToSlide(7);return false;' class='menu_entrada'> \
-                                <img src='img/multy-user.png ' class='imgEntrada '> \
-                                Proteger \ </div>");
-    }
+        $("#opcoes_joao").html("<div onclick='toggleProtectionJoao();goToSlide(7);return false;' class='menu_entrada'> \
+                                    <img src='img/multy-user.png ' class='imgEntrada '>" +
+                                    (joao_protected == 1 ? "Desproteger" : "Proteger") + 
+                                "</div>");
+    
 }
 
 function goToMenu() {
@@ -685,12 +659,9 @@ function hf_mapa() {
     }
 }
 
-function protectJoao() {
-    joao_protected = 1;
-}
+function toggleProtectionJoao() {
+    joao_protected = (joao_protected == 0 ? 1 : 0);
 
-function unprotectJoao() {
-    joao_protected = 0;
 }
 
 function adicionarJoao() {
@@ -700,6 +671,7 @@ function adicionarJoao() {
 
 function removerJoao() {
     joao_added = 0;
+    joao_protected = 0;
     $('#iconJoao').css('display', 'none');
 
 }
