@@ -184,7 +184,7 @@ $(document).ready(function() {
     
 
     $('#iconJoao').click(function() {
-        goToJoaoOptions();
+        goToOpcoesAmigo(2); // a do Joao
     });
     
     $('.hf_top').hover(function() {
