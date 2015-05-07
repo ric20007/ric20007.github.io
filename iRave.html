@@ -34,12 +34,12 @@
        <a href="#"  onclick="mySwipe.next();return false;" >Esconder Fotos</a>
        -->
     
-     <div id='theback'> <img src="img/mota360noscope.png"  class="backimg" > </div>
+     <div id='theback'> <img src="img/mota360noscope_works no border.png"  class="backimg" > </div>
 
     <div id='botoes'>
 
         <div id='bot_back' class="shinybot" onclick="prev();return false;"> </div>
-        <div id='bot_ajuda' class="shinybot" onclick="next();return false;"> </div>
+        <div id='bot_ajuda' class="shinybot" onclick="help();return false;"> </div>
         <div id='bot_menu' class="shinybot" onclick="goToMenu();return false;"> </div>
 
         <!-- botoes maos livres  -->
@@ -89,14 +89,14 @@
                 <div class="swiper-container swiper-container-h">
                     <div class="swiper-wrapper">
 
-
-
                         <!-- 0 menu -->
                         <div class="swiper-slide">
                             
                             <div class='help_screen'>
-                                <div class='help_title'>Ajuda</div>
-                                <pre class='help_text' style="top: 10pt; position: absolute;">  O iRave é um dispositivo para o auxiliar durante o festival!</pre>
+                                <div class='help_title'>Ajuda<img src='img/question_mark_white2.png' style="width:10pt;height:10pt;margin-left:2pt;"></div>
+                                    <div style="height:7pt;width:1pt;"></div>
+                                    O ecrã bloqueia-se automaticamente
+                                
                             </div>
                             
                             <div class="swiper-container swiper-container-v">
@@ -104,10 +104,10 @@
 
 
                                     <div onclick=" mapa();return false;" class="swiper-slide  menu_entrada">
-                                        <img src="img/map-2.png" class="imgEntrada"> &nbsp; Mapa </div>
+                                        <img src="img/map-2.png" class="imgEntrada bottom"> &nbsp; Mapa </div>
 
                                     <div onclick=" procurar();return false;" class="swiper-slide menu_entrada">
-                                        <img src="img/active-search.png" class="imgEntrada"> Procurar </div>
+                                        <img src="img/active-search.png" class="imgEntrada bottom"> Procurar </div>
 
                                     <div onclick=" horario();return false;" class="swiper-slide menu_entrada">
                                         <img src="img/Agenda.png" class="imgEntrada"> Horário </div>
@@ -159,7 +159,7 @@
 
                         <!-- 3 add joao -->
                         <div class="swiper-slide joao_add_amigos">
-                            <div id=AmgDetectado >
+                            <div id=AmgDetectado style="padding-top:5px" >
                                 
                                 João detectado.
                                 <p>Quer adicioná-lo ?</p>
@@ -184,7 +184,7 @@
                         <div class="swiper-slide joao_add_amigos">
                            <div id=AmgAdicionado > O João foi adicionado com sucesso.</div>
                             <p></p>
-                            <a href="# " class="botao" onclick=" goToSlide(1);return false; ">
+                            <a href="# " class="botao" onclick=" amigos();return false; ">
 
                                 <img src="img/user1.png " class="imgEntrada "> OK
                             </a>
@@ -349,6 +349,18 @@
 
                         <!-- 12 mapa -->
                         <div class='swiper-slide'>
+                            
+                            <div class='help_screen'>
+                                <div class='help_title'>Ajuda<img src='img/question_mark_white2.png' style="width:10pt;height:10pt;margin-left:2pt;"></div>
+                                    <div style="height:2pt;width:1pt;"></div>
+                                    <b>Legenda:</b> <br>
+                                    <img src='img/user_male.png' style="width:10pt;height:10pt;">
+                                    <img src='img/user_female.png' style="width:10pt;height:10pt;"> Amigos <br>
+                                    <img src='img/foods.png' style="width:10pt;height:10pt;"> Comes/bebes <br>
+                                    <img src='img/merch.png' style="width:10pt;height:10pt;"> Merchandising <br>
+                                    <img src='img/wc.png' style="width:10pt;height:10pt;"> WC <br>
+                            </div>
+                            
                             <div id='mapa'>
                                 <img src='img/mapa.png' id='imgMapa'>
 
@@ -575,11 +587,11 @@
                                     </div>
 
                                     <div onclick="return false; " class="swiper-slide menu_entrada">
-                                        <img src="img/add-user.png " class="imgEntrada " align="center "> Adicionar Amigo
+                                        <img src="img/add-user.png " class="imgEntrada" align="center "> Adicionar Amigo
                                     </div>
 
                                     <div class="swiper-slide menu_entrada" style="font-size:8.25pt">
-                                        <img src="img/Agenda.png " class="imgEntrada " align="center "> Histórico de Transações 
+                                        <img src="img/Agenda.png " class="imgEntrada" align="center "> Histórico de Transações 
                                     </div>
 
                                     <div class="swiper-slide"></div>

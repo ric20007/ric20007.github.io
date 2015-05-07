@@ -25,28 +25,17 @@ function pessoa(_nome) {
     this.isAdded = 0;
     this.isProtected = 0;
 }
-var pessoas = [new pessoa("Carla"),
-                new pessoa("Carlos"),
+var pessoas = [new pessoa("Carlos"),
                 new pessoa("João"),
                 new pessoa("Joana"),
                 new pessoa("Merio"),
-                new pessoa("Rita"),
-                new pessoa("Rui"),
-                new pessoa("Salvador")];
+                new pessoa("Rita")];
                 
 var amigosAdicionados = [];
 
     
 
 $(document).ready(function() {
-
-    //var elem = document.getElementById('slider');   
-    //window.mySwipe = new Swipe(elem, {});
-
-    //$("#activities").click(function(){
-    //    $("#body").load("activities.html");
-    //    $('div img').draggable();
-    //});
 
     // fix checkbox detect
     var el = $('input:checkbox[name="compra"]');
@@ -127,36 +116,22 @@ $(document).ready(function() {
 
     });
     
+     swiperVAmigos = new Swiper('.swiper-container-vAmigos', {
+        pagination: '.swiper-pagination-vAmigos',
+        direction: 'vertical',
+        slidesPerView: 5,
+        slidesPerScroll: 1,
+        freeMode: true,
+        freeModeMomentum: false
+
+    });
+    
     swiperHCartaz = new Swiper('.swiper-container-hCartaz', {
         onlyExternal: true,
         //setWrapperSize:true
     });
 
     elSlides = swiperH.slides;
-
-
-    /*
-    var menu_offset = $('#menu').offset();
-    var altura_entrada_menu = $("ul.list > li ").height();
-                                         //so funciona num ecra
-    var menu_offset_top1 = menu_offset.top - (5.65 * altura_entrada_menu);
-    var menu_offset_top2 = menu_offset.top;
-    
-    //var nope = false;
-   //ajuda a nao clicar quando se faz drag    
-    $('.draggable').draggable({
-        axis: "y", containment: [0, menu_offset_top1, 0, menu_offset_top2],
-        start: function() {
-            nope = true;
-        },
-        stop: function(event, ui) {
-            $( event.toElement ).one('click', function(e){ e.stopImmediatePropagation(); } );
-            setTimeout(function() {
-             nope = false;
-          }, 200);
-        }
-    });
-    */
 
 
 
@@ -323,27 +298,27 @@ var cartazTitulo = ["&nbsp; &nbsp; Dia 1 &nbsp; &nbsp;",
 
 var nome = ["Menu",
     "<img src='img/user1.png' class='imgTitulo'> Perfil",              //1
-    "<img src='img/add-user.png' class='imgEntrada'> Add. Amigos",     //2
-    "<img src='img/add-user.png' class='imgEntrada'> Add. Amigos",     //3
-    "<img src='img/add-user.png' class='imgEntrada'> Add. Amigos",     //4
-    "<img src='img/multy-user.png' class='imgEntrada'> Lista Amigos",  //5
+    "<img src='img/add-user.png' class='imgTitulo'> Add. Amigos",     //2
+    "<img src='img/add-user.png' class='imgTitulo'> Add. Amigos",     //3
+    "<img src='img/add-user.png' class='imgTitulo'> Add. Amigos",     //4
+    "<img src='img/multy-user.png' class='imgTitulo'> Lista Amigos",  //5
     "<img src='img/user1.png' class='imgTitulo'> João",                //6
-    "<img src='img/shield.png' class='imgEntrada'> Proteger",         //7
-    "<img src='img/active-search.png' class='imgEntrada'> Procurar",   //8
-    "<img src='img/foods.png' class='imgEntrada'> Comes/Bebes",        //9
-    "<img src='img/foods.png' class='imgEntrada'> Comes/Bebes",       //10
-    "<img src='img/foods.png' class='imgEntrada'> Comes/Bebes",       //11
-    "<img src='img/map-2.png' class='imgEntrada'> Mapa",              //12
-    "<img src='img/hands-free.png' class='imgEntrada'> Mão Livre",    //13
-    "<img src='img/euro_1.png' class='imgEntrada'> Merchandising",    //14
-    "<img src='img/euro_1.png' class='imgEntrada'> Merchandising",    //15
-    "<img src='img/euro_1.png' class='imgEntrada'> Merchandising",    //16
-    "<img src='img/Agenda.png' class='imgEntrada'> Horário",          //17
-    "<img src='img/cartaz.png' class='imgEntrada'> Cartaz",           //18
-    "<img src='img/cartaz.png' class='imgEntrada'> nooope",           //
-    "<img src='img/cartaz.png' class='imgEntrada'> nooope",           //
-    "<img src='img/pointer.png' class='imgEntrada'> Encontros",       //21
-    "<img src='img/pointer.png' class='imgEntrada'> Histórico"        //22 AINDA NAO HA ICON !!!!
+    "<img src='img/shield.png' class='imgTitulo'> Proteger",         //7
+    "<img src='img/active-search.png' class='imgTitulo'> Procurar",   //8
+    "<img src='img/foods.png' class='imgTitulo'> Comes/Bebes",        //9
+    "<img src='img/foods.png' class='imgTitulo'> Comes/Bebes",       //10
+    "<img src='img/foods.png' class='imgTitulo'> Comes/Bebes",       //11
+    "<img src='img/map-2.png' class='imgTitulo'> Mapa",              //12
+    "<img src='img/hands-free.png' class='imgTitulo'> Mão Livre",    //13
+    "<img src='img/euro_1.png' class='imgTitulo'> Merchandising",    //14
+    "<img src='img/euro_1.png' class='imgTitulo'> Merchandising",    //15
+    "<img src='img/euro_1.png' class='imgTitulo'> Merchandising",    //16
+    "<img src='img/Agenda.png' class='imgTitulo'> Horário",          //17
+    "<img src='img/cartaz.png' class='imgTitulo'> Cartaz",           //18
+    "<img src='img/cartaz.png' class='imgTitulo'> nooope",           //
+    "<img src='img/cartaz.png' class='imgTitulo'> nooope",           //
+    "<img src='img/pointer.png' class='imgTitulo'> Encontros",       //21
+    "<img src='img/pointer.png' class='imgTitulo'> Histórico"        //22 AINDA NAO HA ICON !!!!
 ];
 
 
@@ -494,6 +469,8 @@ function detectadoAmigo(_index) {
 }
 
 function adicionarAmigo(_index) {
+    if (pessoas[_index].isAdded)
+        return;
     amigosAdicionados.push(pessoas[_index]);
     pessoas[_index].isAdded = 1;
     pessoas[_index].index = _index;
@@ -555,7 +532,8 @@ function goToOpcoesAmigo(_index){
 
 
 function amigos() {
-
+    
+    //swiperVAmigos.removeAllSlides();
     goToSlide(5);
     
     if (amigosAdicionados.length == 0)
@@ -563,8 +541,8 @@ function amigos() {
     else{
         $("#lista_joao").html("");
         $.each( amigosAdicionados, function( i, pess ){
-            console.log( "Index #" + i + ": " + pess.nome );
-            $("#lista_joao").append("<div onclick='goToOpcoesAmigo("+pess.index+");return false;' class='menu_entrada'>"
+            //console.log( "Index #" + i + ": " + pess.nome );
+            $("#lista_joao").append("<div class='swiper-slide menu_entrada' onclick='goToOpcoesAmigo("+pess.index+");return false;'>"
                                         + imgUserAmigo + pess.nome + (pess.isProtected == 1 ? imgShieldAmigo : "") +
                                     "</div>");
         });
@@ -779,11 +757,23 @@ function efectuarCompra() {
 }
 
 function hf_mapa() {
-    if (hf_on == 1) {
-        mapa();
-    }
+    if (hf_on == 1) { mapa(); }
 }
 
+
+//                0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18       21  22       
+var help_ecras = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 0,0,  0,  0];
+
+function help() {
+    if (help_ecras[current_i] == 0) {
+        help_ecras[current_i] = 1;
+        $(elSlides[current_i]).find('.help_screen').css("display", "inline");
+    }
+    else {
+        help_ecras[current_i] = 0;
+        $(elSlides[current_i]).find('.help_screen').css("display", "none");
+    }
+}
 
 $(document).keydown(function(e) {
     switch (e.keyCode) {
@@ -795,7 +785,7 @@ $(document).keydown(function(e) {
             break;
         case 39:
             var rand;
-            while (amigosAdicionados.length !=8){
+            while (amigosAdicionados.length !=pessoas.length){
                 rand = Math.floor((Math.random() * pessoas.length) ); 
                 if(pessoas[rand].isAdded == 0)
                     break;
