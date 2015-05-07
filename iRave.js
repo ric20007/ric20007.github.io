@@ -328,7 +328,7 @@ var nome = ["Menu",
     "<img src='img/add-user.png' class='imgEntrada'> Add. Amigos",     //4
     "<img src='img/multy-user.png' class='imgEntrada'> Lista Amigos",  //5
     "<img src='img/user1.png' class='imgTitulo'> João",                //6
-    "<img src='img/shield.png' class='imgEntrada'> Protegido",         //7
+    "<img src='img/shield.png' class='imgEntrada'> Proteger",         //7
     "<img src='img/active-search.png' class='imgEntrada'> Procurar",   //8
     "<img src='img/foods.png' class='imgEntrada'> Comes/Bebes",        //9
     "<img src='img/foods.png' class='imgEntrada'> Comes/Bebes",       //10
@@ -478,15 +478,69 @@ function goToSlide(i) {
 
 }
 
+
+function detectadoAmigo(_index) {
+    var char = pessoas[_index].nome.slice(-1);
+    char = (char == "a" ? "a" : "o");
+    
+    $("#AmgDetectado").html(pessoas[_index].nome + " detectad"+char+".	<p>Quer adicioná-l"+char+" ?</p> \
+                           <a href='# ' class='botao' onclick='adicionarAmigo("+ _index +");next();return false; '> \
+                        		<img src='img/check.png ' class='imgEntrada '> Sim \
+                        	</a>\
+                        	<a href='# ' class='botao' onclick='prev();return false; '> \
+                        		<img src='img/cross.png ' class='imgEntrada '> Não \
+                        	</a>");
+
+}
+
+function adicionarAmigo(_index) {
+    amigosAdicionados.push(pessoas[_index]);
+    pessoas[_index].isAdded = 1;
+    pessoas[_index].index = _index;
+    
+    var char = pessoas[_index].nome.slice(-1);
+    char = (char == "a" ? "a" : "o");
+    
+     $("#AmgAdicionado").html(char.toUpperCase()+" " + pessoas[_index].nome + " foi adicionad"+char+" com sucesso.");
+
+    //$('#iconJoao').css('display', 'inline');
+}
+
+function removerAmigo(_index) {
+
+    pessoas[_index].isAdded = 0;
+       pessoas[_index].isProtected = 0;
+       
+    for (var i = 0; i < amigosAdicionados.length; i++) { 
+       if (amigosAdicionados[i].nome == pessoas[_index].nome)
+        break;
+    }
+
+    amigosAdicionados.splice(i, 1);
+    
+       
+    //$('#iconJoao').css('display', 'none');
+
+}
+
 function toggleProtection(_index) {
+    var char = pessoas[_index].nome.slice(-1);
+    char = (char == "a" ? "a" : "o");
+    
+    var frase = "rotegid"+char+" com sucesso";
+    
     pessoas[_index].isProtected = (pessoas[_index].isProtected == 0 ? 1 : 0);
+    pessoas[_index].isProtected == 0 ? frase ="desp"+frase : frase ="p"+frase+"!";
+    frase = pessoas[_index].nome + " foi " + frase;
+    $("#protSucesso").html(frase);
 
 }
 
 function goToOpcoesAmigo(_index){
     var esteAmigo = pessoas[_index];
     
-    $("#titulo_menu").html(esteAmigo.nome);
+    $("#queroRemoverQuem").attr("onclick","removerAmigo("+_index+");amigos();return false;");
+    
 
     $("#opcoes_joao").html("<div onclick='toggleProtection("+_index+");goToSlide(7);return false;' class='menu_entrada'> \
                                 <img src='img/multy-user.png ' class='imgEntrada '>" +
@@ -494,13 +548,14 @@ function goToOpcoesAmigo(_index){
                             "</div>");
                             
     goToSlide(6);
+    $("#titulo_menu").html(esteAmigo.nome);
     
 
 }
 
-function goToListaAmigos() {
-    // cuidado ja ha funcao amigos()
-    
+
+function amigos() {
+
     goToSlide(5);
     
     if (amigosAdicionados.length == 0)
@@ -518,6 +573,7 @@ function goToListaAmigos() {
     
 }
 
+// REMOVE AFTER new feature
 function goToSix() {
 
     goToSlide(5);
@@ -533,12 +589,14 @@ function goToSix() {
 
 }
 
+// REMOVE AFTER new feature
 function goToJoaoOptions() {
     goToSlide(6);
     checkProtection();
 
 }
 
+// REMOVE AFTER new feature
 function checkProtection() {
         $("#opcoes_joao").html("<div onclick='toggleProtectionJoao();goToSlide(7);return false;' class='menu_entrada'> \
                                     <img src='img/multy-user.png ' class='imgEntrada '>" +
@@ -601,11 +659,6 @@ function hfOff() {
 
 
 
-function amigos() {
-
-    goToSix();
-
-}
 
 function addAmigos() {
 
@@ -762,6 +815,7 @@ function hf_mapa() {
     }
 }
 
+//REMOVE AFter new feature
 function toggleProtectionJoao() {
     joao_protected = (joao_protected == 0 ? 1 : 0);
 
@@ -791,6 +845,14 @@ $(document).keydown(function(e) {
             goToMenu();
             break;
         case 39:
+            var rand;
+            while (amigosAdicionados.length !=8){
+                rand = Math.floor((Math.random() * pessoas.length) ); 
+                if(pessoas[rand].isAdded == 0)
+                    break;
+            }
+            
+            detectadoAmigo(rand);
             next();
             break;
         case 37:
