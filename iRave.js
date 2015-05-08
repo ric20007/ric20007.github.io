@@ -5,7 +5,7 @@ var swiperH,
     swiperVProcurar,
     swiperVCartaz,
     valorCompra = 0,
-    totalComprado;
+    totalComprado =0;
     
 var itemsCompra = [];
 var itemsComprados = [];
@@ -96,7 +96,7 @@ $(document).ready(function() {
         pagination: '.swiper-pagination-v3',
 
         direction: 'vertical',
-        slidesPerView: 1,
+        slidesPerView:3,
         slidesPerScroll: 1,
 
         freeMode: true,
@@ -131,9 +131,8 @@ $(document).ready(function() {
         //setWrapperSize:true
     });
 
+
     elSlides = swiperH.slides;
-
-
 
     /* mapa e derivados */
     $('#mapa').draggable();
@@ -157,9 +156,24 @@ $(document).ready(function() {
         merch();
     });
     
-
+    $('#iconCarlos').click(function() {
+        goToOpcoesAmigo(0);
+    });
+    
     $('#iconJoao').click(function() {
-        goToOpcoesAmigo(2); // a do Joao
+        goToOpcoesAmigo(1);
+    });
+    
+    $('#iconJoana').click(function() {
+        goToOpcoesAmigo(2);
+    });
+    
+    $('#iconMerio').click(function() {
+        goToOpcoesAmigo(3);
+    });
+    
+    $('#iconRita').click(function() {
+        goToOpcoesAmigo(4);
     });
     
     $('.hf_top').hover(function() {
@@ -213,6 +227,7 @@ $(document).ready(function() {
     });
     /* end mapa e derivados */
     
+    $('.help_drag').draggable({axis: "y"});
     
     $('.compras').click(function() {
         //$('input[type=checkbox]').attr('checked', false);
@@ -231,7 +246,6 @@ $(document).ready(function() {
             }, 200);
         }
     });
-
 
     //add highlight no menu
     $('.menu_entrada').click(function() {
@@ -254,7 +268,6 @@ $(document).ready(function() {
             }, 200);
         }
     });
-
 
     //add highlight no botao para add. amigos
     $('.botao').click(function() {
@@ -297,13 +310,13 @@ var cartazTitulo = ["&nbsp; &nbsp; Dia 1 &nbsp; &nbsp;",
                     "&nbsp; &nbsp; Dia 3 &nbsp; &nbsp;"];
 
 var nome = ["Menu",
-    "<img src='img/user1.png' class='imgTitulo'> Perfil",              //1
+    "<img src='img/user1.png' class='imgTitulo'> Perfil",             //1
     "<img src='img/add-user.png' class='imgTitulo'> Add. Amigos",     //2
     "<img src='img/add-user.png' class='imgTitulo'> Add. Amigos",     //3
     "<img src='img/add-user.png' class='imgTitulo'> Add. Amigos",     //4
     "<img src='img/multy-user.png' class='imgTitulo'> Lista Amigos",  //5
-    "<img src='img/user1.png' class='imgTitulo'> João",                //6
-    "<img src='img/shield.png' class='imgTitulo'> Proteger",         //7
+    "<img src='img/user1.png' class='imgTitulo'> João",               //6
+    "<img src='img/shield.png' class='imgTitulo'> Proteger",          //7
     "<img src='img/active-search.png' class='imgTitulo'> Procurar",   //8
     "<img src='img/foods.png' class='imgTitulo'> Comes/Bebes",        //9
     "<img src='img/foods.png' class='imgTitulo'> Comes/Bebes",       //10
@@ -314,16 +327,19 @@ var nome = ["Menu",
     "<img src='img/euro_1.png' class='imgTitulo'> Merchandising",    //15
     "<img src='img/euro_1.png' class='imgTitulo'> Merchandising",    //16
     "<img src='img/Agenda.png' class='imgTitulo'> Horário",          //17
-    "<img src='img/cartaz.png' class='imgTitulo'> Cartaz",           //18
-    "<img src='img/cartaz.png' class='imgTitulo'> nooope",           //
-    "<img src='img/cartaz.png' class='imgTitulo'> nooope",           //
-    "<img src='img/pointer.png' class='imgTitulo'> Encontros",       //21
-    "<img src='img/pointer.png' class='imgTitulo'> Histórico"        //22 AINDA NAO HA ICON !!!!
+    "<img src='img/pointer.png' class='imgTitulo'> Encontros",       //18 antes 21
+    "<img src='img/pointer.png' class='imgTitulo'> Histórico",       //19 antes 22 AINDA NAO HA ICON !!!!
+    "<img src='img/cartaz.png' class='imgTitulo'> nooope",           //20
+    "<img src='img/cartaz.png' class='imgTitulo'> Cartaz",           //21 antes18
+        "<img src='img/cartaz.png' class='imgTitulo'> nooope"        //22
+    
 ];
 
+//                0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22       
+var help_ecras = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0];
 
-//              0  1   2  3  4   5  6  7  8   9  10  11   12  13   14  15  16  17  18       21  22       
-var prevEcra = [0, 0, -1, 2, 1, -1, 5, 7, 0, -1,  9,  8,  -1,  0,  -1, 14,  8,  0, -1, 0,0, -1,  1];
+//              0  1   2  3  4   5   6  7  8   9  10  11   12  13   14  15  16  17  18  19     21  22       
+var prevEcra = [0, 0, -1, 2, 1, -1, -1, 7, 0, -1,  9,  8,  -1,  0,  -1, 14,  8,  0, -1,  1, 0, -1,  1];
 
 var current_i = 0;
 var previous_i = 0;
@@ -409,13 +425,16 @@ function goToSlide(i) {
     else if (current_i === 15) {
         $("#botVoltarConfirmar").css("display", "none");
     }
-
-
     
+    
+ 
     if (i >= 0 && i <= nome.length - 1) {
         
+        if(i===9)
+            $("#botContinuar").css("display", "block");
+        
          // esconder slides que nao estao active
-        for (j = 0; j < elSlides.length; j++) {
+        for (var j = 0; j < elSlides.length; j++) {
             if (j != i && j != current_i)
                 $(elSlides[j]).css("visibility", "hidden");
             else
@@ -439,15 +458,19 @@ function goToSlide(i) {
         }
         
         mudarNome(i);
-        if (i==21) {$(elSlides[22]).css("visibility", "visible");} //fuck this shit.
-        if (i==22) {$(elSlides[23]).css("visibility", "visible");} //no, rly.
+        
+        //esconder o help do ecra a transitar
+        help_ecras[current_i] = 0;
+        $(elSlides[current_i]).find('.help_screen').css("display", "none");
+        
+        //if (i==21) {$(elSlides[22]).css("visibility", "visible");} //fuck this shit.
+        //if (i==22) {$(elSlides[23]).css("visibility", "visible");} //no, rly.
         swiperH.slideTo(i);
         
         // hide previous slide
         $(elSlides[current_i]).css("visibility", "hidden");
         
         current_i = i;
-
 
     }
 
@@ -479,8 +502,24 @@ function adicionarAmigo(_index) {
     char = (char == "a" ? "a" : "o");
     
      $("#AmgAdicionado").html(char.toUpperCase()+" " + pessoas[_index].nome + " foi adicionad"+char+" com sucesso.");
-
-    //$('#iconJoao').css('display', 'inline');
+    
+    switch (_index) {
+    case 0:
+        $('#iconCarlos').css('display', 'inline');
+        break;
+    case 1:
+        $('#iconJoao').css('display', 'inline');
+        break;
+    case 2:
+        $('#iconJoana').css('display', 'inline');
+        break;
+    case 3:
+        $('#iconMerio').css('display', 'inline');
+        break;
+    case 4:
+        $('#iconRita').css('display', 'inline');
+        break;
+    }
 }
 
 function removerAmigo(_index) {
@@ -495,8 +534,23 @@ function removerAmigo(_index) {
 
     amigosAdicionados.splice(i, 1);
     
-       
-    //$('#iconJoao').css('display', 'none');
+    switch (_index) {
+    case 0:
+        $('#iconCarlos').css('display', 'none');
+        break;
+    case 1:
+        $('#iconJoao').css('display', 'none');
+        break;
+    case 2:
+        $('#iconJoana').css('display', 'none');
+        break;
+    case 3:
+        $('#iconMerio').css('display', 'none');
+        break;
+    case 4:
+        $('#iconRita').css('display', 'none');
+        break;
+    }
 
 }
 
@@ -560,7 +614,6 @@ function goToMenu() {
 
 // opcoes do menu principal 
 function mapa() {
-    // $( '.placeholder').load( 'mapa.html' );
     goToSlide(12);
 }
 
@@ -572,8 +625,8 @@ function horario() {
     goToSlide(17);
 }
 
-function cartaz(i) {
-    goToSlide(17 + i);
+function cartaz() {
+    goToSlide(21);
 }
 
 function maoLivre() {
@@ -614,12 +667,12 @@ function addAmigos() {
 }
 
 function historico(){
-    goToSlide(22);
+    goToSlide(19);
     
-    if (valorCompra === 0)
+    if (totalComprado === 0)
         return;
     
-    $("#listaHistoricoCompras").html("Total Gasto: " + valorCompra + "€");
+    $("#listaHistoricoCompras").html("Total Gasto: " + totalComprado + "€");
     for (var i = 0; i < itemsComprados.length; i++) {
         $("#listaHistoricoCompras").append(itemsComprados[i]);
     }
@@ -676,12 +729,14 @@ function cartazPrevious() {
 }
 
 function encontros() {
-    goToSlide(21);
+    goToSlide(18);
 }
 
 function continuarCompra() {
     var num, value = 0,
         string, thisValue;
+        
+    itemsCompra=[], valorCompra=0;
     var el = $('input:checkbox[name="compra"]');
 
 
@@ -698,19 +753,20 @@ function continuarCompra() {
             string = "<div class='swiper-slide menu_entrada'>" + string + "</div>";
 
             itemsCompra.push(string);
-            //alert(string);
+            console.log(string);
             value = value + num;
         }
 
     });
+    console.log(itemsCompra);
     //////////////////////////////////////     DIZER que nao tem nada selecionado, seleccionar algo
     if (value === 0)
         return false;
 
-    valorCompra += value;
+    valorCompra = value;
     $(".exchangeCompra").html("Total Pedido: " + value + "€");
-    var i;
-    for (i = 0; i < itemsCompra.length; i++) {
+
+    for (var i = 0; i < itemsCompra.length; i++) {
         $(".exchangeCompra").append(itemsCompra[i]);
     }
 
@@ -727,7 +783,7 @@ function continuarCompra() {
 
 }
 
-
+/*
 function voltarCompra() {
     value = 0;
     itemsCompra = [];
@@ -736,8 +792,9 @@ function voltarCompra() {
 
     prev();
 }
-
+*/
 function efectuarCompra() {
+	totalComprado += valorCompra;
     $("#botVoltarConfirmar").css("display", "none");
     itemsComprados = itemsComprados.concat(itemsCompra);
 
@@ -761,12 +818,11 @@ function hf_mapa() {
 }
 
 
-//                0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18       21  22       
-var help_ecras = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 0,0,  0,  0];
-
 function help() {
     if (help_ecras[current_i] == 0) {
         help_ecras[current_i] = 1;
+        $(elSlides[current_i]).find('.help_screen').css("top", "2pt");
+        $(elSlides[current_i]).find('.help_screen').css("left", "5pt");
         $(elSlides[current_i]).find('.help_screen').css("display", "inline");
     }
     else {

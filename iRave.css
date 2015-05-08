@@ -22,8 +22,8 @@
 
  #botVoltarConfirmar    {
     display:none;
-    padding-top:2px;
-    height: 25.75pt; 
+    //padding-top:2px;
+    height: 23.75pt; 
     width: 105.5pt;
     
     background-color:#D70;
@@ -32,10 +32,10 @@
 
    left:50%;
     top: 50%;
-    transform: translate(-50%, 110%);
+    transform: translate(-50%, 135%);
     
     z-index:1000;
-    font-size:10pt;
+    //font-size:10pt;
     font-family: 'khmerui';
     color:white;
     text-align:center;
@@ -51,41 +51,18 @@
     
 }
 
+/*
  #voltarCompra      {
-
      float:left;
-
  }
+ */
  
-  #efectuarCompra    {
-
+#efectuarCompra    {
      float:right;
-
- }
+}
 
  
-.swiper-container-v {
-    width: 1.5in;
-    height: 1.1in;
-    //margin: 15pt auto;
-    padding: 0;
-}
-
-.swiper-container-vProcurar{
-    width: 1.5in;
-    height: 1.1in;
-    //margin: 15pt auto;
-    padding: 0;
-}
-
-.swiper-container-vCartaz{
-    width: 1.5in;
-    height: 1.1in;
-    //margin: 15pt auto;
-    padding: 0;
-}
-
-.swiper-container-vAmigos{
+.swiperVertical {
     width: 1.5in;
     height: 1.1in;
     //margin: 15pt auto;
@@ -93,7 +70,6 @@
 }
 
 .swiper-slide  {
-  
     text-align: center;
     font-size: 11pt;
     background: #fff;
@@ -163,6 +139,17 @@
 }
     
 
+.entrada_cartaz{
+    font-size:9.5pt;
+    text-align: center;
+    border: 0.75pt solid #e8e8e8;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: 'khmerui';
+}
+
+
 .menu_entrada {
     text-align: center;
     border: 0.75pt solid #e8e8e8;
@@ -220,7 +207,7 @@ a {
     //background-image: url("mota360.png");
  
     //background-size: 6in 6in;
-    //background-size:80% 80%;
+    //background-size: 80% 80%;
     background-repeat: no-repeat;
 
 
@@ -451,7 +438,7 @@ a {
     position: absolute;
     top: 123pt;
     left: 63pt;
-    height:15pt;
+    height: 15pt;
     width: 15pt;
 }
 
@@ -460,7 +447,7 @@ a {
     position: absolute;
     top: 121pt;
     left: 80pt;
-    height:25pt;
+    height: 25pt;
     width: 36pt;
     display: none;
 }
@@ -470,7 +457,7 @@ a {
     position: absolute;
     top: 51pt;
     left: 75pt;
-    height:15pt;
+    height: 15pt;
     width: 15pt;
 }
 
@@ -479,8 +466,27 @@ a {
     position: absolute;
     top: 28pt;
     left: 166pt;
-    height:15pt;
+    height: 15pt;
     width: 15pt;
+}
+
+#iconUser {
+    z-index: 2;
+    position: absolute;
+    top: 45pt;
+    left: 46pt;
+    height: 10pt;
+    width: 10pt;
+}
+
+#iconCarlos {
+    z-index: 2;
+    position: absolute;
+    top: -20pt;
+    left: 170pt;
+    height: 10pt;
+    width: 10pt;
+    display: none;
 }
 
 #iconJoao {
@@ -488,7 +494,37 @@ a {
     position: absolute;
     top: 53pt;
     left: 136pt;
-    height:10pt;
+    height: 10pt;
+    width: 10pt;
+    display: none;
+}
+
+#iconJoana {
+    z-index: 2;
+    position: absolute;
+    top: 51pt;
+    left: 126pt;
+    height: 10pt;
+    width: 10pt;
+    display: none;
+}
+
+#iconMerio {
+    z-index: 2;
+    position: absolute;
+    top: 129pt;
+    left: 78pt;
+    height: 10pt;
+    width: 10pt;
+    display: none;
+}
+
+#iconRita {
+    z-index: 2;
+    position: absolute;
+    top: -46pt;
+    left: 70pt;
+    height: 10pt;
     width: 10pt;
     display: none;
 }
