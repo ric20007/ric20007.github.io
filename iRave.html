@@ -44,9 +44,16 @@
             <div class='hf_directions hf_botl' style="height:4pt;width:13pt;top:68pt;left:-105pt;transform:rotate(-45deg)"></div>
             <img src="img/hf_arrows/gesto_navegar_mapa.png" class="botaoHandsFree" style="top: 50%;transform: translate(-150%, -50%);">
         </div>
-        
         <!-- end botoes maos livres -->
-
+        
+        <!-- encostar iRave  -->
+        <div id='botao_encostar_inact' style='transform: translate(-150%, 100%);'></div>
+        <div>
+            <img src="img/encostar.png" id="botao_encostar" style="top: 50%;transform: translate(-150%, 100%);">
+        </div>
+        <!-- end encostar iRave  -->
+        
+        
         <div id='moldura'>
             <div onclick="continuarCompra();return false;" id="botContinuar">Continuar</div>
             <div id="botVoltarConfirmar">
@@ -121,7 +128,7 @@
                                         <img src="img/multy-user.png " class="imgEntrada "> Lista de Amigos 
                                     </div>
 
-                                    <div onclick="addAmigos();return false; " class="swiper-slide menu_entrada">
+                                    <div onclick="$('#botao_encostar_inact').css('display','none');addAmigos();return false; " class="swiper-slide menu_entrada">
                                         <img src="img/add-user.png " class="imgEntrada " align="center "> Adicionar Amigo
                                     </div>
 
@@ -183,7 +190,7 @@
 
                             <div class='joao_add_amigos' style="left:-5px;position: relative; bottom: 0; ">
                                 Adicionar amigos ?
-                                <a href="# " onclick=" goToSlide(2);return false; ">
+                                <a href="# " onclick="$('#botao_encostar_inact').css('display','none');goToSlide(2);return false; ">
 
                                     <img src="img/user1.png " class="imgEntrada "> OK
                                 </a>
@@ -330,7 +337,7 @@
                         <!-- 12 mapa -->
                         <div class='swiper-slide'>
                             
-                            <div class='help_screen help_drag' style='height:110pt;'>
+                            <div class='help_screen help_drag' style='height:124pt;'>
                                 <div class='help_title'>Ajuda<img src='img/question_mark_white2.png' style="width:10pt;height:10pt;margin-left:2pt;"></div>
                                     <div style="height:2pt;width:1pt;"></div>
                                     <b>Legenda:</b> <br>
@@ -342,6 +349,7 @@
                                     <img src='img/merch.png' style="width:10pt;height:10pt;"> Merchandising <br>
                                     <div style="height:2pt;width:1pt;"></div>
                                     <img src='img/wc.png' style="width:10pt;height:10pt;"> WC <br>
+                                    <img src='img/p1.png' style="width:12pt;height:12pt;"> Palcos <br>
                             </div>
                             
                             <div id='mapa'>
@@ -354,6 +362,10 @@
                                 <img src='img/foods.png' id='iconFood'>
 
                                 <img src='img/merch.png' id='iconMerch'>
+                                
+                                <img src='img/p1.png' id='iconP1'>
+                                
+                                <img src='img/p2.png' id='iconP2'>
                                 
                                 <img src='img/user.png' id='iconUser'>
                                 
@@ -471,15 +483,15 @@
                                 <div class="swiper-wrapper">
 
                                     <div onclick="return false;" class="swiper-slide  menu_entrada">
-                                        <img src="img/multy-user.png " class="imgEntrada "> Lista de Amigos 
+                                        <img src="img/multy-user.png " class="imgEntrada "> Get out of
                                     </div>
 
                                     <div onclick="return false; " class="swiper-slide menu_entrada">
-                                        <img src="img/add-user.png " class="imgEntrada" align="center "> Adicionar Amigo
+                                        <img src="img/add-user.png " class="imgEntrada" align="center "> there, it's
                                     </div>
 
                                     <div class="swiper-slide menu_entrada" style="font-size:8.25pt">
-                                        <img src="img/Agenda.png " class="imgEntrada" align="center "> Histórico de Transações 
+                                        <img src="img/Agenda.png " class="imgEntrada" align="center ">Gonna Blow
                                     </div>
 
                                     <div class="swiper-slide"></div>
@@ -508,35 +520,38 @@
                         <!-- 21 cartaz -->
                         <div class="swiper-slide" style="position:absolute; height:1.5in">
                             
-                            <div style="background:#d70; height:18pt; width:100pt; position:absolute;">
-                                <img id='cartaz-previous' onclick="cartazPrevious(); return false;" src="img/previous.png" class="imgEntrada" style="float:left; visibility:hidden;">
-                                <img id='cartaz-next' onclick="cartazNext(); return false;" src="img/next.png" class="imgEntrada" style="float:right;">
-                                <div id='cartaz-dia'>&nbsp; &nbsp; Dia 1 &nbsp; &nbsp;</div>
-                            </div>
-                            
-                            <div style="top:200pt;">
+                            <div>
                                 <div class="swiper-container swiper-container-hCartaz">
                                     
                                     <div class="swiper-wrapper">
-                                        
-                                 
-                                        
+                            
+                             <img id='cartaz-previous' onclick="cartazPrevious(); return false;" src="img/previous.png" class="img_cartaz" style="position:absolute; visibility:hidden;">
+                                <img id='cartaz-next' onclick="cartazNext(); return false;" src="img/next.png" class="img_cartaz" style="position:absolute">
+                            
                                         <!-- dia 1  -->
                                         <div class="swiper-slide">
                                             <div class="swiper-container swiper-container-vCartaz ">
                                                 <div class="swiper-wrapper" >
                                                     
+                                                    <div class="swiper-slide"></div>
+                                                    <div  class="swiper-slide entrada_cartaz" id="cartazPLS" >
+                                                        <div id='cartaz-dia'>&nbsp; &nbsp; Dia 1 &nbsp; &nbsp;
+             
+                                                        </div>
+      
+                                                    </div>
+
                 
-                                                    <div onclick="return false;" class="swiper-slide  entrada_cartaz" >
-                                                        16:00 Os Rui - Palco 1 
+                                                    <div onclick="goToP1();return false;" class="swiper-slide  entrada_cartaz" >
+                                                        16:00 Os Rui - P.1 
                                                     </div>
                 
-                                                    <div onclick="return false;" class="swiper-slide entrada_cartaz">
-                                                       16:00 Os Outros - Palco 2 
+                                                    <div onclick="goToP2();return false;" class="swiper-slide entrada_cartaz">
+                                                       16:00 Os Outros - P.2 
                                                     </div>
                 
-                                                    <div class="swiper-slide entrada_cartaz" >
-                                                       19:00 Megue Leve - Palco 1
+                                                    <div onclick="goToP1();return false;" class="swiper-slide entrada_cartaz" >
+                                                       19:00 Megue Leve - P.1
                                                     </div>
                 
                                                     <div class="swiper-slide"></div>
@@ -553,16 +568,16 @@
                                                 <div class="swiper-wrapper">
                                                     
                 
-                                                    <div onclick="return false;" class="swiper-slide  entrada_cartaz">
-                                                         11:00 Os Tapa-Cartaz - Palco 1/2 
+                                                    <div onclick="goToP2();return false;" class="swiper-slide  entrada_cartaz">
+                                                         11:00 Os Tapa-Cartaz - P.2
                                                     </div>
                 
-                                                    <div onclick="return false;" class="swiper-slide entrada_cartaz">
-                                                         19:00 Encore ft. Mais Uma - Palco 1
+                                                    <div onclick="goToP1();return false;" class="swiper-slide entrada_cartaz">
+                                                         19:00 Encore ft. Mais Uma - P.1
                                                     </div>
                 
-                                                    <div class="swiper-slide entrada_cartaz" >
-                                                         22:00 Desku - Palco 2
+                                                    <div onclick="goToP2();return false;" class="swiper-slide entrada_cartaz" >
+                                                         22:00 Desku - P.2
                                                     </div>
                 
                                                     <div class="swiper-slide"></div>
@@ -579,16 +594,16 @@
                                                 <div class="swiper-wrapper">
                                                     
                 
-                                                    <div onclick="return false;" class="swiper-slide  entrada_cartaz">
-                                                       9:00 Os Fidelizados - Palco 1
+                                                    <div onclick="goToP1();return false;" class="swiper-slide  entrada_cartaz">
+                                                       9:00 Os Fidelizados - P.1
                                                     </div>
                 
-                                                    <div onclick="return false;" class="swiper-slide entrada_cartaz">
-                                                       9:00 Os Rescisão - Palco 2
+                                                    <div onclick="goToP2();return false;" class="swiper-slide entrada_cartaz">
+                                                       9:00 Os Rescisão - P.2
                                                     </div>
                 
-                                                    <div class="swiper-slide entrada_cartaz" >
-                                                        13:00 Mais que Muitos - Palco 1
+                                                    <div onclick="goToP1();return false;" class="swiper-slide entrada_cartaz" >
+                                                        13:00 Mais que Muitos - P.1
                                                     </div>
                 
                                                     <div class="swiper-slide"></div>

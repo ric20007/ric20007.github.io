@@ -1,3 +1,5 @@
+
+ 
  #botContinuar {
     display:none;
     padding-top:2px;
@@ -138,9 +140,22 @@
     background: #d70;
 }
     
-
+    
+#cartazPLS{
+    background:#D70;
+    font-size:16pt;
+}
+     
+.img_cartaz{
+	height: 12pt;
+	width: 12pt;
+	
+	display: inline-block;
+    //vertical-align: middle;
+}
+    
 .entrada_cartaz{
-    font-size:9.5pt;
+    font-size:9.45pt;
     text-align: center;
     border: 0.75pt solid #e8e8e8;
     border-top: none;
@@ -470,6 +485,24 @@ a {
     width: 15pt;
 }
 
+#iconP1 {
+    z-index: 2;
+    position: absolute;
+    top: -23pt;
+    left: 103pt;
+    height: 18pt;
+    width: 18pt;
+}
+
+#iconP2 {
+    z-index: 2;
+    position: absolute;
+    top: 24.5pt;
+    left: 41pt;
+    height: 18pt;
+    width: 18pt;
+}
+
 #iconUser {
     z-index: 2;
     position: absolute;
@@ -535,10 +568,27 @@ a {
     height: 60pt;
     width: 120pt;
     position: fixed;
-    
 }
 
 .hf_inactivos {
+    z-index: 1001;
+    height: 63pt;
+    width: 123pt;
+    top: 50%;
+    background-color: grey;
+    opacity: 0.8;
+    position: fixed;
+}
+
+#botao_encostar{
+    z-index:999;
+    border: 1.5pt solid black;
+    height: 60pt;
+    width: 120pt;
+    position: fixed;
+}
+
+#botao_encostar_inact {
     z-index: 1001;
     height: 63pt;
     width: 123pt;

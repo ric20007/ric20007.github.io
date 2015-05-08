@@ -227,6 +227,18 @@ $(document).ready(function() {
     });
     /* end mapa e derivados */
     
+    $('#botao_encostar').click(function() {
+        var rand;
+            while (amigosAdicionados.length !=pessoas.length){
+                rand = Math.floor((Math.random() * pessoas.length) ); 
+                if(pessoas[rand].isAdded == 0)
+                    break;
+            }
+            
+            detectadoAmigo(rand);
+            next();
+    });
+    
     $('.help_drag').draggable({axis: "y"});
     
     $('.compras').click(function() {
@@ -426,6 +438,7 @@ function goToSlide(i) {
         $("#botVoltarConfirmar").css("display", "none");
     }
     
+    if (current_i === 2) $('#botao_encostar_inact').css('display','inline');
     
  
     if (i >= 0 && i <= nome.length - 1) {
@@ -699,6 +712,18 @@ function merch() {
 function banho() {
     $('#mapa').css('top', '-90pt');
     $('#mapa').css('left', '-20pt');
+    mapa();
+}
+
+function goToP1() {
+    $('#mapa').css('top', '50pt');
+    $('#mapa').css('left', '-60pt');
+    mapa();
+}
+
+function goToP2() {
+    $('#mapa').css('top', '8pt');
+    $('#mapa').css('left', '5pt');
     mapa();
 }
 
