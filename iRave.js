@@ -353,6 +353,7 @@ var help_ecras = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  0,  0,  0,  0,  0,  0, 
 //              0  1   2  3  4   5   6  7  8   9  10  11   12  13   14  15  16  17  18  19     21  22       
 var prevEcra = [0, 0, -1, 2, 1, -1, -1, 7, 0, -1,  9,  8,  -1,  0,  -1, 14,  8,  0, -1,  1, 0, -1,  1];
 
+
 var current_i = 0;
 var previous_i = 0;
 
@@ -514,7 +515,7 @@ function adicionarAmigo(_index) {
     var char = pessoas[_index].nome.slice(-1);
     char = (char == "a" ? "a" : "o");
     
-     $("#AmgAdicionado").html(char.toUpperCase()+" " + pessoas[_index].nome + " foi adicionad"+char+" com sucesso.");
+     $("#AmgAdicionado").html("<p></p> "+char.toUpperCase()+" " + pessoas[_index].nome + " foi adicionad"+char+" com sucesso.");
     
     switch (_index) {
     case 0:

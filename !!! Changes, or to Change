@@ -1,0 +1,6 @@
+ifs do protegido e como aparece o shield
+
+Depois do prev, ter um array em que cada indice esta associado à função precisa para msotrar bem o ecra
+exemplo a lista de amigos precisa de percorrer o array de amigos
+e se no prev for lido um 5 apenas faz goToSlide(5) e nao mostra amigos
+é preciso usar o amigos()
