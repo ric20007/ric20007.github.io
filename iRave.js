@@ -516,65 +516,67 @@ function detectadoAmigo(_index) {
 }
 
 function adicionarAmigo(_index) {
-    if (pessoas[_index].isAdded)
-        return;
-    amigosAdicionados.push(pessoas[_index]);
-    pessoas[_index].isAdded = 1;
-    pessoas[_index].index = _index;
+    var pess = pessoas[_index];
     
-    var char = pessoas[_index].nome.slice(-1);
+    if (pess.isAdded)
+        return;
+        
+    amigosAdicionados.push(pess);
+    pess.isAdded = 1;
+    pess.index = _index;
+    
+    var char = pess.nome.slice(-1);
     char = (char == "a" ? "a" : "o");
     
-     $("#AmgAdicionado").html("<p></p> "+char.toUpperCase()+" " + pessoas[_index].nome + " foi adicionad"+char+" com sucesso.");
+     $("#AmgAdicionado").html("<p></p> "+char.toUpperCase()+" " + pess.nome + " foi adicionad"+char+" com sucesso.");
     
-    switch (_index) {
-    case 0:
-        $('#iconCarlos').css('display', 'inline');
-        break;
-    case 1:
-        $('#iconJoao').css('display', 'inline');
-        break;
-    case 2:
-        $('#iconJoana').css('display', 'inline');
-        break;
-    case 3:
-        $('#iconMerio').css('display', 'inline');
-        break;
-    case 4:
-        $('#iconRita').css('display', 'inline');
-        break;
-    }
+    //mostrar icone do amigo no mapa
+    var nomeTemp = (pess.nome == "João" ? "Joao" : pess.nome);
+    $('#icon'+nomeTemp).css('display', 'inline');
+    
+    if (amigosAdicionados.length == 1)
+        $("#lista_joao").html("");
+    console.log( "Index #" + _index + ": " + pess.nome );
+    $("#lista_joao").append("<div class='swiper-slide menu_entrada' onclick='goToOpcoesAmigo("+pess.index+");return false;'>"
+                                + imgUserAmigo + pess.nome + (pess.isProtected == 1 ? imgShieldAmigo : "") +
+                            "</div>");
+
+    
+    
+     
 }
 
 function removerAmigo(_index) {
 
     pessoas[_index].isAdded = 0;
-       pessoas[_index].isProtected = 0;
+    pessoas[_index].isProtected = 0;
        
+    //encontrar o indice do amigo a remover no array dos adicionados
     for (var i = 0; i < amigosAdicionados.length; i++) { 
-       if (amigosAdicionados[i].nome == pessoas[_index].nome)
-        break;
+        if (amigosAdicionados[i].nome == pessoas[_index].nome)
+            break;
     }
 
     amigosAdicionados.splice(i, 1);
     
-    switch (_index) {
-    case 0:
-        $('#iconCarlos').css('display', 'none');
-        break;
-    case 1:
-        $('#iconJoao').css('display', 'none');
-        break;
-    case 2:
-        $('#iconJoana').css('display', 'none');
-        break;
-    case 3:
-        $('#iconMerio').css('display', 'none');
-        break;
-    case 4:
-        $('#iconRita').css('display', 'none');
-        break;
+    //tirar o amigo do mapa
+    var nomeTemp = (pessoas[_index].nome == "João" ? "Joao" : pessoas[_index].nome);
+    $('#icon'+nomeTemp).css('display', 'none');
+    
+    //reescrever a lista de amigos
+     if (amigosAdicionados.length == 0)
+        $("#lista_joao").html("<p style=\"text-align:center\" >Não tem amigos");
+    else{
+        $("#lista_joao").html("");
+        $.each( amigosAdicionados, function( i, pess ){
+            //console.log( "Index #" + i + ": " + pess.nome );
+            $("#lista_joao").append("<div class='swiper-slide menu_entrada' onclick='goToOpcoesAmigo("+pess.index+");return false;'>"
+                                        + imgUserAmigo + pess.nome + (pess.isProtected == 1 ? imgShieldAmigo : "") +
+                                    "</div>");
+        });
     }
+    
+   
 
 }
 
@@ -603,6 +605,7 @@ function goToOpcoesAmigo(_index){
                             "</div>");
                             
     goToSlide(6);
+    //e preciso alterar o nome depois porque o goToSlide altera tambem o nome
     $("#titulo_menu").html(esteAmigo.nome);
     
 
@@ -610,31 +613,16 @@ function goToOpcoesAmigo(_index){
 
 
 function amigos() {
-    
-    //swiperVAmigos.removeAllSlides();
     goToSlide(5);
     
-    if (amigosAdicionados.length == 0)
-        $("#lista_joao").html("<p style=\"text-align:center\" >Não tem amigos");
-    else{
-        $("#lista_joao").html("");
-        $.each( amigosAdicionados, function( i, pess ){
-            //console.log( "Index #" + i + ": " + pess.nome );
-            $("#lista_joao").append("<div class='swiper-slide menu_entrada' onclick='goToOpcoesAmigo("+pess.index+");return false;'>"
-                                        + imgUserAmigo + pess.nome + (pess.isProtected == 1 ? imgShieldAmigo : "") +
-                                    "</div>");
-        });
-    }
-    
-    
+    //reescrever a lsita agora é feito no remover e adicionar amigo
+
 }
 
 
 function goToMenu() {
     goToSlide(0);
-
 }
-
 
 // opcoes do menu principal 
 function mapa() {
@@ -649,46 +637,41 @@ function horario() {
     goToSlide(17);
 }
 
+function maoLivre() {
+    goToSlide(13);
+}
+
+function toggleHandsFree() {
+    if (hf_on == 0) {
+        hf_on = 1;
+        $('.hf_inactivos').css('display', "none");
+        $("#mao_livre").html("<p>Toque para desactivar o modo mãos livres.");
+    }
+    else {
+        hf_on = 0;
+        $('.hf_inactivos').css('display', "inline");
+        $("#mao_livre").html("<p>Toque para activar o modo mãos livres!");
+    }
+}
+
+
+
 function cartaz() {
     goToSlide(21);
 }
 
-function maoLivre() {
-    goToSlide(13);
-    if (hf_on == 0) {
-        $("#mao_livre").html("Toque para activar o modo mãos livres! \
-                                <p></p> \
-                                <a href='# ' class='botao' onclick='hfOn();goToSlide(0);return false; '> \
-                                    <img src='img/user1.png ' class='imgEntrada '> OK \ </a>");
-    }
-    else {
-        $("#mao_livre").html("Toque para desactivar o modo mãos livres \
-                                <p></p> \
-                                <a href='# ' class='botao' onclick='hfOff();goToSlide(0);return false; '> \
-                                    <img src='img/user1.png ' class='imgEntrada '> OK \ </a>");
-    }
-}
 
-function hfOn() {
-    hf_on = 1;
-    $('.hf_inactivos').css('display', "none");
-}
 
-function hfOff() {
-    hf_on = 0;
-    $('.hf_inactivos').css('display', "inline");
-}
+
 
 //opcoes do procurar
 
 
 
-
 function addAmigos() {
-
     goToSlide(2);
-
 }
+
 
 function historico(){
     goToSlide(19);
@@ -720,53 +703,6 @@ function merch() {
     $("#botContinuar").css("display", "block");
 }
 
-function banho() {
-    $('#mapa').css('top', '-90pt');
-    $('#mapa').css('left', '-20pt');
-    mapa();
-}
-
-function goToP1() {
-    $('#mapa').css('top', '50pt');
-    $('#mapa').css('left', '-60pt');
-    mapa();
-}
-
-function goToP2() {
-    $('#mapa').css('top', '8pt');
-    $('#mapa').css('left', '5pt');
-    mapa();
-}
-
-function cartazNext() {
-    if (dia != 2) {
-        if (dia == 1) {
-            $('#cartaz-next').css('visibility', 'hidden');
-        } else {
-            $('#cartaz-previous').css('visibility', 'visible');
-        }
-        dia++;
-        $("#cartaz-dia").html(cartazTitulo[dia]);
-        swiperHCartaz.slideTo(dia);
-    }
-}
-
-function cartazPrevious() {
-    if (dia != 0) {
-        if (dia == 2) {
-            $('#cartaz-next').css('visibility', 'visible');
-        } else {
-            $('#cartaz-previous').css('visibility', 'hidden');
-        }
-        dia--;
-        $("#cartaz-dia").html(cartazTitulo[dia]);
-        swiperHCartaz.slideTo(dia);
-    }
-}
-
-function encontros() {
-    goToSlide(18);
-}
 
 function continuarCompra() {
     var num, value = 0,
@@ -848,6 +784,59 @@ function efectuarCompra() {
 
     next();
 }
+
+
+
+
+
+function banho() {
+    $('#mapa').css('top', '-90pt');
+    $('#mapa').css('left', '-20pt');
+    mapa();
+}
+
+function goToP1() {
+    $('#mapa').css('top', '50pt');
+    $('#mapa').css('left', '-60pt');
+    mapa();
+}
+
+function goToP2() {
+    $('#mapa').css('top', '8pt');
+    $('#mapa').css('left', '5pt');
+    mapa();
+}
+
+function cartazNext() {
+    if (dia != 2) {
+        if (dia == 1) {
+            $('#cartaz-next').css('visibility', 'hidden');
+        } else {
+            $('#cartaz-previous').css('visibility', 'visible');
+        }
+        dia++;
+        $("#cartaz-dia").html(cartazTitulo[dia]);
+        swiperHCartaz.slideTo(dia);
+    }
+}
+
+function cartazPrevious() {
+    if (dia != 0) {
+        if (dia == 2) {
+            $('#cartaz-next').css('visibility', 'visible');
+        } else {
+            $('#cartaz-previous').css('visibility', 'hidden');
+        }
+        dia--;
+        $("#cartaz-dia").html(cartazTitulo[dia]);
+        swiperHCartaz.slideTo(dia);
+    }
+}
+
+function encontros() {
+    goToSlide(18);
+}
+
 
 function hf_mapa() {
     if (hf_on == 1) { mapa(); }
