@@ -333,7 +333,7 @@ var cartazTitulo = ["&nbsp; &nbsp; Dia 1 &nbsp; &nbsp;",
                     "&nbsp; &nbsp; Dia 2 &nbsp; &nbsp;", 
                     "&nbsp; &nbsp; Dia 3 &nbsp; &nbsp;"];
 
-var nome = ["Menu",
+var nome_Titulos = ["Menu",
     "<img src='img/user1.png' class='imgTitulo'> Perfil",             //1
     "<img src='img/add-user.png' class='imgTitulo'> Add. Amigos",     //2
     "<img src='img/add-user.png' class='imgTitulo'> Add. Amigos",     //3
@@ -346,7 +346,7 @@ var nome = ["Menu",
     "<img src='img/foods.png' class='imgTitulo'> Comes/Bebes",       //10
     "<img src='img/foods.png' class='imgTitulo'> Comes/Bebes",       //11
     "<img src='img/map-2.png' class='imgTitulo'> Mapa",              //12
-    "<img src='img/hands-free.png' class='imgTitulo'> Mão Livre",    //13
+    "<img src='img/hands-free.png' class='imgTitulo'> Mãos Livre",   //13
     "<img src='img/euro_1.png' class='imgTitulo'> Merchandising",    //14
     "<img src='img/euro_1.png' class='imgTitulo'> Merchandising",    //15
     "<img src='img/euro_1.png' class='imgTitulo'> Merchandising",    //16
@@ -363,7 +363,7 @@ var nome = ["Menu",
 var help_ecras = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0];
 
 //              0  1   2  3  4   5   6  7  8   9  10  11   12  13   14  15  16  17  18  19     21  22       
-var prevEcra = [0, 0, -1, 2, 1, -1, -1, 7, 0, -1,  9,  8,  -1,  0,  -1, 14,  8,  0, -1,  1, 0, -1,  1];
+var prevEcra = [0, 0, -1, 2, 1, -1, -1, 6, 0, -1,  9,  8,  -1,  0,  -1, 14,  8,  0, -1,  1, 0, -1,  1];
 
 
 var current_i = 0;
@@ -374,7 +374,7 @@ var hf_on = 0;
 var dia = 0;
 
 function mudarNome(i) {
-    $("#titulo_menu").html(nome[i]);
+    $("#titulo_menu").html(nome_Titulos[i]);
 }
 
 function prev() {
@@ -397,7 +397,7 @@ function prev() {
     if (thePrev === -1) {
 
         console.log(-1 + " $$$$$$");
-        console.log(nome[current_i] + "(" + current_i + " -> " + nome[previous_i] + "(" + prevEcra[previous_i]);
+        console.log(nome_Titulos[current_i] + "(" + current_i + " -> " + nome_Titulos[previous_i] + "(" + prevEcra[previous_i]);
         //preserve previous_i
 
         goToSlide(previous_i);
@@ -406,7 +406,7 @@ function prev() {
     } else {
         console.log(prevEcra[current_i]);
         //current_i -1
-        console.log(nome[current_i] + "(" + current_i + " -> " + nome[prevEcra[current_i]] + "(" + prevEcra[current_i]);
+        console.log(nome_Titulos[current_i] + "(" + current_i + " -> " + nome_Titulos[prevEcra[current_i]] + "(" + prevEcra[current_i]);
         goToSlide(prevEcra[current_i]);
 
     }
@@ -421,7 +421,7 @@ function next() {
         return false;
     }
 
-    if (current_i < nome.length - 1) {
+    if (current_i < nome_Titulos.length - 1) {
 
         goToSlide(current_i + 1);
 
@@ -452,7 +452,7 @@ function goToSlide(i) {
     if (current_i === 2) $('#botao_encostar_inact').css('display','inline');
     
  
-    if (i >= 0 && i <= nome.length - 1) {
+    if (i >= 0 && i <= nome_Titulos.length - 1) {
         
         if(i===9)
             $("#botContinuar").css("display", "block");
@@ -600,19 +600,29 @@ function goToOpcoesAmigo(_index){
     
 
     $("#opcoes_joao").html("<div onclick='toggleProtection("+_index+");goToSlide(7);return false;' class='menu_entrada'> \
-                                <img src='img/multy-user.png ' class='imgEntrada '>" +
+                                <img src='img/shield.png ' class='imgEntrada '>&nbsp;" +
                                 (esteAmigo.isProtected == 1 ? "Desproteger" : "Proteger") + 
                             "</div>");
                             
+                            
+                            
+    nome_Titulos[6] =  "<img src='img/user1.png' class='imgTitulo'>&nbsp;" + 
+                        esteAmigo.nome + 
+                        (esteAmigo.isProtected == 1 ? "&nbsp;<img src='img/shield.png ' class='imgTitulo'>" : ""); 
+    
     goToSlide(6);
-    //e preciso alterar o nome depois porque o goToSlide altera tambem o nome
-    $("#titulo_menu").html(esteAmigo.nome);
+    
+    //era preciso alterar o nome depois porque o goToSlide altera tambem o nome
+    //$("#titulo_menu").html(esteAmigo.nome);
     
 
 }
 
 
 function amigos() {
+    //se estiver no perfil ou procurar
+    if(current_i==1 ||current_i==8)
+        prevEcra[5]=current_i;
     goToSlide(5);
     
     //reescrever a lsita agora é feito no remover e adicionar amigo
@@ -626,6 +636,8 @@ function goToMenu() {
 
 // opcoes do menu principal 
 function mapa() {
+    //if(current_i==0 || current_i==0 )
+        prevEcra[12]=current_i;
     goToSlide(12);
 }
 
@@ -669,6 +681,7 @@ function cartaz() {
 
 
 function addAmigos() {
+    prevEcra[2]=current_i;
     goToSlide(2);
 }
 

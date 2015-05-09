@@ -1,5 +1,4 @@
 
- 
  #botContinuar {
     display:none;
     padding-top:2px;
@@ -92,15 +91,17 @@
     align-items: center;
 }
 
+
+.swiper-container{
+      background-color: #fff;
+}
+
     
 /*
 .swiper-slide  {
      visibility:hidden;
     }
 
-.swiper-container-vertical .swiper-wrapper .swiper-slide-active{
-    visibility:visible;
-}
 
 
 

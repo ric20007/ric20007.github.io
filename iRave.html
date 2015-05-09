@@ -98,6 +98,7 @@
                                 
                             </div>
                             
+                            
                             <div class="swiper-container swiper-container-v swiperVertical">
                                 <div class="swiper-wrapper">
 
@@ -161,7 +162,7 @@
                         <div class="swiper-slide joao_add_amigos">
                             <div id=AmgDetectado style="padding-top:5px" >
                                 
-                                João detectado.
+                                Amigo detectado.
                                 <p>Quer adicioná-lo ?</p>
     
                                 <a href="# " class="botao" onclick="adicionarJoao();next();return false; ">
@@ -180,9 +181,9 @@
 
                         <!-- 4 added joao -->
                         <div class="swiper-slide joao_add_amigos">
-                           <div id=AmgAdicionado ><p></p> O João foi adicionado com sucesso.</div>
+                           <div id=AmgAdicionado ><p></p> O amigo foi adicionado com sucesso.</div>
                             <p></p>
-                            <a href="# " class="botao" onclick=" amigos();return false; ">
+                            <a href="# " class="botao" onclick="amigos();return false; ">
 
                                 <img src="img/user1.png " class="imgEntrada "> OK
                             </a>
@@ -200,7 +201,7 @@
 
                             <div class='joao_add_amigos' style="left:-5px;position: relative; bottom: 0; ">
                                 Adicionar amigos ?
-                                <a href="# " onclick="$('#botao_encostar_inact').css('display','none');goToSlide(2);return false; ">
+                                <a href="# " onclick="$('#botao_encostar_inact').css('display','none');addAmigos();return false; ">
 
                                     <img src="img/user1.png " class="imgEntrada "> OK
                                 </a>
@@ -400,7 +401,7 @@
                                 <p>Toque para activar o modo mãos livres! 
                              </div>                
                                <p>
-                                <a href='# ' class='botao' onclick='toggleHandsFree();goToSlide(0);return false; '> 
+                                <a href='# ' class='botao' onclick='toggleHandsFree();goToMenu();return false; '> 
                                     <img src='img/user1.png ' class='imgEntrada '> OK </a>
                                 
                                 
