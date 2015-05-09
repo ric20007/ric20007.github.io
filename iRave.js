@@ -153,7 +153,16 @@ $(document).ready(function() {
     //  O CRIME:     \$('#mapa').draggable({  ILLEGAL!!!!!
     $('#mapa').draggable({
         stop: function() {
+            var centerY = $('#botoes').offset().top;
+            var centerX = $('#botoes').offset().left;
             
+            var mapaY = $('#imgMapa').offset().top;
+            var mapaX = $('#imgMapa').offset().left;
+            var mapaW = $('#imgMapa').width();
+            var mapaH = $('#imgMapa').height();
+            
+            if (mapaX > centerX) { $('#mapa').css('top',(mapaX-centerX)+'pt'); }
+            if (mapaX+mapaW < centerX) { $('#mapa').css('top',(mapaX-centerX)+'pt'); }
         }
     });
     
@@ -553,11 +562,13 @@ function adicionarAmigo(_index) {
                             "</div>");
                             
     
-    
+    console.log(prevStack);
     next();
+    console.log(prevStack);
     
      //para nao voltar a perguntar se quer adicionar ao voltar atras depois de adicionar
     prevStack.pop();
+    console.log(prevStack);
 
     
     
