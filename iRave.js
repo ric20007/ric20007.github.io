@@ -1,4 +1,3 @@
-var nope = false;
 var swiperH,
     swiperV,
     swiperV2,
@@ -20,6 +19,8 @@ var imgUserAmigo = "<img src='img/user1.png ' class='imgEntrada '>",
     imgShieldAmigo = "<img src='img/shield.png ' class='imgEntrada '>";
     
     
+var prevStack = [];
+
 function pessoa(_nome) {
     this.nome = _nome;
     this.isAdded = 0;
@@ -135,19 +136,27 @@ $(document).ready(function() {
     elSlides = swiperH.slides;
 
     /* mapa e derivados */
-    
+    /*
     var conterTop = $("#conter_mapaTOP").position().top + $("#conter_mapaTOP").position().top *0.3;
     var conterBot = $("#conter_mapaBOT").height()*0.90;  //$("#conter_mapaBOT").position().top + ....
     var conterLeft = $("#conter_mapaLEFT").position().left;
     var conterRight =  conterLeft +$("#conter_mapaLEFT").width()*0.40;
 
     console.log("MAPA",conterLeft,conterTop,conterRight,conterBot);
-
+*/
     //top e bot inconsistentes
-    $('#mapa').draggable({containment : [conterLeft,0,conterRight,conterBot] , scroll: false });
+    //$('#mapa').draggable({containment : [conterLeft,0,conterRight,conterBot] , scroll: false });
     
     // so para na esquerda
     //('#mapa').draggable({containment : "#conter_mapaLEFT" , scroll: false });
+    
+    //  O CRIME:     \$('#mapa').draggable({  ILLEGAL!!!!!
+    $('#mapa').draggable({
+        stop: function() {
+            
+        }
+    });
+    
     
     $('#iconFood').click(function() {
         comida();
@@ -262,46 +271,45 @@ $(document).ready(function() {
 
     $('ul.list > li').click(function() {
 
-        if (nope == false) {
-            var _that = $(this);
-            $(this).addClass('highlighted');
-            setTimeout(function() {
-                _that.removeClass('highlighted');
-            }, 200);
-        }
+        var _that = $(this);
+        $(this).addClass('highlighted');
+        setTimeout(function() {
+            _that.removeClass('highlighted');
+        }, 200);
+        
     });
 
     //add highlight no menu
     $('.menu_entrada').click(function() {
-        if (nope == false) {
-            var _that = $(this);
-            $(this).addClass('highlighted');
-            setTimeout(function() {
-                _that.removeClass('highlighted');
-            }, 200);
-        }
+       
+        var _that = $(this);
+        $(this).addClass('highlighted');
+        setTimeout(function() {
+            _that.removeClass('highlighted');
+        }, 200);
+        
     });
 
     //add highlight no perfil
     $('.perfil_entrada').click(function() {
-        if (nope == false) {
-            var _that = $(this);
-            $(this).addClass('highlighted');
-            setTimeout(function() {
-                _that.removeClass('highlighted');
-            }, 200);
-        }
+        
+        var _that = $(this);
+        $(this).addClass('highlighted');
+        setTimeout(function() {
+            _that.removeClass('highlighted');
+        }, 200);
+        
     });
 
     //add highlight no botao para add. amigos
     $('.botao').click(function() {
-        if (nope == false) {
-            var _that = $(this);
-            $(this).addClass('highlighted');
-            setTimeout(function() {
-                _that.removeClass('highlighted');
-            }, 200);
-        }
+        
+        var _that = $(this);
+        $(this).addClass('highlighted');
+        setTimeout(function() {
+            _that.removeClass('highlighted');
+        }, 200);
+        
     });
 
 
@@ -340,7 +348,7 @@ var nome_Titulos = ["Menu",
     "<img src='img/add-user.png' class='imgTitulo'> Add. Amigos",     //4
     "<img src='img/multy-user.png' class='imgTitulo'> Lista Amigos",  //5
     "<img src='img/user1.png' class='imgTitulo'> João",               //6
-    "<img src='img/shield.png' class='imgTitulo'> Proteger",          //7
+    "<img src='img/shield.png' class='imgTitulo'> Proteção",          //7
     "<img src='img/active-search.png' class='imgTitulo'> Procurar",   //8
     "<img src='img/foods.png' class='imgTitulo'> Comes/Bebes",        //9
     "<img src='img/foods.png' class='imgTitulo'> Comes/Bebes",       //10
@@ -363,7 +371,7 @@ var nome_Titulos = ["Menu",
 var help_ecras = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0];
 
 //              0  1   2  3  4   5   6  7  8   9  10  11   12  13   14  15  16  17  18  19     21  22       
-var prevEcra = [0, 0, -1, 2, 1, -1, -1, 6, 0, -1,  9,  8,  -1,  0,  -1, 14,  8,  0, -1,  1, 0, -1,  1];
+var prevEcra = [0, 0, -1, 2, 5, -1, -1, 6, 0, -1,  9,  8,  -1,  0,  -1, 14,  8,  0, -1,  1, 0, -1,  1];
 
 
 var current_i = 0;
@@ -378,21 +386,11 @@ function mudarNome(i) {
 }
 
 function prev() {
+
+    
     canChangePrev = 0;
 
-    if (nope != false) {
-        return false;
-        canChangePrev = 1;
-    }
 
-    /*
-    if (previous_i == -1){
-
-        goToSlide(1);
-        
-        previous_i = 0;
-    }
-        */
     thePrev = prevEcra[current_i];
     if (thePrev === -1) {
 
@@ -400,14 +398,26 @@ function prev() {
         console.log(nome_Titulos[current_i] + "(" + current_i + " -> " + nome_Titulos[previous_i] + "(" + prevEcra[previous_i]);
         //preserve previous_i
 
-        goToSlide(previous_i);
+        //goToSlide(previous_i);
+        
+            if(prevStack.length !==0){
+                var temp_slide = prevStack.pop();
+                goToSlide(temp_slide);
+                prevStack.pop();
+            }
+                 // queue is now [5]
+            
+            //return;
    
 
     } else {
         console.log(prevEcra[current_i]);
         //current_i -1
         console.log(nome_Titulos[current_i] + "(" + current_i + " -> " + nome_Titulos[prevEcra[current_i]] + "(" + prevEcra[current_i]);
+        
+        prevStack.pop();
         goToSlide(prevEcra[current_i]);
+        prevStack.pop();
 
     }
     
@@ -416,10 +426,6 @@ function prev() {
 }
 
 function next() {
-
-    if (nope != false) {
-        return false;
-    }
 
     if (current_i < nome_Titulos.length - 1) {
 
@@ -431,10 +437,11 @@ function next() {
 
 function goToSlide(i) {
 
-
     // se tentar mudar para o mesmo ecra
     if (current_i == i)
         return false;
+        
+        
 
     // clean button
     if (current_i === 9)
@@ -450,9 +457,12 @@ function goToSlide(i) {
     }
     
     if (current_i === 2) $('#botao_encostar_inact').css('display','inline');
+    if (i ===2) $('#botao_encostar_inact').css('display','none');
     
  
     if (i >= 0 && i <= nome_Titulos.length - 1) {
+        
+        prevStack.push(current_i);
         
         if(i===9)
             $("#botContinuar").css("display", "block");
@@ -474,7 +484,7 @@ function goToSlide(i) {
         
         SpecialthePrev = prevEcra[i];
         if (canChangePrev === 1  && SpecialthePrev === -1) {
-         
+            console.log("IN can change prev");
             //console.log("tou no " +  current_i + " ir p " + i + " special " + SpecialthePrev)
             //console.log("chanchange? " +canChangePrev);
 
@@ -506,7 +516,7 @@ function detectadoAmigo(_index) {
     char = (char == "a" ? "a" : "o");
     
     $("#AmgDetectado").html(pessoas[_index].nome + " detectad"+char+".	<p>Quer adicioná-l"+char+" ?</p> \
-                           <a href='# ' class='botao' onclick='adicionarAmigo("+ _index +");next();return false; '> \
+                           <a href='# ' class='botao' onclick='adicionarAmigo("+ _index +");return false; '> \
                         		<img src='img/check.png ' class='imgEntrada '> Sim \
                         	</a>\
                         	<a href='# ' class='botao' onclick='prev();return false; '> \
@@ -516,6 +526,7 @@ function detectadoAmigo(_index) {
 }
 
 function adicionarAmigo(_index) {
+    
     var pess = pessoas[_index];
     
     if (pess.isAdded)
@@ -540,6 +551,13 @@ function adicionarAmigo(_index) {
     $("#lista_joao").append("<div class='swiper-slide menu_entrada' onclick='goToOpcoesAmigo("+pess.index+");return false;'>"
                                 + imgUserAmigo + pess.nome + (pess.isProtected == 1 ? imgShieldAmigo : "") +
                             "</div>");
+                            
+    
+    
+    next();
+    
+     //para nao voltar a perguntar se quer adicionar ao voltar atras depois de adicionar
+    prevStack.pop();
 
     
     
@@ -575,10 +593,34 @@ function removerAmigo(_index) {
                                     "</div>");
         });
     }
-    
-   
-
 }
+
+function localizarAmigo(_index){
+    switch (_index) {
+    case 0: //Carlos
+        $('#mapa').css('top', '50pt');
+        $('#mapa').css('left', '-123pt');
+        break;
+    case 1: //Joao
+        $('#mapa').css('top', '-20pt');
+        $('#mapa').css('left', '-90pt');
+        break;
+    case 2: //Joana
+        $('#mapa').css('top', '-18pt');
+        $('#mapa').css('left', '-78pt');
+        break;
+    case 3: //Merio
+        $('#mapa').css('top', '-100pt');
+        $('#mapa').css('left', '-30pt');
+        break;
+    case 4: //Rita
+        $('#mapa').css('top', '74pt');
+        $('#mapa').css('left', '-22pt');
+        break;
+    }
+    mapa();
+}
+
 
 function toggleProtection(_index) {
     var char = pessoas[_index].nome.slice(-1);
@@ -595,6 +637,8 @@ function toggleProtection(_index) {
 
 function goToOpcoesAmigo(_index){
     var esteAmigo = pessoas[_index];
+    
+    $("#queroLocalizarQuem").attr("onclick","localizarAmigo("+_index+");return false;");
     
     $("#queroRemoverQuem").attr("onclick","removerAmigo("+_index+");amigos();return false;");
     
@@ -631,7 +675,9 @@ function amigos() {
 
 
 function goToMenu() {
+    
     goToSlide(0);
+    prevStack = [];
 }
 
 // opcoes do menu principal 

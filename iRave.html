@@ -25,11 +25,11 @@
         <div id='bot_back' class="shinybot" onclick="prev();return false;"> </div>
         <div id='bot_ajuda' class="shinybot" onclick="help();return false;"> </div>
         <div id='bot_menu' class="shinybot" onclick="goToMenu();return false;"> </div>
-        
+        <!--
         <div id='conter_mapaTOP' class="Class_conter_mapa" >TT </div>
         <div id='conter_mapaBOT' class="Class_conter_mapa" >BB </div>
         <div id='conter_mapaLEFT' class="Class_conter_mapa" >LEFT </div>
-        <div id='conter_mapaRIGHT' class="Class_conter_mapa" >RIGHT </div>
+        <div id='conter_mapaRIGHT' class="Class_conter_mapa" >RIGHT </div> -->
         
         
        
@@ -218,13 +218,13 @@
 
 
                             <!-- ir para: mapa no joao -->
-                            <div onclick="$('#mapa').css('top', '-20pt');$('#mapa').css('left', '-90pt');mapa();return false;" class="menu_entrada">
+                            <div id='queroLocalizarQuem' onclick="localizarAmigo();return false;" class="menu_entrada">
                                 <img src="img/add-user.png " class="imgEntrada "> Localizar
                             </div>
 
                             <!-- ir para: pretende remover o joao? -->
       
-                            <div id=queroRemoverQuem onclick="removerAmigo();amigos();return false;" class="menu_entrada">
+                            <div id="queroRemoverQuem" onclick="removerAmigo();amigos();return false;" class="menu_entrada">
                                 <img src="img/Agenda.png " class="imgEntrada "> Remover
                             </div>
 
@@ -363,9 +363,10 @@
                                     <img src='img/p1.png' style="width:12pt;height:12pt;"> Palcos <br>
                             </div>
                             
+                            <div id='mapa_containment'></div>
+                            
                             <div id='mapa'>
-                                
-                                 
+                            
                                 <img src='img/mapa.png' id='imgMapa'>
 
                                 <img src='img/wc.png' id='iconWC'>
@@ -393,6 +394,7 @@
                                 <img src='img/user_female.png' id='iconRita'>
 
                             </div>
+                            
                         </div>
 
                         <!-- 13 tocar para activar hands-free -->
