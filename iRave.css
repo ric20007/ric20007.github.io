@@ -252,6 +252,47 @@ a {
 
 }
 
+#conter_mapaTOP{
+    
+    border-color:#D70;
+
+    height: 515px; 
+    width: 505px;
+
+     left:50%;
+    top: 50%;
+    
+     transform: translate(-50%, -50%);
+}
+#conter_mapaBOT{
+    
+    border-color:blue;
+   
+    height: 615px; 
+    width: 505px;
+
+     left:50%;
+    top: 50%;
+    
+     transform: translate(-50%, -50%);
+}
+
+#conter_mapaLEFT{
+    
+    border-color:green;
+   
+    height: 550px; 
+    width: 455px;
+
+     left:50%;
+    top: 50%;
+    
+     transform: translate(-50%, -50%);
+}
+
+
+.Class_conter_mapa{     position: fixed;  border-style: solid;
+    border-width: 5px;}
 
 #bot_back {
 
@@ -352,6 +393,7 @@ a {
 
 #titulo_menu {
     padding-top: 0.5pt;
+      margin-top: -0.8pt;
     text-align: center;
     font-size: 9.75pt;
     font-family: 'khmerui';

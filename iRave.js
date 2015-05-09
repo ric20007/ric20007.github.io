@@ -135,8 +135,20 @@ $(document).ready(function() {
     elSlides = swiperH.slides;
 
     /* mapa e derivados */
-    $('#mapa').draggable();
+    
+    var conterTop = $("#conter_mapaTOP").position().top + $("#conter_mapaTOP").position().top *0.3;
+    var conterBot = $("#conter_mapaBOT").height()*0.90;  //$("#conter_mapaBOT").position().top + ....
+    var conterLeft = $("#conter_mapaLEFT").position().left;
+    var conterRight =  conterLeft +$("#conter_mapaLEFT").width()*0.40;
 
+    console.log("MAPA",conterLeft,conterTop,conterRight,conterBot);
+
+    //top e bot inconsistentes
+    $('#mapa').draggable({containment : [conterLeft,0,conterRight,conterBot] , scroll: false });
+    
+    // so para na esquerda
+    //('#mapa').draggable({containment : "#conter_mapaLEFT" , scroll: false });
+    
     $('#iconFood').click(function() {
         comida();
     });
@@ -357,8 +369,6 @@ var prevEcra = [0, 0, -1, 2, 1, -1, -1, 7, 0, -1,  9,  8,  -1,  0,  -1, 14,  8, 
 var current_i = 0;
 var previous_i = 0;
 
-var joao_added = 0;
-var joao_protected = 0;
 var hf_on = 0;
 
 var dia = 0;
