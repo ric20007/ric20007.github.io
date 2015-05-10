@@ -140,8 +140,8 @@ $(document).ready(function() {
         pagination: '.swiper-pagination-v3',
 
         direction: 'vertical',
-        slidesPerView:3,
-        slidesPerScroll: 1,
+        slidesPerView:4,
+        slidesPerScroll: 2,
 
         freeMode: true,
         freeModeMomentum: false
@@ -197,7 +197,7 @@ $(document).ready(function() {
                                 pagination: '.swiper-pagination-vCartaz'+i,
                                 paginationClickable: true,
                                 direction: 'vertical',
-                                slidesPerView: 2,
+                                slidesPerView: 4,
                                 slidesPerScroll: 1,
                         
                                 freeMode: true,
@@ -300,7 +300,6 @@ $(document).ready(function() {
     $('.hf_top').click(function() {
         if (current_i >= 21 && current_i <= 23) {
             console.log("pah ya up");
-            dia = current_i - 21;
             swiperCartaz[dia].slidePrev(true, 100);
         }
         else {
@@ -311,7 +310,6 @@ $(document).ready(function() {
     
     $('.hf_bot').click(function() {
         if (current_i >= 21 && current_i <= 23) {
-            console.log("pah ya down");
             dia = current_i - 21;
             swiperCartaz[dia].slideNext(true, 100);
         }
