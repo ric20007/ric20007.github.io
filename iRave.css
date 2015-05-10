@@ -132,13 +132,8 @@
     opacity: 1;
 }
 
-/* bullet nao seleccionada */
-.swiper-pagination-bullet-active{
-    background: #d70;
-}
 
-
-.swiper-pagination .swiper-pagination-bullet .swiper-pagination-bullet-active {
+.swiper-pagination-bullet, .swiper-pagination-bullet-active {
     background: #d70;
 }
 
@@ -664,13 +659,6 @@ a {
     display: none;
 }
 
-.botaoHandsFree{
-    z-index:999;
-    border: 1.5pt solid black;
-    height: 60pt;
-    width: 120pt;
-    position: fixed;
-}
 
 .hf_inactivos {
     z-index: 1001;
@@ -680,6 +668,33 @@ a {
     background-color: grey;
     opacity: 0.8;
     position: fixed;
+
+}
+
+.botaoHandsFree{
+    z-index:999;
+    border: 1.5pt solid black;
+    height: 60pt;
+    width: 120pt;
+    position: fixed;
+    
+    top: 50%;
+}
+
+.bot_hf_mapa {
+    transform: translate(-155%, 200%);
+}
+
+.bot_hf_setas{
+    transform: translate(-45%, 200%);
+}
+.bot_hf_cartaz{
+    transform: translate(65%, 200%);
+}
+
+#botao_encostar, #botao_encostar_inact{
+    //transform: translate(-150%, 250%);
+    transform: translate(175%, 200%);
 }
 
 #botao_encostar{
@@ -688,6 +703,9 @@ a {
     height: 60pt;
     width: 120pt;
     position: fixed;
+    
+    top: 50%;
+
 }
 
 #botao_encostar_inact {
@@ -698,11 +716,22 @@ a {
     background-color: grey;
     opacity: 0.8;
     position: fixed;
+
 }
 
 .hf_directions {
     z-index: 1000;
     position: absolute;
+    
+    transform: translate(129pt, 158pt);
+}
+.hf_rotate{
+    transform: translate(129pt, 158pt) rotate(45deg);
+    
+}
+.hf_rotate-45{
+    transform: translate(129pt, 158pt) rotate(-45deg);
+    
 }
 
 

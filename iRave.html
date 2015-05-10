@@ -44,34 +44,34 @@
        
 
         <!-- botoes maos livres  -->
-        <div class='hf_inactivos' style='transform: translate(-150%, -200%);'></div>
+        <div class='hf_inactivos bot_hf_mapa'></div>
         <div onclick="$('#mapa').css('top','-10pt');$('#mapa').css('left','2pt');hf_mapa();return false;">
-            <img src="img/gesto_abrir_mapa.png" class="botaoHandsFree" style="top: 50%;transform: translate(-150%, -200%);">
+            <img src="img/gesto_abrir_mapa.png" class="botaoHandsFree bot_hf_mapa">
         </div>
 
-        <div class='hf_inactivos' style='transform: translate(-150%, -50%);'></div>
+        <div class='hf_inactivos bot_hf_setas'></div>
         <div class='map_nav'>
             <div class='hf_directions hf_top' style="height:15pt;width:5pt;top:47pt;left:-94pt;"></div>
             <div class='hf_directions hf_bot' style="height:15pt;width:5pt;top:62pt;left:-94pt;"></div>
             <div class='hf_directions hf_right' style="height:6pt;width:11pt;top:59.3pt;left:-89pt;"></div>
             <div class='hf_directions hf_left' style="height:6pt;width:11pt;top:59.3pt;left:-104pt;"></div>
-            <div class='hf_directions hf_topr' style="height:4pt;width:13pt;top:52pt;left:-90pt;transform:rotate(-45deg)"></div>
-            <div class='hf_directions hf_botr' style="height:4pt;width:13pt;top:68pt;left:-90pt;transform:rotate(45deg)"></div>
-            <div class='hf_directions hf_topl' style="height:4pt;width:13pt;top:52pt;left:-105pt;transform:rotate(45deg)"></div>
-            <div class='hf_directions hf_botl' style="height:4pt;width:13pt;top:68pt;left:-105pt;transform:rotate(-45deg)"></div>
-            <img src="img/hf_arrows/gesto_navegar_mapa.png" class="botaoHandsFree" style="top: 50%;transform: translate(-150%, -50%);">
+            <div class='hf_directions hf_topr hf_rotate-45' style="height:4pt;width:13pt;top:52pt;left:-90pt;"></div>
+            <div class='hf_directions hf_botr hf_rotate' style="height:4pt;width:13pt;top:68pt;left:-90pt;"></div>
+            <div class='hf_directions hf_topl hf_rotate' style="height:4pt;width:13pt;top:52pt;left:-105pt;"></div>
+            <div class='hf_directions hf_botl hf_rotate-45' style="height:4pt;width:13pt;top:68pt;left:-105pt;"></div>
+            <img src="img/hf_arrows/gesto_navegar_mapa.png" class="botaoHandsFree bot_hf_setas">
         </div>
         
-        <div class='hf_inactivos' style='transform: translate(-150%, 100%);'></div>
+        <div class='hf_inactivos bot_hf_cartaz'></div>
         <div onclick="cartaz();return false;">
-            <img src="img/gesto_abrir_cartaz.png" class="botaoHandsFree" style="top: 50%;transform: translate(-150%, 100%);">
+            <img src="img/gesto_abrir_cartaz.png" class="botaoHandsFree bot_hf_cartaz">
         </div>
         <!-- end botoes maos livres -->
         
         <!-- encostar iRave  -->
-        <div id='botao_encostar_inact' style='transform: translate(-150%, 250%);'></div>
+        <div id='botao_encostar_inact'></div>
         <div>
-            <img src="img/encostar.png" id="botao_encostar" style="top: 50%;transform: translate(-150%, 250%);">
+            <img src="img/encostar.png" id="botao_encostar" >
         </div>
         <!-- end encostar iRave  -->
         
@@ -214,11 +214,13 @@
                             </div>
 
 
-                            <div class='joao_add_amigos' style="left:-5px;position: relative; bottom: 0; ">
-                                Adicionar amigos ?
-                                <a href="# " onclick="$('#botao_encostar_inact').css('display','none');addAmigos();return false; ">
+                            <div class='joao_add_amigos' style="height:50pt;left:-5px;position: relative;bottom:0;background-color:#d3d3d3">
+                                <div style="height:7pt;width:1pt;"></div>
+                                Adicionar amigos?<br>
+                                <div style="height:3pt;width:1pt;"></div>
+                                <a href="# " onclick="$('#botao_encostar_inact').css('display','none');addAmigos();return false;" style='font-size:12pt;font-weight:bold;'>
 
-                                    <img src="img/user1.png " class="imgEntrada "> OK
+                                    <img src="img/user1.png " class="imgEntrada "> Sim
                                 </a>
 
                             </div>
