@@ -11,6 +11,8 @@ var swiperH,
     valorCompra = 0,
     totalComprado =0;
     
+var swiperCartaz= [0,0,0];
+    
 var itemsCompra = [];
 var itemsComprados = [];
 var elSlides;
@@ -149,7 +151,7 @@ $(document).ready(function() {
         pagination: '.swiper-pagination-vMerch',
 
         direction: 'vertical',
-        slidesPerView:3,
+        slidesPerView:4,
         slidesPerScroll: 1,
 
         freeMode: true,
@@ -171,6 +173,8 @@ $(document).ready(function() {
     
     
     
+    
+    
     swiperVHistorico = new Swiper('.swiper-container-vHistorico', {
         //pagination: '.swiper-pagination-vMerch',
 
@@ -183,8 +187,25 @@ $(document).ready(function() {
 
     });
 
-
     
+    
+    // swipers de cada cartaz
+    for (var i = 0; i < swiperCartaz.length; i++) {
+        console.log('.swiper-container-vCartaz'+i);
+        swiperCartaz[i] = new Swiper('.swiper-container-vCartaz'+i, {
+                                //pagination: '.swiper-pagination-vMerch',
+                                paginationClickable: true,
+                                direction: 'vertical',
+                                slidesPerView: 3,
+                                slidesPerScroll: 1,
+                        
+                                freeMode: true,
+                                freeModeMomentum: false
+                        
+                            });
+    }
+
+    // dos encontros
     swiperVCartaz = new Swiper('.swiper-container-vCartaz', {
         pagination: '.swiper-pagination-vCartaz',
         paginationClickable: true,
@@ -441,9 +462,9 @@ var nome_Titulos = ["Menu",
     "<img src='img/foods.png' class='imgTitulo'> Comes/Bebes",       //11
     "<img src='img/map-2.png' class='imgTitulo'> Mapa",              //12
     "<img src='img/hands-free.png' class='imgTitulo'> Mãos Livres",   //13
-    "<img src='img/euro_1.png' class='imgTitulo'> Merchandising",    //14
-    "<img src='img/euro_1.png' class='imgTitulo'> Merchandising",    //15
-    "<img src='img/euro_1.png' class='imgTitulo'> Merchandising",    //16
+    "<img src='img/merch.png' class='imgTitulo'> Merchandising",    //14
+    "<img src='img/merch.png' class='imgTitulo'> Merchandising",    //15
+    "<img src='img/merch.png' class='imgTitulo'> Merchandising",    //16
     "<img src='img/Agenda.png' class='imgTitulo'> Horário",          //17
     "<img src='img/pointer.png' class='imgTitulo'> Encontros",       //18 antes 21
     "<img src='img/euro.png' class='imgTitulo'> Histórico",       //19 antes 22 AINDA NAO HA ICON !!!!
@@ -858,7 +879,15 @@ function cartaz() {
     dia = 0;
     cartazOn==1;
     goToSlide(21);
-    $(".theSpecialEntrada").css("height","21pt");
+    
+    $('.specialwidth').each(function() {
+        $(this).css("height","21pt");
+
+    });
+	$('.helpResize').each(function() {
+        $(this).css("height","30pt");
+    });
+    //$(".theSpecialEntrada").css("height","21pt");
 }
 
 

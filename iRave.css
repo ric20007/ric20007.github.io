@@ -187,6 +187,12 @@
     border-right: none;
     font-family: 'khmerui';
 }
+.specialwidth{
+    
+    width:1.4in;
+    margin: 0 auto; /*center div on parent*/ 
+    
+}
 
 
 .menu_entrada {
