@@ -48,10 +48,6 @@ var amigosAdicionados = [];
 
 var cartazOn = 0;
 
-
-
-
-
 $(document).ready(function() {
 
     // fix checkbox detect
@@ -63,25 +59,11 @@ $(document).ready(function() {
         });
 
     });
-    
-    /*
-    $('.hf_inactivos').each(function() {
-        console.log("1");
-        $(this).on('click', function(event) {
-            event.stopPropagation();
-            console.log("Stopped propagation");
 
-        });
-
-    });
-    
-*/
-        
     swiperH = new Swiper('.swiper-container-h', {
         onlyExternal: true,
         //setWrapperSize:true
     });
-    
     
         
     swiperV = new Swiper('.swiper-container-v', {
@@ -172,10 +154,7 @@ $(document).ready(function() {
 
     });
     
-    
-    
-    
-    
+
     swiperVHistorico = new Swiper('.swiper-container-vHistorico', {
         //pagination: '.swiper-pagination-vMerch',
 
@@ -188,11 +167,8 @@ $(document).ready(function() {
 
     });
 
-    
-    
     // swipers de cada cartaz
     for (var i = 0; i < swiperCartaz.length; i++) {
-        console.log('.swiper-container-vCartaz'+i);
         swiperCartaz[i] = new Swiper('.swiper-container-vCartaz'+i, {
                                 pagination: '.swiper-pagination-vCartaz'+i,
                                 paginationClickable: true,
@@ -232,23 +208,8 @@ $(document).ready(function() {
 
     elSlides = swiperH.slides;
     
-
     /* mapa e derivados */
-    /*
-    var conterTop = $("#conter_mapaTOP").position().top + $("#conter_mapaTOP").position().top *0.3;
-    var conterBot = $("#conter_mapaBOT").height()*0.90;  //$("#conter_mapaBOT").position().top + ....
-    var conterLeft = $("#conter_mapaLEFT").position().left;
-    var conterRight =  conterLeft +$("#conter_mapaLEFT").width()*0.40;
 
-    console.log("MAPA",conterLeft,conterTop,conterRight,conterBot);
-*/
-    //top e bot inconsistentes
-    //$('#mapa').draggable({containment : [conterLeft,0,conterRight,conterBot] , scroll: false });
-    
-    // so para na esquerda
-    //('#mapa').draggable({containment : "#conter_mapaLEFT" , scroll: false });
-    
-    //  O CRIME:     \$('#mapa').draggable({  ILLEGAL!!!!!
     $('#mapa').draggable({
         stop: function() {
             checkBorders()
@@ -433,11 +394,6 @@ $(document).ready(function() {
     });
     
     
-    
-
-
-
-
     //funcao que mostra o tempo
 
     function checkTime(i) {
@@ -492,8 +448,7 @@ var nome_Titulos = ["Menu",
 var help_ecras = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 0];
 
 //              0  1   2  3  4   5   6  7  8   9  10  11   12  13   14  15  16  17  18  19     21  22  23    
-var prevEcra = [0, 0, -1, 2, 5, -1, -1, 6, 0, -1,  9,  8,  -1,  0,  -1, 14,  8,  0, -1,  1, 0, -1,  21, 22];
-
+var prevEcra = [0, 0, -1, 2, 5, -1, -1, 6, 0, -1,  9,  8,  -1,  0,  -1, 14,  8,  0, -1,  1, 0, -1,  -1, -1];
 
 var current_i = 0;
 var previous_i = 0;
@@ -517,32 +472,32 @@ function prev() {
         return;
     }
     
-    
     canChangePrev = 0;
     
     thePrev = prevEcra[current_i];
     if (thePrev === -1) {
 
-        console.log(-1 + " $$$$$$");
-        console.log(nome_Titulos[current_i] + "(" + current_i + " -> " + nome_Titulos[previous_i] + "(" + prevEcra[previous_i]);
-        //preserve previous_i
+        console.log(nome_Titulos[current_i] + " :" + current_i + " -> " + nome_Titulos[previous_i] + " :" + prevEcra[previous_i]);
 
         //goToSlide(previous_i);
         
-            if(prevStack.length !==0){
-                var temp_slide = prevStack.pop();
-                goToSlide(temp_slide);
-                prevStack.pop();
-            }
-                 // queue is now [5]
+        if(prevStack.length !==0){
+            var temp_slide = prevStack.pop();
+            goToSlide(temp_slide);
+            prevStack.pop();
             
-            //return;
-   
-
-    } else {
+            //hack para o cartaz regressar de onde veio
+            if(current_i >= 21)
+                prev();
+            if(current_i >= 22)
+                prev();
+                
+        }
+    } 
+    else {
         console.log(prevEcra[current_i]);
         //current_i -1
-        console.log(nome_Titulos[current_i] + "(" + current_i + " -> " + nome_Titulos[prevEcra[current_i]] + "(" + prevEcra[current_i]);
+        console.log(nome_Titulos[current_i] + " :" + current_i + " -> " + nome_Titulos[prevEcra[current_i]] + " :" + prevEcra[current_i]);
         
         prevStack.pop();
         goToSlide(prevEcra[current_i]);
@@ -612,7 +567,6 @@ function goToSlide(i) {
         if (current_i == 21 && !(i >= 21 && i <= 23)) {
             cartazOn = 0;
             console.log("not cartaz!");
-            
         }
         
         if (i >= 21 && i <= 23) { cartazOn = 1; }
@@ -647,10 +601,7 @@ function goToSlide(i) {
         
         SpecialthePrev = prevEcra[i];
         if (canChangePrev === 1  && SpecialthePrev === -1) {
-            console.log("IN can change prev");
-            //console.log("tou no " +  current_i + " ir p " + i + " special " + SpecialthePrev)
-            //console.log("chanchange? " +canChangePrev);
-
+            console.log("In can change prev");
             previous_i = current_i;
         }
         
@@ -660,8 +611,6 @@ function goToSlide(i) {
         help_ecras[current_i] = 0;
         $(elSlides[current_i]).find('.help_screen').css("display", "none");
         
-        //if (i==21) {$(elSlides[22]).css("visibility", "visible");} //fuck this shit.
-        //if (i==22) {$(elSlides[23]).css("visibility", "visible");} //no, rly.
         swiperH.slideTo(i);
         
         // hide previous slide
@@ -710,36 +659,30 @@ function adicionarAmigo(_index) {
     
     if (amigosAdicionados.length == 1)
         $("#lista_joao").html("");
+        
     console.log( "Index #" + _index + ": " + pess.nome );
     $("#lista_joao").append("<div class='swiper-slide menu_entrada' onclick='goToOpcoesAmigo("+pess.index+");return false;'>"
                                 + imgUserAmigo + pess.nome + (pess.isProtected == 1 ? imgShieldAmigo : "") +
                             "</div>");
                             
     
-    console.log(prevStack);
+    // pops para controlar o estado da stack
     prevStack.pop();
-    console.log(prevStack);
-    
     next();
-    console.log(prevStack);
-    
+
      //para nao voltar a perguntar se quer adicionar ao voltar atras depois de adicionar
     prevStack.pop();
-    console.log(prevStack);
 
-    
-    
-     
 }
 
 function actualizarListaAmigos(){
-         $("#lista_joao").html("");
-        $.each( amigosAdicionados, function( i, pess ){
-            //console.log( "Index #" + i + ": " + pess.nome );
-            $("#lista_joao").append("<div class='swiper-slide menu_entrada' onclick='goToOpcoesAmigo("+pess.index+");return false;'>"
-                                        + imgUserAmigo + pess.nome + (pess.isProtected == 1 ? imgShieldAmigo : "") +
-                                    "</div>");
-        });
+    $("#lista_joao").html("");
+    $.each( amigosAdicionados, function( i, pess ){
+        //console.log( "Index #" + i + ": " + pess.nome );
+        $("#lista_joao").append("<div class='swiper-slide menu_entrada' onclick='goToOpcoesAmigo("+pess.index+");return false;'>"
+                                    + imgUserAmigo + pess.nome + (pess.isProtected == 1 ? imgShieldAmigo : "") +
+                                "</div>");
+    });
 }
 
 function removerAmigo(_index) {
@@ -752,7 +695,8 @@ function removerAmigo(_index) {
         if (amigosAdicionados[i].nome == pessoas[_index].nome)
             break;
     }
-
+    
+    //remover um amigo
     amigosAdicionados.splice(i, 1);
     
     //tirar o amigo do mapa
