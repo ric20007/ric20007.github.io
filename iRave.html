@@ -4,13 +4,22 @@
 <head>
     <title>IPM14/15 - iRAVE grupo 56</title>
     <meta charset="UTF-8">
+
+    <!--<link rel="stylesheet" href="swiper.min.css">-->
+    
+    <link rel="stylesheet" href="swiper307.css">
+    
+    
     <link rel="stylesheet" href="iRave.css" type="text/css" />
-    <link rel="stylesheet" href="swiper.min.css">
 
     <script src="jquery.min.js"></script>
     <script src="jquery-ui.js"></script>
+    
 
-    <script src="swiper.jquery.js"></script>
+     <!--<script src="swiper.jquery.js"></script>-->
+     <script src="swiper.jquery307.js"></script>
+    
+    
 
     <script src='iRave.js'></script>
 
@@ -147,7 +156,8 @@
                                     </div>
 
                                     <div onclick="historico();return false; " class="swiper-slide menu_entrada" style="font-size:8.25pt">
-                                        <img src="img/Agenda.png " class="imgEntrada " align="center "> Histórico de Transações </div>
+                                        <img src="img/Agenda.png " class="imgEntrada " align="center "> Histórico de Transações
+                                    </div>
 
 
                                     <div class="swiper-slide"></div>
@@ -248,7 +258,7 @@
 
                         <!-- 8 procurar -->
                         <div class="swiper-slide">
-                            <div class="swiper-container swiper-container-vProcurar swiperVertical">
+                            <div class=" swiper-container swiper-container-vProcurar swiperVertical">
                                 <div class="swiper-wrapper">
 
                                     <div onclick="amigos(); return false;" class="swiper-slide  menu_entrada">
@@ -270,7 +280,7 @@
                                         <img src="img/pointer.png" class="imgEntrada" style="width:8pt"> &nbsp; Encontros </div>
 
                                     <div class="swiper-slide"></div>
-                                    <div class="swiper-slide"></div>
+                                   
 
                                 </div>
 
@@ -281,7 +291,7 @@
 
                         <!-- 9 comes/cegues -->
                         <div class="swiper-slide">
-                            <div class="swiper-container swiper-container-vProcurar swiperVertical">
+                            <div class="swiper-container swiper-container-vComes swiperVertical">
                                 <div class="swiper-wrapper">
 
                                     <div class="swiper-slide  menu_entrada" style="background:#ddd">
@@ -325,7 +335,7 @@
 
                                 </div>
 
-                                <div class="swiper-pagination swiper-pagination-vProcurar"></div>
+                                <div class="swiper-pagination swiper-pagination-vComes"></div>
                             </div>
                         </div>
 
@@ -435,7 +445,7 @@
 
                         <!-- 14 merchandising -->
                         <div class="swiper-slide">
-                            <div class="swiper-container swiper-container-vProcurar swiperVertical">
+                            <div class="swiper-container swiper-container-vMerch swiperVertical">
                                 <div class="swiper-wrapper">
                                     
                                     <div class="swiper-slide menu_entrada compras">
@@ -482,13 +492,13 @@
 
                                 </div>
 
-                                <div class="swiper-pagination swiper-pagination-vProcurar"></div>
+                                <div class="swiper-pagination swiper-pagination-vMerch"></div>
                             </div>
                         </div>
                         
                         <!-- 15 merchandising confirmar compra -->
                         <div class="swiper-slide">
-                            <div class="swiper-container swiper-container-v3">
+                            <div class="swiper-container swiper-container-vMerch2">
                                 <div class="swiper-wrapper exchangeCompra">
                                     #Pedido:
 
@@ -550,7 +560,7 @@
                         
                         <!-- 19 historico -->
                         <div class="swiper-slide">
-                            <div class="swiper-container swiper-container-v3">
+                            <div class="swiper-container swiper-container-vHistorico">
                                 <div id="listaHistoricoCompras" class="swiper-wrapper">
                                     Sem compras.
 
@@ -574,13 +584,13 @@
                                     
                                      <div id="cartazPLS" class="entrada_cartaz" >
                                                                 
-                                        <img id='cartaz-previous' onclick="cartazPrevious();return false;" src="img/previous.png" class="img_cartazPrev" style="float:left;visibility:hidden;">
+                                        <img id='cartaz-previous' onclick="return false;" src="img/previous.png" class="img_cartazPrev" style="float:left;visibility:hidden;">
                                         
                                         <div id='cartaz-dia'>
                                             &nbsp; &nbsp; Dia 1 &nbsp; &nbsp;
                                         </div>
                                         
-                                        <img id='cartaz-next' onclick="cartazNext();return false;" src="img/next.png" class="img_cartazNext" style="float:right">
+                                        <img id='cartaz-next' onclick="next();return false;" src="img/next.png" class="img_cartazNext" style="float:right">
             
                                         
                                      </div>
@@ -621,13 +631,13 @@
                                     
                                     <div id="cartazPLS" class="entrada_cartaz" >
                                                                 
-                                        <img id='cartaz-previous' onclick="cartazPrevious(); return false;" src="img/previous.png" class="img_cartazPrev" style="float:left">
+                                        <img id='cartaz-previous' onclick="prev(); return false;" src="img/previous.png" class="img_cartazPrev" style="float:left">
                                         
                                         <div id='cartaz-dia'>
                                             &nbsp; &nbsp; Dia 2 &nbsp; &nbsp;
                                         </div>
                                         
-                                        <img id='cartaz-next' onclick="cartazNext(); return false;" src="img/next.png" class="img_cartazNext" style="float:right">
+                                        <img id='cartaz-next' onclick="next(); return false;" src="img/next.png" class="img_cartazNext" style="float:right">
             
                                         
                                      </div>
@@ -665,13 +675,13 @@
                                     
                                     <div id="cartazPLS" class="entrada_cartaz" >
                                                                 
-                                        <img id='cartaz-previous' onclick="cartazPrevious(); return false;" src="img/previous.png" class="img_cartazPrev" style="float:left;">
+                                        <img id='cartaz-previous' onclick="prev(); return false;" src="img/previous.png" class="img_cartazPrev" style="float:left;">
                                         
                                         <div id='cartaz-dia'>
                                             &nbsp; &nbsp; Dia 3 &nbsp; &nbsp;
                                         </div>
                                         
-                                        <img id='cartaz-next' onclick="cartazNext(); return false;" src="img/next.png" class="img_cartazNext" style="float:right;visibility:hidden;">
+                                        <img id='cartaz-next' onclick="return false;" src="img/next.png" class="img_cartazNext" style="float:right;visibility:hidden;">
             
                                         
                                      </div>

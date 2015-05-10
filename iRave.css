@@ -133,16 +133,15 @@
 }
 
 /* bullet nao seleccionada */
-.swiper-pagination .swiper-pagination-bullet {
+.swiper-pagination-bullet-active{
     background: #d70;
 }
 
 
-.swiper-pagination .swiper-pagination-bullet-active {
+.swiper-pagination .swiper-pagination-bullet .swiper-pagination-bullet-active {
     background: #d70;
 }
-    
-    
+
 #cartazPLS{
     background:#D70;
     font-size:14pt;
