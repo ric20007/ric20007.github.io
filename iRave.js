@@ -35,8 +35,8 @@ function pessoa(_nome) {
     this.isProtected = 0;
 }
 var pessoas = [new pessoa("Carlos"),
-                new pessoa("João"),
                 new pessoa("Joana"),
+                new pessoa("João"),
                 new pessoa("Merio"),
                 new pessoa("Rita")];
                 
@@ -637,6 +637,34 @@ function detectadoAmigo(_index) {
 
 }
 
+function actualizarListaAmigos(){
+    
+    if (amigosAdicionados.length >=4){
+        $("#plsbegone").css("display","none");
+        $(".bot_pergunta_amigo").css("font-size","9pt");
+
+    }
+    else{
+         $("#plsbegone").css("display","block");
+        $(".bot_pergunta_amigo").css("font-size","11.25pt");
+
+    }
+    if(amigosAdicionados.length >4)
+            $("#bot_add_amigo_pergunta").css("display","none");
+    else
+        $("#bot_add_amigo_pergunta").css("display","block");
+    
+    $("#lista_joao").html("");
+    $.each( pessoas, function( i, pess ){
+        //console.log( "Index #" + i + ": " + pess.nome );
+        if (pess.isAdded){
+            $("#lista_joao").append("<div class='swiper-slide menu_entrada' onclick='goToOpcoesAmigo("+pess.index+");return false;'>"
+                                        + imgUserAmigo + pess.nome + (pess.isProtected == 1 ? imgShieldAmigo : "") +
+                                    "</div>");
+        }
+    });
+}
+
 function adicionarAmigo(_index) {
     
     var pess = pessoas[_index];
@@ -657,6 +685,7 @@ function adicionarAmigo(_index) {
     var nomeTemp = (pess.nome == "João" ? "Joao" : pess.nome);
     $('#icon'+nomeTemp).css('display', 'inline');
     
+    /*
     if (amigosAdicionados.length == 1)
         $("#lista_joao").html("");
         
@@ -664,6 +693,10 @@ function adicionarAmigo(_index) {
     $("#lista_joao").append("<div class='swiper-slide menu_entrada' onclick='goToOpcoesAmigo("+pess.index+");return false;'>"
                                 + imgUserAmigo + pess.nome + (pess.isProtected == 1 ? imgShieldAmigo : "") +
                             "</div>");
+                            
+                            */
+                            
+    actualizarListaAmigos();
                             
     
     // pops para controlar o estado da stack
@@ -675,15 +708,7 @@ function adicionarAmigo(_index) {
 
 }
 
-function actualizarListaAmigos(){
-    $("#lista_joao").html("");
-    $.each( amigosAdicionados, function( i, pess ){
-        //console.log( "Index #" + i + ": " + pess.nome );
-        $("#lista_joao").append("<div class='swiper-slide menu_entrada' onclick='goToOpcoesAmigo("+pess.index+");return false;'>"
-                                    + imgUserAmigo + pess.nome + (pess.isProtected == 1 ? imgShieldAmigo : "") +
-                                "</div>");
-    });
-}
+
 
 function removerAmigo(_index) {
 
