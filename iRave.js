@@ -37,6 +37,10 @@ var pessoas = [new pessoa("Carlos"),
                 new pessoa("Merio"),
                 new pessoa("Rita")];
                 
+var setasHf = ["top","bot","right",
+                "left","topr","botr",
+                "topl","botl"]
+                
 var amigosAdicionados = [];
 
 var cartazOn = 0;
@@ -249,149 +253,83 @@ $(document).ready(function() {
         merch();
     });
     
-    $('#iconCarlos').click(function() {
-        goToOpcoesAmigo(0);
-    });
+    // click handler para os icones dos amigos no mapa
+	$.each( pessoas, function( i, pess ){
+		var nome_temp = (pess.nome == "João" ? "Joao" : pess.nome);
+		$('#icon'+nome_temp).click(function() {
+			goToOpcoesAmigo(i);
+		});
+	});
     
-    $('#iconJoao').click(function() {
-        goToOpcoesAmigo(1);
-    });
     
-    $('#iconJoana').click(function() {
-        goToOpcoesAmigo(2);
-    });
-    
-    $('#iconMerio').click(function() {
-        goToOpcoesAmigo(3);
-    });
-    
-    $('#iconRita').click(function() {
-        goToOpcoesAmigo(4);
-    });
+    // Tratar dos hovers ficarem a laranja
+    $.each( setasHf, function( i, seta ){
+		$('.hf_'+seta).hover(function() {
+			$(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_'+seta+'.png');
+			
+		}, function() {
+			$(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
+		});
+	});
+	
+	
+    var pxAmount = 45;
     
     $('.hf_top').click(function() { 
-            $('#mapa').animate({top:'+=16'}, 100 ); 
-            checkBorders();
+        $('#mapa').animate({top:'+='+pxAmount}, 100 ); 
+        checkBorders();
     });
-    
-    $('.hf_top').hover(function() {
-        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_top.png');
-        
-    }, function() {
-        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
-    });
-    
     
     $('.hf_bot').click(function() {
-            $('#mapa').animate({top:'-=16'}, 100 ); 
-            checkBorders();
-        });
-    $('.hf_bot').hover(function() {
-        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_bot.png');
-        
-    }, function() {
-        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
+        $('#mapa').animate({top:'-='+pxAmount}, 100 ); 
+        checkBorders();
     });
-    
+
        
-        
     $('.hf_right').click(function() { 
         console.log("detected hand move right");
-        if (cartazOn) { 
-
+        if (cartazOn) {
             cartazNext();
-            
-            }
+        }
         else { 
-            $('#mapa').animate({left:'-=16'}, 100 ); 
+            $('#mapa').animate({left:'-='+pxAmount}, 100 ); 
             checkBorders();
         }
         
     });
-    
-    $('.hf_right').hover(function() {
-        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_right.png');
-        
-    }, function() {
-        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
-    });
-    
-    
-     $('.hf_left').click(function(){
+
+    $('.hf_left').click(function(){
         console.log("detected hand move left");
         if (cartazOn) {
             cartazPrevious();
-            
         }
         else {
-            $('#mapa').animate({left:'+=16'}, 100 ); 
+            $('#mapa').animate({left:'+='+pxAmount}, 100 ); 
             checkBorders();
         }
     });
-    
-     //erro------------------------------------------------------
-    $('.hf_left').hover(function() {
-            $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_left.png');
-            
-            
-    }, function() {
-        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
-    });
-    
-    //erro---------------------------------------------------------------
- 
-    
-    
+
     $('.hf_topr').click(function() { 
-            $('#mapa').animate({top:'+=16', left:'-=16'}, 100 ); 
-            checkBorders();            
-        });
-    
-    $('.hf_topr').hover(function() {
-        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_topr.png');
-        
-    }, function() {
-        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
+        $('#mapa').animate({top:'+='+pxAmount, left:'-='+pxAmount}, 100 ); 
+        checkBorders();            
     });
-    
-    
+
     $('.hf_botr').click(function() { 
-        $('#mapa').animate({top:'-=16', left:'-=16'}, 100 ); 
+        $('#mapa').animate({top:'-='+pxAmount, left:'-='+pxAmount}, 100 ); 
         checkBorders();
     });
         
-    $('.hf_botr').hover(function() {
-        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_botr.png');
-        
-    }, function() {
-        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
+    $('.hf_topl').click(function() { 
+        $('#mapa').animate({top:'+='+pxAmount, left:'+='+pxAmount}, 100 ); 
+        checkBorders();    
     });
-    
-    
-     $('.hf_topl').click(function() { 
-            $('#mapa').animate({top:'+=16', left:'+=16'}, 100 ); 
-            checkBorders();    
-        });
-    
-    $('.hf_topl').hover(function() {
-        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_topl.png');
-       
-    }, function() {
-        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
-    });
-    
-    
+
     $('.hf_botl').click(function() { 
-            $('#mapa').animate({top:'-=16', left:'+=16'}, 100 ); 
-            checkBorders();
-        });
-    
-    $('.hf_botl').hover(function() {
-        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_botl.png');
-        
-    }, function() {
-        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
+        $('#mapa').animate({top:'-='+pxAmount, left:'+='+pxAmount}, 100 ); 
+        checkBorders();
     });
+    
+
     /* end mapa e derivados */
     
     $('#botao_encostar').click(function() {
@@ -489,11 +427,6 @@ $(document).ready(function() {
 });
 
 
-
-var cartazTitulo = ["&nbsp; &nbsp; Dia 1 &nbsp; &nbsp;", 
-                    "&nbsp; &nbsp; Dia 2 &nbsp; &nbsp;", 
-                    "&nbsp; &nbsp; Dia 3 &nbsp; &nbsp;"];
-
 var nome_Titulos = ["Menu",
     "<img src='img/user1.png' class='imgTitulo'> Perfil",             //1
     "<img src='img/add-user.png' class='imgTitulo'> Add. Amigos",     //2
@@ -535,16 +468,24 @@ var hf_on = 0;
 
 var dia = 0;
 
+var prompt = 0;
+
 function mudarNome(i) {
     $("#titulo_menu").html(nome_Titulos[i]);
 }
 
 function prev() {
-
+    
+    // caso se se estar a cancelar um remove amigo
+    if (prompt == 1) {
+        prompt = 0;
+        $('.remove_screen').css("display", "none");
+        return;
+    }
+    
     
     canChangePrev = 0;
-
-
+    
     thePrev = prevEcra[current_i];
     if (thePrev === -1) {
 
@@ -597,13 +538,13 @@ function checkBorders(){
     var mapaH = $('#imgMapa').height();
     
     //left border
-    if (mapaX > centerX) { $('#mapa').animate({left: '-='+(10+mapaX-centerX)+'pt'}, 100);}
+    if (mapaX + 10 > centerX) { $('#mapa').animate({left: '-='+(10+mapaX-centerX)+'pt'}, 100);}
     //right border
-    if (mapaX + mapaW < centerX) { $('#mapa').animate({left: '+='+(10+centerX-(mapaX+mapaW))+'pt'}, 100);}
+    if (mapaX + mapaW - 10 < centerX) { $('#mapa').animate({left: '+='+(10+centerX-(mapaX+mapaW))+'pt'}, 100);}
     //top border
-    if (mapaY > centerY) { $('#mapa').animate({top: '+='+(10+centerY-mapaY)+'pt'}, 100);}
+    if (mapaY + 10 > centerY) { $('#mapa').animate({top: '+='+(10+centerY-mapaY)+'pt'}, 100);}
     //bottom border
-    if (mapaY + mapaH < centerY) { $('#mapa').animate({top: '+='+(20+centerY-(mapaY+mapaH))+'pt'}, 100);}
+    if (mapaY + mapaH - 30 < centerY) { $('#mapa').animate({top: '+='+(30+centerY-(mapaY+mapaH))+'pt'}, 100);}
 }
 
 
@@ -642,6 +583,12 @@ function goToSlide(i) {
         
         if (i >= 21 && i <= 23) { cartazOn = 1; }
     
+        //limpar remove
+        if (current_i == 6) {
+            prompt = 0;
+            $('.remove_screen').css("display", "none");
+        }
+        
         
         prevStack.push(current_i);
         
@@ -1104,6 +1051,16 @@ function hf_mapa() {
     if (hf_on == 1) { mapa(); }
 }
 
+
+function removePrompt() {
+    if (prompt == 0) {
+        prompt = 1;
+        $('.remove_screen').css("display", "inline");
+    }
+    else {
+        
+    }
+}
 
 function help() {
     if (help_ecras[current_i] == 0) {

@@ -463,7 +463,7 @@ a {
 }
 */
 
-.help_screen {
+.help_screen, .remove_screen {
     z-index: 10;
     position: absolute;
     width: 93pt;
@@ -476,7 +476,7 @@ a {
     display: none;
 }
 
-.help_title {
+.help_title, .remove_title {
     width: 100%;
     height: 20pt;
     line-height: 20pt;
@@ -489,9 +489,22 @@ a {
     border-bottom: 3pt solid #1c1c1c;
 }
 
-.help_text {
+.help_text{
     padding-top: 2pt;
     font-family: 'khmerui';
+}
+
+.remove_text {
+    padding-top: 2pt;
+    padding-bottom: 2pt;
+    font-family: 'khmerui';
+    font-weight: bold;
+    font-size: 13pt;
+    
+    width: 40pt;
+    border: 2pt solid #1c1c1c;
+    border-radius: 4pt;
+    margin-top:1pt
 }
 
 .highlighted {

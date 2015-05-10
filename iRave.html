@@ -238,8 +238,19 @@
                             </div>
 
                             <!-- ir para: pretende remover o joao? -->
-      
-                            <div id="queroRemoverQuem" onclick="removerAmigo();amigos();return false;" class="menu_entrada">
+                              
+                              <div class='remove_screen' style='height:60pt'>
+                                <div class='remove_title'>Remover Amigo?</div>
+                                    <div style="height:7pt;width:1pt;"></div>
+                                    <div id="queroRemoverQuem" onclick="removerAmigo();amigos();return false;">
+                                        <p class='remove_text' style='margin-left:3%;float:left'>Sim</p>
+                                    </div>
+                                    <div onclick="prev();return false;">
+                                        <p class='remove_text' style='margin-right:3%;float:right'>Não</p>
+                                    </div>
+                                </div>
+                              
+                            <div  onclick="removePrompt();return false;" class="menu_entrada">
                                 <img src="img/Agenda.png " class="imgEntrada "> Remover
                             </div>
 
