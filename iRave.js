@@ -446,7 +446,7 @@ var nome_Titulos = ["Menu",
     "<img src='img/euro_1.png' class='imgTitulo'> Merchandising",    //16
     "<img src='img/Agenda.png' class='imgTitulo'> Horário",          //17
     "<img src='img/pointer.png' class='imgTitulo'> Encontros",       //18 antes 21
-    "<img src='img/pointer.png' class='imgTitulo'> Histórico",       //19 antes 22 AINDA NAO HA ICON !!!!
+    "<img src='img/euro.png' class='imgTitulo'> Histórico",       //19 antes 22 AINDA NAO HA ICON !!!!
     "<img src='img/cartaz.png' class='imgTitulo'> nooope",           //20
     "<img src='img/cartaz.png' class='imgTitulo'> Cartaz",           //21 antes18
         "<img src='img/cartaz.png' class='imgTitulo'> Cartaz",        //22
@@ -843,7 +843,7 @@ function toggleHandsFree() {
     if (hf_on == 0) {
         hf_on = 1;
         $('.hf_inactivos').css('display', "none");
-        $("#mao_livre").html("<p>Toque para desactivar o modo mãos livres.");
+        $("#mao_livre").html("<p>Toque para <br> desactivar o modo mãos livres.");
     }
     else {
         hf_on = 0;
@@ -881,7 +881,7 @@ function historico(){
     if (totalComprado === 0)
         return;
     
-    $("#listaHistoricoCompras").html("Total Gasto: " + totalComprado + "€");
+    $("#listaHistoricoCompras").html("Total Gasto: " + totalComprado + "€ <div style='height:3pt;width:1pt;'></div>");
     for (var i = 0; i < itemsComprados.length; i++) {
         $("#listaHistoricoCompras").append(itemsComprados[i]);
     }
@@ -905,6 +905,7 @@ function comida() {
         }
 
     });
+    
     
 }
 
@@ -949,7 +950,7 @@ function continuarCompra() {
         return false;
 
     valorCompra = value;
-    $(".exchangeCompra").html("Total Pedido: " + value + "€");
+    $(".exchangeCompra").html("Total Pedido: " + value + "€ <div style='height:3pt;width:1pt;'>");
 
     for (var i = 0; i < itemsCompra.length; i++) {
         $(".exchangeCompra").append(itemsCompra[i]);
