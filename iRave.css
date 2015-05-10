@@ -145,18 +145,46 @@
     
 #cartazPLS{
     background:#D70;
-    font-size:16pt;
+    font-size:14pt;
+
 }
      
-.img_cartaz{
+.img_cartazNext{
 	height: 12pt;
 	width: 12pt;
-	
+	z-index:999;
+	position:absolute;
+
+    top: 2.5pt;
+    left: 78pt;
+
 	display: inline-block;
     //vertical-align: middle;
+    
+}
+
+.img_cartazPrev{
+	height: 12pt;
+	width: 12pt;
+	z-index:999;
+	position:absolute;
+
+    top: 2.5pt;
+    left: 10pt;
+
+	display: inline-block;
+    //vertical-align: middle;
+    
+}
+
+.theSpecialEntrada{
+    //height:36px;
+    
 }
     
 .entrada_cartaz{
+    //height:px;
+    
     font-size:9.45pt;
     text-align: center;
     border: 0.75pt solid #e8e8e8;
@@ -388,6 +416,7 @@ a {
     font-size: 8.25pt;
     color: #f5f5f5;
 }
+
 
 
 .imgEntrada

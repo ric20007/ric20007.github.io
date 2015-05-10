@@ -22,11 +22,10 @@
 
     <div id='botoes'>
 
-        <div id='bot_back' class="shinybot" onclick="prev();return false;"> </div>
-        <div id='bot_ajuda' class="shinybot" onclick="help();return false;"> </div>
-        <div id='bot_menu' class="shinybot" onclick="goToMenu();return false;"> </div>
+        <div id='bot_back' onclick="prev();return false;"> </div>
+        <div id='bot_ajuda' onclick="help();return false;"> </div>
+        <div id='bot_menu' onclick="goToMenu();return false;"> </div>
         <!--
-		V1313
         <div id='conter_mapaTOP' class="Class_conter_mapa" >TT </div>
         <div id='conter_mapaBOT' class="Class_conter_mapa" >BB </div>
         <div id='conter_mapaLEFT' class="Class_conter_mapa" >LEFT </div>
@@ -53,12 +52,17 @@
             <div class='hf_directions hf_botl' style="height:4pt;width:13pt;top:68pt;left:-105pt;transform:rotate(-45deg)"></div>
             <img src="img/hf_arrows/gesto_navegar_mapa.png" class="botaoHandsFree" style="top: 50%;transform: translate(-150%, -50%);">
         </div>
+        
+        <div class='hf_inactivos' style='transform: translate(-150%, 100%);'></div>
+        <div onclick="cartaz();return false;">
+            <img src="img/gesto_abrir_cartaz.png" class="botaoHandsFree" style="top: 50%;transform: translate(-150%, 100%);">
+        </div>
         <!-- end botoes maos livres -->
         
         <!-- encostar iRave  -->
-        <div id='botao_encostar_inact' style='transform: translate(-150%, 100%);'></div>
+        <div id='botao_encostar_inact' style='transform: translate(-150%, 250%);'></div>
         <div>
-            <img src="img/encostar.png" id="botao_encostar" style="top: 50%;transform: translate(-150%, 100%);">
+            <img src="img/encostar.png" id="botao_encostar" style="top: 50%;transform: translate(-150%, 250%);">
         </div>
         <!-- end encostar iRave  -->
         
@@ -349,7 +353,7 @@
                         <!-- 12 mapa -->
                         <div class='swiper-slide'>
                             
-                            <div class='help_screen help_drag' style='height:124pt;'>
+                            <div class='help_screen help_drag' style='height:187pt;margin-left:-3pt;'>
                                 <div class='help_title'>Ajuda<img src='img/question_mark_white2.png' style="width:10pt;height:10pt;margin-left:2pt;"></div>
                                     <div style="height:2pt;width:1pt;"></div>
                                     <b>Legenda:</b> <br>
@@ -357,11 +361,14 @@
                                     <img src='img/user.png' style="width:10pt;height:10pt;"> Eu <br>
                                     <img src='img/user_male.png' style="width:10pt;height:10pt;">
                                     <img src='img/user_female.png' style="width:10pt;height:10pt;"> Amigos <br>
-                                    <img src='img/foods.png' style="width:10pt;height:10pt;"> Comes/bebes <br>
-                                    <img src='img/merch.png' style="width:10pt;height:10pt;"> Merchandising <br>
+                                    <img src='img/foods.png' style="width:12pt;height:12pt;"> Comes/bebes <br>
+                                    <img src='img/merch.png' style="width:12pt;height:12pt;"> Merchandising <br>
                                     <div style="height:2pt;width:1pt;"></div>
-                                    <img src='img/wc.png' style="width:10pt;height:10pt;"> WC <br>
+                                    <img src='img/wc.png' style="width:12pt;height:12pt;"> WC <br>
                                     <img src='img/p1.png' style="width:12pt;height:12pt;"> Palcos <br>
+                                    <img src='img/wc-fila-male.png' style="width:23pt;height:14pt;"> Fila para WC masculino <br>
+                                    <img src='img/wc-fila-female.png' style="width:23pt;height:14pt;"> Fila para WC feminino <br>
+                                    
                             </div>
                             
                             <div id='mapa_containment'></div>
@@ -398,8 +405,23 @@
                             
                         </div>
 
-                        <!-- 13 tocar para activar hands-free -->
+                        <!-- 13 hands-free -->
                         <div class="swiper-slide joao_add_amigos" >
+                            
+                            <div class='help_screen help_drag' style='height:210pt;margin-left:-3pt;'>
+                                <div class='help_title'>Mãos Livres<img src='img/hands-free.png' style="width:10pt;height:10pt;margin-left:2pt;"></div>
+                                    <div style="height:2pt;width:1pt;"></div>
+                                    <b>Legenda:</b> <br>
+                                    <div style="height:6pt;width:1pt;"></div>
+                                    <img src='img/gesto_abrir_mapa.png' style="border:1pt solid black;border-radius:4pt;width:45pt;height:25pt;"><br>Abrir mapa<br>
+                                    <div style="height:10pt;width:1pt;"></div>
+                                    <img src='img/gesto_abrir_cartaz.png' style="border:1pt solid black;border-radius:4pt;width:45pt;height:25pt;"><br>Abrir cartaz<br>
+                                    <div style="height:10pt;width:1pt;"></div>
+                                    <img src='img/hf_arrows/gesto_navegar_mapa_cross.png' style="border:1pt solid black;border-radius:4pt;width:50pt;height:25pt;"><br>O indicador move o mapa e o cartaz<br>
+                                    
+                                    
+                            </div>
+                            
                             <div id='mao_livre'>
                                 <p>Toque para activar o modo mãos livres! 
                              </div>                
@@ -492,12 +514,12 @@
 
                             <div id='horario'></div>
 
-                            <div onclick=" cartaz(); return false;" class="menu_entrada">
-                                <img src="img/cartaz.png " class="imgEntrada "> Cartaz
+                            <div onclick=" cartaz(); return false;" class="menu_entrada swiper-slide" style='height:25pt'>
+                                <img src="img/cartaz.png " class="imgEntrada"> &nbsp; Cartaz
                             </div>
 
-                            <div onclick="encontros();return false;" class="menu_entrada">
-                                <img src="img/pointer.png " class="imgEntrada "> Encontros
+                            <div onclick="encontros();return false;" class="menu_entrada swiper-slide" style='height:25pt'>
+                                <img src="img/pointer.png " class="imgEntrada" style="width:8pt"> &nbsp; Encontros
                             </div>
                         </div>
 
@@ -541,109 +563,145 @@
                         <!-- 20 algo -->
                         <div class="swiper-slide placeholder">Horizontal Slide 4</div>
                         
-                        <!-- 21 cartaz -->
-                        <div class="swiper-slide" style="position:absolute; height:1.5in">
+                        
+                         <!-- dia 1 = 20 + dia -->
+                        <div class="swiper-slide">
                             
-                            <div>
-                                <div class="swiper-container swiper-container-hCartaz">
-                                    
-                                    <div class="swiper-wrapper">
-                            
-                             <img id='cartaz-previous' onclick="cartazPrevious(); return false;" src="img/previous.png" class="img_cartaz" style="position:absolute; visibility:hidden;">
-                                <img id='cartaz-next' onclick="cartazNext(); return false;" src="img/next.png" class="img_cartaz" style="position:absolute">
-                            
-                                        <!-- dia 1  -->
-                                        <div class="swiper-slide">
-                                            <div class="swiper-container swiper-container-vCartaz ">
-                                                <div class="swiper-wrapper" >
-                                                    
-                                                    <div class="swiper-slide"></div>
-                                                    <div  class="swiper-slide entrada_cartaz" id="cartazPLS" >
-                                                        <div id='cartaz-dia'>&nbsp; &nbsp; Dia 1 &nbsp; &nbsp;
-             
-                                                        </div>
-      
-                                                    </div>
-
-                
-                                                    <div onclick="goToP1();return false;" class="swiper-slide  entrada_cartaz" >
-                                                        16:00 Os Rui - P.1 
-                                                    </div>
-                
-                                                    <div onclick="goToP2();return false;" class="swiper-slide entrada_cartaz">
-                                                       16:00 Os Outros - P.2 
-                                                    </div>
-                
-                                                    <div onclick="goToP1();return false;" class="swiper-slide entrada_cartaz" >
-                                                       19:00 Megue Leve - P.1
-                                                    </div>
-                
-                                                    <div class="swiper-slide"></div>
-                
-                                                </div>
-                
-                                                <div class="swiper-pagination swiper-pagination-vCartaz"></div>
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- dia 2  -->
-                                        <div class="swiper-slide">
-                                            <div class="swiper-container swiper-container-vCartaz ">
-                                                <div class="swiper-wrapper">
-                                                    
-                
-                                                    <div onclick="goToP2();return false;" class="swiper-slide  entrada_cartaz">
-                                                         11:00 Os Tapa-Cartaz - P.2
-                                                    </div>
-                
-                                                    <div onclick="goToP1();return false;" class="swiper-slide entrada_cartaz">
-                                                         19:00 Encore ft. Mais Uma - P.1
-                                                    </div>
-                
-                                                    <div onclick="goToP2();return false;" class="swiper-slide entrada_cartaz" >
-                                                         22:00 Desku - P.2
-                                                    </div>
-                
-                                                    <div class="swiper-slide"></div>
-                
-                                                </div>
-                
-                                                <div class="swiper-pagination swiper-pagination-vCartaz"></div>
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- dia 3  -->
-                                        <div class="swiper-slide">
-                                            <div class="swiper-container swiper-container-vCartaz " >
-                                                <div class="swiper-wrapper">
-                                                    
-                
-                                                    <div onclick="goToP1();return false;" class="swiper-slide  entrada_cartaz">
-                                                       9:00 Os Fidelizados - P.1
-                                                    </div>
-                
-                                                    <div onclick="goToP2();return false;" class="swiper-slide entrada_cartaz">
-                                                       9:00 Os Rescisão - P.2
-                                                    </div>
-                
-                                                    <div onclick="goToP1();return false;" class="swiper-slide entrada_cartaz" >
-                                                        13:00 Mais que Muitos - P.1
-                                                    </div>
-                
-                                                    <div class="swiper-slide"></div>
-                
-                                                </div>
-                
-                                                <div class="swiper-pagination swiper-pagination-vCartaz"></div>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
+                            <div class="swiper-container swiper-container-vCartaz" style='margin-left: -0.45pt;'>
                                 
+                                   
+                                <div class="swiper-wrapper" >
+                                    
+                                     <div id="cartazPLS" class="entrada_cartaz" >
+                                                                
+                                        <img id='cartaz-previous' onclick="cartazPrevious();return false;" src="img/previous.png" class="img_cartazPrev" style="float:left;visibility:hidden;">
+                                        
+                                        <div id='cartaz-dia'>
+                                            &nbsp; &nbsp; Dia 1 &nbsp; &nbsp;
+                                        </div>
+                                        
+                                        <img id='cartaz-next' onclick="cartazNext();return false;" src="img/next.png" class="img_cartazNext" style="float:right">
+            
+                                        
+                                     </div>
+                                    
+                                    
+
+                                    <div onclick="goToP1();return false;" class="swiper-slide entrada_cartaz" >
+                                        16h00 <p>&nbsp; &nbsp;</p> Os Rui - P.1 
+                                    </div>
+
+                                    <div onclick="goToP2();return false;" class="swiper-slide entrada_cartaz">
+                                       16h00 <p>&nbsp; &nbsp;</p> Os Outros - P.2 
+                                    </div>
+
+                                    <div onclick="goToP1();return false;" class="swiper-slide entrada_cartaz theSpecialEntrada">
+                                       19h00 <br> Megue Leve - P.1
+                                    </div>
+                                    
+                                    
+                                    <div class="swiper-slide entrada_cartaz"> </div>
+                                    <div class="swiper-slide entrada_cartaz"> </div>
+                                    <div class="swiper-slide entrada_cartaz"> </div>
+                                    
+                                    
+                                    
+                           
+
+                                </div>
+
+                                <div class="swiper-pagination swiper-pagination-vCartaz"></div>
                             </div>
-                            
                         </div>
+                        
+                        <!-- dia 2  -->
+                        <div class="swiper-slide">
+                            <div class="swiper-container swiper-container-vCartaz" style='margin-left: -0.8pt;'>
+                                <div class="swiper-wrapper">
+                                    
+                                    <div id="cartazPLS" class="entrada_cartaz" >
+                                                                
+                                        <img id='cartaz-previous' onclick="cartazPrevious(); return false;" src="img/previous.png" class="img_cartazPrev" style="float:left">
+                                        
+                                        <div id='cartaz-dia'>
+                                            &nbsp; &nbsp; Dia 2 &nbsp; &nbsp;
+                                        </div>
+                                        
+                                        <img id='cartaz-next' onclick="cartazNext(); return false;" src="img/next.png" class="img_cartazNext" style="float:right">
+            
+                                        
+                                     </div>
+                                    
+
+                                    <div onclick="goToP2();return false;" class="swiper-slide  entrada_cartaz">
+                                         11h00 <p>&nbsp; &nbsp;</p> Os Tapa-Cartaz - P.2
+                                    </div>
+
+                                    <div onclick="goToP1();return false;" class="swiper-slide entrada_cartaz">
+                                         19h00 <p>&nbsp; &nbsp;</p> Encore ft. Mais Uma - P.1
+                                    </div>
+
+                                    <div onclick="goToP2();return false;" class="swiper-slide entrada_cartaz" >
+                                         22h00 <p>&nbsp; &nbsp;</p> Desku - P.2
+                                    </div>
+
+                                    <div class="swiper-slide entrada_cartaz"> </div>
+                                    <div class="swiper-slide entrada_cartaz"> </div>
+                                    <div class="swiper-slide entrada_cartaz"> </div>
+                                    
+                                    
+
+                                </div>
+
+                                <div class="swiper-pagination swiper-pagination-vCartaz"></div>
+                            </div>
+                        </div>
+                        
+                        
+                        <!-- dia 3  -->
+                        <div class="swiper-slide">
+                            <div class="swiper-container swiper-container-vCartaz" style='margin-left: -0.5pt;'>
+                                <div class="swiper-wrapper">
+                                    
+                                    <div id="cartazPLS" class="entrada_cartaz" >
+                                                                
+                                        <img id='cartaz-previous' onclick="cartazPrevious(); return false;" src="img/previous.png" class="img_cartazPrev" style="float:left;">
+                                        
+                                        <div id='cartaz-dia'>
+                                            &nbsp; &nbsp; Dia 3 &nbsp; &nbsp;
+                                        </div>
+                                        
+                                        <img id='cartaz-next' onclick="cartazNext(); return false;" src="img/next.png" class="img_cartazNext" style="float:right;visibility:hidden;">
+            
+                                        
+                                     </div>
+                                    
+
+                                    <div onclick="goToP1();return false;" class="swiper-slide  entrada_cartaz">
+                                       9h00<p>&nbsp; &nbsp;</p> Fidelizados - P.1
+                                    </div>
+
+                                    <div onclick="goToP2();return false;" class="swiper-slide entrada_cartaz">
+                                       9h00 <p>&nbsp; &nbsp;</p> Os Rescisão - P.2
+                                    </div>
+
+                                    <div onclick="goToP1();return false;" class="swiper-slide entrada_cartaz" >
+                                        13h00 <p>&nbsp; &nbsp;</p> Mais que Muitos - P.1
+                                    </div>
+
+                                    <div class="swiper-slide entrada_cartaz"> </div>
+                                    <div class="swiper-slide entrada_cartaz"> </div>
+                                    <div class="swiper-slide entrada_cartaz"> </div>
+                                    
+                                    
+
+                                </div>
+
+                                <div class="swiper-pagination swiper-pagination-vCartaz"></div>
+                            </div>
+                        </div>
+                        
+                    
 
                         <div class="swiper-slide">Horizontal Slide 4</div>
                     </div>

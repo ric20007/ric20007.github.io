@@ -3,6 +3,9 @@ var swiperH,
     swiperV2,
     swiperVProcurar,
     swiperVCartaz,
+    swiperV3,
+    swiperVCartaz,
+    swiperVAmigos,
     valorCompra = 0,
     totalComprado =0;
     
@@ -34,7 +37,11 @@ var pessoas = [new pessoa("Carlos"),
                 
 var amigosAdicionados = [];
 
-    
+var cartazOn = 0;
+
+
+
+
 
 $(document).ready(function() {
 
@@ -49,7 +56,7 @@ $(document).ready(function() {
     });
 
 
-
+        
     swiperH = new Swiper('.swiper-container-h', {
         onlyExternal: true,
         //setWrapperSize:true
@@ -109,8 +116,8 @@ $(document).ready(function() {
         pagination: '.swiper-pagination-vCartaz',
         paginationClickable: true,
         direction: 'vertical',
-        slidesPerView: 4,
-        slidesPerScroll: 2,
+        slidesPerView: 8,
+        slidesPerScroll: 3,
 
         freeMode: true,
         freeModeMomentum: false
@@ -131,9 +138,15 @@ $(document).ready(function() {
         onlyExternal: true,
         //setWrapperSize:true
     });
-
-
+    
     elSlides = swiperH.slides;
+    
+    
+    
+    
+
+
+    
 
     /* mapa e derivados */
     /*
@@ -153,16 +166,7 @@ $(document).ready(function() {
     //  O CRIME:     \$('#mapa').draggable({  ILLEGAL!!!!!
     $('#mapa').draggable({
         stop: function() {
-            var centerY = $('#botoes').offset().top;
-            var centerX = $('#botoes').offset().left;
-            
-            var mapaY = $('#imgMapa').offset().top;
-            var mapaX = $('#imgMapa').offset().left;
-            var mapaW = $('#imgMapa').width();
-            var mapaH = $('#imgMapa').height();
-            
-            if (mapaX > centerX) { $('#mapa').css('top',(mapaX-centerX)+'pt'); }
-            if (mapaX+mapaW < centerX) { $('#mapa').css('top',(mapaX-centerX)+'pt'); }
+            checkBorders()
         }
     });
     
@@ -208,50 +212,81 @@ $(document).ready(function() {
     
     $('.hf_top').hover(function() {
         $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_top.png');
-        $(this).click(function() { $('#mapa').animate({top:'+=8'}, 100 ); });
+        $(this).click(function() { 
+            $('#mapa').animate({top:'+=8'}, 100 ); 
+            checkBorders();
+        });
     }, function() {
         $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
     });
     
     $('.hf_bot').hover(function() {
         $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_bot.png');
-        $(this).click(function() { $('#mapa').animate({top:'-=8'}, 100 ); });
+        $(this).click(function() { 
+            $('#mapa').animate({top:'-=8'}, 100 ); 
+            checkBorders();
+        });
     }, function() {
         $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
     });
     $('.hf_right').hover(function() {
         $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_right.png');
-        $(this).click(function() { $('#mapa').animate({left:'-=8'}, 100 ); });
+        $(this).click(function() { 
+            if (cartazOn) { cartazNext(); }
+            else { 
+                $('#mapa').animate({left:'-=8'}, 100 ); 
+                checkBorders();
+            }
+        });
+        
     }, function() {
         $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
     });
     $('.hf_left').hover(function() {
-        $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_left.png');
-        $(this).click(function() { $('#mapa').animate({left:'+=8'}, 100 ); });
+            $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_left.png');
+            $(this).click(function() { 
+                if (cartazOn) { cartazPrevious();}
+                else {
+                    $('#mapa').animate({left:'+=8'}, 100 ); 
+                    checkBorders();
+                }
+            });
     }, function() {
         $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
     });
     $('.hf_topr').hover(function() {
         $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_topr.png');
-        $(this).click(function() { $('#mapa').animate({top:'+=8', left:'-=8'}, 100 ); });
+        $(this).click(function() { 
+            $('#mapa').animate({top:'+=8', left:'-=8'}, 100 ); 
+            checkBorders();            
+        });
     }, function() {
         $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
     });
     $('.hf_botr').hover(function() {
         $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_botr.png');
-        $(this).click(function() { $('#mapa').animate({top:'-=8', left:'-=8'}, 100 ); });
+        $(this).click(function() { 
+            $('#mapa').animate({top:'-=8', left:'-=8'}, 100 ); 
+            checkBorders();
+        });
     }, function() {
         $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
     });
     $('.hf_topl').hover(function() {
         $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_topl.png');
-        $(this).click(function() { $('#mapa').animate({top:'+=8', left:'+=8'}, 100 ); });
+        $(this).click(function() { 
+            $('#mapa').animate({top:'+=8', left:'+=8'}, 100 ); 
+            checkBorders();    
+        });
     }, function() {
         $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
     });
     $('.hf_botl').hover(function() {
         $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa_botl.png');
-        $(this).click(function() { $('#mapa').animate({top:'-=8', left:'+=8'}, 100 ); });
+        $(this).click(function() { 
+            $('#mapa').animate({top:'-=8', left:'+=8'}, 100 ); 
+            checkBorders();
+        });
     }, function() {
         $(".map_nav > img").attr('src', 'img/hf_arrows/gesto_navegar_mapa.png');
     });
@@ -320,6 +355,10 @@ $(document).ready(function() {
         }, 200);
         
     });
+    
+    
+    
+
 
 
 
@@ -346,6 +385,7 @@ $(document).ready(function() {
 });
 
 
+
 var cartazTitulo = ["&nbsp; &nbsp; Dia 1 &nbsp; &nbsp;", 
                     "&nbsp; &nbsp; Dia 2 &nbsp; &nbsp;", 
                     "&nbsp; &nbsp; Dia 3 &nbsp; &nbsp;"];
@@ -363,7 +403,7 @@ var nome_Titulos = ["Menu",
     "<img src='img/foods.png' class='imgTitulo'> Comes/Bebes",       //10
     "<img src='img/foods.png' class='imgTitulo'> Comes/Bebes",       //11
     "<img src='img/map-2.png' class='imgTitulo'> Mapa",              //12
-    "<img src='img/hands-free.png' class='imgTitulo'> Mãos Livre",   //13
+    "<img src='img/hands-free.png' class='imgTitulo'> Mãos Livres",   //13
     "<img src='img/euro_1.png' class='imgTitulo'> Merchandising",    //14
     "<img src='img/euro_1.png' class='imgTitulo'> Merchandising",    //15
     "<img src='img/euro_1.png' class='imgTitulo'> Merchandising",    //16
@@ -372,15 +412,16 @@ var nome_Titulos = ["Menu",
     "<img src='img/pointer.png' class='imgTitulo'> Histórico",       //19 antes 22 AINDA NAO HA ICON !!!!
     "<img src='img/cartaz.png' class='imgTitulo'> nooope",           //20
     "<img src='img/cartaz.png' class='imgTitulo'> Cartaz",           //21 antes18
-        "<img src='img/cartaz.png' class='imgTitulo'> nooope"        //22
+        "<img src='img/cartaz.png' class='imgTitulo'> Cartaz",        //22
+            "<img src='img/cartaz.png' class='imgTitulo'> Cartaz"        //23
     
 ];
 
-//                0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22       
-var help_ecras = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0];
+//                0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23     
+var help_ecras = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 0];
 
-//              0  1   2  3  4   5   6  7  8   9  10  11   12  13   14  15  16  17  18  19     21  22       
-var prevEcra = [0, 0, -1, 2, 5, -1, -1, 6, 0, -1,  9,  8,  -1,  0,  -1, 14,  8,  0, -1,  1, 0, -1,  1];
+//              0  1   2  3  4   5   6  7  8   9  10  11   12  13   14  15  16  17  18  19     21  22  23    
+var prevEcra = [0, 0, -1, 2, 5, -1, -1, 6, 0, -1,  9,  8,  -1,  0,  -1, 14,  8,  0, -1,  1, 0, -1,  21, 22];
 
 
 var current_i = 0;
@@ -437,19 +478,36 @@ function prev() {
 function next() {
 
     if (current_i < nome_Titulos.length - 1) {
-
         goToSlide(current_i + 1);
-
     }
 
 }
+
+function checkBorders(){
+    var centerX = $('#botoes').offset().left + ($('#botoes').width()/2);
+    var centerY = $('#botoes').offset().top + ($('#botoes').height()/2);
+    
+    var mapaX = $('#imgMapa').offset().left;
+    var mapaY = $('#imgMapa').offset().top;
+    var mapaW = $('#imgMapa').width();
+    var mapaH = $('#imgMapa').height();
+    
+    //left border
+    if (mapaX > centerX) { $('#mapa').animate({left: '-='+(10+mapaX-centerX)+'pt'}, 100);}
+    //right border
+    if (mapaX + mapaW < centerX) { $('#mapa').animate({left: '+='+(10+centerX-(mapaX+mapaW))+'pt'}, 100);}
+    //top border
+    if (mapaY > centerY) { $('#mapa').animate({top: '+='+(10+centerY-mapaY)+'pt'}, 100);}
+    //bottom border
+    if (mapaY + mapaH < centerY) { $('#mapa').animate({top: '+='+(20+centerY-(mapaY+mapaH))+'pt'}, 100);}
+}
+
 
 function goToSlide(i) {
 
     // se tentar mudar para o mesmo ecra
     if (current_i == i)
         return false;
-        
         
 
     // clean button
@@ -468,13 +526,17 @@ function goToSlide(i) {
     if (current_i === 2) $('#botao_encostar_inact').css('display','inline');
     if (i ===2) $('#botao_encostar_inact').css('display','none');
     
- 
+    //casos de hands-free no cartaz
+    if (current_i == 21 || current_i == 22 || current_i == 23) { cartazOn = 0; }
+    if (i == 21 || i == 22 || i == 23) { cartazOn = 1; }
+    
     if (i >= 0 && i <= nome_Titulos.length - 1) {
         
         prevStack.push(current_i);
         
-        if(i===9)
+        if(i===9 || i ===14)
             $("#botContinuar").css("display", "block");
+        
         
          // esconder slides que nao estao active
         for (var j = 0; j < elSlides.length; j++) {
@@ -563,6 +625,9 @@ function adicionarAmigo(_index) {
                             
     
     console.log(prevStack);
+    prevStack.pop();
+    console.log(prevStack);
+    
     next();
     console.log(prevStack);
     
@@ -573,6 +638,16 @@ function adicionarAmigo(_index) {
     
     
      
+}
+
+function actualizarListaAmigos(){
+         $("#lista_joao").html("");
+        $.each( amigosAdicionados, function( i, pess ){
+            //console.log( "Index #" + i + ": " + pess.nome );
+            $("#lista_joao").append("<div class='swiper-slide menu_entrada' onclick='goToOpcoesAmigo("+pess.index+");return false;'>"
+                                        + imgUserAmigo + pess.nome + (pess.isProtected == 1 ? imgShieldAmigo : "") +
+                                    "</div>");
+        });
 }
 
 function removerAmigo(_index) {
@@ -596,13 +671,7 @@ function removerAmigo(_index) {
      if (amigosAdicionados.length == 0)
         $("#lista_joao").html("<p style=\"text-align:center\" >Não tem amigos");
     else{
-        $("#lista_joao").html("");
-        $.each( amigosAdicionados, function( i, pess ){
-            //console.log( "Index #" + i + ": " + pess.nome );
-            $("#lista_joao").append("<div class='swiper-slide menu_entrada' onclick='goToOpcoesAmigo("+pess.index+");return false;'>"
-                                        + imgUserAmigo + pess.nome + (pess.isProtected == 1 ? imgShieldAmigo : "") +
-                                    "</div>");
-        });
+        actualizarListaAmigos();
     }
 }
 
@@ -643,6 +712,8 @@ function toggleProtection(_index) {
     pessoas[_index].isProtected == 0 ? frase ="desp"+frase : frase ="p"+frase+"!";
     frase = pessoas[_index].nome + " foi " + frase;
     $("#protSucesso").html(frase);
+    
+    actualizarListaAmigos();
 
 }
 
@@ -726,7 +797,9 @@ function toggleHandsFree() {
 
 
 function cartaz() {
+    
     goToSlide(21);
+    $(".theSpecialEntrada").css("height","21pt");
 }
 
 
@@ -853,6 +926,8 @@ function efectuarCompra() {
     });
 
     next();
+    prevStack.pop();
+    prevStack.pop();
 }
 
 
@@ -886,7 +961,7 @@ function cartazNext() {
         }
         dia++;
         $("#cartaz-dia").html(cartazTitulo[dia]);
-        swiperHCartaz.slideTo(dia);
+        goToSlide(21+dia);
     }
 }
 
@@ -899,7 +974,7 @@ function cartazPrevious() {
         }
         dia--;
         $("#cartaz-dia").html(cartazTitulo[dia]);
-        swiperHCartaz.slideTo(dia);
+        goToSlide(21+dia);
     }
 }
 
