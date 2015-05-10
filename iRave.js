@@ -7,6 +7,7 @@ var swiperH,
     swiperVAmigos,
     swiperVComes,
     swiperVMerch,
+    swiperVMerch2,
     swiperVHistorico,
     valorCompra = 0,
     totalComprado =0;
@@ -160,11 +161,11 @@ $(document).ready(function() {
     });
     
     swiperVMerch2 = new Swiper('.swiper-container-vMerch2', {
-        //pagination: '.swiper-pagination-vMerch',
+        pagination: '.swiper-pagination-vMerch2',
 
         direction: 'vertical',
         slidesPerView:3,
-        slidesPerScroll: 1,
+        slidesPerScroll: 2,
 
         freeMode: true,
         freeModeMomentum: false
@@ -193,10 +194,10 @@ $(document).ready(function() {
     for (var i = 0; i < swiperCartaz.length; i++) {
         console.log('.swiper-container-vCartaz'+i);
         swiperCartaz[i] = new Swiper('.swiper-container-vCartaz'+i, {
-                                //pagination: '.swiper-pagination-vMerch',
+                                pagination: '.swiper-pagination-vCartaz'+i,
                                 paginationClickable: true,
                                 direction: 'vertical',
-                                slidesPerView: 3,
+                                slidesPerView: 2,
                                 slidesPerScroll: 1,
                         
                                 freeMode: true,
@@ -295,15 +296,29 @@ $(document).ready(function() {
 	
 	
     var pxAmount = 45;
-    
-    $('.hf_top').click(function() { 
-        $('#mapa').animate({top:'+='+pxAmount}, 100 ); 
-        checkBorders();
+
+    $('.hf_top').click(function() {
+        if (current_i >= 21 && current_i <= 23) {
+            console.log("pah ya up");
+            dia = current_i - 21;
+            swiperCartaz[dia].slidePrev(true, 100);
+        }
+        else {
+            $('#mapa').animate({top:'+='+pxAmount}, 100 ); 
+            checkBorders();
+        }
     });
     
     $('.hf_bot').click(function() {
-        $('#mapa').animate({top:'-='+pxAmount}, 100 ); 
-        checkBorders();
+        if (current_i >= 21 && current_i <= 23) {
+            console.log("pah ya down");
+            dia = current_i - 21;
+            swiperCartaz[dia].slideNext(true, 100);
+        }
+        else{
+            $('#mapa').animate({top:'-='+pxAmount}, 100 ); 
+            checkBorders();
+        }
     });
 
        
@@ -876,12 +891,12 @@ function toggleHandsFree() {
 
 
 function cartaz() {
-    dia = 0;
+    //dia = 0;
     cartazOn==1;
     goToSlide(21);
     
     $('.specialwidth').each(function() {
-        $(this).css("height","21pt");
+        $(this).css("height","25pt");
 
     });
 	$('.helpResize').each(function() {
@@ -979,14 +994,19 @@ function continuarCompra() {
         return false;
 
     valorCompra = value;
-    $(".exchangeCompra").html("Total Pedido: " + value + "€ <div style='height:3pt;width:1pt;'>");
+   // $(".exchangeCompra").html('<div id="cartazPLS">Total Pedido: ' +value + '€</div><div style="height:3pt;width:1pt;">');
+    //swiperVMerch2.appendSlide('<div id="cartazPLS">Total Pedido: ' +value + '€</div><div style="height:3pt;width:1pt;">');
+    $(".exchangeCompra").html("Total Pedido " + value + "€ <div style='height:3pt;width:1pt;'>");
+    
 
     for (var i = 0; i < itemsCompra.length; i++) {
+
         $(".exchangeCompra").append(itemsCompra[i]);
     }
+    
 
-    $(".exchangeCompra").append("<div class='menu_entrada '></div>");
-    $(".exchangeCompra").append("<div class='swiper-slide '></div>");
+    $(".exchangeCompra").append("<div class='swiper-slide menu_entrada'></div>");
+    $(".exchangeCompra").append("<div class='swiper-slide menu_entrada'></div>");
 
     //alert(value);
     //alert(itemsCompra);
