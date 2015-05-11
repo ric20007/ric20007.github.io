@@ -48,6 +48,14 @@ var amigosAdicionados = [];
 
 var cartazOn = 0;
 
+
+var contaClicks =0
+
+$(document).click( function(){
+    contaClicks++;
+    console.log(contaClicks);
+} );
+
 $(document).ready(function() {
 
     // fix checkbox detect
@@ -115,9 +123,6 @@ $(document).ready(function() {
 
     });
     
-    
-    
-    
     swiperV3 = new Swiper('.swiper-container-v3', {
         pagination: '.swiper-pagination-v3',
 
@@ -153,7 +158,6 @@ $(document).ready(function() {
         freeModeMomentum: false
 
     });
-    
 
     swiperVHistorico = new Swiper('.swiper-container-vHistorico', {
         //pagination: '.swiper-pagination-vMerch',
@@ -218,7 +222,6 @@ $(document).ready(function() {
         }
     });
     
-    
     $('#iconFood').click(function() {
         comida();
     });
@@ -282,7 +285,6 @@ $(document).ready(function() {
         }
     });
 
-       
     $('.hf_right').click(function() { 
         console.log("detected hand move right");
         if (cartazOn) {
@@ -350,18 +352,6 @@ $(document).ready(function() {
         checkbox.prop('checked', alerte);
     });
 
-    /*
-    $('ul.list > li').click(function() {
-
-        var _that = $(this);
-        $(this).addClass('highlighted');
-        setTimeout(function() {
-            _that.removeClass('highlighted');
-        }, 200);
-        
-    });
-    */
-    
     //add highlight no menu
     $('.menu_entrada').click(function() {
        
@@ -414,10 +404,7 @@ $(document).ready(function() {
     }
     startTime();
 
-
-
 });
-
 
 var nome_Titulos = ["Menu",
     "<img src='img/user1.png' class='imgTitulo'> Perfil",             //1
@@ -428,21 +415,21 @@ var nome_Titulos = ["Menu",
     "<img src='img/user1.png' class='imgTitulo'> João",               //6
     "<img src='img/shield.png' class='imgTitulo'> Proteção",          //7
     "<img src='img/active-search.png' class='imgTitulo'> Procurar",   //8
-    "<img src='img/foods.png' class='imgTitulo'> Comes/Bebes",        //9
-    "<img src='img/foods.png' class='imgTitulo'> Comes/Bebes",       //10
-    "<img src='img/foods.png' class='imgTitulo'> Comes/Bebes",       //11
+    "<img src='img/foods.png' class='imgTitulo'> Restaurante",        //9
+    "<img src='img/foods.png' class='imgTitulo'> Restaurante",       //10
+    "<img src='img/foods.png' class='imgTitulo'> Restaurante",       //11
     "<img src='img/map-2.png' class='imgTitulo'> Mapa",              //12
-    "<img src='img/hands-free.png' class='imgTitulo'> Mãos Livres",   //13
-    "<img src='img/merch.png' class='imgTitulo'> Merchandising",    //14
-    "<img src='img/merch.png' class='imgTitulo'> Merchandising",    //15
-    "<img src='img/merch.png' class='imgTitulo'> Merchandising",    //16
+    "<img src='img/hands-free.png' class='imgTitulo'> Mãos Livres",  //13
+    "<img src='img/merch.png' class='imgTitulo'> Souvenires",        //14
+    "<img src='img/merch.png' class='imgTitulo'> Souvenires",        //15
+    "<img src='img/merch.png' class='imgTitulo'> Souvenires",        //16
     "<img src='img/Agenda.png' class='imgTitulo'> Horário",          //17
-    "<img src='img/pointer.png' class='imgTitulo'> Encontros",       //18 antes 21
-    "<img src='img/euro.png' class='imgTitulo'> Histórico",       //19 antes 22 AINDA NAO HA ICON !!!!
-    "<img src='img/cartaz.png' class='imgTitulo'> nooope",           //20
-    "<img src='img/cartaz.png' class='imgTitulo'> Cartaz",           //21 antes18
-        "<img src='img/cartaz.png' class='imgTitulo'> Cartaz",        //22
-            "<img src='img/cartaz.png' class='imgTitulo'> Cartaz"        //23
+    "<img src='img/pointer.png' class='imgTitulo'> Encontros",       //18 
+    "<img src='img/euro.png' class='imgTitulo'> Histórico",          //19
+    "<img src='img/cartaz.png' class='imgTitulo'> Titulo",           //20
+    "<img src='img/cartaz.png' class='imgTitulo'> Cartaz",           //21
+    "<img src='img/cartaz.png' class='imgTitulo'> Cartaz",           //22
+    "<img src='img/cartaz.png' class='imgTitulo'> Cartaz"            //23
     
 ];
 
@@ -496,7 +483,6 @@ function prev() {
                     prev();
             }
             
-                
         }
     } 
     else {
@@ -568,7 +554,7 @@ function goToSlide(i) {
    
     if (i >= 0 && i <= nome_Titulos.length - 1) {
         
-         //casos de hands-free no cartaz
+        //casos de hands-free no cartaz
         if (current_i == 21 && !(i >= 21 && i <= 23)) {
             cartazOn = 0;
             console.log("not cartaz!");
@@ -583,12 +569,10 @@ function goToSlide(i) {
         }
         
         //esconder wcFila
-        
         if (current_i == 12) {
             $('#wcFila').css('display', 'none');
             wcFilaToggle = 0;
         }
-        
         
         prevStack.push(current_i);
         
@@ -667,7 +651,7 @@ function actualizarListaAmigos(){
     else
         $("#bot_add_amigo_pergunta").css("display","block");
     
-    
+    // mostrar protegidos primeiro
     $("#lista_joao").html("");
     $.each( pessoas, function( i, pess ){
         if (pess.isAdded && pess.isProtected){
@@ -705,21 +689,9 @@ function adicionarAmigo(_index) {
     //mostrar icone do amigo no mapa
     var nomeTemp = (pess.nome == "João" ? "Joao" : pess.nome);
     $('#icon'+nomeTemp).css('display', 'inline');
-    
-    /*
-    if (amigosAdicionados.length == 1)
-        $("#lista_joao").html("");
-        
-    console.log( "Index #" + _index + ": " + pess.nome );
-    $("#lista_joao").append("<div class='swiper-slide menu_entrada' onclick='goToOpcoesAmigo("+pess.index+");return false;'>"
-                                + imgUserAmigo + pess.nome + (pess.isProtected == 1 ? imgShieldAmigo : "") +
-                            "</div>");
-                            
-                            */
-                            
+  
     actualizarListaAmigos();
                             
-    
     // pops para controlar o estado da stack
     prevStack.pop();
     next();
@@ -728,7 +700,6 @@ function adicionarAmigo(_index) {
     prevStack.pop();
 
 }
-
 
 
 function removerAmigo(_index) {
@@ -783,7 +754,6 @@ function localizarAmigo(_index){
     mapa();
 }
 
-
 function toggleProtection(_index) {
     var char = pessoas[_index].nome.slice(-1);
     char = (char == "a" ? "a" : "o");
@@ -820,10 +790,6 @@ function goToOpcoesAmigo(_index){
     
     goToSlide(6);
     
-    //era preciso alterar o nome depois porque o goToSlide altera tambem o nome
-    //$("#titulo_menu").html(esteAmigo.nome);
-    
-
 }
 
 
@@ -836,7 +802,6 @@ function amigos() {
     //reescrever a lsita agora é feito no remover e adicionar amigo
 
 }
-
 
 function goToMenu() {
     
@@ -877,7 +842,6 @@ function toggleHandsFree() {
 }
 
 
-
 function cartaz() {
     cartazOn==1;
     goToSlide(21);
@@ -892,13 +856,7 @@ function cartaz() {
 
 }
 
-
-
-
-
 //opcoes do procurar
-
-
 
 function addAmigos() {
     prevEcra[2]=current_i;
@@ -917,7 +875,12 @@ function historico(){
         $("#listaHistoricoCompras").append(itemsComprados[i]);
     }
     
-    
+}
+
+function findComida() {
+    $('#mapa').css('top', '-25pt');
+    $('#mapa').css('left', '-30pt');
+    mapa();
 }
 
 function comida() {
@@ -928,7 +891,7 @@ function comida() {
     $("#botContinuar").css("display", "block");
     
     var checkss = $('input:checkbox[name="compra"]');
-    //uncheck cmidas
+    //uncheck comidas
      checkss.each(function() {
         if ($(this).is(':checked')) {
             var alerte = !$(this).is(':checked');
@@ -937,7 +900,12 @@ function comida() {
 
     });
     
-    
+}
+
+function findMerch() {
+    $('#mapa').css('top', '0pt');
+    $('#mapa').css('left', '-121pt');
+    mapa();
 }
 
 function merch() {
@@ -955,8 +923,6 @@ function continuarCompra() {
         
     itemsCompra=[], valorCompra=0;
     var el = $('input:checkbox[name="compra"]');
-
-
 
     el.each(function() {
         if ($(this).is(':checked')) {
@@ -981,13 +947,9 @@ function continuarCompra() {
         return false;
 
     valorCompra = value;
-   // $(".exchangeCompra").html('<div id="cartazPLS">Total Pedido: ' +value + '€</div><div style="height:3pt;width:1pt;">');
-    //swiperVMerch2.appendSlide('<div id="cartazPLS">Total Pedido: ' +value + '€</div><div style="height:3pt;width:1pt;">');
     $(".exchangeCompra").html("Total Pedido " + value + "€ <div style='height:3pt;width:1pt;'>");
     
-
     for (var i = 0; i < itemsCompra.length; i++) {
-
         $(".exchangeCompra").append(itemsCompra[i]);
     }
     
@@ -995,11 +957,8 @@ function continuarCompra() {
     $(".exchangeCompra").append("<div class='swiper-slide menu_entrada'></div>");
     $(".exchangeCompra").append("<div class='swiper-slide menu_entrada'></div>");
 
-    //alert(value);
-    //alert(itemsCompra);
     $("#botContinuar").css("display", "none");
-    $("#botVoltarConfirmar").css("display", "flex"); // ou flex ?
-
+    $("#botVoltarConfirmar").css("display", "flex");
 
     next();
 
@@ -1038,12 +997,9 @@ function efectuarCompra() {
 }
 
 
-
-
-
 function banho() {
     $('#mapa').css('top', '-90pt');
-    $('#mapa').css('left', '-20pt');
+    $('#mapa').css('left', '-18pt');
     mapa();
 }
 
@@ -1059,7 +1015,6 @@ function goToP2() {
     mapa();
 }
 
-
 function cartazNext() {
     if (current_i >= 21 && current_i < 23) { next(); }
 }
@@ -1071,7 +1026,6 @@ function cartazPrevious() {
 function encontros() {
     goToSlide(18);
 }
-
 
 function hf_mapa() {
     if (hf_on == 1) { mapa(); }
