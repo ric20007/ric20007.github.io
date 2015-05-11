@@ -212,6 +212,8 @@ $(document).ready(function() {
 
     $('#mapa').draggable({
         stop: function() {
+            $('#wcFila').css('display', 'none');
+            wcFilaToggle = 0;
             checkBorders()
         }
     });
@@ -580,6 +582,13 @@ function goToSlide(i) {
             $('.remove_screen').css("display", "none");
         }
         
+        //esconder wcFila
+        
+        if (current_i == 12) {
+            $('#wcFila').css('display', 'none');
+            wcFilaToggle = 0;
+        }
+        
         
         prevStack.push(current_i);
         
@@ -642,6 +651,7 @@ function detectadoAmigo(_index) {
 
 function actualizarListaAmigos(){
     
+    // para o botao de adicionar amigos nao fugir
     if (amigosAdicionados.length >=4){
         $("#plsbegone").css("display","none");
         $(".bot_pergunta_amigo").css("font-size","9pt");
@@ -657,10 +667,18 @@ function actualizarListaAmigos(){
     else
         $("#bot_add_amigo_pergunta").css("display","block");
     
+    
     $("#lista_joao").html("");
     $.each( pessoas, function( i, pess ){
-        //console.log( "Index #" + i + ": " + pess.nome );
-        if (pess.isAdded){
+        if (pess.isAdded && pess.isProtected){
+            $("#lista_joao").append("<div class='swiper-slide menu_entrada' onclick='goToOpcoesAmigo("+pess.index+");return false;'>"
+                                        + imgUserAmigo + pess.nome + (pess.isProtected == 1 ? imgShieldAmigo : "") +
+                                    "</div>");
+        }
+    });
+    
+    $.each( pessoas, function( i, pess ){
+        if (pess.isAdded && !pess.isProtected){
             $("#lista_joao").append("<div class='swiper-slide menu_entrada' onclick='goToOpcoesAmigo("+pess.index+");return false;'>"
                                         + imgUserAmigo + pess.nome + (pess.isProtected == 1 ? imgShieldAmigo : "") +
                                     "</div>");
@@ -743,23 +761,23 @@ function localizarAmigo(_index){
     switch (_index) {
     case 0: //Carlos
         $('#mapa').css('top', '50pt');
-        $('#mapa').css('left', '-123pt');
+        $('#mapa').css('left', '-121pt');
         break;
-    case 1: //Joao
-        $('#mapa').css('top', '-20pt');
-        $('#mapa').css('left', '-90pt');
-        break;
-    case 2: //Joana
-        $('#mapa').css('top', '-18pt');
+    case 1: //Joana
+        $('#mapa').css('top', '-19pt');
         $('#mapa').css('left', '-78pt');
+        break;
+    case 2: //Joao
+        $('#mapa').css('top', '-20pt');
+        $('#mapa').css('left', '-87pt');
         break;
     case 3: //Merio
         $('#mapa').css('top', '-100pt');
-        $('#mapa').css('left', '-30pt');
+        $('#mapa').css('left', '-28pt');
         break;
     case 4: //Rita
         $('#mapa').css('top', '74pt');
-        $('#mapa').css('left', '-22pt');
+        $('#mapa').css('left', '-23pt');
         break;
     }
     mapa();
