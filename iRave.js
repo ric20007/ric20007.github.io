@@ -55,12 +55,12 @@ $(document).ready(function() {
     el.each(function() {
         $(this).on('click', function(event) {
             event.stopPropagation();
-
         });
 
     });
 
     swiperH = new Swiper('.swiper-container-h', {
+        speed: 200,
         onlyExternal: true,
         //setWrapperSize:true
     });
@@ -457,7 +457,7 @@ var hf_on = 0;
 
 var dia = 0;
 
-var prompt = 0;
+var promptRemove = 0;
 
 function mudarNome(i) {
     $("#titulo_menu").html(nome_Titulos[i]);
@@ -466,8 +466,8 @@ function mudarNome(i) {
 function prev() {
     
     // caso se se estar a cancelar um remove amigo
-    if (prompt == 1) {
-        prompt = 0;
+    if (promptRemove == 1) {
+        promptRemove = 0;
         $('.remove_screen').css("display", "none");
         return;
     }
@@ -487,10 +487,13 @@ function prev() {
             prevStack.pop();
             
             //hack para o cartaz regressar de onde veio
-            if(current_i >= 21)
-                prev();
-            if(current_i >= 22)
-                prev();
+            if(!hf_on){
+                if(current_i >= 21)
+                    prev();
+                if(current_i >= 22)
+                    prev();
+            }
+            
                 
         }
     } 
@@ -573,7 +576,7 @@ function goToSlide(i) {
     
         //limpar remove
         if (current_i == 6) {
-            prompt = 0;
+            promptRemove = 0;
             $('.remove_screen').css("display", "none");
         }
         
@@ -858,7 +861,6 @@ function toggleHandsFree() {
 
 
 function cartaz() {
-    //dia = 0;
     cartazOn==1;
     goToSlide(21);
     
@@ -869,7 +871,7 @@ function cartaz() {
 	$('.helpResize').each(function() {
         $(this).css("height","30pt");
     });
-    //$(".theSpecialEntrada").css("height","21pt");
+
 }
 
 
@@ -1042,21 +1044,10 @@ function goToP2() {
 
 function cartazNext() {
     if (current_i >= 21 && current_i < 23) { next(); }
-
-        //goToSlide(21+dia);
-        //next();
-    
 }
 
 function cartazPrevious() {
-    
      if (current_i >= 21 && current_i <= 23) { prev(); }
-     //if (current_i == 21) cartazOn ==0;
-
-        
-        //prevStack.pop();
-        //prevStack.pop();
-    
 }
 
 function encontros() {
@@ -1070,13 +1061,8 @@ function hf_mapa() {
 
 
 function removePrompt() {
-    if (prompt == 0) {
-        prompt = 1;
-        $('.remove_screen').css("display", "inline");
-    }
-    else {
-        
-    }
+    promptRemove = 1;
+    $('.remove_screen').css("display", "inline");
 }
 
 function help() {
