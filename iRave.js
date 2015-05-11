@@ -48,7 +48,6 @@ var amigosAdicionados = [];
 
 var cartazOn = 0;
 
-
 var contaClicks =0
 
 $(document).click( function(){
@@ -591,9 +590,13 @@ function goToSlide(i) {
         
         if (i !== 12) {
             $('#mapa').css("opacity", 0);
+            
         } else {
             $('#mapa').css("opacity", 1);
         }
+        if(i!== 12 || !cartazOn )
+            $('.specialSeta').css('display', "inline");
+        
         
         SpecialthePrev = prevEcra[i];
         if (canChangePrev === 1  && SpecialthePrev === -1) {
@@ -755,17 +758,24 @@ function localizarAmigo(_index){
 }
 
 function toggleProtection(_index) {
-    var char = pessoas[_index].nome.slice(-1);
+    var esteAmigo = pessoas[_index];
+    
+    var char = esteAmigo.nome.slice(-1);
     char = (char == "a" ? "a" : "o");
     
     var frase = "rotegid"+char+" com sucesso";
     
-    pessoas[_index].isProtected = (pessoas[_index].isProtected == 0 ? 1 : 0);
-    pessoas[_index].isProtected == 0 ? frase ="desp"+frase : frase ="p"+frase+"!";
-    frase = pessoas[_index].nome + " foi " + frase;
+    esteAmigo.isProtected = (esteAmigo.isProtected == 0 ? 1 : 0);
+    esteAmigo.isProtected == 0 ? frase ="desp"+frase : frase ="p"+frase+"!";
+    frase = esteAmigo.nome + " foi " + frase;
     $("#protSucesso").html(frase);
     
     actualizarListaAmigos();
+    
+     $("#opcoes_joao").html("<div onclick='toggleProtection("+_index+");goToSlide(7);return false;' class='menu_entrada'> \
+                                <img src='img/shield.png ' class='imgEntrada '>&nbsp;" +
+                                (esteAmigo.isProtected == 1 ? "Desproteger" : "Proteger") + 
+                            "</div>");
 
 }
 
@@ -813,7 +823,11 @@ function goToMenu() {
 function mapa() {
     //if(current_i==0 || current_i==0 )
         prevEcra[12]=current_i;
+        
+        
     goToSlide(12);
+    if(hf_on)
+        $('.specialSeta').css('display', "none");
 }
 
 function procurar() {
@@ -832,6 +846,8 @@ function toggleHandsFree() {
     if (hf_on == 0) {
         hf_on = 1;
         $('.hf_inactivos').css('display', "none");
+        $('specialSeta').css('display', "inline"); // setas só funciona no mapa ou cartaz
+        
         $("#mao_livre").html("<p>Toque para <br> desactivar o modo mãos livres.");
     }
     else {
@@ -845,6 +861,9 @@ function toggleHandsFree() {
 function cartaz() {
     cartazOn==1;
     goToSlide(21);
+    
+    if(hf_on)
+        $('.specialSeta').css('display', "none");
     
     $('.specialwidth').each(function() {
         $(this).css("height","25pt");

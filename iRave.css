@@ -672,13 +672,17 @@ a {
 }
 
 
-.hf_inactivos {
+.hf_inactivos, #botao_encostar_inact {
     z-index: 1001;
     height: 63pt;
     width: 123pt;
     top: 50%;
-    background-color: grey;
-    opacity: 0.8;
+    //background-color: grey;
+    background-image: url(img/aviso_inativo.png);
+    background-size: 123pt 63pt;
+    background-repeat: no-repeat;
+    
+    opacity: 0.6;
     position: fixed;
 
 }
@@ -719,7 +723,7 @@ a {
     top: 50%;
 
 }
-
+/*
 #botao_encostar_inact {
     z-index: 1001;
     height: 63pt;
@@ -729,7 +733,7 @@ a {
     opacity: 0.8;
     position: fixed;
 
-}
+}*/
 
 .hf_directions {
     z-index: 1000;
