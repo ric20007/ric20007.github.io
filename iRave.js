@@ -49,7 +49,6 @@ var amigosAdicionados = [];
 var cartazOn = 0;
 
 var contaClicks =0
-
 $(document).click( function(){
     contaClicks++;
     console.log(contaClicks);
@@ -464,13 +463,13 @@ function prev() {
     
     thePrev = prevEcra[current_i];
     if (thePrev === -1) {
-
-        console.log(nome_Titulos[current_i] + " :" + current_i + " -> " + nome_Titulos[previous_i] + " :" + prevEcra[previous_i]);
-
         //goToSlide(previous_i);
         
         if(prevStack.length !==0){
+
             var temp_slide = prevStack.pop();
+            console.log(nome_Titulos[current_i] + " :" + current_i + " -> " + nome_Titulos[temp_slide] + " :" + temp_slide);
+
             goToSlide(temp_slide);
             prevStack.pop();
             
@@ -485,8 +484,6 @@ function prev() {
         }
     } 
     else {
-        console.log(prevEcra[current_i]);
-        //current_i -1
         console.log(nome_Titulos[current_i] + " :" + current_i + " -> " + nome_Titulos[prevEcra[current_i]] + " :" + prevEcra[current_i]);
         
         prevStack.pop();
@@ -645,12 +642,12 @@ function actualizarListaAmigos(){
 
     }
     else{
-         $("#plsbegone").css("display","block");
+        $("#plsbegone").css("display","block");
         $(".bot_pergunta_amigo").css("font-size","11.25pt");
 
     }
     if(amigosAdicionados.length >4)
-            $("#bot_add_amigo_pergunta").css("display","none");
+        $("#bot_add_amigo_pergunta").css("display","none");
     else
         $("#bot_add_amigo_pergunta").css("display","block");
     
@@ -809,7 +806,7 @@ function amigos() {
         prevEcra[5]=current_i;
     goToSlide(5);
     
-    //reescrever a lsita agora é feito no remover e adicionar amigo
+    //reescrever a lista agora é feito no remover e adicionar amigo
 
 }
 
@@ -821,9 +818,7 @@ function goToMenu() {
 
 // opcoes do menu principal 
 function mapa() {
-    //if(current_i==0 || current_i==0 )
-        prevEcra[12]=current_i;
-        
+    prevEcra[12]=current_i;
         
     goToSlide(12);
     if(hf_on)
@@ -865,6 +860,7 @@ function cartaz() {
     if(hf_on)
         $('.specialSeta').css('display', "none");
     
+    // tamanho entradas do cartaz
     $('.specialwidth').each(function() {
         $(this).css("height","25pt");
 
@@ -950,7 +946,6 @@ function continuarCompra() {
 
             num = parseFloat($(this).prop("value"));
             string = $(this).attr("produ") + ": " + $(this).prop("value") + "€";
-
 
             string = "<div class='swiper-slide menu_entrada'>" + string + "</div>";
 
@@ -1089,7 +1084,7 @@ $(document).keydown(function(e) {
             next();
             break;
         case 37:
-            goToSlide(current_i - 1); // num funcemina bem
+            goToSlide(current_i - 1);
             //prev();
             break;
     }
