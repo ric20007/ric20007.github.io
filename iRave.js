@@ -41,9 +41,19 @@ var amigosAdicionados = [];
 var cartazOn = 0;
 
 var contaClicks =0
+var mouseups =0;
+var minus =0;
+
 $(document).click( function(){
     contaClicks++;
-    console.log(contaClicks);
+    //minus =mouseups-contaClicks;
+    //console.log("clicks: " + contaClicks +" | drags ?: "+minus);
+} );
+
+$(document).mouseup( function(){
+    mouseups++;
+    minus =mouseups-contaClicks;
+    console.log("clicks: " +contaClicks +" | drags ?: "+minus);
 } );
 
 $(document).ready(function() {
