@@ -1,16 +1,8 @@
 var swiperH,
-    swiperV,
-    swiperV2,
-    swiperVProcurar,
-    swiperVCartaz,
-    swiperV3,
-    swiperVAmigos,
-    swiperVComes,
-    swiperVMerch,
-    swiperVMerch2,
-    swiperVHistorico,
     valorCompra = 0,
     totalComprado =0;
+    
+var swipers;
     
 var swiperCartaz= [0,0,0];
     
@@ -20,7 +12,7 @@ var elSlides;
 
 var thePrev;
 var SpecialthePrev; 
-var  canChangePrev = 1;
+var canChangePrev = 1;
 
 var wcFilaToggle = 0;
 var imgUserAmigo = "<img src='img/user1.png ' class='imgEntrada '>",
@@ -71,21 +63,22 @@ $(document).ready(function() {
         //setWrapperSize:true
     });
     
-        
-    swiperV = new Swiper('.swiper-container-v', {
-
-        pagination: '.swiper-pagination-v',
-        paginationClickable: true,
-        direction: 'vertical',
-        slidesPerView: 3,
-        slidesPerScroll: 1,
-
-        freeMode: true,
-        freeModeMomentum: false
-
-    });
-
-    swiperV2 = new Swiper('.swiper-container-v2', {
+    elSlides = swiperH.slides;
+    
+    
+    swipers =[
+    new Swiper('.swiper-container-v', {
+            pagination: '.swiper-pagination-v',
+            paginationClickable: true,
+            direction: 'vertical',
+            slidesPerView: 3,
+            slidesPerScroll: 1,
+    
+            freeMode: true,
+            freeModeMomentum: false
+        }),
+            
+    new Swiper('.swiper-container-v2', {
         pagination: '.swiper-pagination-v2',
         paginationClickable: true,
         direction: 'vertical',
@@ -95,9 +88,8 @@ $(document).ready(function() {
         freeMode: true,
         freeModeMomentum: false
 
-    });
-    
-    swiperVProcurar = new Swiper('.swiper-container-vProcurar', {
+    }),
+    new Swiper('.swiper-container-vProcurar', {
         pagination: '.swiper-pagination-vProcurar',
         paginationClickable: true,
         direction: 'vertical',
@@ -107,9 +99,8 @@ $(document).ready(function() {
         freeMode: true,
         freeModeMomentum: false
 
-    });
-    
-    swiperVComes = new Swiper('.swiper-container-vComes', {
+    }),
+    new Swiper('.swiper-container-vComes', {
         pagination: '.swiper-pagination-vComes',
         paginationClickable: true,
         direction: 'vertical',
@@ -119,9 +110,8 @@ $(document).ready(function() {
         freeMode: true,
         freeModeMomentum: false
 
-    });
-    
-    swiperV3 = new Swiper('.swiper-container-v3', {
+    }),
+    new Swiper('.swiper-container-v3', {
         pagination: '.swiper-pagination-v3',
 
         direction: 'vertical',
@@ -131,9 +121,8 @@ $(document).ready(function() {
         freeMode: true,
         freeModeMomentum: false
 
-    });
-    
-    swiperVMerch = new Swiper('.swiper-container-vMerch', {
+    }),
+    new Swiper('.swiper-container-vMerch', {
         pagination: '.swiper-pagination-vMerch',
 
         direction: 'vertical',
@@ -143,9 +132,8 @@ $(document).ready(function() {
         freeMode: true,
         freeModeMomentum: false
 
-    });
-    
-    swiperVMerch2 = new Swiper('.swiper-container-vMerch2', {
+    }),
+    new Swiper('.swiper-container-vMerch2', {
         pagination: '.swiper-pagination-vMerch2',
 
         direction: 'vertical',
@@ -155,9 +143,8 @@ $(document).ready(function() {
         freeMode: true,
         freeModeMomentum: false
 
-    });
-
-    swiperVHistorico = new Swiper('.swiper-container-vHistorico', {
+    }),
+    new Swiper('.swiper-container-vHistorico', {
         //pagination: '.swiper-pagination-vMerch',
 
         direction: 'vertical',
@@ -167,7 +154,28 @@ $(document).ready(function() {
         freeMode: true,
         freeModeMomentum: false
 
-    });
+    }),
+    new Swiper('.swiper-container-vCartaz', {
+        pagination: '.swiper-pagination-vCartaz',
+        paginationClickable: true,
+        direction: 'vertical',
+        slidesPerView: 8,
+        slidesPerScroll: 3,
+
+        freeMode: true,
+        freeModeMomentum: false
+
+    }),
+    new Swiper('.swiper-container-vAmigos', {
+        pagination: '.swiper-pagination-vAmigos',
+        direction: 'vertical',
+        slidesPerView: 5,
+        slidesPerScroll: 1,
+        freeMode: true,
+        freeModeMomentum: false
+
+    })
+    ]
 
     // swipers de cada cartaz
     for (var i = 0; i < swiperCartaz.length; i++) {
@@ -184,32 +192,7 @@ $(document).ready(function() {
                             });
     }
 
-    // dos encontros
-    swiperVCartaz = new Swiper('.swiper-container-vCartaz', {
-        pagination: '.swiper-pagination-vCartaz',
-        paginationClickable: true,
-        direction: 'vertical',
-        slidesPerView: 8,
-        slidesPerScroll: 3,
 
-        freeMode: true,
-        freeModeMomentum: false
-
-    });
-    
-     swiperVAmigos = new Swiper('.swiper-container-vAmigos', {
-        pagination: '.swiper-pagination-vAmigos',
-        direction: 'vertical',
-        slidesPerView: 5,
-        slidesPerScroll: 1,
-        freeMode: true,
-        freeModeMomentum: false
-
-    });
-    
-
-    elSlides = swiperH.slides;
-    
     /* mapa e derivados */
 
     $('#mapa').draggable({
@@ -383,9 +366,7 @@ $(document).ready(function() {
         
     });
     
-    
     //funcao que mostra o tempo
-
     function checkTime(i) {
         return (i < 10) ? "0" + i : i;
     }
