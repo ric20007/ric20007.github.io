@@ -28,7 +28,7 @@ img, #moldura {
     
 }
 
- #botVoltarConfirmar    {
+ #botVoltarConfirmar {
     display:none;
     //padding-top:2px;
     height: 23.75pt; 
@@ -59,12 +59,6 @@ img, #moldura {
     
 }
 
-/*
- #voltarCompra      {
-     float:left;
- }
- */
- 
 #efectuarCompra    {
      float:right;
 }
@@ -82,7 +76,6 @@ img, #moldura {
     font-size: 11pt;
     background: #fff;
     
-    
     /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
@@ -98,38 +91,8 @@ img, #moldura {
     align-items: center;
 }
 
-
 .swiper-container{
       background-color: #fff;
-}
-
-    
-/*
-.swiper-slide  {
-     visibility:hidden;
-    }
-
-
-
-
- .swiper-container-horizontal .swiper-wrapper .swiper-slide, .swiper-container-h .swiper-wrapper .swiper-slide  {
-     visibility:hidden;
-    }
-
-.swiper-container-horizontal .swiper-slide-active, .swiper-container-h .swiper-slide-active {
-    visibility:visible;
-
-}
-
-
-.swiper-container-vertical .swiper-wrapper .swiper-slide, .swiper-pagination  {
-     visibility:visible;
-    }
-*/
-
-.swiper-wrapper{  /*apagar? -> ve se laranja la em baixo*/
-    //background: #d70;
-    
 }
 
 .swiper-pagination{
@@ -149,39 +112,25 @@ img, #moldura {
 
 }
      
-.img_cartazNext{
+.img_cartazNext, .img_cartazPrev {
 	height: 12pt;
 	width: 12pt;
 	z-index:999;
 	position:absolute;
-
     top: 2.5pt;
-    left: 78pt;
-
 	display: inline-block;
     //vertical-align: middle;
     
+}
+
+.img_cartazNext{
+    left: 78pt;
 }
 
 .img_cartazPrev{
-	height: 12pt;
-	width: 12pt;
-	z-index:999;
-	position:absolute;
-
-    top: 2.5pt;
     left: 10pt;
-
-	display: inline-block;
-    //vertical-align: middle;
-    
 }
 
-.theSpecialEntrada{
-    //height:36px;
-    
-}
-    
 .entrada_cartaz{
     //height:px;
     
@@ -200,7 +149,6 @@ img, #moldura {
     
 }
 
-
 .menu_entrada {
     text-align: center;
     border: 0.75pt solid #e8e8e8;
@@ -209,31 +157,6 @@ img, #moldura {
     border-right: none;
     font-family: 'khmerui';
 }
-
-/*
-ul.list {
-    padding: 0;
-    list-style-type: none;
-    margin: 0;
-    border: none;
-    z-index: -1;
-
-}
-
-ul.list > li {
-    text-align: center;
-    border: 0.75pt solid #e8e8e8;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    
-
-    height: 0.18in;
-    padding: 6pt;
-    left: -2.25pt;
-    font-family: 'khmerui';
-}
-*/
 
 * {
     cursor: url(cursor.png), auto;
@@ -260,13 +183,11 @@ a {
     //background-size: 80% 80%;
     background-repeat: no-repeat;
 
-
 }
 
 
 #botoes {
     z-index:990; /* prev 998*/
-    
     
     height: 1.9in;
     width: 1.9in;
@@ -305,48 +226,6 @@ a {
     transform: translate(-50%, -58%);
 }
 
-/*#conter_mapaTOP{
-    
-    border-color:#D70;
-
-    height: 515px; 
-    width: 505px;
-
-     left:50%;
-    top: 50%;
-    
-     transform: translate(-50%, -50%);
-}
-#conter_mapaBOT{
-    
-    border-color:blue;
-   
-    height: 615px; 
-    width: 505px;
-
-     left:50%;
-    top: 50%;
-    
-     transform: translate(-50%, -50%);
-}
-*/
-#conter_mapaLEFT{
-    
-    border-color:green;
-   
-    height: 550px; 
-    width: 455px;
-
-    left:50%;
-    top: 50%;
-    
-    transform: translate(-50%, -50%);
-}
-
-
-.Class_conter_mapa{     position: fixed;  border-style: solid;
-    border-width: 5px;}
-
 #bot_back {
 
     height: 37.5pt; 
@@ -364,7 +243,6 @@ a {
 
     height: 18.75pt; 
     width: 30pt;
-
     
     position: fixed;
 
@@ -381,7 +259,6 @@ a {
     height: 37.5pt; 
     width: 18.75pt;
 
-    
     position: fixed;
 
     left: 50%;
@@ -453,22 +330,6 @@ a {
     font-family: 'khmerui';
     color: #f5f5f5;
 }
-
-/*
-#titulo_menu img{
-    vertical-align: middle;
-}
-
-#menu {
-
-    width: 1.6in;
-    height: 10in;
-}
-
-#body {
-    background-color: #f5f5f5;
-}
-*/
 
 .help_screen, .remove_screen {
     z-index: 10;
@@ -723,17 +584,6 @@ a {
     top: 50%;
 
 }
-/*
-#botao_encostar_inact {
-    z-index: 1001;
-    height: 63pt;
-    width: 123pt;
-    top: 50%;
-    background-color: grey;
-    opacity: 0.8;
-    position: fixed;
-
-}*/
 
 .hf_directions {
     z-index: 1000;
@@ -743,13 +593,11 @@ a {
 }
 .hf_rotate{
     transform: translate(129pt, 158pt) rotate(45deg);
-    
 }
 .hf_rotate-45{
     transform: translate(129pt, 158pt) rotate(-45deg);
     
 }
-
 
 
 @font-face {
