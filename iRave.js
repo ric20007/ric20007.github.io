@@ -68,15 +68,14 @@ $(document).ready(function() {
     
     swipers =[
     new Swiper('.swiper-container-v', {
-            pagination: '.swiper-pagination-v',
-            paginationClickable: true,
-            direction: 'vertical',
-            slidesPerView: 3,
-            slidesPerScroll: 1,
-    
-            freeMode: true,
-            freeModeMomentum: false
-        }),
+        pagination: '.swiper-pagination-v',
+        paginationClickable: true,
+        direction: 'vertical',
+        slidesPerView: 3,
+        slidesPerScroll: 1,
+        freeMode: true,
+        freeModeMomentum: false
+    }),
             
     new Swiper('.swiper-container-v2', {
         pagination: '.swiper-pagination-v2',
@@ -84,7 +83,6 @@ $(document).ready(function() {
         direction: 'vertical',
         slidesPerView: 3,
         slidesPerScroll: 1,
-
         freeMode: true,
         freeModeMomentum: false
 
@@ -95,7 +93,6 @@ $(document).ready(function() {
         direction: 'vertical',
         slidesPerView: 4,
         slidesPerScroll: 2,
-
         freeMode: true,
         freeModeMomentum: false
 
@@ -106,51 +103,42 @@ $(document).ready(function() {
         direction: 'vertical',
         slidesPerView: 4,
         slidesPerScroll: 2,
-
         freeMode: true,
         freeModeMomentum: false
 
     }),
     new Swiper('.swiper-container-v3', {
         pagination: '.swiper-pagination-v3',
-
         direction: 'vertical',
         slidesPerView:4,
         slidesPerScroll: 2,
-
         freeMode: true,
         freeModeMomentum: false
 
     }),
     new Swiper('.swiper-container-vMerch', {
         pagination: '.swiper-pagination-vMerch',
-
         direction: 'vertical',
         slidesPerView:4,
         slidesPerScroll: 1,
-
         freeMode: true,
         freeModeMomentum: false
 
     }),
     new Swiper('.swiper-container-vMerch2', {
         pagination: '.swiper-pagination-vMerch2',
-
         direction: 'vertical',
         slidesPerView:3,
         slidesPerScroll: 2,
-
         freeMode: true,
         freeModeMomentum: false
 
     }),
     new Swiper('.swiper-container-vHistorico', {
         //pagination: '.swiper-pagination-vMerch',
-
         direction: 'vertical',
         slidesPerView:3,
         slidesPerScroll: 1,
-
         freeMode: true,
         freeModeMomentum: false
 
@@ -161,7 +149,6 @@ $(document).ready(function() {
         direction: 'vertical',
         slidesPerView: 8,
         slidesPerScroll: 3,
-
         freeMode: true,
         freeModeMomentum: false
 
