@@ -86,8 +86,8 @@ $(document).ready(function() {
     var el = $('input:checkbox[name="compra"]');
     el.each(function(i) {
         $(this).on('click', function(event) {
-            event.stopPropagation();
-            reset_um_producto(i);
+            //event.stopPropagation();
+            //reset_um_producto(i);
             
         });
         
@@ -101,7 +101,7 @@ $(document).ready(function() {
     for (var i = 0; i < items_listados.length; i++) {
         //$($('.compras')[i]).on('click',incrementQuantidade(i));
         $($('.compras')[i]).attr('onclick','incrementQuantidade('+ i +');return false;' );
-		console.log($('.compras')[i]);
+		//console.log($('.compras')[i]);
 
     }
 
@@ -282,7 +282,7 @@ $(document).ready(function() {
 
     $('.hf_top').click(function() {
         if (current_i >= 21 && current_i <= 23) {
-            console.log("pah ya up");
+            //console.log("pah ya up");
             swiperCartaz[dia].slidePrev(true, 100);
         }
         else {
@@ -941,15 +941,11 @@ function comida() {
     // incrementar a quantidade de cada produto
     for (var i = 0; i < items_listados.length; i++) {
         if (items_listados[i].quantidade > 0){
-            var text = items_listados[i].preco +"€ " + items_listados[i].nome + $('input:checkbox[name="compra"]')[i].outerHTML;
-    
-            $($('.compras')[i]).html(text);
-            items_listados[i].quantidade = 0;
-            
+            reset_um_producto(i);
         }
-
-
     }
+    
+    
 
     
     
@@ -973,13 +969,8 @@ function merch() {
     // incrementar a quantidade de cada produto
     for (var i = 0; i < items_listados.length; i++) {
         if (items_listados[i].quantidade > 0){
-            var text = items_listados[i].preco +"€ " + items_listados[i].nome + $('input:checkbox[name="compra"]')[i].outerHTML;
-    
-            $($('.compras')[i]).html(text);
-            items_listados[i].quantidade = 0;
-            
+            reset_um_producto(i);
         }
-
     }
 }
 
