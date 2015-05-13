@@ -29,6 +29,14 @@ img, #moldura {
     padding: 0;
 }
 
+.highlighted {
+    font-size: 10.5pt;
+    font-weight: bold;
+    border-left: none;
+    border-right: none;
+    background-color:#ccc;
+}
+
 .swiper-slide  {
     text-align: center;
     font-size: 11pt;
@@ -114,6 +122,16 @@ img, #moldura {
     border-left: none;
     border-right: none;
     font-family: 'khmerui';
+}
+/*
+.menu_entrada:active {
+    background-color: #EB993B;
+    font-weight: bold;
+
+}*/
+.Specialkulers{
+    background-color: #EB993B;
+    font-weight: bold;
 }
 
 * {
@@ -326,14 +344,6 @@ a {
     border: 2pt solid #1c1c1c;
     border-radius: 4pt;
     margin-top:1pt
-}
-
-.highlighted {
-    font-size: 10.5pt;
-    font-weight: bold;
-    border-left: none;
-    border-right: none;
-    background-color:#ccc;
 }
 
 .text_add_amigos{

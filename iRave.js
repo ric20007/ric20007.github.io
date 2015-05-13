@@ -66,17 +66,17 @@ $(document).mouseup( function(){
 
 function incrementQuantidade(i) {
     items_listados[i].quantidade++; 
-    var text = items_listados[i].quantidade +"x " + items_listados[i].nome +" " + items_listados[i].preco +"€ " + $('input:checkbox[name="compra"]')[i].outerHTML;
+    var text = items_listados[i].quantidade +"x " + items_listados[i].nome +" " + items_listados[i].preco +"€";
     
-    $($('.compras')[i]).html(text);
+    $($(".produtos_listados")[i]).html(text);
     
 };
 
 function reset_um_producto(i) {
     items_listados[i].quantidade = 0; 
-    var text = items_listados[i].nome +" " + items_listados[i].preco +"€ " + $('input:checkbox[name="compra"]')[i].outerHTML;
+    var text = items_listados[i].nome +" " + items_listados[i].preco +"€";
     
-    $($('.compras')[i]).html(text);
+    $($(".produtos_listados")[i]).html(text);
     
 };
 
@@ -85,9 +85,15 @@ $(document).ready(function() {
     // fix checkbox detect
     var el = $('input:checkbox[name="compra"]');
     el.each(function(i) {
+        
         $(this).on('click', function(event) {
-            //event.stopPropagation();
-            //reset_um_producto(i);
+            console.log("YAY");
+            if (items_listados[i].quantidade === 0)
+                incrementQuantidade(i);
+            else
+                reset_um_producto(i);
+            
+            event.stopPropagation();
             
         });
         
@@ -104,6 +110,13 @@ $(document).ready(function() {
 		//console.log($('.compras')[i]);
 
     }
+    
+    // incrementar a quantidade de cada produto
+    for (var i = 0; i < items_listados.length; i++) {
+        reset_um_producto(i);
+
+    }
+    
 
 
     swiperH = new Swiper('.swiper-container-h', {
@@ -113,6 +126,14 @@ $(document).ready(function() {
     });
     
     elSlides = swiperH.slides;
+    
+     // esconder slides que nao estao active
+    for (var j = 0; j < elSlides.length; j++) {
+        if (j != current_i)
+            $(elSlides[j]).css("visibility", "hidden");
+        else
+            $(elSlides[j]).css("visibility", "visible");
+    }
     
     
     swipers =[
@@ -365,7 +386,8 @@ $(document).ready(function() {
     $('.compras').click(function() {
         //$('input[type=checkbox]').attr('checked', false);
         var checkbox = $('input[type=checkbox]').eq($(this).index('.compras'));
-        var alerte = !checkbox.is(':checked');
+        //var alerte = !checkbox.is(':checked');
+        var alerte = true;
         checkbox.prop('checked', alerte);
     });
 
@@ -592,7 +614,7 @@ function goToSlide(i) {
         if(i===9 || i ===14)
             $("#botContinuar").css("display", "block");
         
-        
+        /*
          // esconder slides que nao estao active
         for (var j = 0; j < elSlides.length; j++) {
             if (j != i && j != current_i)
@@ -600,7 +622,7 @@ function goToSlide(i) {
             else
                 $(elSlides[j]).css("visibility", "visible");
         }
-        
+        */
         
         if (i !== 12) {
             $('#mapa').css("opacity", 0);
@@ -624,9 +646,11 @@ function goToSlide(i) {
         help_ecras[current_i] = 0;
         $(elSlides[current_i]).find('.help_screen').css("display", "none");
         
+        $(elSlides[i]).css("visibility", "visible");
+        
         swiperH.slideTo(i);
         
-        // hide previous slide
+        // hide previous slide in 100 ms
         $(elSlides[current_i]).css("visibility", "hidden");
         
         current_i = i;
