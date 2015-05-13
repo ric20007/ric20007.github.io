@@ -950,29 +950,18 @@ function continuarCompra() {
     $(".exchangeCompra").append("<div class='swiper-slide menu_entrada'></div>");
 
     $("#botContinuar").css("display", "none");
-    $("#botVoltarConfirmar").css("display", "flex");
+    $("#botVoltarConfirmar").css("display", "block"); // flex
 
     next();
 
 }
 
-/*
-function voltarCompra() {
-    value = 0;
-    itemsCompra = [];
-    $("#botContinuar").css("display", "block");
-    $("#botVoltarConfirmar").css("display", "none");
-
-    prev();
-}
-*/
 function efectuarCompra() {
 	totalComprado += valorCompra;
     $("#botVoltarConfirmar").css("display", "none");
     itemsComprados = itemsComprados.concat(itemsCompra);
 
     //clean check boxes
-
     var el = $('input:checkbox[name="compra"]');
     el.each(function() {
         if ($(this).is(':checked')) {
