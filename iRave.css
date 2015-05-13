@@ -359,6 +359,7 @@ input:checkbox[name="compra"]{
      font-family: 'khmerui';
 }
 
+
 .joao_add_amigos{
     text-align: center;
     display: block;
@@ -370,6 +371,17 @@ input:checkbox[name="compra"]{
     font-family: 'khmerui';
     
     //padding-top: 0.5em;
+    
+}
+
+.bot_pergunta_amigo{
+    height:100pt;
+    left:-5px;
+    border-top: 1.75pt solid #aaa;
+    position: relative;
+    bottom:0;
+    background-color:#f1f1f1;
+    
     
 }
 
