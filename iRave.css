@@ -350,6 +350,15 @@ a {
 
 }
 
+input:checkbox[name="compra"]{
+    z-index:2000;
+    
+}
+
+#lista_joao{
+     font-family: 'khmerui';
+}
+
 .joao_add_amigos{
     text-align: center;
     display: block;

@@ -36,9 +36,18 @@ var setasHf = ["top","bot","right",
                 "left","topr","botr",
                 "topl","botl"]
                 
+                
 var amigosAdicionados = [];
 
 var cartazOn = 0;
+
+
+function producto(_nome, _preco) {
+    this.nome = _nome;
+    this.preco = _preco;
+    this.quantidade = 0;
+}
+var items_listados = [];
 
 var contaClicks =0
 var mouseups =0;
@@ -46,8 +55,6 @@ var minus =0;
 
 $(document).click( function(){
     contaClicks++;
-    //minus =mouseups-contaClicks;
-    //console.log("clicks: " + contaClicks +" | drags ?: "+minus);
 } );
 
 $(document).mouseup( function(){
@@ -56,16 +63,48 @@ $(document).mouseup( function(){
     console.log("clicks: " +contaClicks +" | drags ?: "+minus);
 } );
 
+
+function incrementQuantidade(i) {
+    items_listados[i].quantidade++; 
+    var text = items_listados[i].quantidade +"x " + items_listados[i].nome +" " + items_listados[i].preco +"€ " + $('input:checkbox[name="compra"]')[i].outerHTML;
+    
+    $($('.compras')[i]).html(text);
+    
+};
+
+function reset_um_producto(i) {
+    items_listados[i].quantidade = 0; 
+    var text = items_listados[i].nome +" " + items_listados[i].preco +"€ " + $('input:checkbox[name="compra"]')[i].outerHTML;
+    
+    $($('.compras')[i]).html(text);
+    
+};
+
 $(document).ready(function() {
 
     // fix checkbox detect
     var el = $('input:checkbox[name="compra"]');
-    el.each(function() {
+    el.each(function(i) {
         $(this).on('click', function(event) {
             event.stopPropagation();
+            reset_um_producto(i);
+            
         });
+        
+        var _nome = $(this).attr("produ");
+		var _valor =  parseFloat($(this).prop("value"));
+        items_listados.push(new producto(_nome, _valor));
 
     });
+    
+    // incrementar a quantidade de cada produto
+    for (var i = 0; i < items_listados.length; i++) {
+        //$($('.compras')[i]).on('click',incrementQuantidade(i));
+        $($('.compras')[i]).attr('onclick','incrementQuantidade('+ i +');return false;' );
+		console.log($('.compras')[i]);
+
+    }
+
 
     swiperH = new Swiper('.swiper-container-h', {
         speed: 200,
@@ -310,7 +349,7 @@ $(document).ready(function() {
     /* end mapa e derivados */
     
     $('#botao_encostar').click(function() {
-        var rand;
+            var rand;
             while (amigosAdicionados.length !=pessoas.length){
                 rand = Math.floor((Math.random() * pessoas.length) ); 
                 if(pessoas[rand].isAdded == 0)
@@ -876,13 +915,8 @@ function findComida() {
     mapa();
 }
 
-function comida() {
-    //valorCompra = 0;
-    itemsCompra = [];
 
-    goToSlide(9);
-    $("#botContinuar").css("display", "block");
-    
+function clearChecks() {
     var checkss = $('input:checkbox[name="compra"]');
     //uncheck comidas
      checkss.each(function() {
@@ -890,8 +924,34 @@ function comida() {
             var alerte = !$(this).is(':checked');
             $(this).prop('checked', alerte);
         }
-
+    
     });
+}
+
+function comida() {
+    //valorCompra = 0;
+    itemsCompra = [];
+
+    goToSlide(9);
+    $("#botContinuar").css("display", "block");
+    
+    
+    clearChecks();
+    
+    // incrementar a quantidade de cada produto
+    for (var i = 0; i < items_listados.length; i++) {
+        if (items_listados[i].quantidade > 0){
+            var text = items_listados[i].preco +"€ " + items_listados[i].nome + $('input:checkbox[name="compra"]')[i].outerHTML;
+    
+            $($('.compras')[i]).html(text);
+            items_listados[i].quantidade = 0;
+            
+        }
+
+
+    }
+
+    
     
 }
 
@@ -907,29 +967,40 @@ function merch() {
 
     goToSlide(14);
     $("#botContinuar").css("display", "block");
+    
+    clearChecks();
+    
+    // incrementar a quantidade de cada produto
+    for (var i = 0; i < items_listados.length; i++) {
+        if (items_listados[i].quantidade > 0){
+            var text = items_listados[i].preco +"€ " + items_listados[i].nome + $('input:checkbox[name="compra"]')[i].outerHTML;
+    
+            $($('.compras')[i]).html(text);
+            items_listados[i].quantidade = 0;
+            
+        }
+
+    }
 }
 
 
 function continuarCompra() {
-    var num, value = 0,
-        string, thisValue;
-        
+    var value = 0, string;
     itemsCompra=[], valorCompra=0;
+    
     var el = $('input:checkbox[name="compra"]');
 
-    el.each(function() {
+    el.each(function(i) {
         if ($(this).is(':checked')) {
-            //var alerte = !$(this).is(':checked');
-            //$(this).prop('checked', alerte);
-
-            num = parseFloat($(this).prop("value"));
-            string = $(this).attr("produ") + ": " + $(this).prop("value") + "€";
+            string = items_listados[i].quantidade +"x " + items_listados[i].nome +" " + items_listados[i].preco +"€";
+    
+            //string = items_listados[i].nome + ": " + items_listados[i].preco + "€";
 
             string = "<div class='swiper-slide menu_entrada'>" + string + "</div>";
 
             itemsCompra.push(string);
             console.log(string);
-            value = value + num;
+            value = value + items_listados[i].quantidade * items_listados[i].preco;
         }
 
     });
@@ -962,15 +1033,7 @@ function efectuarCompra() {
     itemsComprados = itemsComprados.concat(itemsCompra);
 
     //clean check boxes
-    var el = $('input:checkbox[name="compra"]');
-    el.each(function() {
-        if ($(this).is(':checked')) {
-            var alerte = !$(this).is(':checked');
-            $(this).prop('checked', alerte);
-
-        }
-
-    });
+    clearChecks(); 
 
     next();
     prevStack.pop();
@@ -1040,15 +1103,7 @@ $(document).keydown(function(e) {
             goToMenu();
             break;
         case 39:
-            var rand;
-            while (amigosAdicionados.length !=pessoas.length){
-                rand = Math.floor((Math.random() * pessoas.length) ); 
-                if(pessoas[rand].isAdded == 0)
-                    break;
-            }
-            
-            detectadoAmigo(rand);
-            next();
+            $('#botao_encostar').click();
             break;
         case 37:
             goToSlide(current_i - 1);
