@@ -81,6 +81,9 @@ function reset_um_producto(i) {
 };
 
 $(document).ready(function() {
+    
+   $(".swiper-pagination-v3").css("transform","translate(0%, -5%)");
+    //$(".exchangeCompra").css("width","1.4in");
 
     // fix checkbox detect
     var el = $('input:checkbox[name="compra"]');
@@ -626,14 +629,20 @@ function goToSlide(i) {
         
         if (i !== 12) {
             $('#mapa').css("opacity", 0);
+            if( !cartazOn)
+                $('.specialSeta').css('display', "inline");
             
         } else {
             $('#mapa').css("opacity", 1);
         }
-        if(i!== 12 || !cartazOn )
+        
+        if(cartazOn && hf_on )
+            $('.specialSeta').css('display', "none");
+        else
             $('.specialSeta').css('display', "inline");
+
         
-        
+            
         SpecialthePrev = prevEcra[i];
         if (canChangePrev === 1  && SpecialthePrev === -1) {
             console.log("In can change prev");
@@ -650,7 +659,7 @@ function goToSlide(i) {
         
         swiperH.slideTo(i);
         
-        // hide previous slide in 100 ms
+        // hide previous slide
         $(elSlides[current_i]).css("visibility", "hidden");
         
         current_i = i;
@@ -663,12 +672,13 @@ function goToSlide(i) {
 function detectadoAmigo(_index) {
     var char = pessoas[_index].nome.slice(-1);
     char = (char == "a" ? "a" : "o");
-    
-    $("#AmgDetectado").html(pessoas[_index].nome + " detectad"+char+".	<p>Quer adicioná-l"+char+" ?</p> \
-                           <a href='# ' class='botao' onclick='adicionarAmigo("+ _index +");return false; '> \
+    // removed </p> after quer adiciona-lo ?
+    $("#AmgDetectado").html(pessoas[_index].nome + " detectad"+char+".	<div style='height:3pt;width:1pt;'></div>Quer adicioná-l"+char+" ? \
+                           <div style='height:5pt;width:1pt;'> </div>\
+                           <a href='# ' class='botao  btn btn-2 btn-2c' onclick='adicionarAmigo("+ _index +");return false; '> \
                         		<img src='img/check.png ' class='imgEntrada '> Sim \
                         	</a>\
-                        	<a href='# ' class='botao' onclick='prev();return false; '> \
+                        	<a href='# ' class='botao  btn btn-2 btn-2c' onclick='prev();return false; '> \
                         		<img src='img/cross.png ' class='imgEntrada '> Não \
                         	</a>");
 
@@ -1030,6 +1040,8 @@ function continuarCompra() {
     for (var i = 0; i < itemsCompra.length; i++) {
         $(".exchangeCompra").append(itemsCompra[i]);
     }
+    if (i > 3)
+        $(".swiper-pagination-v3").css("transform","translate(0%, -50%)");
     
 
     $(".exchangeCompra").append("<div class='swiper-slide menu_entrada'></div>");

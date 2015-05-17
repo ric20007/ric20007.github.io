@@ -1,3 +1,73 @@
+
+/* General button style (reset) */
+.btn {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 2pt 4pt;
+	display: inline-block;
+	//margin: 15px 30px;
+	//text-transform: uppercase;
+	//letter-spacing: 1px;
+	//font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+/* Pseudo elements for icons */
+.btn:before,
+.icon-heart:after,
+.icon-star:after,
+.icon-plus:after,
+.icon-file:before {
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+/* Button 2 */
+.btn-2 {
+	background: #F9DCBA;
+	//color: #fff;
+	box-shadow: 0 2.5pt #E48E2B;
+	-webkit-transition: none;
+	-moz-transition: none;
+	transition: none;
+}
+
+
+/* Button 2c */
+.btn-2c {
+	border-radius: 5px;
+}
+
+.btn-2c:active {
+	box-shadow: 0 0 #E48E2B;
+	top: 2.5pt;
+}
+
+
 img, #moldura {
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -66,6 +136,13 @@ img, #moldura {
     height: 75%;
     opacity: 1;
 }
+.swiper-pagination-v3{
+    transform: translate(-50%, 50%);
+    
+}
+.exchangeCompra{
+    width:1.4in;
+}
 
 
 .swiper-pagination-bullet, .swiper-pagination-bullet-active {
@@ -123,12 +200,13 @@ img, #moldura {
     border-right: none;
     font-family: 'khmerui';
 }
-/*
+
+
 .menu_entrada:active {
     background-color: #EB993B;
     font-weight: bold;
 
-}*/
+}
 .Specialkulers{
     background-color: #EB993B;
     font-weight: bold;

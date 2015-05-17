@@ -44,10 +44,10 @@
             <div class='hf_directions hf_bot' style="height:15pt;width:5pt;top:62pt;left:-94pt;"></div>
             <div class='hf_directions hf_right' style="height:6pt;width:11pt;top:59.3pt;left:-89pt;"></div>
             <div class='hf_directions hf_left' style="height:6pt;width:11pt;top:59.3pt;left:-104pt;"></div>
-            <div class='hf_directions hf_topr hf_rotate-45' style="height:4pt;width:13pt;top:52pt;left:-90pt;"></div>
-            <div class='hf_directions hf_botr hf_rotate' style="height:4pt;width:13pt;top:68pt;left:-90pt;"></div>
-            <div class='hf_directions hf_topl hf_rotate' style="height:4pt;width:13pt;top:52pt;left:-105pt;"></div>
-            <div class='hf_directions hf_botl hf_rotate-45' style="height:4pt;width:13pt;top:68pt;left:-105pt;"></div>
+            <div class='hf_directions hf_topr' style="height:12pt;width:12pt;top:47pt;left:-87pt;"></div>
+            <div class='hf_directions hf_botr' style="height:12pt;width:12pt;top:65pt;left:-88pt;"></div>
+            <div class='hf_directions hf_topl' style="height:12pt;width:12pt;top:47pt;left:-107pt;"></div>
+            <div class='hf_directions hf_botl' style="height:12pt;width:12pt;top:65pt;left:-108pt;"></div>
             <img src="img/hf_arrows/gesto_navegar_mapa.png" class="botaoHandsFree bot_hf_setas" style='z-index:1'>
         </div>
         
@@ -102,11 +102,11 @@
                                 <div class="swiper-wrapper">
 
 
-                                    <div onclick="$('#mapa').css('top','-10pt');$('#mapa').css('left','2pt');mapa();return false;" class="swiper-slide  menu_entrada btn">
-                                        <img src="img/map-2.png" class="imgEntrada bottom"> &nbsp; Mapa </div>
+                                    <div onclick="$('#mapa').css('top','-10pt');$('#mapa').css('left','2pt');mapa();return false;" class="swiper-slide menu_entrada ">
+                                        <img src="img/map-2.png" class="imgEntrada"> &nbsp; Mapa </div>
       
                                     <div onclick=" procurar();return false;" class="swiper-slide menu_entrada">
-                                        <img src="img/active-search.png" class="imgEntrada bottom"> Procurar </div>
+                                        <img src="img/active-search.png" class="imgEntrada"> Procurar </div>
 
                                     <div onclick=" horario();return false;" class="swiper-slide menu_entrada">
                                         <img src="img/Agenda.png" class="imgEntrada"> Horário </div>
@@ -182,8 +182,8 @@
                         <!-- 4 added joao -->
                         <div class="swiper-slide joao_add_amigos">
                            <div id=AmgAdicionado ><p></p> O amigo foi adicionado com sucesso.</div>
-                            <p></p>
-                            <a href="# " class="botao" onclick="prev();return false;" style='font-size:12pt;font-weight:bold;'>
+                            <div style='height:5pt;width:1pt;'> </div>
+                            <a href="# " class="botao btn btn-2 btn-2c" onclick="prev();return false;" style='font-size:12pt;font-weight:bold;'>
 
                                 <img src="img/user1.png " class="imgEntrada "> OK
                             </a>
@@ -394,7 +394,7 @@
                             Pedido efectuado. Estará pronto dentro de 5 minutos.
                             <br>
                             <div style="height:2pt;width:1pt;"></div>
-                            <a href="# " class="botao" onclick=" goToMenu();return false;" style='font-size:12pt;font-weight:bold;'>
+                            <a href="# " class="botao  btn btn-2 btn-2c" onclick=" goToMenu();return false;" style='font-size:12pt;font-weight:bold;'>
 
                                 <img src="img/check.png " class="imgEntrada "> OK
                             </a>
@@ -402,7 +402,7 @@
                             <br>
                             <div style="height:2pt;width:1pt;"></div>
                             
-                            <a href="# " class="botao" onclick=" findComida();return false;" style='font-size:12pt;font-weight:bold;'>
+                            <a href="# " class="botao  btn btn-2 btn-2c" onclick=" findComida();return false;" style='font-size:12pt;font-weight:bold;'>
 
                                 <img src="img/active-search.png " class="imgEntrada "> Localizar
                             </a>
