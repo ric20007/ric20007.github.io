@@ -3,13 +3,12 @@
 
 <head>
     <title>IPM14/15 - iRAVE grupo 56</title>
+    <link rel="icon" type="image/png" href="/not using/mota360.png" />
     <meta charset="UTF-8">
 
     <!--<link rel="stylesheet" href="swiper.min.css">-->
     
     <link rel="stylesheet" href="swiper307.css">
-    
-    
     <link rel="stylesheet" href="iRave.css" type="text/css" />
 
     <script src="jquery.min.js"></script>
@@ -25,9 +24,10 @@
 <body>
 
     <div id='theback'> <img src="img/mota360noscope_works no border.png"  class="backimg" > </div>
-
+    
     <div id='botoes'>
-
+    
+         <!-- botoes fisicos  -->
         <div id='bot_back' onclick="prev();return false;"> </div>
         <div id='bot_ajuda' onclick="help();return false;"> </div>
         <div id='bot_menu' onclick="goToMenu();return false;"> </div>
@@ -64,11 +64,9 @@
         </div>
         <!-- end encostar iRave  -->
         
-        
         <div id='moldura'>
             <div id="botContinuar" class="botCompras" onclick="continuarCompra();return false;" >Continuar</div>
             <div id="botVoltarConfirmar" class="botCompras" onclick="efectuarCompra();return false;">&nbsp;Aceitar</div>
-
 
             <div id='barra_horas'>
                 <div id='horas' style="font-family: 'khmerui';">
@@ -81,713 +79,710 @@
 
             </div>
 
-            <div id='body3'>
+            <div class="swiper-container swiper-container-h">
+                <div class="swiper-wrapper">
 
-
-                <div class="swiper-container swiper-container-h">
-                    <div class="swiper-wrapper">
-
-                        <!-- 0 menu -->
-                        <div class="swiper-slide">
-                            
-                            <div class='help_screen'>
-                                <div class='help_title'>Ajuda<img src='img/question_mark_white2.png' style="width:10pt;height:10pt;margin-left:2pt;"></div>
-                                    <div style="height:7pt;width:1pt;"></div>
-                                    O ecrã bloqueia-se automaticamente
-                                
-                            </div>
-                            
-                            
-                            <div class="swiper-container swiper-container-v swiperVertical">
-                                <div class="swiper-wrapper">
-
-
-                                    <div onclick="$('#mapa').css('top','-10pt');$('#mapa').css('left','2pt');mapa();return false;" class="swiper-slide menu_entrada ">
-                                        <img src="img/map-2.png" class="imgEntrada"> &nbsp; Mapa </div>
-      
-                                    <div onclick=" procurar();return false;" class="swiper-slide menu_entrada">
-                                        <img src="img/active-search.png" class="imgEntrada"> Procurar </div>
-
-                                    <div onclick=" horario();return false;" class="swiper-slide menu_entrada">
-                                        <img src="img/Agenda.png" class="imgEntrada"> Horário </div>
-
-                                    <div onclick="next();return false;" class="swiper-slide menu_entrada">
-                                        <img src="img/user1.png" class="imgEntrada"> Perfil </div>
-
-                                    <div onclick=" maoLivre();return false;" class="swiper-slide menu_entrada">
-                                        <img src="img/hands-free.png" class="imgEntrada"> Mãos Livres </div>
-
-                                    <div class="swiper-slide" style="height:5pt"></div>
-
-
-                                </div>
-
-                                <div class="swiper-pagination swiper-pagination-v"></div>
-                            </div>
-                        </div>
-
-
-                        <!-- 1 pefil -->
-                        <div class="swiper-slide">
-                            <div class="swiper-container swiper-container-v2 swiperVertical" style='margin-left:-2pt'>
-                                <div class="swiper-wrapper">
-
-                                    <div onclick="amigos();return false;" class="swiper-slide  menu_entrada">
-                                        <img src="img/multy-user.png " class="imgEntrada "> Lista de Amigos 
-                                    </div>
-
-                                    <div onclick="$('#botao_encostar_inact').css('display','none');addAmigos();return false; " class="swiper-slide menu_entrada">
-                                        <img src="img/add-user.png " class="imgEntrada " align="center "> Adicionar Amigo
-                                    </div>
-
-                                    <div onclick="historico();return false; " class="swiper-slide menu_entrada" style="font-size:8.25pt">
-                                        <img src="img/euro.png " class="imgEntrada " align="center "> Histórico de Transações
-                                    </div>
-
-
-                                    <div class="swiper-slide"></div>
-
-                                </div>
-
-                                <div class="swiper-pagination swiper-pagination-v2"></div>
-                            </div>
-                        </div>
-
-
-                        <!-- 2 add amigos -->
-                        <div class="swiper-slide text_add_amigos">Encoste o seu iRave ao do seu amigo.</div>
-
-
-                        <!-- 3 add joao -->
-                        <div class="swiper-slide joao_add_amigos">
-                            <div id=AmgDetectado style="padding-top:5px" >
-                                
-                                Amigo detectado.
-                                <p>Quer adicioná-lo ?</p>
-    
-                                <a href="# " class="botao" onclick="adicionarJoao();next();return false; ">
-    
-                                    <img src="img/check.png " class="imgEntrada "> Sim
-                                </a>
-    
-                                <a href="# " class="botao" onclick="prev();return false; ">
-    
-                                    <img src="img/cross.png " class="imgEntrada "> Não
-                                </a>
-   
-                            </div>
+                    <!-- 0 menu -->
+                    <div class="swiper-slide">
+                        
+                        <div class='help_screen'>
+                            <div class='help_title'>Ajuda<img src='img/question_mark_white2.png' style="width:10pt;height:10pt;margin-left:2pt;"></div>
+                                <div style="height:7pt;width:1pt;"></div>
+                                O ecrã bloqueia-se automaticamente
                             
                         </div>
-
-                        <!-- 4 added joao -->
-                        <div class="swiper-slide joao_add_amigos">
-                           <div id=AmgAdicionado ><p></p> O amigo foi adicionado com sucesso.</div>
-                            <div style='height:5pt;width:1pt;'> </div>
-                            <a href="# " class="botao btn btn-2 btn-2c" onclick="prev();return false;" style='font-size:12pt;font-weight:bold;'>
-
-                                <img src="img/user1.png " class="imgEntrada "> OK
-                            </a>
-
-                        </div>
+                        
+                        
+                        <div class="swiper-container swiper-container-v swiperVertical">
+                            <div class="swiper-wrapper">
 
 
-                        <!-- 5 lista amigos -->
-                        <div class="swiper-slide" style="display: block;">
-
-                            <div id='lista_joao'>
-                                <p style="text-align:center;font-size:10pt" >Ainda não adicionou amigos
-                            </div>
-
-
-                            <div id="bot_add_amigo_pergunta" class='joao_add_amigos bot_pergunta_amigo' >
-                                <div id="plsbegone" style="height:3pt;width:1pt;"></div>
-                                Adicionar amigos?<br>
-                                <!--<div style="height:3pt;width:1pt;"></div>-->
-                                <a href="# " onclick="$('#botao_encostar_inact').css('display','none');addAmigos();return false;" style='font-size:12pt;font-weight:bold;'>
-
-                                    <img src="img/user1.png " class="imgEntrada"> Sim
-                                </a>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- 6 opcoes joao -->
-                        <div class="swiper-slide" style="display: block;">
-
-                            <div id='opcoes_joao'></div>
-
-
-                            <!-- ir para: mapa no joao -->
-                            <div id='queroLocalizarQuem' onclick="localizarAmigo();return false;" class="menu_entrada">
-                                <img src="img/add-user.png " class="imgEntrada "> Localizar
-                            </div>
-
-                            <!-- ir para: pretende remover o joao? -->
-                              
-                              <div class='remove_screen' style='height:60pt'>
-                                <div class='remove_title'>Remover Amigo?</div>
-                                    <div style="height:7pt;width:1pt;"></div>
-                                    <div id="queroRemoverQuem" onclick="removerAmigo();amigos();return false;">
-                                        <p class='remove_text' style='margin-left:3%;float:left'>Sim</p>
-                                    </div>
-                                    <div onclick="prev();return false;">
-                                        <p class='remove_text' style='margin-right:3%;float:right'>Não</p>
-                                    </div>
-                                </div>
-                              
-                            <div  onclick="removePrompt();return false;" class="menu_entrada">
-                                <img src="img/Agenda.png " class="imgEntrada "> Remover
-                            </div>
-
-                        </div>
-
-
-                        <!-- 7 protegido com sucesso -->
-                        <div class="swiper-slide joao_add_amigos">
-                            <div style="height:9pt;width:1pt;"></div>
-                            <div id='protSucesso'>Protegido com sucesso!</div>
-                            <p></p>
-                            <a href="# " class="botao" onclick="amigos();return false;" style='font-size:12pt;font-weight:bold;'>
-                                <img src="img/user1.png " class="imgEntrada "> OK
-                            </a>
-                        </div>
-
-
-                        <!-- 8 procurar -->
-                        <div class="swiper-slide">
-                            <div class=" swiper-container swiper-container-vProcurar swiperVertical" style='margin-left:-6pt'>
-                                <div class="swiper-wrapper">
-
-                                    <div onclick="amigos(); return false;" class="swiper-slide  menu_entrada">
-                                        <img src="img/multy-user.png" class="imgEntrada"> &nbsp; Amigos </div>
-                                        
-                                    <div onclick="banho(); return false;" class="swiper-slide menu_entrada">
-                                        <img src="img/wc.png" class="imgEntrada"> &nbsp; WC </div>
-
-                                    <div onclick="comida(); return false;" class="swiper-slide menu_entrada">
-                                        <img src="img/foods.png" class="imgEntrada"> &nbsp; Restaurante </div>
-
-                                    <div onclick="merch(); return false;" class="swiper-slide menu_entrada">
-                                        <img src="img/merch.png" class="imgEntrada"> &nbsp; Souvenires </div>
-                                    
-                                    <div onclick="cartaz(); return false;" class="swiper-slide menu_entrada">
-                                        <img src="img/cartaz.png" class="imgEntrada"> &nbsp; Cartaz </div>
-                                    
-                                    <div onclick="encontros(); return false;" class="swiper-slide menu_entrada">
-                                        <img src="img/pointer.png" class="imgEntrada" style="width:8pt"> &nbsp; Encontros </div>
-
-                                    <div class="swiper-slide"></div>
-                                   
-
-                                </div>
-
-                                <div class="swiper-pagination swiper-pagination-vProcurar"></div>
-                            </div>
-                        </div>
-
-
-                        <!-- 9 comes/cegues -->
-                        <div class="swiper-slide">
-                            <div class="swiper-container swiper-container-vComes swiperVertical" style='margin-left:-3pt'>
-                                <div class="swiper-wrapper">
-
-                                    <div class="swiper-slide  menu_entrada" style="background:#ddd">
-                                        <img src="img/hamburguer.png" class="imgEntrada"> &nbsp; Comidas
-                                    </div>
-                                    
-                                    <div class="swiper-slide menu_entrada compras">
-                                        <div class="produtos_listados" onclick=" console.log('shishi');"></div>
-                                        <input type="checkbox" name="compra" produ="Batatas" value="1">
-                                        <!--  checked="checked"-->
-                                    </div>
-
-                                    <div class="swiper-slide  menu_entrada compras">
-                                        <div class="produtos_listados"></div>
-                                        <input type="checkbox" name="compra" produ="Bifana" value="3">
-                                    </div>
-
-                                    <div class="swiper-slide menu_entrada compras">
-                                        <div class="produtos_listados"></div>
-                                        <input type="checkbox" name="compra" produ="Bitoque" value="5">
-                                        <!--  checked="checked"-->
-                                    </div>
-                                    
-                                    <div class="swiper-slide menu_entrada compras">
-                                        <div class="produtos_listados"></div>
-                                        <input type="checkbox" name="compra" produ="Gelado" value="2">
-                                        <!--  checked="checked"-->
-                                    </div>
-
-
-                                    <div class="swiper-slide menu_entrada" style="background:#ddd">
-                                        <img src="img/bebida.png" class="imgEntrada"> Bebidas </div>
-
-                                    <div class="swiper-slide menu_entrada compras">
-                                        <div class="produtos_listados"></div>
-                                        <input type="checkbox" name="compra" produ="Água" value="1">
-                                        <!--  checked-->
-                                    </div>
-
-                                    <div class="swiper-slide  menu_entrada compras">
-                                        <div class="produtos_listados"></div>
-                                        <input type="checkbox" name="compra" produ="Cola" value="1.2">
-                                    </div>
-                                    
-                                    <div class="swiper-slide  menu_entrada compras">
-                                        <div class="produtos_listados"></div>
-                                        <input type="checkbox" name="compra" produ="Ice Tea" value="1">
-                                    </div>
-                                    
-                                    <div class="swiper-slide  menu_entrada compras">
-                                        <div class="produtos_listados"></div>
-                                        <input type="checkbox" name="compra"  produ="Limonada" value="0.5">
-                                    </div>
-                                    
-                                
+                                <div onclick="$('#mapa').css('top','-10pt');$('#mapa').css('left','2pt');mapa();return false;" class="swiper-slide menu_entrada ">
+                                    <img src="img/map-2.png" class="imgEntrada"> &nbsp; Mapa </div>
   
-                                    <div class="swiper-slide"></div>
-                                    <div class="swiper-slide"></div>
-                                    <!--         
-                                        <div  onclick="continuarCompra();return false;" class="swiper-slide menu_entrada">
-                                               <img src="img/map-2.png" class="imgEntrada"> Continuar  </div>-->
+                                <div onclick=" procurar();return false;" class="swiper-slide menu_entrada">
+                                    <img src="img/active-search.png" class="imgEntrada"> Procurar </div>
 
-                                </div>
+                                <div onclick=" horario();return false;" class="swiper-slide menu_entrada">
+                                    <img src="img/Agenda.png" class="imgEntrada"> Horário </div>
 
-                                <div class="swiper-pagination swiper-pagination-vComes"></div>
-                            </div>
-                        </div>
+                                <div onclick="next();return false;" class="swiper-slide menu_entrada">
+                                    <img src="img/user1.png" class="imgEntrada"> Perfil </div>
 
-                        <!-- 10 comes/cegues confirmar compra -->
-                        <div class="swiper-slide">
-                            <div class="swiper-container swiper-container-v3">
-                                <div class="swiper-wrapper exchangeCompra">
-                                    #Pedido:
-                                        
-                                    <div class='swiper-slide menu_entrada'></div>
-                                    <div class='swiper-slide menu_entrada'></div>
-                                    <div class='swiper-slide menu_entrada'></div>
-                                    <div class='swiper-slide menu_entrada'></div>
-                                    <div class='swiper-slide menu_entrada'></div>
-                                    <div class="swiper-slide menu_entrada"></div>
-                                    <div class="swiper-slide menu_entrada"></div>
-                                    <div class="swiper-slide menu_entrada"></div>
-                                    <div class="swiper-slide menu_entrada"></div>
-                                    <div class="swiper-slide menu_entrada"></div>
-                                    <div class="swiper-slide menu_entrada"></div>
-                                    <div class="swiper-slide menu_entrada"></div>
-                                    <div class="swiper-slide menu_entrada"></div>
-                                    <div class="swiper-slide menu_entrada"></div>
-                                    <div class="swiper-slide menu_entrada"></div>
-                                </div>
-                               
-                                <div class="swiper-pagination swiper-pagination-v3"></div>
-                                
+                                <div onclick=" maoLivre();return false;" class="swiper-slide menu_entrada">
+                                    <img src="img/hands-free.png" class="imgEntrada"> Mãos Livres </div>
+
+                                <div class="swiper-slide" style="height:5pt"></div>
+
 
                             </div>
+
+                            <div class="swiper-pagination swiper-pagination-v"></div>
                         </div>
-
-                        <!-- 11 comes/cegues confirmada compra -->
-                        <div class="swiper-slide joao_add_amigos" style='margin-left:-3pt'>
-                            <div style="height:2pt;width:1pt;"></div>
-                            Pedido efectuado. Estará pronto dentro de 5 minutos.
-                            <br>
-                            <div style="height:2pt;width:1pt;"></div>
-                            
-                            <a href="# " class="botao  btn btn-2 btn-2c" onclick=" findComida();return false;" style='font-size:11pt;font-weight:bold;  padding: 0pt 4pt;'>
-                                 Localizar
-                                 
-                                <img src="img/active-search.png " class="imgEntrada ">
-                            </a>
-                           
-                            
-                            <br>
-                            <div style="height:4pt;width:1pt;"></div>
-                             <a href="# " class="botao  btn btn-2 btn-2c" onclick=" goToMenu();return false;" style='font-size:11pt;font-weight:bold; padding: 0pt 4pt;'>
-                                 OK
-                                
-                                <img src="img/check.png " class="imgEntrada ">
-                            </a>
-                            
-                        </div>
-
-                        <!-- 12 mapa -->
-                        <div class='swiper-slide'>
-                            
-                            <div class='help_screen help_drag' style='height:187pt;margin-left:-3pt;'>
-                                <div class='help_title'>Ajuda<img src='img/question_mark_white2.png' style="width:10pt;height:10pt;margin-left:2pt;"></div>
-                                    <div style="height:2pt;width:1pt;"></div>
-                                    <b>Legenda:</b> <br>
-                                    <div style="height:2pt;width:1pt;"></div>
-                                    <img src='img/user.png' style="width:10pt;height:10pt;"> Eu <br>
-                                    <img src='img/user_male.png' style="width:10pt;height:10pt;">
-                                    <img src='img/user_female.png' style="width:10pt;height:10pt;"> Amigos <br>
-                                    <img src='img/foods.png' style="width:12pt;height:12pt;"> Restaurante <br>
-                                    <img src='img/merch.png' style="width:12pt;height:12pt;"> Souvenires <br>
-                                    <div style="height:2pt;width:1pt;"></div>
-                                    <img src='img/wc.png' style="width:12pt;height:12pt;"> WC <br>
-                                    <img src='img/p1.png' style="width:12pt;height:12pt;"> Palcos <br>
-                                    <img src='img/wc-fila-male.png' style="width:23pt;height:14pt;"> Fila para WC masculino <br>
-                                    <img src='img/wc-fila-female.png' style="width:23pt;height:14pt;"> Fila para WC feminino <br>
-                                    
-                            </div>
-                            
-                            <div id='mapa_containment'></div>
-                            
-                            <div id='mapa'>
-                            
-                                <img src='img/mapa.png' id='imgMapa'>
-
-                                <img src='img/wc.png' id='iconWC'>
-                                
-                                <img src='img/wc-fila.png' id='wcFila' style='z-index:11'>
-
-                                <img src='img/foods.png' id='iconFood'>
-
-                                <img src='img/merch.png' id='iconMerch'>
-                                
-                                <img src='img/p1.png' id='iconP1'>
-                                
-                                <img src='img/p2.png' id='iconP2'>
-                                
-                                <img src='img/user.png' id='iconUser'>
-                                
-                                <img src='img/user_male.png' id='iconCarlos'>
-                                
-                                <img src='img/user_male.png' id='iconJoao'>
-                                
-                                <img src='img/user_female.png' id='iconJoana'>
-                                
-                                <img src='img/user_male.png' id='iconMerio'>
-                                
-                                <img src='img/user_female.png' id='iconRita'>
-
-                            </div>
-                            
-                        </div>
-
-                        <!-- 13 hands-free -->
-                        <div class="swiper-slide joao_add_amigos" >
-                            
-                            <div class='help_screen help_drag' style='height:210pt;margin-left:-3pt;'>
-                                <div class='help_title'>Mãos Livres<img src='img/hands-free.png' style="width:10pt;height:10pt;margin-left:2pt;"></div>
-                                    <div style="height:2pt;width:1pt;"></div>
-                                    <b>Legenda:</b> <br>
-                                    <div style="height:6pt;width:1pt;"></div>
-                                    <img src='img/gesto_abrir_mapa.png' style="border:1pt solid black;border-radius:4pt;width:45pt;height:25pt;"><br>Abrir mapa<br>
-                                    <div style="height:10pt;width:1pt;"></div>
-                                    <img src='img/gesto_abrir_cartaz.png' style="border:1pt solid black;border-radius:4pt;width:45pt;height:25pt;"><br>Abrir cartaz<br>
-                                    <div style="height:10pt;width:1pt;"></div>
-                                    <img src='img/hf_arrows/gesto_navegar_mapa_cross.png' style="border:1pt solid black;border-radius:4pt;width:50pt;height:25pt;"><br>O indicador move o mapa e o cartaz<br>
-                                    
-                                    
-                            </div>
-                            
-                            <div id='mao_livre' style='margin-left:-3pt'>
-                                <div style="height:3pt;width:1pt;"></div>
-                                <p>Toque para activar o modo mãos livres! 
-                             </div>                
-                               <p>
-                                <a href='# ' class='botao' onclick='toggleHandsFree();goToMenu();return false;' style='font-size:12pt;font-weight:bold;'> 
-                                    <img src='img/user1.png ' class='imgEntrada '> OK </a>
-                                
-                                
-                           
-                        </div>
-
-                        <!-- 14 merchandising -->
-                        <div class="swiper-slide">
-                            <div class="swiper-container swiper-container-vMerch swiperVertical">
-                                <div class="swiper-wrapper">
-                                    
-                                    <div class="swiper-slide menu_entrada compras">
-                                        <div class="produtos_listados"></div>
-                                        <input type="checkbox" name="compra" produ="Camisola" value="15">
-                                        <!--  checked-->
-                                    </div>
-                                    
-                                    <div class="swiper-slide  menu_entrada compras">
-                                        <div class="produtos_listados"></div>
-                                        <input type="checkbox" name="compra" produ="Corrente" value="2">
-                                    </div>
-                                    
-                                    <div class="swiper-slide menu_entrada compras">
-                                        <div class="produtos_listados"></div>
-                                        <input type="checkbox" name="compra" produ="Pins" value="2">
-                                        <!--  checked-->
-                                    </div>
-
-                                    <div class="swiper-slide  menu_entrada compras">
-                                        <div class="produtos_listados"></div>
-                                        <input type="checkbox" name="compra" produ="Porta-Chaves" value="3">
-                                    </div>
-
-                                    <div class="swiper-slide menu_entrada compras">
-                                        <div class="produtos_listados"></div>
-                                        <input type="checkbox" name="compra" produ="Postal" value="1">
-                                        <!--  checked="checked"-->
-                                    </div>
-
-                                    <div class="swiper-slide menu_entrada compras">
-                                        <div class="produtos_listados"></div>
-                                        <input type="checkbox" name="compra" produ="Pulseira" value="6">
-                                        <!--  checked-->
-                                    </div>
-
-
-                                    <div class="swiper-slide"></div>
-                                    <div class="swiper-slide"></div>
-                                    <!--         
-                                        <div  onclick="continuarCompra();return false;" class="swiper-slide menu_entrada">
-                                               <img src="img/map-2.png" class="imgEntrada"> Continuar  </div>-->
-
-
-                                </div>
-
-                                <div class="swiper-pagination swiper-pagination-vMerch"></div>
-                            </div>
-                        </div>
-                        
-                        <!-- 15 merchandising confirmar compra -->
-                        <div class="swiper-slide">
-                            <div class="swiper-container swiper-container-vMerch2">
-                                <div class="swiper-wrapper exchangeCompra">
-                                    #Pedido:
-                                    <div class='swiper-slide'></div>
-                                    <div class='swiper-slide '></div>
-                                    <div class='swiper-slide '></div>
-                                    <div class='swiper-slide '></div>
-                                    <div class='swiper-slide '></div>
-                                    <div class='swiper-slide '></div>
-                                    <div class='swiper-slide '></div>
-                                    <div class='swiper-slide '></div>
-                                    <div class='swiper-slide '></div>
-                                    <div class='swiper-slide '></div>
-                                    <div class='swiper-slide '></div>
-                                    
-                   
-                                    
-
-                                </div>
-                                
-                                <div class="swiper-pagination swiper-pagination-vMerch2"></div>
-
-                            </div>
-                        </div>
-                        
-                        
-
-                        <!-- 16 merchandising confirmada compra -->
-                        <div class="swiper-slide joao_add_amigos" style='margin-left:-3pt'>
-                            <div style="height:2pt;width:1pt;"></div>
-                            Pedido efectuado. Pode levantar a encomenda.
-                            
-                            <br>
-                            <div style="height:2pt;width:1pt;"></div>
-                            
-                            <a href="# " class="botao  btn btn-2 btn-2c" onclick=" findMerch();return false;" style='font-size:11pt;font-weight:bold;  padding: 0pt 4pt;'>
-                                 Localizar
-                                 
-                                <img src="img/active-search.png " class="imgEntrada ">
-                            </a>
-                            <br>
-                            <div style="height:4pt;width:1pt;"></div>
-                             <a href="# " class="botao  btn btn-2 btn-2c" onclick=" goToMenu();return false;" style='font-size:11pt;font-weight:bold; padding: 0pt 4pt;'>
-                                 OK
-                                
-                                <img src="img/check.png " class="imgEntrada ">
-                            </a>
-                        </div>
-
-                        <!-- 17 horario -->
-                        <div class="swiper-slide" style="display: block;">
-
-                            <div id='horario'></div>
-
-                            <div onclick=" cartaz(); return false;" class="menu_entrada swiper-slide" style='height:25pt'>
-                                <img src="img/cartaz.png " class="imgEntrada"> &nbsp; Cartaz
-                            </div>
-
-                            <div onclick="encontros();return false;" class="menu_entrada swiper-slide" style='height:25pt'>
-                                <img src="img/pointer.png " class="imgEntrada" style="width:8pt"> &nbsp; Encontros
-                            </div>
-                        </div>
-
-                        <!-- 18 encontros -->
-                        <div class="swiper-slide">
-                            <div class="swiper-container swiper-container-vCartaz swiperVertical">
-                                <div class="swiper-wrapper">
-
-                                    <div onclick="return false;" class="swiper-slide  menu_entrada">
-                                        <img src="img/multy-user.png " class="imgEntrada "> Get out of
-                                    </div>
-
-                                    <div onclick="return false; " class="swiper-slide menu_entrada">
-                                        <img src="img/add-user.png " class="imgEntrada" align="center "> there, it's
-                                    </div>
-
-                                    <div class="swiper-slide menu_entrada" style="font-size:8.25pt">
-                                        <img src="img/Agenda.png " class="imgEntrada" align="center ">Gonna Blow
-                                    </div>
-
-                                    <div class="swiper-slide"></div>
-
-                                </div>
-
-                                <div class="swiper-pagination swiper-pagination-vCartaz"></div>
-                            </div>
-                        </div>
-                        
-                        <!-- 19 historico -->
-                        <div class="swiper-slide">
-                            <div class="swiper-container swiper-container-vHistorico">
-                                <div id="listaHistoricoCompras" class="swiper-wrapper" style='font-size:12pt;'>
-                                    <div style="height:9pt;width:1pt;"></div>
-                                    Sem compras.
-
-                                </div>
-
-                            </div>
-                        </div>
-                        
-                        
-                        <!-- 20 algo -->
-                        <div class="swiper-slide placeholder">Horizontal Slide 4</div>
-                        
-                        
-                         <!-- dia 1 = 20 + dia -->
-                        <div class="swiper-slide">
-                            
-                            <div class="swiper-container swiper-container-vCartaz0" style="width:1.5in">
-                               
-                                <div id="cartazPLS" class="entrada_cartaz">
-                                                                
-                                        <img id='cartaz-previous' onclick="return false;" src="img/previous.png" class="img_cartazPrev" style="float:left;visibility:hidden;">
-                                        
-                                        <div id='cartaz-dia'>
-                                            &nbsp; &nbsp; <b>Dia 1</b> &nbsp; &nbsp;
-                                        </div>
-                                        
-                                        <img id='cartaz-next' onclick="next();return false;" src="img/next.png" class="img_cartazNext" style="float:right">
-                                        
-                                </div>
-                                   
-                                <div id='cartazD1' class="swiper-wrapper" style='z-index:-1'>
-                                    
-                                     
-                                    
-
-                                    <div onclick="goToP1();return false;" class="swiper-slide entrada_cartaz specialwidth" >
-                                        16h00 <p>&nbsp; &nbsp;</p> Os Rui - P.1 
-                                    </div>
-
-                                    <div onclick="goToP2();return false;" class="swiper-slide entrada_cartaz specialwidth">
-                                       16h00 <p>&nbsp; &nbsp;</p> Os Outros - P.2 
-                                    </div>
-
-                                    <div onclick="goToP1();return false;" class="swiper-slide entrada_cartaz specialwidth">
-                                       19h00  <p>&nbsp; &nbsp;</p> Megue Leve - P.1
-                                    </div>
-                                    
-                                    <div class="swiper-slide entrada_cartaz helpResize" > </div>
-                                    <div class="swiper-slide entrada_cartaz helpResize" > </div>
-                                    
-
-                                </div>
-                                <!-- <div class="swiper-pagination swiper-pagination-vCartaz0"></div> -->
-                                
-                            </div>
-                        </div>
-                        
-                        <!-- dia 2  -->
-                        <div class="swiper-slide">
-                            <div class="swiper-container swiper-container-vCartaz1" style='margin-left: -0.8pt;width:1.5in;'>
-                                
-                                <div id="cartazPLS" class="entrada_cartaz">
-                                                                
-                                        <img id='cartaz-previous' onclick="prev(); return false;" src="img/previous.png" class="img_cartazPrev" style="float:left">
-                                        
-                                        <div id='cartaz-dia'>
-                                            &nbsp; &nbsp; <b>Dia 2</b> &nbsp; &nbsp;
-                                        </div>
-                                        
-                                        <img id='cartaz-next' onclick="next(); return false;" src="img/next.png" class="img_cartazNext" style="float:right">
-                                        
-                                </div>
-                                     
-                                <div class="swiper-wrapper" style='z-index:-1'>
-                                    
-                                    <div onclick="goToP2();return false;" class="swiper-slide  entrada_cartaz specialwidth">
-                                         11h00 <p>&nbsp; &nbsp;</p> Os Tapa-Cartaz - P.2
-                                    </div>
-
-                                    <div onclick="goToP1();return false;" class="swiper-slide entrada_cartaz specialwidth">
-                                         19h00 <p>&nbsp; &nbsp;</p> Encore ft. Mais Uma - P.1
-                                    </div>
-
-                                    <div onclick="goToP2();return false;" class="swiper-slide entrada_cartaz specialwidth" >
-                                         22h00 <p>&nbsp; &nbsp;</p> Desku - P.2
-                                    </div>
-
-                                    <div class="swiper-slide entrada_cartaz helpResize"> </div>
-                                    <div class="swiper-slide entrada_cartaz helpResize" > </div>
-              
-                                </div>
-
-                            </div>
-                        </div>
-                        
-                        
-                        <!-- dia 3  -->
-                        <div class="swiper-slide">
-                            <div class="swiper-container swiper-container-vCartaz2" style='margin-left: -0.5pt;width:1.5in;'>
-                                
-                                <div id="cartazPLS" class="entrada_cartaz" >
-                                                                
-                                        <img id='cartaz-previous' onclick="prev(); return false;" src="img/previous.png" class="img_cartazPrev" style="float:left;">
-                                        
-                                        <div id='cartaz-dia'>
-                                            &nbsp; &nbsp; <b>Dia 3</b> &nbsp; &nbsp;
-                                        </div>
-                                        
-                                        <img id='cartaz-next' onclick="return false;" src="img/next.png" class="img_cartazNext" style="float:right;visibility:hidden;">
-            
-                                     </div>
-                                     
-                                <div class="swiper-wrapper" style='z-index:-1'>
-                                    
-                                    <div onclick="goToP1();return false;" class="swiper-slide  entrada_cartaz specialwidth">
-                                       9h00<p>&nbsp; &nbsp;</p> Mais que Muitos - P.1
-                                    </div>
-
-                                    <div onclick="goToP2();return false;" class="swiper-slide entrada_cartaz specialwidth">
-                                       9h00 <p>&nbsp; &nbsp;</p> Os Rescisão - P.2
-                                    </div>
-
-                                    <div onclick="goToP1();return false;" class="swiper-slide entrada_cartaz specialwidth" >
-                                        13h00 <p>&nbsp; &nbsp;</p> Φdelizados - P.1
-                                    </div>
-
-                                    <div class="swiper-slide entrada_cartaz helpResize"> </div>
-                                    <div class="swiper-slide entrada_cartaz helpResize" > </div>
-                                    
-                                </div>
-
-                            </div>
-                        </div>
-                        
-                    
-
-                        <div class="swiper-slide">Horizontal Slide 4</div>
                     </div>
 
+
+                    <!-- 1 pefil -->
+                    <div class="swiper-slide">
+                        <div class="swiper-container swiper-container-v2 swiperVertical" style='margin-left:-2pt'>
+                            <div class="swiper-wrapper">
+
+                                <div onclick="amigos();return false;" class="swiper-slide  menu_entrada">
+                                    <img src="img/multy-user.png " class="imgEntrada "> Lista de Amigos 
+                                </div>
+
+                                <div onclick="$('#botao_encostar_inact').css('display','none');addAmigos();return false; " class="swiper-slide menu_entrada">
+                                    <img src="img/add-user.png " class="imgEntrada " align="center "> Adicionar Amigo
+                                </div>
+
+                                <div onclick="historico();return false; " class="swiper-slide menu_entrada" style="font-size:8.25pt">
+                                    <img src="img/euro.png " class="imgEntrada " align="center "> Histórico de Transações
+                                </div>
+
+
+                                <div class="swiper-slide"></div>
+
+                            </div>
+
+                            <div class="swiper-pagination swiper-pagination-v2"></div>
+                        </div>
+                    </div>
+
+
+                    <!-- 2 add amigos -->
+                    <div class="swiper-slide text_add_amigos">Encoste o seu iRave ao do seu amigo.</div>
+
+
+                    <!-- 3 add joao -->
+                    <div class="swiper-slide joao_add_amigos">
+                        <div id=AmgDetectado style="padding-top:5px" >
+                            
+                            Amigo detectado.
+                            <p>Quer adicioná-lo ?</p>
+
+                            <a href="# " class="botao" onclick="adicionarJoao();next();return false; ">
+
+                                <img src="img/check.png " class="imgEntrada "> Sim
+                            </a>
+
+                            <a href="# " class="botao" onclick="prev();return false; ">
+
+                                <img src="img/cross.png " class="imgEntrada "> Não
+                            </a>
+
+                        </div>
+                        
+                    </div>
+
+                    <!-- 4 added joao -->
+                    <div class="swiper-slide joao_add_amigos">
+                       <div id=AmgAdicionado ><p></p> O amigo foi adicionado com sucesso.</div>
+                        <div style='height:5pt;width:1pt;'> </div>
+                        <a href="# " class="botao btn btn-2 btn-2c" onclick="prev();return false;" style='font-size:12pt;font-weight:bold;'>
+
+                            <img src="img/user1.png " class="imgEntrada "> OK
+                        </a>
+
+                    </div>
+
+
+                    <!-- 5 lista amigos -->
+                    <div class="swiper-slide" style="display: block;">
+
+                        <div id='lista_joao'>
+                            <p style="text-align:center;font-size:10pt" >Ainda não adicionou amigos
+                        </div>
+
+
+                        <div id="bot_add_amigo_pergunta" class='joao_add_amigos bot_pergunta_amigo' >
+                            <div id="plsbegone" style="height:3pt;width:1pt;"></div>
+                            Adicionar amigos?<br>
+                            <!--<div style="height:3pt;width:1pt;"></div>-->
+                            <a href="# " onclick="$('#botao_encostar_inact').css('display','none');addAmigos();return false;" style='font-size:12pt;font-weight:bold;'>
+
+                                <img src="img/user1.png " class="imgEntrada"> Sim
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 6 opcoes joao -->
+                    <div class="swiper-slide" style="display: block;">
+
+                        <div id='opcoes_joao'></div>
+
+
+                        <!-- ir para: mapa no joao -->
+                        <div id='queroLocalizarQuem' onclick="localizarAmigo();return false;" class="menu_entrada">
+                            <img src="img/add-user.png " class="imgEntrada "> Localizar
+                        </div>
+
+                        <!-- ir para: pretende remover o joao? -->
+                          
+                          <div class='remove_screen' style='height:60pt'>
+                            <div class='remove_title'>Remover Amigo?</div>
+                                <div style="height:7pt;width:1pt;"></div>
+                                <div id="queroRemoverQuem" onclick="removerAmigo();amigos();return false;">
+                                    <p class='remove_text' style='margin-left:3%;float:left'>Sim</p>
+                                </div>
+                                <div onclick="prev();return false;">
+                                    <p class='remove_text' style='margin-right:3%;float:right'>Não</p>
+                                </div>
+                            </div>
+                          
+                        <div  onclick="removePrompt();return false;" class="menu_entrada">
+                            <img src="img/Agenda.png " class="imgEntrada "> Remover
+                        </div>
+
+                    </div>
+
+
+                    <!-- 7 protegido com sucesso -->
+                    <div class="swiper-slide joao_add_amigos">
+                        <div style="height:9pt;width:1pt;"></div>
+                        <div id='protSucesso'>Protegido com sucesso!</div>
+                        <p></p>
+                        <a href="# " class="botao" onclick="amigos();return false;" style='font-size:12pt;font-weight:bold;'>
+                            <img src="img/user1.png " class="imgEntrada "> OK
+                        </a>
+                    </div>
+
+
+                    <!-- 8 procurar -->
+                    <div class="swiper-slide">
+                        <div class=" swiper-container swiper-container-vProcurar swiperVertical" style='margin-left:-6pt'>
+                            <div class="swiper-wrapper">
+
+                                <div onclick="amigos(); return false;" class="swiper-slide  menu_entrada">
+                                    <img src="img/multy-user.png" class="imgEntrada"> &nbsp; Amigos </div>
+                                    
+                                <div onclick="banho(); return false;" class="swiper-slide menu_entrada">
+                                    <img src="img/wc.png" class="imgEntrada"> &nbsp; WC </div>
+
+                                <div onclick="comida(); return false;" class="swiper-slide menu_entrada">
+                                    <img src="img/foods.png" class="imgEntrada"> &nbsp; Restaurante </div>
+
+                                <div onclick="merch(); return false;" class="swiper-slide menu_entrada">
+                                    <img src="img/merch.png" class="imgEntrada"> &nbsp; Souvenires </div>
+                                
+                                <div onclick="cartaz(); return false;" class="swiper-slide menu_entrada">
+                                    <img src="img/cartaz.png" class="imgEntrada"> &nbsp; Cartaz </div>
+                                
+                                <div onclick="encontros(); return false;" class="swiper-slide menu_entrada">
+                                    <img src="img/pointer.png" class="imgEntrada" style="width:8pt"> &nbsp; Encontros </div>
+
+                                <div class="swiper-slide"></div>
+                               
+
+                            </div>
+
+                            <div class="swiper-pagination swiper-pagination-vProcurar"></div>
+                        </div>
+                    </div>
+
+
+                    <!-- 9 comes/cegues -->
+                    <div class="swiper-slide">
+                        <div class="swiper-container swiper-container-vComes swiperVertical" style='margin-left:-3pt'>
+                            <div class="swiper-wrapper">
+
+                                <div class="swiper-slide  menu_entrada" style="background:#ddd">
+                                    <img src="img/hamburguer.png" class="imgEntrada"> &nbsp; Comidas
+                                </div>
+                                
+                                <div class="swiper-slide menu_entrada compras">
+                                    <div class="produtos_listados" onclick=" console.log('shishi');"></div>
+                                    <input type="checkbox" name="compra" produ="Batatas" value="1">
+                                    <!--  checked="checked"-->
+                                </div>
+
+                                <div class="swiper-slide  menu_entrada compras">
+                                    <div class="produtos_listados"></div>
+                                    <input type="checkbox" name="compra" produ="Bifana" value="3">
+                                </div>
+
+                                <div class="swiper-slide menu_entrada compras">
+                                    <div class="produtos_listados"></div>
+                                    <input type="checkbox" name="compra" produ="Bitoque" value="5">
+                                    <!--  checked="checked"-->
+                                </div>
+                                
+                                <div class="swiper-slide menu_entrada compras">
+                                    <div class="produtos_listados"></div>
+                                    <input type="checkbox" name="compra" produ="Gelado" value="2">
+                                    <!--  checked="checked"-->
+                                </div>
+
+
+                                <div class="swiper-slide menu_entrada" style="background:#ddd">
+                                    <img src="img/bebida.png" class="imgEntrada"> Bebidas </div>
+
+                                <div class="swiper-slide menu_entrada compras">
+                                    <div class="produtos_listados"></div>
+                                    <input type="checkbox" name="compra" produ="Água" value="1">
+                                    <!--  checked-->
+                                </div>
+
+                                <div class="swiper-slide  menu_entrada compras">
+                                    <div class="produtos_listados"></div>
+                                    <input type="checkbox" name="compra" produ="Cola" value="1.2">
+                                </div>
+                                
+                                <div class="swiper-slide  menu_entrada compras">
+                                    <div class="produtos_listados"></div>
+                                    <input type="checkbox" name="compra" produ="Ice Tea" value="1">
+                                </div>
+                                
+                                <div class="swiper-slide  menu_entrada compras">
+                                    <div class="produtos_listados"></div>
+                                    <input type="checkbox" name="compra"  produ="Limonada" value="0.5">
+                                </div>
+                                
+                            
+
+                                <div class="swiper-slide"></div>
+                                <div class="swiper-slide"></div>
+                                <!--         
+                                    <div  onclick="continuarCompra();return false;" class="swiper-slide menu_entrada">
+                                           <img src="img/map-2.png" class="imgEntrada"> Continuar  </div>-->
+
+                            </div>
+
+                            <div class="swiper-pagination swiper-pagination-vComes"></div>
+                        </div>
+                    </div>
+
+                    <!-- 10 comes/cegues confirmar compra -->
+                    <div class="swiper-slide">
+                        <div class="swiper-container swiper-container-v3">
+                            <div class="swiper-wrapper exchangeCompra">
+                                #Pedido:
+                                    
+                                <div class='swiper-slide menu_entrada'></div>
+                                <div class='swiper-slide menu_entrada'></div>
+                                <div class='swiper-slide menu_entrada'></div>
+                                <div class='swiper-slide menu_entrada'></div>
+                                <div class='swiper-slide menu_entrada'></div>
+                                <div class="swiper-slide menu_entrada"></div>
+                                <div class="swiper-slide menu_entrada"></div>
+                                <div class="swiper-slide menu_entrada"></div>
+                                <div class="swiper-slide menu_entrada"></div>
+                                <div class="swiper-slide menu_entrada"></div>
+                                <div class="swiper-slide menu_entrada"></div>
+                                <div class="swiper-slide menu_entrada"></div>
+                                <div class="swiper-slide menu_entrada"></div>
+                                <div class="swiper-slide menu_entrada"></div>
+                                <div class="swiper-slide menu_entrada"></div>
+                            </div>
+                           
+                            <div class="swiper-pagination swiper-pagination-v3"></div>
+                            
+
+                        </div>
+                    </div>
+
+                    <!-- 11 comes/cegues confirmada compra -->
+                    <div class="swiper-slide joao_add_amigos" style='margin-left:-3pt'>
+                        <div style="height:2pt;width:1pt;"></div>
+                        Pedido efectuado. Estará pronto dentro de 5 minutos.
+                        <br>
+                        <div style="height:2pt;width:1pt;"></div>
+                        
+                        <a href="# " class="botao  btn btn-2 btn-2c" onclick=" findComida();return false;" style='font-size:11pt;font-weight:bold;  padding: 0pt 4pt;'>
+                             Localizar
+                             
+                            <img src="img/active-search.png " class="imgEntrada ">
+                        </a>
+                       
+                        
+                        <br>
+                        <div style="height:4pt;width:1pt;"></div>
+                         <a href="# " class="botao  btn btn-2 btn-2c" onclick=" goToMenu();return false;" style='font-size:11pt;font-weight:bold; padding: 0pt 4pt;'>
+                             OK
+                            
+                            <img src="img/check.png " class="imgEntrada ">
+                        </a>
+                        
+                    </div>
+
+                    <!-- 12 mapa -->
+                    <div class='swiper-slide'>
+                        
+                        <div class='help_screen help_drag' style='height:187pt;margin-left:-3pt;'>
+                            <div class='help_title'>Ajuda<img src='img/question_mark_white2.png' style="width:10pt;height:10pt;margin-left:2pt;"></div>
+                                <div style="height:2pt;width:1pt;"></div>
+                                <b>Legenda:</b> <br>
+                                <div style="height:2pt;width:1pt;"></div>
+                                <img src='img/user.png' style="width:10pt;height:10pt;"> Eu <br>
+                                <img src='img/user_male.png' style="width:10pt;height:10pt;">
+                                <img src='img/user_female.png' style="width:10pt;height:10pt;"> Amigos <br>
+                                <img src='img/foods.png' style="width:12pt;height:12pt;"> Restaurante <br>
+                                <img src='img/merch.png' style="width:12pt;height:12pt;"> Souvenires <br>
+                                <div style="height:2pt;width:1pt;"></div>
+                                <img src='img/wc.png' style="width:12pt;height:12pt;"> WC <br>
+                                <img src='img/p1.png' style="width:12pt;height:12pt;"> Palcos <br>
+                                <img src='img/wc-fila-male.png' style="width:23pt;height:14pt;"> Fila para WC masculino <br>
+                                <img src='img/wc-fila-female.png' style="width:23pt;height:14pt;"> Fila para WC feminino <br>
+                                
+                        </div>
+                        
+                        <div id='mapa_containment'></div>
+                        
+                        <div id='mapa'>
+                        
+                            <img src='img/mapa.png' id='imgMapa'>
+
+                            <img src='img/wc.png' id='iconWC'>
+                            
+                            <img src='img/wc-fila.png' id='wcFila' style='z-index:11'>
+
+                            <img src='img/foods.png' id='iconFood'>
+
+                            <img src='img/merch.png' id='iconMerch'>
+                            
+                            <img src='img/p1.png' id='iconP1'>
+                            
+                            <img src='img/p2.png' id='iconP2'>
+                            
+                            <img src='img/user.png' id='iconUser'>
+                            
+                            <img src='img/user_male.png' id='iconCarlos'>
+                            
+                            <img src='img/user_male.png' id='iconJoao'>
+                            
+                            <img src='img/user_female.png' id='iconJoana'>
+                            
+                            <img src='img/user_male.png' id='iconMerio'>
+                            
+                            <img src='img/user_female.png' id='iconRita'>
+
+                        </div>
+                        
+                    </div>
+
+                    <!-- 13 hands-free -->
+                    <div class="swiper-slide joao_add_amigos" >
+                        
+                        <div class='help_screen help_drag' style='height:210pt;margin-left:-3pt;'>
+                            <div class='help_title'>Mãos Livres<img src='img/hands-free.png' style="width:10pt;height:10pt;margin-left:2pt;"></div>
+                                <div style="height:2pt;width:1pt;"></div>
+                                <b>Legenda:</b> <br>
+                                <div style="height:6pt;width:1pt;"></div>
+                                <img src='img/gesto_abrir_mapa.png' style="border:1pt solid black;border-radius:4pt;width:45pt;height:25pt;"><br>Abrir mapa<br>
+                                <div style="height:10pt;width:1pt;"></div>
+                                <img src='img/gesto_abrir_cartaz.png' style="border:1pt solid black;border-radius:4pt;width:45pt;height:25pt;"><br>Abrir cartaz<br>
+                                <div style="height:10pt;width:1pt;"></div>
+                                <img src='img/hf_arrows/gesto_navegar_mapa_cross.png' style="border:1pt solid black;border-radius:4pt;width:50pt;height:25pt;"><br>O indicador move o mapa e o cartaz<br>
+                                
+                                
+                        </div>
+                        
+                        <div id='mao_livre' style='margin-left:-3pt'>
+                            <div style="height:3pt;width:1pt;"></div>
+                            <p>Toque para activar o modo mãos livres! 
+                         </div>                
+                           <p>
+                            <a href='# ' class='botao' onclick='toggleHandsFree();goToMenu();return false;' style='font-size:12pt;font-weight:bold;'> 
+                                <img src='img/user1.png ' class='imgEntrada '> OK </a>
+                            
+                            
+                       
+                    </div>
+
+                    <!-- 14 merchandising -->
+                    <div class="swiper-slide">
+                        <div class="swiper-container swiper-container-vMerch swiperVertical">
+                            <div class="swiper-wrapper">
+                                
+                                <div class="swiper-slide menu_entrada compras">
+                                    <div class="produtos_listados"></div>
+                                    <input type="checkbox" name="compra" produ="Camisola" value="15">
+                                    <!--  checked-->
+                                </div>
+                                
+                                <div class="swiper-slide  menu_entrada compras">
+                                    <div class="produtos_listados"></div>
+                                    <input type="checkbox" name="compra" produ="Corrente" value="2">
+                                </div>
+                                
+                                <div class="swiper-slide menu_entrada compras">
+                                    <div class="produtos_listados"></div>
+                                    <input type="checkbox" name="compra" produ="Pins" value="2">
+                                    <!--  checked-->
+                                </div>
+
+                                <div class="swiper-slide  menu_entrada compras">
+                                    <div class="produtos_listados"></div>
+                                    <input type="checkbox" name="compra" produ="Porta-Chaves" value="3">
+                                </div>
+
+                                <div class="swiper-slide menu_entrada compras">
+                                    <div class="produtos_listados"></div>
+                                    <input type="checkbox" name="compra" produ="Postal" value="1">
+                                    <!--  checked="checked"-->
+                                </div>
+
+                                <div class="swiper-slide menu_entrada compras">
+                                    <div class="produtos_listados"></div>
+                                    <input type="checkbox" name="compra" produ="Pulseira" value="6">
+                                    <!--  checked-->
+                                </div>
+
+
+                                <div class="swiper-slide"></div>
+                                <div class="swiper-slide"></div>
+                                <!--         
+                                    <div  onclick="continuarCompra();return false;" class="swiper-slide menu_entrada">
+                                           <img src="img/map-2.png" class="imgEntrada"> Continuar  </div>-->
+
+
+                            </div>
+
+                            <div class="swiper-pagination swiper-pagination-vMerch"></div>
+                        </div>
+                    </div>
                     
+                    <!-- 15 merchandising confirmar compra -->
+                    <div class="swiper-slide">
+                        <div class="swiper-container swiper-container-vMerch2">
+                            <div class="swiper-wrapper exchangeCompra">
+                                #Pedido:
+                                <div class='swiper-slide'></div>
+                                <div class='swiper-slide '></div>
+                                <div class='swiper-slide '></div>
+                                <div class='swiper-slide '></div>
+                                <div class='swiper-slide '></div>
+                                <div class='swiper-slide '></div>
+                                <div class='swiper-slide '></div>
+                                <div class='swiper-slide '></div>
+                                <div class='swiper-slide '></div>
+                                <div class='swiper-slide '></div>
+                                <div class='swiper-slide '></div>
+                                
+               
+                                
+
+                            </div>
+                            
+                            <div class="swiper-pagination swiper-pagination-vMerch2"></div>
+
+                        </div>
+                    </div>
+                    
+                    
+
+                    <!-- 16 merchandising confirmada compra -->
+                    <div class="swiper-slide joao_add_amigos" style='margin-left:-3pt'>
+                        <div style="height:2pt;width:1pt;"></div>
+                        Pedido efectuado. Pode levantar a encomenda.
+                        
+                        <br>
+                        <div style="height:2pt;width:1pt;"></div>
+                        
+                        <a href="# " class="botao  btn btn-2 btn-2c" onclick=" findMerch();return false;" style='font-size:11pt;font-weight:bold;  padding: 0pt 4pt;'>
+                             Localizar
+                             
+                            <img src="img/active-search.png " class="imgEntrada ">
+                        </a>
+                        <br>
+                        <div style="height:4pt;width:1pt;"></div>
+                         <a href="# " class="botao  btn btn-2 btn-2c" onclick=" goToMenu();return false;" style='font-size:11pt;font-weight:bold; padding: 0pt 4pt;'>
+                             OK
+                            
+                            <img src="img/check.png " class="imgEntrada ">
+                        </a>
+                    </div>
+
+                    <!-- 17 horario -->
+                    <div class="swiper-slide" style="display: block;">
+
+                        <div id='horario'></div>
+
+                        <div onclick=" cartaz(); return false;" class="menu_entrada swiper-slide" style='height:25pt'>
+                            <img src="img/cartaz.png " class="imgEntrada"> &nbsp; Cartaz
+                        </div>
+
+                        <div onclick="encontros();return false;" class="menu_entrada swiper-slide" style='height:25pt'>
+                            <img src="img/pointer.png " class="imgEntrada" style="width:8pt"> &nbsp; Encontros
+                        </div>
+                    </div>
+
+                    <!-- 18 encontros -->
+                    <div class="swiper-slide">
+                        <div class="swiper-container swiper-container-vCartaz swiperVertical">
+                            <div class="swiper-wrapper">
+
+                                <div onclick="return false;" class="swiper-slide  menu_entrada">
+                                    <img src="img/multy-user.png " class="imgEntrada "> Get out of
+                                </div>
+
+                                <div onclick="return false; " class="swiper-slide menu_entrada">
+                                    <img src="img/add-user.png " class="imgEntrada" align="center "> there, it's
+                                </div>
+
+                                <div class="swiper-slide menu_entrada" style="font-size:8.25pt">
+                                    <img src="img/Agenda.png " class="imgEntrada" align="center ">Gonna Blow
+                                </div>
+
+                                <div class="swiper-slide"></div>
+
+                            </div>
+
+                            <div class="swiper-pagination swiper-pagination-vCartaz"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 19 historico -->
+                    <div class="swiper-slide">
+                        <div class="swiper-container swiper-container-vHistorico">
+                            <div id="listaHistoricoCompras" class="swiper-wrapper" style='font-size:12pt;'>
+                                <div style="height:9pt;width:1pt;"></div>
+                                Sem compras.
+
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    
+                    <!-- 20 algo -->
+                    <div class="swiper-slide placeholder">Horizontal Slide 4</div>
+                    
+                    
+                     <!-- dia 1 = 20 + dia -->
+                    <div class="swiper-slide">
+                        
+                        <div class="swiper-container swiper-container-vCartaz0" style="width:1.5in">
+                           
+                            <div id="cartazPLS" class="entrada_cartaz">
+                                                            
+                                    <img id='cartaz-previous' onclick="return false;" src="img/previous.png" class="img_cartazPrev" style="float:left;visibility:hidden;">
+                                    
+                                    <div id='cartaz-dia'>
+                                        &nbsp; &nbsp; <b>Dia 1</b> &nbsp; &nbsp;
+                                    </div>
+                                    
+                                    <img id='cartaz-next' onclick="next();return false;" src="img/next.png" class="img_cartazNext" style="float:right">
+                                    
+                            </div>
+                               
+                            <div id='cartazD1' class="swiper-wrapper" style='z-index:-1'>
+                                
+                                 
+                                
+
+                                <div onclick="goToP1();return false;" class="swiper-slide entrada_cartaz specialwidth" >
+                                    16h00 <p>&nbsp; &nbsp;</p> Os Rui - P.1 
+                                </div>
+
+                                <div onclick="goToP2();return false;" class="swiper-slide entrada_cartaz specialwidth">
+                                   16h00 <p>&nbsp; &nbsp;</p> Os Outros - P.2 
+                                </div>
+
+                                <div onclick="goToP1();return false;" class="swiper-slide entrada_cartaz specialwidth">
+                                   19h00  <p>&nbsp; &nbsp;</p> Megue Leve - P.1
+                                </div>
+                                
+                                <div class="swiper-slide entrada_cartaz helpResize" > </div>
+                                <div class="swiper-slide entrada_cartaz helpResize" > </div>
+                                
+
+                            </div>
+                            <!-- <div class="swiper-pagination swiper-pagination-vCartaz0"></div> -->
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- dia 2  -->
+                    <div class="swiper-slide">
+                        <div class="swiper-container swiper-container-vCartaz1" style='margin-left: -0.8pt;width:1.5in;'>
+                            
+                            <div id="cartazPLS" class="entrada_cartaz">
+                                                            
+                                    <img id='cartaz-previous' onclick="prev(); return false;" src="img/previous.png" class="img_cartazPrev" style="float:left">
+                                    
+                                    <div id='cartaz-dia'>
+                                        &nbsp; &nbsp; <b>Dia 2</b> &nbsp; &nbsp;
+                                    </div>
+                                    
+                                    <img id='cartaz-next' onclick="next(); return false;" src="img/next.png" class="img_cartazNext" style="float:right">
+                                    
+                            </div>
+                                 
+                            <div class="swiper-wrapper" style='z-index:-1'>
+                                
+                                <div onclick="goToP2();return false;" class="swiper-slide  entrada_cartaz specialwidth">
+                                     11h00 <p>&nbsp; &nbsp;</p> Os Tapa-Cartaz - P.2
+                                </div>
+
+                                <div onclick="goToP1();return false;" class="swiper-slide entrada_cartaz specialwidth">
+                                     19h00 <p>&nbsp; &nbsp;</p> Encore ft. Mais Uma - P.1
+                                </div>
+
+                                <div onclick="goToP2();return false;" class="swiper-slide entrada_cartaz specialwidth" >
+                                     22h00 <p>&nbsp; &nbsp;</p> Desku - P.2
+                                </div>
+
+                                <div class="swiper-slide entrada_cartaz helpResize"> </div>
+                                <div class="swiper-slide entrada_cartaz helpResize" > </div>
+          
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    
+                    <!-- dia 3  -->
+                    <div class="swiper-slide">
+                        <div class="swiper-container swiper-container-vCartaz2" style='margin-left: -0.5pt;width:1.5in;'>
+                            
+                            <div id="cartazPLS" class="entrada_cartaz" >
+                                                            
+                                    <img id='cartaz-previous' onclick="prev(); return false;" src="img/previous.png" class="img_cartazPrev" style="float:left;">
+                                    
+                                    <div id='cartaz-dia'>
+                                        &nbsp; &nbsp; <b>Dia 3</b> &nbsp; &nbsp;
+                                    </div>
+                                    
+                                    <img id='cartaz-next' onclick="return false;" src="img/next.png" class="img_cartazNext" style="float:right;visibility:hidden;">
+        
+                                 </div>
+                                 
+                            <div class="swiper-wrapper" style='z-index:-1'>
+                                
+                                <div onclick="goToP1();return false;" class="swiper-slide  entrada_cartaz specialwidth">
+                                   9h00<p>&nbsp; &nbsp;</p> Mais que Muitos - P.1
+                                </div>
+
+                                <div onclick="goToP2();return false;" class="swiper-slide entrada_cartaz specialwidth">
+                                   9h00 <p>&nbsp; &nbsp;</p> Os Rescisão - P.2
+                                </div>
+
+                                <div onclick="goToP1();return false;" class="swiper-slide entrada_cartaz specialwidth" >
+                                    13h00 <p>&nbsp; &nbsp;</p> Φdelizados - P.1
+                                </div>
+
+                                <div class="swiper-slide entrada_cartaz helpResize"> </div>
+                                <div class="swiper-slide entrada_cartaz helpResize" > </div>
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                
+
+                    <div class="swiper-slide">Horizontal Slide 4</div>
                 </div>
 
-            <!--  (> '')>   <( ' ' )>   <('' <)   <( ' ' )>   (> '')>   <( ' ' )>   <('' <)  -->
-
+                
             </div>
+
+        <!--  (> '')>   <( ' ' )>   <('' <)   <( ' ' )>   (> '')>   <( ' ' )>   <('' <)  -->
+
+        
 
         </div>
 
