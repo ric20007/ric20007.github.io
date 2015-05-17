@@ -1,6 +1,7 @@
 var swiperH,
     valorCompra = 0,
-    totalComprado =0;
+    totalComprado = 0,
+    locked = 1;
     
 var swipers;
 var swiperCartaz= [0,0,0];
@@ -66,6 +67,7 @@ function reset_um_producto(i) {
 
 $(document).ready(function() {
     
+    
    $(".swiper-pagination-v3").css("transform","translate(0%, -5%)");
     //$(".exchangeCompra").css("width","1.4in");
 
@@ -119,6 +121,10 @@ $(document).ready(function() {
         else
             $(elSlides[j]).css("visibility", "visible");
     }
+    
+    //mapa atras do lockscreen
+    goToSlide(12);
+    prevStack.pop();
     
     
     swipers =[
@@ -388,6 +394,7 @@ $(document).ready(function() {
             m = checkTime(today.getMinutes()),
             s = checkTime(today.getSeconds());
         document.getElementById('horas').innerHTML = h + ":" + m;
+        document.getElementById('horas_lock').innerHTML = h + ":" + m;
         var t = setTimeout(function() {
             startTime();
         }, 500);
@@ -443,6 +450,8 @@ function mudarNome(i) {
 }
 
 function prev() {
+    if(locked)
+        return;
     
     // caso se se estar a cancelar um remove amigo
     if (promptRemove == 1) {
@@ -799,7 +808,53 @@ function amigos() {
 
 function goToMenu() {
     
-    goToSlide(0);
+    if (locked){
+         
+        setTimeout(function() {
+            $(".lock_screen").css('opacity', 0);
+        }, 500);
+        
+         setTimeout(function() {
+            $(".lock_screen").css('display', "none");
+        }, 700);
+        
+        $(".lock_screen").css('height', 0);
+        $("#horas_lock").css("font-size","8.25pt");
+        $("#horas_lock").css("padding-top","0pt");
+        $(".lock_title").css("line-height","0pt");
+        
+        $(".lock_title").css("height","24.5pt");
+        
+        //$("#musica").css("top","-10pt");
+        $("#musica").css("opacity",0);
+        
+
+        locked=0;
+        goToSlide(0);
+
+    }
+    else
+    {
+        $(".lock_screen").css('height', "1.5in");
+        $(".lock_screen").css('display', "inline");
+        $("#horas_lock").css("padding-top","10pt");
+        $(".lock_title").css("line-height","20pt");
+        
+        setTimeout(function() {
+            $(".lock_title").css("height","50pt");
+            
+            $(".lock_screen").css('opacity', 1);
+            $("#musica").css("opacity",1);
+            $("#horas_lock").css("font-size","22pt");
+            
+            
+        }, 0);
+
+        locked=1;
+        goToSlide(12);
+        prevStack.pop();
+    }
+    
     prevStack = [];
 }
 
@@ -1040,6 +1095,9 @@ function removePrompt() {
 }
 
 function help() {
+    if(locked)
+        return;
+    
     if (help_ecras[current_i] == 0) {
         help_ecras[current_i] = 1;
         $(elSlides[current_i]).find('.help_screen').css("top", "2pt");
