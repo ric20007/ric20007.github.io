@@ -418,9 +418,9 @@ a {
     font-weight: bold;
     font-size: 13pt;
     
-    width: 40pt;
-    border: 2pt solid #1c1c1c;
-    border-radius: 4pt;
+    width: 30pt;
+    //border: 2pt solid #1c1c1c;
+    //border-radius: 4pt;
     margin-top:1pt
 }
 

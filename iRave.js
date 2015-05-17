@@ -3,7 +3,6 @@ var swiperH,
     totalComprado =0;
     
 var swipers;
-    
 var swiperCartaz= [0,0,0];
     
 var itemsCompra = [];
@@ -41,27 +40,12 @@ var amigosAdicionados = [];
 
 var cartazOn = 0;
 
-
 function producto(_nome, _preco) {
     this.nome = _nome;
     this.preco = _preco;
     this.quantidade = 0;
 }
 var items_listados = [];
-
-var contaClicks =0
-var mouseups =0;
-var minus =0;
-
-$(document).click( function(){
-    contaClicks++;
-} );
-
-$(document).mouseup( function(){
-    mouseups++;
-    minus =mouseups-contaClicks;
-    console.log("clicks: " +contaClicks +" | drags ?: "+minus);
-} );
 
 
 function incrementQuantidade(i) {
@@ -120,8 +104,6 @@ $(document).ready(function() {
 
     }
     
-
-
     swiperH = new Swiper('.swiper-container-h', {
         speed: 200,
         onlyExternal: true,
@@ -394,38 +376,6 @@ $(document).ready(function() {
         checkbox.prop('checked', alerte);
     });
 
-    //add highlight no menu
-    $('.menu_entrada').click(function() {
-       
-        var _that = $(this);
-        $(this).addClass('highlighted');
-        setTimeout(function() {
-            _that.removeClass('highlighted');
-        }, 200);
-        
-    });
-
-    //add highlight no perfil
-    $('.perfil_entrada').click(function() {
-        
-        var _that = $(this);
-        $(this).addClass('highlighted');
-        setTimeout(function() {
-            _that.removeClass('highlighted');
-        }, 200);
-        
-    });
-
-    //add highlight no botao para add. amigos
-    $('.botao').click(function() {
-        
-        var _that = $(this);
-        $(this).addClass('highlighted');
-        setTimeout(function() {
-            _that.removeClass('highlighted');
-        }, 200);
-        
-    });
     
     //funcao que mostra o tempo
     function checkTime(i) {
@@ -505,8 +455,7 @@ function prev() {
     
     thePrev = prevEcra[current_i];
     if (thePrev === -1) {
-        //goToSlide(previous_i);
-        
+
         if(prevStack.length !==0){
 
             var temp_slide = prevStack.pop();
@@ -517,10 +466,11 @@ function prev() {
             
             //hack para o cartaz regressar de onde veio
             if(!hf_on){
-                if(current_i >= 21)
+                if(current_i >= 21){
                     prev();
-                if(current_i >= 22)
-                    prev();
+                    if(current_i >= 22)
+                        prev();
+                }
             }
             
         }
@@ -592,6 +542,8 @@ function goToSlide(i) {
    
     if (i >= 0 && i <= nome_Titulos.length - 1) {
         
+         prevStack.push(current_i);
+        
         //casos de hands-free no cartaz
         if (current_i == 21 && !(i >= 21 && i <= 23)) {
             cartazOn = 0;
@@ -612,20 +564,9 @@ function goToSlide(i) {
             wcFilaToggle = 0;
         }
         
-        prevStack.push(current_i);
-        
         if(i===9 || i ===14)
             $("#botContinuar").css("display", "block");
         
-        /*
-         // esconder slides que nao estao active
-        for (var j = 0; j < elSlides.length; j++) {
-            if (j != i && j != current_i)
-                $(elSlides[j]).css("visibility", "hidden");
-            else
-                $(elSlides[j]).css("visibility", "visible");
-        }
-        */
         
         if (i !== 12) {
             $('#mapa').css("opacity", 0);
@@ -642,10 +583,8 @@ function goToSlide(i) {
             $('.specialSeta').css('display', "inline");
 
         
-            
         SpecialthePrev = prevEcra[i];
         if (canChangePrev === 1  && SpecialthePrev === -1) {
-            console.log("In can change prev");
             previous_i = current_i;
         }
         
@@ -839,9 +778,7 @@ function goToOpcoesAmigo(_index){
                                 <img src='img/shield.png ' class='imgEntrada '>&nbsp;" +
                                 (esteAmigo.isProtected == 1 ? "Desproteger" : "Proteger") + 
                             "</div>");
-                            
-                            
-                            
+
     nome_Titulos[6] =  "<img src='img/user1.png' class='imgTitulo'>&nbsp;" + 
                         esteAmigo.nome + 
                         (esteAmigo.isProtected == 1 ? "&nbsp;<img src='img/shield.png ' class='imgTitulo'>" : ""); 
@@ -857,7 +794,6 @@ function amigos() {
         prevEcra[5]=current_i;
     goToSlide(5);
     
-    //reescrever a lista agora é feito no remover e adicionar amigo
 
 }
 
@@ -894,15 +830,23 @@ function toggleHandsFree() {
         $('.hf_inactivos').css('display', "none");
         $('specialSeta').css('display', "inline"); // setas só funciona no mapa ou cartaz
         
-        $("#mao_livre").html("<p>Toque para <br> desactivar o modo mãos livres.");
+        $("#mao_livre").html("<p></p>Toque para <br> desactivar o modo mãos livres.");
     }
     else {
         hf_on = 0;
         $('.hf_inactivos').css('display', "inline");
-        $("#mao_livre").html("<p>Toque para activar o modo mãos livres!");
+        $("#mao_livre").html("<p></p>Toque para activar o modo mãos livres!");
     }
 }
 
+
+//opcoes do procurar
+
+
+function addAmigos() {
+    prevEcra[2]=current_i;
+    goToSlide(2);
+}
 
 function cartaz() {
     cartazOn==1;
@@ -921,14 +865,6 @@ function cartaz() {
     });
 
 }
-
-//opcoes do procurar
-
-function addAmigos() {
-    prevEcra[2]=current_i;
-    goToSlide(2);
-}
-
 
 function historico(){
     goToSlide(19);
@@ -969,7 +905,6 @@ function comida() {
     goToSlide(9);
     $("#botContinuar").css("display", "block");
     
-    
     clearChecks();
     
     // incrementar a quantidade de cada produto
@@ -978,11 +913,7 @@ function comida() {
             reset_um_producto(i);
         }
     }
-    
-    
 
-    
-    
 }
 
 function findMerch() {
