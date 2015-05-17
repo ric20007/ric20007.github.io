@@ -246,6 +246,9 @@ $(document).ready(function() {
         }
     });
     
+    $('#mapa').css('top','-18pt');
+    $('#mapa').css('left','2pt');
+    
     $('#iconFood').click(function() {
         comida();
     });
@@ -392,6 +395,8 @@ $(document).ready(function() {
         }, 500);
     }
     startTime();
+    
+    hideUnlockText();
 
 });
 
@@ -436,6 +441,8 @@ var hf_on = 0;
 var dia = 0;
 
 var promptRemove = 0;
+
+
 
 function mudarNome(i) {
     $("#titulo_menu").html(nome_Titulos[i]);
@@ -737,14 +744,13 @@ function localizarAmigo(_index){
         break;
     }
     
-    $('#mapa').css('top','-10pt');
+    $('#mapa').css('top','-18pt');
     $('#mapa').css('left','2pt');
     mapa();
     setTimeout(function() {
         $('#mapa').animate({top: top_v,left: left_v}, 700);
     }, 500);
-    
-    //mapa();
+
 }
 
 function toggleProtection(_index) {
@@ -790,6 +796,19 @@ function goToOpcoesAmigo(_index){
     
 }
 
+var show_it=0;
+function hideUnlockText(){
+    if(!locked)
+        return;
+        
+    setTimeout(function() { 
+        $("#unlock").css("opacity",show_it); 
+        show_it = (show_it == 0 ? 1 : 0);
+        hideUnlockText()
+        
+    }, 4000);
+}
+
 
 function amigos() {
     //se estiver no perfil ou procurar
@@ -800,9 +819,14 @@ function amigos() {
 
 }
 
-function goToMenu() {
+function toggle_lock_status(){
     
+    //unlock
     if (locked){
+        
+        for (var i = 0; i < 5; i++) {
+            swipers[0].slidePrev(true,100);
+        }
          
         setTimeout(function() {
             $(".lock_screen").css('opacity', 0);
@@ -819,9 +843,8 @@ function goToMenu() {
         
         $(".lock_title").css("height","24.5pt");
         
-        //$("#musica").css("top","-10pt");
+        $("#unlock").css("opacity",0);
         $("#musica").css("opacity",0);
-        
 
         locked=0;
         goToSlide(0);
@@ -829,6 +852,8 @@ function goToMenu() {
     }
     else
     {
+        $('#mapa').animate({top: '-18pt', left: '2pt'}, 500);
+
         $(".lock_screen").css('height', "1.5in");
         $(".lock_screen").css('display', "inline");
         $("#horas_lock").css("padding-top","10pt");
@@ -838,18 +863,32 @@ function goToMenu() {
             $(".lock_title").css("height","50pt");
             
             $(".lock_screen").css('opacity', 1);
+            $("#unlock").css("opacity",1);
             $("#musica").css("opacity",1);
             $("#horas_lock").css("font-size","22pt");
-            
             
         }, 0);
 
         locked=1;
+        show_it=0;
+        hideUnlockText();
+        
         goToSlide(12);
         prevStack.pop();
     }
-    
+}
+
+function goToMenu() {
+    //unlock
+    if (locked)
+        toggle_lock_status();
+    else if(!locked && current_i==0)
+        toggle_lock_status();
+    else
+        goToSlide(0);
+        
     prevStack = [];
+    
 }
 
 // opcoes do menu principal 
@@ -929,7 +968,7 @@ function historico(){
 }
 
 function findComida() {
-    $('#mapa').css('top','-10pt');
+    $('#mapa').css('top','-18pt');
     $('#mapa').css('left','2pt');
     mapa();
     setTimeout(function() {
@@ -969,7 +1008,7 @@ function comida() {
 }
 
 function findMerch() {
-    $('#mapa').css('top','-10pt');
+    $('#mapa').css('top','-18pt');
     $('#mapa').css('left','2pt');
     mapa();
     setTimeout(function() {
@@ -1051,7 +1090,7 @@ function efectuarCompra() {
 
 
 function banho() {
-    $('#mapa').css('top','-10pt');
+    $('#mapa').css('top','-18pt');
     $('#mapa').css('left','2pt');
     mapa();
     setTimeout(function() {
@@ -1060,7 +1099,7 @@ function banho() {
 }
 
 function goToP1() {
-    $('#mapa').css('top','-10pt');
+    $('#mapa').css('top','-18pt');
     $('#mapa').css('left','2pt');
     mapa();
     setTimeout(function() {
@@ -1069,7 +1108,7 @@ function goToP1() {
 }
 
 function goToP2() {
-    $('#mapa').css('top','-10pt');
+    $('#mapa').css('top','-18pt');
     $('#mapa').css('left','2pt');
     mapa();
     setTimeout(function() {

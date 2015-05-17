@@ -30,7 +30,7 @@
 
         <!-- botoes maos livres  -->
         <div class='hf_inactivos bot_hf_mapa'></div>
-        <div onclick="$('#mapa').css('top','-10pt');$('#mapa').css('left','2pt');hf_mapa();return false;">
+        <div onclick="$('#mapa').css('top','-18pt');$('#mapa').css('left','2pt');hf_mapa();return false;">
             <img src="img/gesto_abrir_mapa.png" class="botaoHandsFree bot_hf_mapa" style='z-index:1'>
         </div>
 
@@ -76,6 +76,14 @@
 
                 </div>
                 <div style="height:7pt;width:1pt;"></div>
+                
+                <div id="unlock">
+                    Prima  
+                    <img src='img/casa.png' class="imgCasa" style="">
+                    Para Desbloquear
+                    
+                </div>
+                
                     
                 
             </div>
@@ -107,18 +115,21 @@
                         <div class="swiper-container swiper-container-v swiperVertical">
                             <div class="swiper-wrapper">
 
-                                <div onclick="$('#mapa').css('top','-10pt');$('#mapa').css('left','2pt');mapa();return false;" class="swiper-slide menu_entrada ">
+                                <div onclick="$('#mapa').css('top','-18pt');$('#mapa').css('left','2pt');mapa();return false;" class="swiper-slide menu_entrada ">
                                     <img src="img/map-2.png" class="imgEntrada">&nbsp;Mapa</div>
   
                                 <div onclick=" procurar();return false;" class="swiper-slide menu_entrada">
                                     <img src="img/active-search.png" class="imgEntrada">&nbsp;Procurar</div>
 
-                                <div onclick=" horario();return false;" class="swiper-slide menu_entrada">
-                                    <img src="img/Agenda.png" class="imgEntrada">&nbsp;Horário</div>
-
                                 <div onclick="next();return false;" class="swiper-slide menu_entrada">
                                     <img src="img/user1.png" class="imgEntrada">&nbsp;Perfil</div>
 
+                                <!-- <div onclick="cartaz(); return false;" class="swiper-slide menu_entrada">
+                                    <img src="img/cartaz.png" class="imgEntrada"> &nbsp; Cartaz </div> -->
+                                    
+                                <div onclick="horario(); return false;" class="swiper-slide menu_entrada">
+                                    <img src="img/Agenda.png" class="imgEntrada"> &nbsp; Horário </div>
+                                    
                                 <div onclick=" maoLivre();return false;" class="swiper-slide menu_entrada">
                                     <img src="img/hands-free.png" class="imgEntrada">&nbsp;Mãos Livres</div>
 
@@ -223,10 +234,10 @@
                             <div class='remove_title'>Remover Amigo?</div>
                                 <div style="height:7pt;width:1pt;"></div>
                                 <div id="queroRemoverQuem" onclick="removerAmigo();amigos();return false;">
-                                    <p class='remove_text btn btn-2 btn-2c' style='margin-left:3%;float:left'>Sim</p>
+                                    <p class='remove_text btn btn-2 btn-2c' style='margin-left:5%;float:left'>Sim</p>
                                 </div>
                                 <div onclick="prev();return false;">
-                                    <p class='remove_text btn btn-2 btn-2c' style='margin-right:3%;float:right'>Não</p>
+                                    <p class='remove_text btn btn-2 btn-2c' style='margin-right:5%;float:right'>Não</p>
                                 </div>
                             </div>
                           
@@ -265,12 +276,11 @@
                                 <div onclick="merch(); return false;" class="swiper-slide menu_entrada">
                                     <img src="img/merch.png" class="imgEntrada"> &nbsp; Souvenires </div>
                                 
-                                <div onclick="cartaz(); return false;" class="swiper-slide menu_entrada">
-                                    <img src="img/cartaz.png" class="imgEntrada"> &nbsp; Cartaz </div>
                                 
                                 <div onclick="encontros(); return false;" class="swiper-slide menu_entrada">
                                     <img src="img/pointer.png" class="imgEntrada" style="width:8pt"> &nbsp; Encontros </div>
-
+                                
+                                
                                 <div class="swiper-slide"></div>
                                
                             </div>
@@ -560,14 +570,17 @@
                         <div onclick=" cartaz(); return false;" class="menu_entrada swiper-slide" style='height:25pt'>
                             <img src="img/cartaz.png " class="imgEntrada"> &nbsp; Cartaz
                         </div>
-
+                        
+                        
                         <div onclick="encontros();return false;" class="menu_entrada swiper-slide" style='height:25pt'>
                             <img src="img/pointer.png " class="imgEntrada" style="width:8pt"> &nbsp; Encontros
                         </div>
+                        
                     </div>
                     
                     <!-- 18 encontros -->
                     <div class="swiper-slide">
+                        <!-- 
                         <div class="swiper-container swiper-container-vCartaz swiperVertical">
                             <div class="swiper-wrapper">
 
@@ -588,6 +601,7 @@
                             </div>
                             <div class="swiper-pagination swiper-pagination-vCartaz"></div>
                         </div>
+                        -->
                     </div>
                     
                     <!-- 19 historico -->

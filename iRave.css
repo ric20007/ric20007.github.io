@@ -371,6 +371,7 @@ a {
 } 
 
 
+
 #titulo_menu {
     padding-top: 0.5pt;
       margin-top: -0.8pt;
@@ -419,6 +420,25 @@ a {
     transition:0.7s;
 }
 
+#unlock{
+   font-family: 'khmerui';
+    text-align:center;
+     vertical-align: middle;
+     border-radius: 5px;
+     background: rgba(255, 255, 255, .7);
+     transition: 1s;
+     
+}
+
+
+.imgCasa
+{
+	height: 16pt;
+	width: 16pt;
+	
+	text-align: center;
+	vertical-align: middle;
+} 
 
 .help_screen, .remove_screen {
     z-index: 10;
@@ -427,7 +447,7 @@ a {
     height: 65pt;
     top: 2pt;
     left: 5pt;
-    background-color: #ddd;
+    background-color: #f8f8f8;
     border: 2.5pt solid #1c1c1c;
     border-radius: 4pt;
     display: none;
