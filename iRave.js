@@ -67,16 +67,13 @@ function reset_um_producto(i) {
 
 $(document).ready(function() {
     
-    
    $(".swiper-pagination-v3").css("transform","translate(0%, -5%)");
-    //$(".exchangeCompra").css("width","1.4in");
 
     // fix checkbox detect
     var el = $('input:checkbox[name="compra"]');
     el.each(function(i) {
         
         $(this).on('click', function(event) {
-            console.log("YAY");
             if (items_listados[i].quantidade === 0)
                 incrementQuantidade(i);
             else
@@ -94,9 +91,7 @@ $(document).ready(function() {
     
     // incrementar a quantidade de cada produto
     for (var i = 0; i < items_listados.length; i++) {
-        //$($('.compras')[i]).on('click',incrementQuantidade(i));
         $($('.compras')[i]).attr('onclick','incrementQuantidade('+ i +');return false;' );
-		//console.log($('.compras')[i]);
 
     }
     
@@ -294,7 +289,6 @@ $(document).ready(function() {
 
     $('.hf_top').click(function() {
         if (current_i >= 21 && current_i <= 23) {
-            //console.log("pah ya up");
             swiperCartaz[dia].slidePrev(true, 100);
         }
         else {
@@ -315,7 +309,6 @@ $(document).ready(function() {
     });
 
     $('.hf_right').click(function() { 
-        console.log("detected hand move right");
         if (cartazOn) {
             cartazNext();
         }
@@ -327,7 +320,6 @@ $(document).ready(function() {
     });
 
     $('.hf_left').click(function(){
-        console.log("detected hand move left");
         if (cartazOn) {
             cartazPrevious();
         }
@@ -468,8 +460,7 @@ function prev() {
         if(prevStack.length !==0){
 
             var temp_slide = prevStack.pop();
-            console.log(nome_Titulos[current_i] + " :" + current_i + " -> " + nome_Titulos[temp_slide] + " :" + temp_slide);
-
+          
             goToSlide(temp_slide);
             prevStack.pop();
             
@@ -485,8 +476,7 @@ function prev() {
         }
     } 
     else {
-        console.log(nome_Titulos[current_i] + " :" + current_i + " -> " + nome_Titulos[prevEcra[current_i]] + " :" + prevEcra[current_i]);
-        
+       
         prevStack.pop();
         goToSlide(prevEcra[current_i]);
         prevStack.pop();
@@ -556,7 +546,6 @@ function goToSlide(i) {
         //casos de hands-free no cartaz
         if (current_i == 21 && !(i >= 21 && i <= 23)) {
             cartazOn = 0;
-            console.log("not cartaz!");
         }
         
         if (i >= 21 && i <= 23) { cartazOn = 1; }
@@ -728,29 +717,34 @@ function removerAmigo(_index) {
 }
 
 function localizarAmigo(_index){
+    var top_v,left_v;
+
     switch (_index) {
     case 0: //Carlos
-        $('#mapa').css('top', '50pt');
-        $('#mapa').css('left', '-121pt');
+        top_v = '50pt'; left_v ='-121pt';
         break;
     case 1: //Joana
-        $('#mapa').css('top', '-19pt');
-        $('#mapa').css('left', '-78pt');
+        top_v = '-19pt'; left_v ='-78pt';
         break;
     case 2: //Joao
-        $('#mapa').css('top', '-20pt');
-        $('#mapa').css('left', '-87pt');
+        top_v = '-20pt'; left_v ='-87pt';
         break;
     case 3: //Merio
-        $('#mapa').css('top', '-100pt');
-        $('#mapa').css('left', '-28pt');
+        top_v = '-100pt'; left_v ='-28pt';
         break;
     case 4: //Rita
-        $('#mapa').css('top', '74pt');
-        $('#mapa').css('left', '-23pt');
+        top_v = '74pt'; left_v ='-23pt';
         break;
     }
+    
+    $('#mapa').css('top','-10pt');
+    $('#mapa').css('left','2pt');
     mapa();
+    setTimeout(function() {
+        $('#mapa').animate({top: top_v,left: left_v}, 700);
+    }, 500);
+    
+    //mapa();
 }
 
 function toggleProtection(_index) {
@@ -935,9 +929,12 @@ function historico(){
 }
 
 function findComida() {
-    $('#mapa').css('top', '-25pt');
-    $('#mapa').css('left', '-30pt');
+    $('#mapa').css('top','-10pt');
+    $('#mapa').css('left','2pt');
     mapa();
+    setTimeout(function() {
+        $('#mapa').animate({top: '-25pt',left: '-30pt'}, 700);
+    }, 500);
 }
 
 
@@ -972,9 +969,12 @@ function comida() {
 }
 
 function findMerch() {
-    $('#mapa').css('top', '0pt');
-    $('#mapa').css('left', '-121pt');
+    $('#mapa').css('top','-10pt');
+    $('#mapa').css('left','2pt');
     mapa();
+    setTimeout(function() {
+        $('#mapa').animate({top: '0pt',left: '-121pt'}, 700);
+    }, 500);
 }
 
 function merch() {
@@ -1004,19 +1004,15 @@ function continuarCompra() {
     el.each(function(i) {
         if ($(this).is(':checked')) {
             string = items_listados[i].quantidade +"x " + items_listados[i].nome +" " + items_listados[i].preco +"€";
-    
-            //string = items_listados[i].nome + ": " + items_listados[i].preco + "€";
 
             string = "<div class='swiper-slide menu_entrada'>" + string + "</div>";
 
             itemsCompra.push(string);
-            console.log(string);
             value = value + items_listados[i].quantidade * items_listados[i].preco;
         }
 
     });
-    console.log(itemsCompra);
-    //////////////////////////////////////     DIZER que nao tem nada selecionado, seleccionar algo
+
     if (value === 0)
         return false;
 
@@ -1055,21 +1051,30 @@ function efectuarCompra() {
 
 
 function banho() {
-    $('#mapa').css('top', '-90pt');
-    $('#mapa').css('left', '-18pt');
+    $('#mapa').css('top','-10pt');
+    $('#mapa').css('left','2pt');
     mapa();
+    setTimeout(function() {
+        $('#mapa').animate({top: '-90pt',left: '-18pt'}, 700);
+    }, 500);
 }
 
 function goToP1() {
-    $('#mapa').css('top', '50pt');
-    $('#mapa').css('left', '-60pt');
+    $('#mapa').css('top','-10pt');
+    $('#mapa').css('left','2pt');
     mapa();
+    setTimeout(function() {
+        $('#mapa').animate({top: '50pt',left: '-60pt'}, 700);
+    }, 500);
 }
 
 function goToP2() {
-    $('#mapa').css('top', '8pt');
-    $('#mapa').css('left', '5pt');
+    $('#mapa').css('top','-10pt');
+    $('#mapa').css('left','2pt');
     mapa();
+    setTimeout(function() {
+        $('#mapa').animate({top: '8pt',left: '5pt'}, 700);
+    }, 500);
 }
 
 function cartazNext() {
