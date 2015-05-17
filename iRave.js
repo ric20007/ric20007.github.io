@@ -172,7 +172,7 @@ $(document).ready(function() {
     }),
     new Swiper('.swiper-container-vComes', {
         pagination: '.swiper-pagination-vComes',
-        paginationClickable: true,
+        //paginationClickable: true,
         direction: 'vertical',
         slidesPerView: 4,
         slidesPerScroll: 2,
