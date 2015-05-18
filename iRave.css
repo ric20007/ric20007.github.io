@@ -1,18 +1,12 @@
-
-/* General button style (reset) */
 .btn {
 	border: none;
 	font-family: inherit;
 	font-size: inherit;
 	color: inherit;
 	background: none;
-	cursor: pointer;
 	padding: 2pt 4pt;
 	display: inline-block;
-	//margin: 15px 30px;
-	//text-transform: uppercase;
-	//letter-spacing: 1px;
-	//font-weight: 700;
+
 	outline: none;
 	position: relative;
 	-webkit-transition: all 0.3s;
@@ -29,12 +23,7 @@
 	transition: all 0.3s;
 }
 
-/* Pseudo elements for icons */
-.btn:before,
-.icon-heart:after,
-.icon-star:after,
-.icon-plus:after,
-.icon-file:before {
+.btn:before{
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -45,8 +34,6 @@
 	-webkit-font-smoothing: antialiased;
 }
 
-
-/* Button 2 */
 .btn-2 {
 	background: #F9DCBA;
 	//color: #fff;
@@ -56,8 +43,6 @@
 	transition: none;
 }
 
-
-/* Button 2c */
 .btn-2c {
 	border-radius: 5px;
 }
@@ -97,14 +82,6 @@ img, #moldura {
     height: 1.1in;
     //margin: 15pt auto;
     padding: 0;
-}
-
-.highlighted {
-    font-size: 10.5pt;
-    font-weight: bold;
-    border-left: none;
-    border-right: none;
-    background-color:#ccc;
 }
 
 .swiper-slide  {
@@ -191,6 +168,25 @@ img, #moldura {
     margin: 0 auto; /*center div on parent*/ 
     
 }
+
+.opcoes_entrada {
+    height: 24pt;
+    line-height: 24pt;
+    text-align: center;
+    border: 0.75pt solid #e8e8e8;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: 'khmerui';
+}
+
+
+.opcoes_entrada:active {
+    background-color: #EB993B;
+    font-weight: bold;
+
+}
+
 
 .menu_entrada {
     text-align: center;

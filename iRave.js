@@ -8,6 +8,7 @@ var swiperCartaz= [0,0,0];
     
 var itemsCompra = [];
 var itemsComprados = [];
+var totalQuantidade = 0;
 var elSlides;
 
 var thePrev;
@@ -50,7 +51,9 @@ var items_listados = [];
 
 
 function incrementQuantidade(i) {
+    $("#botContinuar").css("background-color","#D70");
     items_listados[i].quantidade++; 
+    totalQuantidade++;
     var text = items_listados[i].quantidade +"x " + items_listados[i].nome +" " + items_listados[i].preco +"€";
     
     $($(".produtos_listados")[i]).html(text);
@@ -58,10 +61,15 @@ function incrementQuantidade(i) {
 };
 
 function reset_um_producto(i) {
+    totalQuantidade -= items_listados[i].quantidade;
+    
     items_listados[i].quantidade = 0; 
     var text = items_listados[i].nome +" " + items_listados[i].preco +"€";
     
     $($(".produtos_listados")[i]).html(text);
+    
+    if(totalQuantidade==0)
+        $("#botContinuar").css("background-color","#6b6b6b");
     
 };
 
@@ -768,7 +776,7 @@ function toggleProtection(_index) {
     
     actualizarListaAmigos();
     
-     $("#opcoes_joao").html("<div onclick='toggleProtection("+_index+");goToSlide(7);return false;' class='menu_entrada'> \
+     $("#opcoes_joao").html("<div onclick='toggleProtection("+_index+");goToSlide(7);return false;' class='opcoes_entrada'> \
                                 <img src='img/shield.png ' class='imgEntrada '>&nbsp;" +
                                 (esteAmigo.isProtected == 1 ? "Desproteger" : "Proteger") + 
                             "</div>");
@@ -783,7 +791,7 @@ function goToOpcoesAmigo(_index){
     $("#queroRemoverQuem").attr("onclick","removerAmigo("+_index+");amigos();return false;");
     
 
-    $("#opcoes_joao").html("<div onclick='toggleProtection("+_index+");goToSlide(7);return false;' class='menu_entrada'> \
+    $("#opcoes_joao").html("<div onclick='toggleProtection("+_index+");goToSlide(7);return false;' class='opcoes_entrada'> \
                                 <img src='img/shield.png ' class='imgEntrada '>&nbsp;" +
                                 (esteAmigo.isProtected == 1 ? "Desproteger" : "Proteger") + 
                             "</div>");
@@ -873,6 +881,8 @@ function toggle_lock_status(){
         show_it=0;
         hideUnlockText();
         
+        $('#mapa').css('top','-18pt');
+        $('#mapa').css('left','2pt');
         goToSlide(12);
         prevStack.pop();
     }
@@ -1153,21 +1163,3 @@ function help() {
         $(elSlides[current_i]).find('.help_screen').css("display", "none");
     }
 }
-
-$(document).keydown(function(e) {
-    switch (e.keyCode) {
-        case 40:
-            break;
-        case 38:
-            $("#botContinuar").css("display", "none");
-            goToMenu();
-            break;
-        case 39:
-            $('#botao_encostar').click();
-            break;
-        case 37:
-            goToSlide(current_i - 1);
-            //prev();
-            break;
-    }
-});
