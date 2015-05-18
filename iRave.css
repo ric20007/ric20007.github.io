@@ -1,3 +1,8 @@
+body {
+    background-image: url("img/crowd-background2.png");
+    background-repeat: no-repeat;
+} 
+
 .btn {
 	border: none;
 	font-family: inherit;

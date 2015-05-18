@@ -725,7 +725,7 @@ function removerAmigo(_index) {
     
     //reescrever a lista de amigos
      if (amigosAdicionados.length == 0)
-        $("#lista_joao").html("<p style=\"text-align:center\" >Não tem amigos");
+        $("#lista_joao").html("<p style='text-align:center;font-size:10pt'>Ainda não adicionou amigos");
     else{
         actualizarListaAmigos();
     }
@@ -776,9 +776,8 @@ function toggleProtection(_index) {
     
     actualizarListaAmigos();
     
-     $("#opcoes_joao").html("<div onclick='toggleProtection("+_index+");goToSlide(7);return false;' class='opcoes_entrada'> \
-                                <img src='img/shield.png ' class='imgEntrada '>&nbsp;" +
-                                (esteAmigo.isProtected == 1 ? "Desproteger" : "Proteger") + 
+    $("#opcoes_joao").html("<div onclick='toggleProtection("+_index+");goToSlide(7);return false;' class='opcoes_entrada'>" +
+                                (esteAmigo.isProtected == 1 ? "<img src='img/unshield.png ' class='imgEntrada '>&nbsp; Desproteger" : "<img src='img/shield.png ' class='imgEntrada '>&nbsp; Proteger") + 
                             "</div>");
 
 }
@@ -791,9 +790,8 @@ function goToOpcoesAmigo(_index){
     $("#queroRemoverQuem").attr("onclick","removerAmigo("+_index+");amigos();return false;");
     
 
-    $("#opcoes_joao").html("<div onclick='toggleProtection("+_index+");goToSlide(7);return false;' class='opcoes_entrada'> \
-                                <img src='img/shield.png ' class='imgEntrada '>&nbsp;" +
-                                (esteAmigo.isProtected == 1 ? "Desproteger" : "Proteger") + 
+    $("#opcoes_joao").html("<div onclick='toggleProtection("+_index+");goToSlide(7);return false;' class='opcoes_entrada'>" +
+                                (esteAmigo.isProtected == 1 ? "<img src='img/unshield.png ' class='imgEntrada '>&nbsp; Desproteger" : "<img src='img/shield.png ' class='imgEntrada '>&nbsp; Proteger") + 
                             "</div>");
 
     nome_Titulos[6] =  "<img src='img/user1.png' class='imgTitulo'>&nbsp;" + 
@@ -1138,8 +1136,12 @@ function encontros() {
     goToSlide(18);
 }
 
+function hf_cartaz() {
+    if (hf_on == 1 && !locked) { cartaz(); }
+}
+
 function hf_mapa() {
-    if (hf_on == 1) { mapa(); }
+    if (hf_on == 1 && !locked) { mapa(); }
 }
 
 
