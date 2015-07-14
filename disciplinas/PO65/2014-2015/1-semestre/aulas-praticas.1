@@ -1,0 +1,657 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-PT" xml:lang="pt-PT">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="ensino, ensino superior, universidade, instituto, ciência, Instituto Superior Técnico, investigação e desenvolvimento" />
+<meta name="description" content="O Instituto Superior Técnico é a maior escola de engenharia, ciência e tecnologia em Portugal." />
+
+
+
+<link rel="stylesheet" type="text/css" media="screen" href="../../../../CSS/execution_course.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="../../../../CSS/exam_map.css" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="../../../../CSS/dotist_timetables.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="../../../../CSS/general.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="../../../../CSS/istPublicPagesStyles.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="../../../../CSS/iststyle_print.css"/>
+
+
+<script type="text/javascript" src="../../../../CSS/scripts/expmenu.js"></script>
+<script type="text/javascript" src="../../../../CSS/scripts/hideButtons.js"></script>
+<script src="../../../../javaScript/jquery/jquery.js" type="text/javascript" >
+</script>
+<script src="../../../../javaScript/jquery/jquery-ui.js" type="text/javascript">
+</script>
+
+<script type="text/javascript" src='../../../../javaScript/MathJax/MathJax.js@config=TeX-AMS-MML_HTMLorMML'>
+</script>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>
+	
+
+
+
+	Aulas Práticas -
+
+Programação com Objectos - 
+	Instituto Superior Técnico
+</title> 
+
+<!-- Link -->
+<link rel="shortcut icon" href="../../../../images/newImage2012/favicon.png" type="image/x-icon" />
+
+<!-- For third-generation iPad with high-resolution Retina display: -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../../../images/newImage2012/apple-touch-icon-144x144-precomposed.png" />
+
+<!-- For iPhone with high-resolution Retina display: -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../../../images/newImage2012/apple-touch-icon-114x114-precomposed.png" />
+
+<!-- For first- and second-generation iPad: -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../../../images/newImage2012/apple-touch-icon-72x72-precomposed.png" />
+
+<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+<link rel="apple-touch-icon-precomposed" href="../../../../images/newImage2012/apple-touch-icon-precomposed.png" />
+
+
+       <script type="text/javascript">
+       		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-182539-44', 'utl.pt');ga('send', 'pageview');
+       </script>
+
+
+</head>
+
+<body>
+
+<script id="ist-bar" data-logout="https://fenix.tecnico.ulisboa.pt/logoff.do" data-login="https://fenix.tecnico.ulisboa.pt/loginPage.jsp" data-fluid="true" data-lang="pt"  data-use-offline="true"  data-next-param="service" src="https://barra.tecnico.ulisboa.pt/site_media/static/js/barra.js"></script>
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<!-- SYMBOLSROW -->
+<!-- h1>IST_LAYOUT &emsp; + &emsp; IST_LAYOUT_CONTENT &emsp; + &emsp; PUBLIC_EXECUTION_COURSE &emsp; + &emsp; PUBLIC_GES_DIS_LAYOUT_2COL &emsp; + &emsp; UNIT_SITE_LAYOUT</h1-->
+<div id="header">
+	
+
+
+
+
+
+
+
+
+
+<div id="logoist">
+	<a href="https://tecnico.ulisboa.pt/">
+		<img alt="Técnico de Lisboa" src="../../../../images/newImage2012/logo-ist.png"/>
+	</a>
+</div>
+
+
+
+<div id="search">
+	
+	<form action="https://tecnico.ulisboa.pt/search/">
+		<input type="hidden" name="cx" value="007266409324096302065:xkagxvojzme" />
+		<input type="hidden" name="cof" value="FORID:10" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<label for="textfield">
+			<input alt="input.q" placeholder="Pesquisar" type="text" id="textfield" name="q" size="17"/>
+		</label>
+		<label for="submit_button">
+			<input alt="input.sa" type="submit" id="submit" name="sa" value="Google" />
+		</label>
+	</form>
+</div>
+
+</div>
+
+<!-- PROFILE NAVIGATION -->
+<div id="perfnav">
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul>
+	<li><a href="https://tecnico.ulisboa.pt/">Início</a></li>
+  	<li><a href="https://tecnico.ulisboa.pt/pt/alunos/">Aluno</a></li>
+  	<li><a href="https://tecnico.ulisboa.pt/pt/docentes/">Docente</a></li>
+	<li><a href="https://tecnico.ulisboa.pt/pt/pessoal/">Não Docente</a></li>
+	<li><!-- NO_CHECKSUM --><a href="https://tecnico.ulisboa.pt/pt/candidatos/">Candidato	</a></li>	
+  	<li><a href="https://tecnico.ulisboa.pt/en/">International</a></li>
+  	<li><a href="https://tecnico.ulisboa.pt/pt/alumni/">Alumni</a></li>
+</ul>
+
+</div>
+
+<div id="holder">
+	
+	
+	
+		<table id="bigtable" width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+		
+		<td rowspan="3" id="latnav_container">
+			<!--MAIN NAVIGATION -->   
+			<div id="latnav">
+				
+
+
+
+
+
+
+
+
+
+
+
+<ul>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="pagina-inicial" title="Página Inicial" class="fenix-rendered"><span class="fenix-rendered">Página Inicial</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="agrupamentos" title="Agrupamentos" class="fenix-rendered"><span class="fenix-rendered">Agrupamentos</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="anuncios" title="Anúncios" class="fenix-rendered"><span class="fenix-rendered">Anúncios</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="avaliacao" title="Avaliação" class="fenix-rendered"><span class="fenix-rendered">Avaliação</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="bibliografia" title="Bibliografia" class="fenix-rendered"><span class="fenix-rendered">Bibliografia</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="horario" title="Horário" class="fenix-rendered"><span class="fenix-rendered">Horário</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="metodo-de-avaliacao" title="Método de Avaliação" class="fenix-rendered"><span class="fenix-rendered">Método de Avaliação</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="objectivos" title="Objectivos" class="fenix-rendered"><span class="fenix-rendered">Objectivos</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="pesquisa-de-conteudos" title="Pesquisa de Conteúdos" class="fenix-rendered"><span class="fenix-rendered">Pesquisa de Conteúdos</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="planeamento" title="Planeamento" class="fenix-rendered"><span class="fenix-rendered">Planeamento</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="programa" title="Programa" class="fenix-rendered"><span class="fenix-rendered">Programa</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="resultados-quc" title="Resultados QUC" class="fenix-rendered"><span class="fenix-rendered">Resultados QUC</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="sumarios" title="Sumários" class="fenix-rendered"><span class="fenix-rendered">Sumários</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="turnos" title="Turnos" class="fenix-rendered"><span class="fenix-rendered">Turnos</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="projecto.1" title="Projecto" class="fenix-rendered"><span class="fenix-rendered">Projecto</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="aulas-praticas.1" title="Aulas Práticas" class="fenix-rendered menu-top-item-selected"><span class="fenix-rendered">Aulas Práticas</span></a>
+    <ul class="fenix-rendered">
+      <li style="margin-left: 1em;" class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/pauta" title="Pauta" class="fenix-rendered"><span class="fenix-rendered">Pauta</span></a>
+      </li>
+      <li style="margin-left: 1em;" class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-01" title="Aula Prática 01" class="fenix-rendered"><span class="fenix-rendered">Aula Prática 01</span></a>
+      </li>
+      <li style="margin-left: 1em;" class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-02" title="Aula Prática 02" class="fenix-rendered"><span class="fenix-rendered">Aula Prática 02</span></a>
+      </li>
+      <li style="margin-left: 1em;" class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-03" title="Aula Prática 03" class="fenix-rendered"><span class="fenix-rendered">Aula Prática 03</span></a>
+      </li>
+      <li style="margin-left: 1em;" class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-04" title="Aula Prática 04" class="fenix-rendered"><span class="fenix-rendered">Aula Prática 04</span></a>
+      </li>
+      <li style="margin-left: 1em;" class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-05" title="Aula Prática 05" class="fenix-rendered"><span class="fenix-rendered">Aula Prática 05</span></a>
+      </li>
+      <li style="margin-left: 1em;" class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-06" title="Aula Prática 06" class="fenix-rendered"><span class="fenix-rendered">Aula Prática 06</span></a>
+      </li>
+      <li style="margin-left: 1em;" class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-07" title="Aula Prática 07" class="fenix-rendered"><span class="fenix-rendered">Aula Prática 07</span></a>
+      </li>
+      <li style="margin-left: 1em;" class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-08" title="Aula Prática 08" class="fenix-rendered"><span class="fenix-rendered">Aula Prática 08</span></a>
+      </li>
+      <li style="margin-left: 1em;" class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-09" title="Aula Prática 09" class="fenix-rendered"><span class="fenix-rendered">Aula Prática 09</span></a>
+      </li>
+      <li style="margin-left: 1em;" class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-10" title="Aula Prática 10" class="fenix-rendered"><span class="fenix-rendered">Aula Prática 10</span></a>
+      </li>
+      <li style="margin-left: 1em;" class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-11" title="Aula Prática 11" class="fenix-rendered"><span class="fenix-rendered">Aula Prática 11</span></a>
+      </li>
+      <li style="margin-left: 1em;" class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-12" title="Aula Prática 12" class="fenix-rendered"><span class="fenix-rendered">Aula Prática 12</span></a>
+      </li>
+      <li style="margin-left: 1em;" class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-13" title="Aula Prática 13" class="fenix-rendered"><span class="fenix-rendered">Aula Prática 13</span></a>
+      </li>
+    </ul>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="aulas-teoricas" title="Aulas Teóricas" class="fenix-rendered"><span class="fenix-rendered">Aulas Teóricas</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="horarios-de-apoio" title="Horários de Apoio" class="fenix-rendered"><span class="fenix-rendered">Horários de Apoio</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="horarios-de-duvidas.1" title="Horários de Dúvidas" class="fenix-rendered"><span class="fenix-rendered">Horários de Dúvidas</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="provas-escritas.1" title="Provas Escritas" class="fenix-rendered"><span class="fenix-rendered">Provas Escritas</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="pauta-global" title="Pauta Global" class="fenix-rendered"><span class="fenix-rendered">Pauta Global</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="faq.1" title="FAQ" class="fenix-rendered"><span class="fenix-rendered">FAQ</span></a>
+  </li>
+</ul>
+
+<ul>
+    <li>
+        <a href="https://fenix.tecnico.ulisboa.pt/publico/executionCourse.do?method=rss&amp;executionCourseID=1610612965354" class="rss">RSS</a>
+    </li>
+</ul>
+
+
+
+
+		
+		
+		<div class="email"><p>
+		<a href="mailto:po14@l2f.inesc-id.pt" title="Envia um e-mail para o endereço apresentado">Enviar e-mail</a>
+		</p></div>
+	
+
+
+				
+			</div>
+		</td>
+		
+		<!-- DEGREE SITE -->
+		
+		
+			<td width="100%" colspan="3" id="main">
+		
+		
+			
+			
+			
+			
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="version">
+<table>
+	<tr>
+		
+			<td>
+			<!-- NO_CHECKSUM --><img src="../../../../images/flags/pt.gif" 
+									 alt="pt_PT" lang="pt-PT"
+									 title="pt_PT" class="locale-change-flag" style="cursor: pointer" />
+			</td>
+		
+			<td>
+			<!-- NO_CHECKSUM --><img src="../../../../images/flags/en.gif" 
+									 alt="en_GB" lang="en-GB"
+									 title="en_GB" class="locale-change-flag" style="cursor: pointer" />
+			</td>
+		
+	</tr>
+</table>
+</div>
+
+<script>
+
+$(".locale-change-flag").on("click", function (event) {
+	$.ajax({
+		type: 'POST',
+		url: '/api/bennu-core/profile/locale/' + $(event.currentTarget).attr('lang'),
+		success: function () {
+			location.reload();
+		}
+	});
+});
+
+</script>
+
+
+<h1 class="mtop0 mbottom03 cnone">
+	Programação com Objectos
+	<span class="greytxt" style="font-size: 11px;">
+		(1
+		º Sem
+		2014/2015)
+	</span>
+</h1>
+
+<!--
+<p class="greytxt" style="">
+	1
+	º Sem
+	2014/2015
+</p>
+-->
+
+<p style="margin-top: 0;">
+<span>
+
+					
+	<a href="../../../../cursos/leic-a.7">
+		LEIC-A
+	</a>								
+
+	,				
+	<a href="../../../../cursos/meic-a.1">
+		MEIC-A
+	</a>								
+
+</span>
+</p>
+
+
+
+
+			
+			
+			
+			
+			
+
+
+
+
+
+
+
+<script type="text/javascript" src='../../../../javaScript/MathJax/MathJax.js@config=TeX-AMS-MML_HTMLorMML'>
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    <h2>
+        Aulas Práticas
+  		<span class="permalink1">(<!-- NO_CHECKSUM --><a href="aulas-praticas.1">Link</a>)</span>
+    </h2>
+
+    
+
+
+	
+
+		
+				<ul>
+							
+							<li>
+								<a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/pauta">Pauta</a>
+							</li>
+								
+							<li>
+								<a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-01">Aula Prática 01</a>
+							</li>
+								
+							<li>
+								<a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-02">Aula Prática 02</a>
+							</li>
+								
+							<li>
+								<a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-03">Aula Prática 03</a>
+							</li>
+								
+							<li>
+								<a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-04">Aula Prática 04</a>
+							</li>
+								
+							<li>
+								<a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-05">Aula Prática 05</a>
+							</li>
+								
+							<li>
+								<a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-06">Aula Prática 06</a>
+							</li>
+								
+							<li>
+								<a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-07">Aula Prática 07</a>
+							</li>
+								
+							<li>
+								<a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-08">Aula Prática 08</a>
+							</li>
+								
+							<li>
+								<a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-09">Aula Prática 09</a>
+							</li>
+								
+							<li>
+								<a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-10">Aula Prática 10</a>
+							</li>
+								
+							<li>
+								<a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-11">Aula Prática 11</a>
+							</li>
+								
+							<li>
+								<a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-12">Aula Prática 12</a>
+							</li>
+								
+							<li>
+								<a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aula-pratica-13">Aula Prática 13</a>
+							</li>
+						
+				</ul>
+		
+			
+			
+    
+       	
+       	
+           
+            
+            
+            
+            
+	       		<h3 class="mtop2 mbottom05" id="item1722283670088">
+	                Aulas Práticas
+
+		            
+		                  <span class="permalink1">(<!-- NO_CHECKSUM --><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/aulas-praticas">Link</a>)</span>
+	    			
+	            </h3>
+            
+
+            
+              	  
+            			
+            				
+            					
+            					
+            				
+            			<p>As aulas pr&aacute;ticas destinam-se &agrave; resolu&ccedil;&atilde;o de problemas de modela&ccedil;&atilde;o e de programa&ccedil;&atilde;o e decorrem no modelo &quot;papel e l&aacute;pis&quot;, por forma a concentrar o esfor&ccedil;o na conceptualiza&ccedil;&atilde;o e programa&ccedil;&atilde;o e n&atilde;o nos problemas de interac&ccedil;&atilde;o com a m&aacute;quina (que est&atilde;o cobertos pela realiza&ccedil;&atilde;o do projecto).</p> 
+<p>As aulas 1 e 2 s&atilde;o introdut&oacute;rias e destinam-se a recordar conceitos de linguagens semelhantes e a familiarizar os alunos com alguns dos novos conceitos, nomeadamente classes simples. Estas aulas&nbsp;t&ecirc;m um exerc&iacute;cio de avalia&ccedil;&atilde;o (durante os 30 minutos finais).</p> 
+<p>As aulas 3 a 13 cobrem a generalidade da mat&eacute;ria e t&ecirc;m um exerc&iacute;cio de avalia&ccedil;&atilde;o (durante os 30 minutos finais). Os alunos s&atilde;o encorajados a tentar resolver autonomamente os exerc&iacute;cios e usar a aula como forma de resolver alguma quest&atilde;o menos clara.</p> 
+<p>Os alunos s&atilde;o encorajados a implementar os programas desenvolvidos nas aulas pr&aacute;ticas e a pensar em outros (durante os per&iacute;odos de estudo aut&oacute;nomo). Os hor&aacute;rios de apoio (realizados em laborat&oacute;rios) podem ser utilizados para estudo acompanhado.</p>
+            		
+                    
+            		
+            
+            
+            
+
+            
+            
+       	
+           
+            
+            
+            
+            
+	       		<h3 class="mtop2 mbottom05" id="item1722283670087">
+	                Condições de Avaliação
+
+		            
+		                  <span class="permalink1">(<!-- NO_CHECKSUM --><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65/2014-2015/1-semestre/aulas-praticas/condicoes-de-avaliacao">Link</a>)</span>
+	    			
+	            </h3>
+            
+
+            
+              	  
+            			
+            				
+            					
+            					
+            				
+            			<p><span style="color: #ff0000;"><strong>N&atilde;o s&atilde;o avaliados alunos fora dos turnos de inscri&ccedil;&atilde;o.</strong></span></p> 
+<p><strong>Alunos que faltem mais de tr&ecirc;s aulas consecutivas perdem a vaga no turno e t&ecirc;m de se reeinscrever (eventualmente, num outro turno, caso a vaga tenha entretanto sido preenchida).</strong></p> 
+<p>Alunos que o desejem, podem fazer exerc&iacute;cios adicionais em C++ (trabalho n&atilde;o presencial), correspondendo a um incremento m&aacute;ximo de 2 valores adicionais (cada exerc&iacute;cio C++ tem a sua avalia&ccedil;&atilde;o majorada pela do exerc&iacute;cio Java correspondente -- este &eacute; feito na aula). Cada exerc&iacute;cio C++ &eacute; entregue na aula pr&aacute;tica da semana seguinte.</p> 
+<p>Alunos que tenham 75% de notas m&aacute;ximas consecutivas nos exerc&iacute;cios das aulas e n&atilde;o tenham faltado a nenhuma aula, t&ecirc;m um valor adicional na classifica&ccedil;&atilde;o final.</p>
+            		
+                    
+            		
+            
+            
+            
+
+            
+            
+       	
+       	
+    
+
+
+			
+		</td>
+		
+		</tr>
+		</table>
+	
+	
+</div>
+<!-- FOOTER --> 
+<div id="footer">
+
+
+
+
+<div id="foot_links">
+	
+	<a href="http://www.ist.utl.pt/pt/sobre-IST/contactos/">Contactos</a>
+	| 
+	
+	<a href="mailto:suporte@dot.ist.utl.pt">Suporte</a>
+</div>
+
+<div id="foot_copy">&copy;2014, Instituto Superior Técnico. Todos os direitos reservados.</div>
+<div class="clear"></div>
+
+</div>
+
+<script type="text/javascript">
+	hideButtons()
+	$("body").hide().show();
+</script>
+
+
+
+</body>
+</html>
