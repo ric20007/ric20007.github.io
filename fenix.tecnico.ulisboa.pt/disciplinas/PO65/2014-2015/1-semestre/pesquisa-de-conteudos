@@ -1,0 +1,669 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-PT" xml:lang="pt-PT">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="ensino, ensino superior, universidade, instituto, ciência, Instituto Superior Técnico, investigação e desenvolvimento" />
+<meta name="description" content="O Instituto Superior Técnico é a maior escola de engenharia, ciência e tecnologia em Portugal." />
+
+
+
+<link rel="stylesheet" type="text/css" media="screen" href="../../../../CSS/execution_course.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="../../../../CSS/exam_map.css" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="../../../../CSS/dotist_timetables.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="../../../../CSS/general.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="../../../../CSS/istPublicPagesStyles.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="../../../../CSS/iststyle_print.css"/>
+
+
+<script type="text/javascript" src="../../../../CSS/scripts/expmenu.js"></script>
+<script type="text/javascript" src="../../../../CSS/scripts/hideButtons.js"></script>
+<script src="../../../../javaScript/jquery/jquery.js" type="text/javascript" >
+</script>
+<script src="../../../../javaScript/jquery/jquery-ui.js" type="text/javascript">
+</script>
+
+<script type="text/javascript" src='../../../../javaScript/MathJax/MathJax.js@config=TeX-AMS-MML_HTMLorMML'>
+</script>
+
+
+
+
+
+
+
+
+
+
+    
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>
+	
+
+
+
+	Pesquisa de Conteúdos -
+
+Programação com Objectos - 
+	Instituto Superior Técnico
+</title> 
+
+<!-- Link -->
+<link rel="shortcut icon" href="../../../../images/newImage2012/favicon.png" type="image/x-icon" />
+
+<!-- For third-generation iPad with high-resolution Retina display: -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../../../images/newImage2012/apple-touch-icon-144x144-precomposed.png" />
+
+<!-- For iPhone with high-resolution Retina display: -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../../../images/newImage2012/apple-touch-icon-114x114-precomposed.png" />
+
+<!-- For first- and second-generation iPad: -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../../../images/newImage2012/apple-touch-icon-72x72-precomposed.png" />
+
+<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+<link rel="apple-touch-icon-precomposed" href="../../../../images/newImage2012/apple-touch-icon-precomposed.png" />
+
+
+       <script type="text/javascript">
+       		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-182539-44', 'utl.pt');ga('send', 'pageview');
+       </script>
+
+
+</head>
+
+<body>
+
+<script id="ist-bar" data-logout="https://fenix.tecnico.ulisboa.pt/logoff.do" data-login="https://fenix.tecnico.ulisboa.pt/loginPage.jsp" data-fluid="true" data-lang="pt"  data-use-offline="true"  data-next-param="service" src="https://barra.tecnico.ulisboa.pt/site_media/static/js/barra.js"></script>
+
+
+
+
+
+<!-- SYMBOLSROW -->
+<!-- h1>IST_LAYOUT &emsp; + &emsp; IST_LAYOUT_CONTENT &emsp; + &emsp; PUBLIC_EXECUTION_COURSE &emsp; + &emsp; PUBLIC_GES_DIS_LAYOUT_2COL &emsp; + &emsp; UNIT_SITE_LAYOUT</h1-->
+<div id="header">
+	
+
+
+
+
+
+
+
+
+
+<div id="logoist">
+	<a href="https://tecnico.ulisboa.pt/">
+		<img alt="Técnico de Lisboa" src="../../../../images/newImage2012/logo-ist.png"/>
+	</a>
+</div>
+
+
+
+<div id="search">
+	
+	<form action="https://tecnico.ulisboa.pt/search/">
+		<input type="hidden" name="cx" value="007266409324096302065:xkagxvojzme" />
+		<input type="hidden" name="cof" value="FORID:10" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<label for="textfield">
+			<input alt="input.q" placeholder="Pesquisar" type="text" id="textfield" name="q" size="17"/>
+		</label>
+		<label for="submit_button">
+			<input alt="input.sa" type="submit" id="submit" name="sa" value="Google" />
+		</label>
+	</form>
+</div>
+
+</div>
+
+<!-- PROFILE NAVIGATION -->
+<div id="perfnav">
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul>
+	<li><a href="https://tecnico.ulisboa.pt/">Início</a></li>
+  	<li><a href="https://tecnico.ulisboa.pt/pt/alunos/">Aluno</a></li>
+  	<li><a href="https://tecnico.ulisboa.pt/pt/docentes/">Docente</a></li>
+	<li><a href="https://tecnico.ulisboa.pt/pt/pessoal/">Não Docente</a></li>
+	<li><!-- NO_CHECKSUM --><a href="https://tecnico.ulisboa.pt/pt/candidatos/">Candidato	</a></li>	
+  	<li><a href="https://tecnico.ulisboa.pt/en/">International</a></li>
+  	<li><a href="https://tecnico.ulisboa.pt/pt/alumni/">Alumni</a></li>
+</ul>
+
+</div>
+
+<div id="holder">
+	
+	
+	
+		<table id="bigtable" width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+		
+		<td rowspan="3" id="latnav_container">
+			<!--MAIN NAVIGATION -->   
+			<div id="latnav">
+				
+
+
+
+
+
+
+
+
+
+
+
+<ul>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="pagina-inicial" title="Página Inicial" class="fenix-rendered"><span class="fenix-rendered">Página Inicial</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="agrupamentos" title="Agrupamentos" class="fenix-rendered"><span class="fenix-rendered">Agrupamentos</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="anuncios" title="Anúncios" class="fenix-rendered"><span class="fenix-rendered">Anúncios</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="avaliacao" title="Avaliação" class="fenix-rendered"><span class="fenix-rendered">Avaliação</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="bibliografia" title="Bibliografia" class="fenix-rendered"><span class="fenix-rendered">Bibliografia</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="horario" title="Horário" class="fenix-rendered"><span class="fenix-rendered">Horário</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="metodo-de-avaliacao" title="Método de Avaliação" class="fenix-rendered"><span class="fenix-rendered">Método de Avaliação</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="objectivos" title="Objectivos" class="fenix-rendered"><span class="fenix-rendered">Objectivos</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="pesquisa-de-conteudos" title="Pesquisa de Conteúdos" class="fenix-rendered menu-top-item-selected"><span class="fenix-rendered">Pesquisa de Conteúdos</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="planeamento" title="Planeamento" class="fenix-rendered"><span class="fenix-rendered">Planeamento</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="programa" title="Programa" class="fenix-rendered"><span class="fenix-rendered">Programa</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="resultados-quc" title="Resultados QUC" class="fenix-rendered"><span class="fenix-rendered">Resultados QUC</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="sumarios" title="Sumários" class="fenix-rendered"><span class="fenix-rendered">Sumários</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="turnos" title="Turnos" class="fenix-rendered"><span class="fenix-rendered">Turnos</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="projecto.6" title="Projecto" class="fenix-rendered"><span class="fenix-rendered">Projecto</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="aulas-praticas.6" title="Aulas Práticas" class="fenix-rendered"><span class="fenix-rendered">Aulas Práticas</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="aulas-teoricas" title="Aulas Teóricas" class="fenix-rendered"><span class="fenix-rendered">Aulas Teóricas</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="horarios-de-apoio" title="Horários de Apoio" class="fenix-rendered"><span class="fenix-rendered">Horários de Apoio</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="horarios-de-duvidas.6" title="Horários de Dúvidas" class="fenix-rendered"><span class="fenix-rendered">Horários de Dúvidas</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="provas-escritas.6" title="Provas Escritas" class="fenix-rendered"><span class="fenix-rendered">Provas Escritas</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="pauta-global" title="Pauta Global" class="fenix-rendered"><span class="fenix-rendered">Pauta Global</span></a>
+  </li>
+  <li class="fenix-rendered">
+<!-- NO_CHECKSUM --><a href="faq.6" title="FAQ" class="fenix-rendered"><span class="fenix-rendered">FAQ</span></a>
+  </li>
+</ul>
+
+<ul>
+    <li>
+        <a href="../../../../publico/executionCourse.do@method=rss&amp;executionCourseID=1610612965354" class="rss">RSS</a>
+    </li>
+</ul>
+
+
+
+
+		
+		
+		<div class="email"><p>
+		<a href="mailto:po14@l2f.inesc-id.pt" title="Envia um e-mail para o endereço apresentado">Enviar e-mail</a>
+		</p></div>
+	
+
+
+				
+			</div>
+		</td>
+		
+		<!-- DEGREE SITE -->
+		
+		
+			<td width="100%" colspan="3" id="main">
+		
+		
+			
+			
+			
+			
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="version">
+<table>
+	<tr>
+		
+			<td>
+			<!-- NO_CHECKSUM --><img src="../../../../images/flags/pt.gif" 
+									 alt="pt_PT" lang="pt-PT"
+									 title="pt_PT" class="locale-change-flag" style="cursor: pointer" />
+			</td>
+		
+			<td>
+			<!-- NO_CHECKSUM --><img src="../../../../images/flags/en.gif" 
+									 alt="en_GB" lang="en-GB"
+									 title="en_GB" class="locale-change-flag" style="cursor: pointer" />
+			</td>
+		
+	</tr>
+</table>
+</div>
+
+<script>
+
+$(".locale-change-flag").on("click", function (event) {
+	$.ajax({
+		type: 'POST',
+		url: '/api/bennu-core/profile/locale/' + $(event.currentTarget).attr('lang'),
+		success: function () {
+			location.reload();
+		}
+	});
+});
+
+</script>
+
+
+<h1 class="mtop0 mbottom03 cnone">
+	Programação com Objectos
+	<span class="greytxt" style="font-size: 11px;">
+		(1
+		º Sem
+		2014/2015)
+	</span>
+</h1>
+
+<!--
+<p class="greytxt" style="">
+	1
+	º Sem
+	2014/2015
+</p>
+-->
+
+<p style="margin-top: 0;">
+<span>
+
+					
+	<a href="../../../../cursos/leic-a.22">
+		LEIC-A
+	</a>								
+
+	,				
+	<a href="../../../../cursos/meic-a.6">
+		MEIC-A
+	</a>								
+
+</span>
+</p>
+
+
+
+
+			
+			
+			
+			
+			
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://fenix.tecnico.ulisboa.pt/CSS/scripts/checkall.js"></script>
+
+
+<h2>Pesquisar Conteúdos</h2>
+
+	<div class="infoop2">
+		Esta funcionalidade permite pesquisar ficheiros (documentos e conteúdos pedagógicos) inseridos no Fénix no contexto de uma disciplina. As opções de pesquisa permitem-lhe obter resultados por disciplina, autor, título, ano lectivo, semestre, tipo de conteúdo, etc.
+		Informação inserida antes de 2007 não se encontra classificada com "Tipo de conteúdo", logo se pretender pesquisar conteúdos referentes a essa data terá de escolher a opção "Todos" em "Tipo de conteúdo".
+	</div>
+
+ 	<form id="searchForm" action="https://fenix.tecnico.ulisboa.pt/publico/searchFileContent.do?method=searchFileContent" method="post" class='fenix-rendered'>
+
+		
+	
+		<span class="fenix-rendered"></span>
+
+		<table class="tstyle5 thright thlight">
+		<tr>
+			<th>
+				Ano Lectivo:
+			</th>
+			<td>
+				
+				
+					
+					
+					
+					
+					
+				
+				
+				<span class="fenix-rendered">
+  <input name="net_sourceforge_fenixedu_dataTransferObject_SearchDSpaceCoursesBean_1834556071_executionYearpostback" type="hidden" class="fenix-rendered" value=""></input>
+  <select name="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:executionYear" onchange="this.form.net_sourceforge_fenixedu_dataTransferObject_SearchDSpaceCoursesBean_1834556071_executionYearpostback.value='true';this.form.submit();">
+    <option class="fenix-rendered" value="">Todos</option>
+    <option class="fenix-rendered" value="net.sourceforge.fenixedu.domain.ExecutionYear:2443836394082" selected="selected">2014/2015</option>
+    <option class="fenix-rendered" value="net.sourceforge.fenixedu.domain.ExecutionYear:2443836393682">2013/2014</option>
+    <option class="fenix-rendered" value="net.sourceforge.fenixedu.domain.ExecutionYear:2443836393482">2012/2013</option>
+    <option class="fenix-rendered" value="net.sourceforge.fenixedu.domain.ExecutionYear:2443836393282">2011/2012</option>
+    <option class="fenix-rendered" value="net.sourceforge.fenixedu.domain.ExecutionYear:2443836393279">2010/2011</option>
+    <option class="fenix-rendered" value="net.sourceforge.fenixedu.domain.ExecutionYear:2443836393276">2009/2010</option>
+    <option class="fenix-rendered" value="net.sourceforge.fenixedu.domain.ExecutionYear:2443836392873">2008/2009</option>
+    <option class="fenix-rendered" value="net.sourceforge.fenixedu.domain.ExecutionYear:2443836392470">2007/2008</option>
+    <option class="fenix-rendered" value="net.sourceforge.fenixedu.domain.ExecutionYear:2443836392469">2006/2007</option>
+    <option class="fenix-rendered" value="net.sourceforge.fenixedu.domain.ExecutionYear:2443836392468">2005/2006</option>
+    <option class="fenix-rendered" value="net.sourceforge.fenixedu.domain.ExecutionYear:2443836392467">2004/2005</option>
+    <option class="fenix-rendered" value="net.sourceforge.fenixedu.domain.ExecutionYear:2443836392426">2003/2004</option>
+    <option class="fenix-rendered" value="net.sourceforge.fenixedu.domain.ExecutionYear:2443836392425">2002/2003</option>
+  </select>
+</span>	
+	
+				Semestre:
+				
+				
+					
+					
+					
+					
+					
+				
+				
+				<select name="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:executionPeriod">
+  <option class="fenix-rendered" value="">Todos</option>
+  <option class="fenix-rendered" value="net.sourceforge.fenixedu.domain.ExecutionSemester:3856880634468">2º Semestre</option>
+  <option class="fenix-rendered" value="net.sourceforge.fenixedu.domain.ExecutionSemester:3856880634467" selected="selected">1º Semestre</option>
+</select>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				Tipo de Conteúdo:
+			</th>
+			<td>
+				<div id="noType" class="dinline">
+					  
+					<input id="noTypeCheckbox" type="checkbox" checked="checked" onclick="javascript:uncheckall('typesCheckBoxes')"/>
+					
+					
+					<label for="noTypeCheckbox">Todos</label>
+				</div>
+				<div id="typesCheckBoxes" class="dinline"> 
+				
+					
+						
+						
+					
+				<ul class="nobullet liinline dinline">
+  <li>
+    <span class="fenix-rendered">
+      <input name="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes" id="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_0" type="checkbox" value="SLIDE"></input>
+      <label for="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_0" class="dinline">
+        Apresentação
+      </label>
+    </span>
+  </li>
+  <li>
+    <span class="fenix-rendered">
+      <input name="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes" id="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_1" type="checkbox" value="EXAM"></input>
+      <label for="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_1" class="dinline">
+        Exame
+      </label>
+    </span>
+  </li>
+  <li>
+    <span class="fenix-rendered">
+      <input name="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes" id="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_2" type="checkbox" value="EXERCISE"></input>
+      <label for="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_2" class="dinline">
+        Exercício 
+      </label>
+    </span>
+  </li>
+  <li>
+    <span class="fenix-rendered">
+      <input name="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes" id="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_3" type="checkbox" value="FIGURE"></input>
+      <label for="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_3" class="dinline">
+        Figura
+      </label>
+    </span>
+  </li>
+  <li>
+    <span class="fenix-rendered">
+      <input name="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes" id="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_4" type="checkbox" value="LABORATORY_GUIDE"></input>
+      <label for="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_4" class="dinline">
+        Guia de laboratório
+      </label>
+    </span>
+  </li>
+  <li>
+    <span class="fenix-rendered">
+      <input name="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes" id="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_5" type="checkbox" value="INFORMATIONS"></input>
+      <label for="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_5" class="dinline">
+        Informações
+      </label>
+    </span>
+  </li>
+  <li>
+    <span class="fenix-rendered">
+      <input name="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes" id="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_6" type="checkbox" value="MARKSHEET"></input>
+      <label for="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_6" class="dinline">
+        Pauta
+      </label>
+    </span>
+  </li>
+  <li>
+    <span class="fenix-rendered">
+      <input name="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes" id="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_7" type="checkbox" value="PROGRAM"></input>
+      <label for="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_7" class="dinline">
+        Programa
+      </label>
+    </span>
+  </li>
+  <li>
+    <span class="fenix-rendered">
+      <input name="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes" id="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_8" type="checkbox" value="QUESTIONNARIE"></input>
+      <label for="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_8" class="dinline">
+        Questionário
+      </label>
+    </span>
+  </li>
+  <li>
+    <span class="fenix-rendered">
+      <input name="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes" id="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_9" type="checkbox" value="STUDY_BOOK"></input>
+      <label for="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_9" class="dinline">
+        Sebenta
+      </label>
+    </span>
+  </li>
+  <li>
+    <span class="fenix-rendered">
+      <input name="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes" id="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_10" type="checkbox" value="SIMULATION"></input>
+      <label for="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_10" class="dinline">
+        Simulação
+      </label>
+    </span>
+  </li>
+  <li>
+    <span class="fenix-rendered">
+      <input name="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes" id="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_11" type="checkbox" value="TABLE"></input>
+      <label for="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_11" class="dinline">
+        Tabela
+      </label>
+    </span>
+  </li>
+  <li>
+    <span class="fenix-rendered">
+      <input name="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes" id="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_12" type="checkbox" value="TEST"></input>
+      <label for="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_12" class="dinline">
+        Teste
+      </label>
+    </span>
+  </li>
+  <li>
+    <span class="fenix-rendered">
+      <input name="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes" id="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_13" type="checkbox" value="SUPPORT_TEXT"></input>
+      <label for="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_13" class="dinline">
+        Texto de apoio
+      </label>
+    </span>
+  </li>
+  <li>
+    <span class="fenix-rendered">
+      <input name="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes" id="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_14" type="checkbox" value="DIDACTIL_TEXT"></input>
+      <label for="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:educationalResourceTypes_14" class="dinline">
+        Texto didáctico
+      </label>
+    </span>
+  </li>
+</ul>
+				</div>
+	
+				<script type="text/javascript" language="javascript">
+					var checkboxes = document.getElementById('typesCheckBoxes').getElementsByTagName("INPUT"); 
+					for(var i=0;i<checkboxes.length;i++) {
+						checkboxes[i].onclick = function() {  uncheckall('noType'); }
+						checkboxes[i].ondblclick = function() { uncheckall('noType'); }
+					}
+				</script>
+			</td>
+		</tr>
+		
+		<tr>
+			<th>
+				Pesquisar por:
+			</th>
+			<td>
+				<span class="fenix-rendered">
+  <input name="net.sourceforge.fenixedu.dataTransferObject.SearchDSpaceCoursesBean:1834556071:searchText" type="text"></input>
+  <span class="fenix-rendered"></span>
+</span>
+			</td>
+		</tr>
+
+		</table>
+			<input type="submit" value="Procurar" />
+	<input name="pt.ist.fenixWebFramework.renderers.components.state.LifeCycleConstants.VIEWSTATE_LIST" type="hidden" class="fenix-rendered" value="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"></input></form>
+
+
+
+<script type="text/javascript" language="javascript">
+switchGlobal();
+</script>
+			
+		</td>
+		
+		</tr>
+		</table>
+	
+	
+</div>
+<!-- FOOTER --> 
+<div id="footer">
+
+
+
+
+<div id="foot_links">
+	
+	<a href="http://www.ist.utl.pt/pt/sobre-IST/contactos/">Contactos</a>
+	| 
+	
+	<a href="mailto:suporte@dot.ist.utl.pt">Suporte</a>
+</div>
+
+<div id="foot_copy">&copy;2014, Instituto Superior Técnico. Todos os direitos reservados.</div>
+<div class="clear"></div>
+
+</div>
+
+<script type="text/javascript">
+	hideButtons()
+	$("body").hide().show();
+</script>
+
+
+
+</body>
+</html>
