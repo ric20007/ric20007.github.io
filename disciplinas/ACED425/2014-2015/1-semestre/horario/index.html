@@ -26,7 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5">
 
 
-    <title>Turnos · Análise Complexa e Equações Diferenciais</title>
+    <title>Horário · Análise Complexa e Equações Diferenciais</title>
 
     <link href="https://fenix.tecnico.ulisboa.pt/cms/assets/fenixedu-learning-theme/3036bc4fb2caff71/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fenix.tecnico.ulisboa.pt/cms/assets/fenixedu-learning-theme/3036bc4fb2caff71/css/publicPages.css" rel="stylesheet">
@@ -40,7 +40,16 @@
 
     
     <!-- Header -->
-        <!-- End Header -->
+    	<link href='https://fenix.tecnico.ulisboa.pt/cms/assets/fenixedu-learning-theme/3036bc4fb2caff71/css/fullcalendar.css' rel='stylesheet' />
+	<link href='https://fenix.tecnico.ulisboa.pt/cms/assets/fenixedu-learning-theme/3036bc4fb2caff71/css/fullcalendar.print.css' rel='stylesheet' media='print' />
+	<link href='https://fenix.tecnico.ulisboa.pt/cms/assets/fenixedu-learning-theme/3036bc4fb2caff71/css/schedule.css' rel='stylesheet' rel='stylesheet' />
+
+	<script src='https://fenix.tecnico.ulisboa.pt/cms/assets/fenixedu-learning-theme/3036bc4fb2caff71/js/moment.min.js'></script>
+	<script src='https://fenix.tecnico.ulisboa.pt/cms/assets/fenixedu-learning-theme/3036bc4fb2caff71/js/jquery-ui.fullCalendar.custom.min.js'></script>
+	<script src='https://fenix.tecnico.ulisboa.pt/cms/assets/fenixedu-learning-theme/3036bc4fb2caff71/js/fullcalendar.js'></script>
+	<script src="https://fenix.tecnico.ulisboa.pt/cms/assets/fenixedu-learning-theme/3036bc4fb2caff71/js/bootstrap.min.js"></script>
+
+    <!-- End Header -->
     
     <link rel="shortcut icon" type="image/x-icon" href="/api/bennu-portal/configuration/favicon">
   </head>
@@ -90,155 +99,62 @@
 
         <div class="col-sm-9 main-content" id="content-block">
           <h3 style="font-weight:300; margin-bottom: 22px; margin-top:0px;">
-                        Turnos  
+                        Horário  
                         
           </h3>
-          
-<table class="table">
-	<thead>
-		<tr>
-			<th>Turno</th>
-			<th>Semanas</th>
-			<th>Data</th>
-			<th>Sala</th>
-			<th>Turma(s)</th>
-		</tr>
-	</thead>
-	<tbody>
-									<tr>
-					<td>ACED425PB04</td>
-					<td>1 - 14</td>
-					<td>Qua, 14:30 &mdash; 16:00</td>
-					<td>
-													<a href="/spaces-view/view/2448131363676">F3</a>
-											</td>
-					<td>
-													LEIC-A0201<br/>
-													LEIC-A0202<br/>
-													LEIC-A0203<br/>
-											</td>
-				</tr>
-												<tr>
-					<td>ACED425PB02</td>
-					<td>1 - 12, 14</td>
-					<td>Seg, 13:00 &mdash; 14:30</td>
-					<td>
-													<a href="/spaces-view/view/2448131361683">V1.31</a>
-											</td>
-					<td>
-													LEIC-A0204<br/>
-											</td>
-				</tr>
-												<tr>
-					<td>ACED425PB06</td>
-					<td>1 - 14</td>
-					<td>Sex, 13:00 &mdash; 14:30</td>
-					<td>
-													<a href="/spaces-view/view/2448131363664">F2</a>
-											</td>
-					<td>
-													LEIC-A0207<br/>
-													LEIC-A0208<br/>
-											</td>
-				</tr>
-												<tr>
-					<td>ACED425PB03</td>
-					<td>1 - 12, 14</td>
-					<td>Seg, 16:30 &mdash; 18:00</td>
-					<td>
-													<a href="/spaces-view/view/2448131363676">F3</a>
-											</td>
-					<td>
-													LEIC-A0205<br/>
-													LEIC-A0206<br/>
-											</td>
-				</tr>
-												<tr>
-					<td>ACED425T01</td>
-					<td>1 - 14</td>
-					<td>Sex, 14:30 &mdash; 15:30</td>
-					<td>
-													<a href="/spaces-view/view/2448131361602">VA3</a>
-											</td>
-					<td>
-													LEIC-A0201<br/>
-													LEIC-A0202<br/>
-													LEIC-A0203<br/>
-													LEIC-A0204<br/>
-													LEIC-A0205<br/>
-													LEIC-A0206<br/>
-													LEIC-A0207<br/>
-													LEIC-A0208<br/>
-											</td>
-				</tr>
-							<tr>
-					<td>ACED425T01</td>
-					<td>1 - 14</td>
-					<td>Qui, 14:30 &mdash; 15:30</td>
-					<td>
-													<a href="/spaces-view/view/2448131362371">GA1</a>
-											</td>
-					<td>
-													LEIC-A0201<br/>
-													LEIC-A0202<br/>
-													LEIC-A0203<br/>
-													LEIC-A0204<br/>
-													LEIC-A0205<br/>
-													LEIC-A0206<br/>
-													LEIC-A0207<br/>
-													LEIC-A0208<br/>
-											</td>
-				</tr>
-							<tr>
-					<td>ACED425T01</td>
-					<td>1 - 14</td>
-					<td>Ter, 14:30 &mdash; 15:30</td>
-					<td>
-													<a href="/spaces-view/view/2448131363245">QA</a>
-											</td>
-					<td>
-													LEIC-A0201<br/>
-													LEIC-A0202<br/>
-													LEIC-A0203<br/>
-													LEIC-A0204<br/>
-													LEIC-A0205<br/>
-													LEIC-A0206<br/>
-													LEIC-A0207<br/>
-													LEIC-A0208<br/>
-											</td>
-				</tr>
-							<tr>
-					<td>ACED425T01</td>
-					<td>1 - 12, 14</td>
-					<td>Seg, 14:30 &mdash; 15:30</td>
-					<td>
-													<a href="/spaces-view/view/2448131362616">QA02.4</a>
-											</td>
-					<td>
-													LEIC-A0201<br/>
-													LEIC-A0202<br/>
-													LEIC-A0203<br/>
-													LEIC-A0204<br/>
-													LEIC-A0205<br/>
-													LEIC-A0206<br/>
-													LEIC-A0207<br/>
-													LEIC-A0208<br/>
-											</td>
-				</tr>
-												<tr>
-					<td>ACED425PB05</td>
-					<td>1 - 14</td>
-					<td>Qua, 16:00 &mdash; 17:30</td>
-					<td>
-													<a href="/spaces-view/view/2448131363664">F2</a>
-											</td>
-					<td>
-													LEIC-A0207<br/>
-											</td>
-				</tr>
-						</tbody>
-</table>	
+          	<div id='calendar'></div>
 
+	<script type="text/javascript">
+		var i18nDayNames = [
+			"Domingo",
+			"Segunda",
+			"Terça",
+			"Quarta",
+			"Quinta",
+			"Sexta",
+			"Sábado"
+		];
+
+        var i18nDayNamesShort = i18nDayNames.map(function(el){
+            return el.substr(0,3);
+        });
+
+		var config = {
+			firstDay: 1,
+			allDaySlot: false,
+			weekends: true,
+			minTime : '07:00',
+			maxTime : '23:59',
+			defaultView: 'agendaWeek',
+			timeFormat: 'HH:mm',
+			axisFormat: 'HH:mm',
+			slotDuration: '00:30:00',
+			slotEventOverlap: false,
+			dayNames: i18nDayNames,
+			dayNamesShort: i18nDayNamesShort,
+			eventAfterRender: afterEventsRender,
+			events: "https://fenix.tecnico.ulisboa.pt/api/fenixedu-learning/events/executionCourse/1610612965503",
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,basicDay'
+            },
+			eventLimit: true,
+			editable: false
+		};
+
+		$(document).ready(function() {
+			$('#calendar').fullCalendar(config);
+            $.get("https://fenix.tecnico.ulisboa.pt/api/fenixedu-learning/events/executionCourse/1610612965503/nearestEvent", function(selectedDate) {
+                $('#calendar').fullCalendar('gotoDate', selectedDate );
+            });
+		});
+
+		function afterEventsRender( event, jsEvent, view ) {
+			jsEvent.attr('title', event.description);
+			jsEvent.tooltip({ container: 'body', html: false });
+		}
+	</script>
         </div>
         
 
@@ -265,7 +181,7 @@
     <a class="item" href="https://fenix.tecnico.ulisboa.pt/disciplinas/ACED425/2014-2015/1-semestre/bibliografia">
       Bibliografia          </a>
         </li>
-                                        <li class="menuItem  ">
+                                        <li class="menuItem open active">
     <a class="item" href="https://fenix.tecnico.ulisboa.pt/disciplinas/ACED425/2014-2015/1-semestre/horario">
       Horário          </a>
         </li>
@@ -289,7 +205,7 @@
     <a class="item" href="https://fenix.tecnico.ulisboa.pt/disciplinas/ACED425/2014-2015/1-semestre/resultados-quc">
       Resultados QUC          </a>
         </li>
-                                        <li class="menuItem open active">
+                                        <li class="menuItem  ">
     <a class="item" href="https://fenix.tecnico.ulisboa.pt/disciplinas/ACED425/2014-2015/1-semestre/turnos">
       Turnos          </a>
         </li>
