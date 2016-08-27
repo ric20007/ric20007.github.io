@@ -158,7 +158,7 @@ lectures :
                     1
                 ]
             ],
-            "T01|MA": [
+            "T01|MEIC-A": [
                 [
                     0,
                     4,
@@ -178,7 +178,7 @@ lectures :
     },
     {
         "2": {
-            "T01|MA,MMA1": [
+            "T01|MEIC-A,MMA1": [
                 [
                     0,
                     0,
@@ -198,7 +198,7 @@ lectures :
     },
     {
         "2": {
-            "T01|MA": [
+            "T01|MEIC-A": [
                 [
                     0,
                     3,
@@ -234,7 +234,7 @@ lectures :
     },
     {
         "2": {
-            "T01|MA": [
+            "T01|MEIC-A": [
                 [
                     0,
                     2,
@@ -254,7 +254,7 @@ lectures :
     },
     {
         "2": {
-            "T01|MA": [
+            "T01|MEIC-A": [
                 [
                     0,
                     0,
@@ -274,7 +274,7 @@ lectures :
     },
     {
         "2": {
-            "T01|MA": [
+            "T01|MEIC-A": [
                 [
                     0,
                     0,
@@ -294,7 +294,7 @@ lectures :
     },
     {
         "2": {
-            "BC25179T01|MA,MEB1,MEE1,MEE2,MEE3,MEE4,MEE5": [
+            "BC25179T01|MEIC-A,MEB1,MEE1,MEE2,MEE3,MEE4,MEE5": [
                 [
                     0,
                     0,
@@ -330,7 +330,7 @@ lectures :
                     6
                 ]
             ],
-            "T02|MA": [
+            "T02|MEIC-A": [
                 [
                     0,
                     2,
@@ -350,7 +350,7 @@ lectures :
     },
     {
         "2": {
-            "T01|MA,MMA1": [
+            "T01|MEIC-A,MMA1": [
                 [
                     0,
                     4,
@@ -390,7 +390,7 @@ lectures :
     },
     {
         "2": {
-            "T01|MA": [
+            "T01|MEIC-A": [
                 [
                     0,
                     0,
@@ -410,7 +410,7 @@ lectures :
     },
     {
         "2": {
-            "T01|MA,MEM1": [
+            "T01|MEIC-A,MEM1": [
                 [
                     0,
                     3,
@@ -446,7 +446,7 @@ lectures :
                     18
                 ]
             ],
-            "T01|MA": [
+            "T01|MEIC-A": [
                 [
                     0,
                     3,
@@ -506,7 +506,7 @@ lectures :
     },
     {
         "2": {
-            "QS5179T01|MA,TAGUS": [
+            "QS5179T01|MEIC-A,TAGUS": [
                 [
                     0,
                     3,
@@ -546,7 +546,7 @@ lectures :
     },
     {
         "2": {
-            "T01|MA": [
+            "T01|MEIC-A": [
                 [
                     0,
                     3,
@@ -598,7 +598,7 @@ lectures :
                     6
                 ]
             ],
-            "T01|MA": [
+            "T01|MEIC-A": [
                 [
                     0,
                     2,
@@ -634,7 +634,7 @@ lectures :
                     18
                 ]
             ],
-            "T01|MA": [
+            "T01|MEIC-A": [
                 [
                     0,
                     0,
@@ -654,7 +654,7 @@ lectures :
     },
     {
         "2": {
-            "T01|MA,MEE4,MEB1": [
+            "T01|MEIC-A,MEE4,MEB1": [
                 [
                     0,
                     0,
@@ -690,7 +690,7 @@ lectures :
                     6
                 ]
             ],
-            "T01|MA": [
+            "T01|MEIC-A": [
                 [
                     0,
                     3,
@@ -710,7 +710,7 @@ lectures :
     },
     {
         "2": {
-            "T01|MA": [
+            "T01|MEIC-A": [
                 [
                     0,
                     3,
@@ -730,7 +730,7 @@ lectures :
     },
     {
         "2": {
-            "T01|MA,MEA1,MEE1": [
+            "T01|MEIC-A,MEA1,MEE1": [
                 [
                     0,
                     4,
@@ -750,7 +750,7 @@ lectures :
     },
     {
         "2": {
-            "T01|MA,MMA1": [
+            "T01|MEIC-A,MMA1": [
                 [
                     0,
                     0,
@@ -770,7 +770,7 @@ lectures :
     },
     {
         "2": {
-            "T01|MA": [
+            "T01|MEIC-A": [
                 [
                     0,
                     3,
@@ -790,7 +790,7 @@ lectures :
     },
     {
         "2": {
-            "T01|MA": [
+            "T01|MEIC-A": [
                 [
                     0,
                     0,
@@ -842,7 +842,7 @@ lectures :
                     35
                 ]
             ],
-            "T01|MA,MSI1,DEA1": [
+            "T01|MEIC-A,MSI1,DEA1": [
                 [
                     0,
                     4,
@@ -862,7 +862,7 @@ lectures :
     },
     {
         "2": {
-            "T01|MA,MEA1,MEE4": [
+            "T01|MEIC-A,MEA1,MEE4": [
                 [
                     0,
                     3,
@@ -898,7 +898,7 @@ lectures :
                     38
                 ]
             ],
-            "T01|MA": [
+            "T01|MEIC-A": [
                 [
                     0,
                     0,
@@ -918,7 +918,7 @@ lectures :
     },
     {
         "2": {
-            "T01|MA": [
+            "T01|MEIC-A": [
                 [
                     0,
                     4,
@@ -975,7 +975,7 @@ tutorials :
                     40
                 ]
             ],
-            "L02|MA": [
+            "L02|MEIC-A": [
                 [
                     0,
                     4,
@@ -988,7 +988,7 @@ tutorials :
     },
     {
         "1": {
-            "L02|MA,MMA1": [
+            "L02|MEIC-A,MMA1": [
                 [
                     0,
                     0,
@@ -1001,7 +1001,7 @@ tutorials :
     },
     {
         "4": {
-            "L03|MA": [
+            "L03|MEIC-A": [
                 [
                     0,
                     0,
@@ -1010,7 +1010,7 @@ tutorials :
                     42
                 ]
             ],
-            "L04|MA": [
+            "L04|MEIC-A": [
                 [
                     0,
                     1,
@@ -1041,7 +1041,7 @@ tutorials :
     },
     {
         "4": {
-            "L02|MA": [
+            "L02|MEIC-A": [
                 [
                     0,
                     2,
@@ -1050,7 +1050,7 @@ tutorials :
                     43
                 ]
             ],
-            "L03|MA": [
+            "L03|MEIC-A": [
                 [
                     0,
                     2,
@@ -1063,7 +1063,7 @@ tutorials :
     },
     {
         "4": {
-            "L02|MA": [
+            "L02|MEIC-A": [
                 [
                     0,
                     1,
@@ -1079,7 +1079,7 @@ tutorials :
     },
     {
         "4": {
-            "BC25179PB02|MA,MEE1,MEE2,MEE3,MEE4,MEE5": [
+            "BC25179PB02|MEIC-A,MEE1,MEE2,MEE3,MEE4,MEE5": [
                 [
                     0,
                     0,
@@ -1128,7 +1128,7 @@ tutorials :
                     46
                 ]
             ],
-            "L05|MA": [
+            "L05|MEIC-A": [
                 [
                     0,
                     2,
@@ -1184,7 +1184,7 @@ tutorials :
     },
     {
         "4": {
-            "L02|MA": [
+            "L02|MEIC-A": [
                 [
                     0,
                     0,
@@ -1193,7 +1193,7 @@ tutorials :
                     4
                 ]
             ],
-            "L03|MA": [
+            "L03|MEIC-A": [
                 [
                     0,
                     4,
@@ -1206,7 +1206,7 @@ tutorials :
     },
     {
         "4": {
-            "PB02|MA,MEM1": [
+            "PB02|MEIC-A,MEM1": [
                 [
                     0,
                     3,
@@ -1246,7 +1246,7 @@ tutorials :
                     44
                 ]
             ],
-            "L02|MA": [
+            "L02|MEIC-A": [
                 [
                     0,
                     0,
@@ -1255,7 +1255,7 @@ tutorials :
                     47
                 ]
             ],
-            "L03|MA": [
+            "L03|MEIC-A": [
                 [
                     0,
                     3,
@@ -1321,7 +1321,7 @@ tutorials :
     },
     {
         "4": {
-            "QS5179L02|MA": [
+            "QS5179L02|MEIC-A": [
                 [
                     0,
                     3,
@@ -1330,7 +1330,7 @@ tutorials :
                     47
                 ]
             ],
-            "QS5179L03|MA": [
+            "QS5179L03|MEIC-A": [
                 [
                     0,
                     3,
@@ -1339,7 +1339,7 @@ tutorials :
                     47
                 ]
             ],
-            "QS5179L04|MA": [
+            "QS5179L04|MEIC-A": [
                 [
                     0,
                     3,
@@ -1364,7 +1364,7 @@ tutorials :
                     51
                 ]
             ],
-            "L04|MA": [
+            "L04|MEIC-A": [
                 [
                     0,
                     0,
@@ -1373,7 +1373,7 @@ tutorials :
                     11
                 ]
             ],
-            "L05|MA": [
+            "L05|MEIC-A": [
                 [
                     0,
                     0,
@@ -1391,7 +1391,7 @@ tutorials :
                     51
                 ]
             ],
-            "L07|MA": [
+            "L07|MEIC-A": [
                 [
                     0,
                     3,
@@ -1422,7 +1422,7 @@ tutorials :
                     51
                 ]
             ],
-            "L02|MA": [
+            "L02|MEIC-A": [
                 [
                     0,
                     3,
@@ -1435,7 +1435,7 @@ tutorials :
     },
     {
         "4": {
-            "L02|MA": [
+            "L02|MEIC-A": [
                 [
                     0,
                     4,
@@ -1444,7 +1444,7 @@ tutorials :
                     4
                 ]
             ],
-            "L03|MA": [
+            "L03|MEIC-A": [
                 [
                     0,
                     4,
@@ -1466,7 +1466,7 @@ tutorials :
     },
     {
         "4": {
-            "L02|MA,MEE4,MEB1": [
+            "L02|MEIC-A,MEE4,MEB1": [
                 [
                     0,
                     0,
@@ -1475,7 +1475,7 @@ tutorials :
                     53
                 ]
             ],
-            "L03|MA,MEE4,MEB1": [
+            "L03|MEIC-A,MEE4,MEB1": [
                 [
                     0,
                     3,
@@ -1497,7 +1497,7 @@ tutorials :
     },
     {
         "4": {
-            "L02|MA": [
+            "L02|MEIC-A": [
                 [
                     0,
                     4,
@@ -1528,7 +1528,7 @@ tutorials :
     },
     {
         "4": {
-            "L02|MA": [
+            "L02|MEIC-A": [
                 [
                     0,
                     3,
@@ -1537,7 +1537,7 @@ tutorials :
                     2
                 ]
             ],
-            "L03|MA": [
+            "L03|MEIC-A": [
                 [
                     0,
                     2,
@@ -1550,7 +1550,7 @@ tutorials :
     },
     {
         "4": {
-            "L02|MA,MEE1": [
+            "L02|MEIC-A,MEE1": [
                 [
                     0,
                     1,
@@ -1559,7 +1559,7 @@ tutorials :
                     54
                 ]
             ],
-            "L03|MA,MEA1,MEE1": [
+            "L03|MEIC-A,MEA1,MEE1": [
                 [
                     0,
                     3,
@@ -1568,7 +1568,7 @@ tutorials :
                     54
                 ]
             ],
-            "L04|MA,MEA1,MEE1": [
+            "L04|MEIC-A,MEA1,MEE1": [
                 [
                     0,
                     4,
@@ -1581,7 +1581,7 @@ tutorials :
     },
     {
         "4": {
-            "L02|MA,MMA1": [
+            "L02|MEIC-A,MMA1": [
                 [
                     0,
                     4,
@@ -1594,7 +1594,7 @@ tutorials :
     },
     {
         "4": {
-            "L02|MA": [
+            "L02|MEIC-A": [
                 [
                     0,
                     2,
@@ -1607,7 +1607,7 @@ tutorials :
     },
     {
         "4": {
-            "L03|MA": [
+            "L03|MEIC-A": [
                 [
                     0,
                     0,
@@ -1616,7 +1616,7 @@ tutorials :
                     47
                 ]
             ],
-            "L04|MA": [
+            "L04|MEIC-A": [
                 [
                     0,
                     1,
@@ -1647,7 +1647,7 @@ tutorials :
     },
     {
         "4": {
-            "L02|MA": [
+            "L02|MEIC-A": [
                 [
                     0,
                     3,
@@ -1656,7 +1656,7 @@ tutorials :
                     52
                 ]
             ],
-            "L03|MA": [
+            "L03|MEIC-A": [
                 [
                     0,
                     3,
@@ -1665,7 +1665,7 @@ tutorials :
                     52
                 ]
             ],
-            "L04|MA": [
+            "L04|MEIC-A": [
                 [
                     0,
                     3,
@@ -1705,7 +1705,7 @@ tutorials :
                     55
                 ]
             ],
-            "L03|MA,MEA1,MEE4": [
+            "L03|MEIC-A,MEA1,MEE4": [
                 [
                     0,
                     1,
@@ -1714,7 +1714,7 @@ tutorials :
                     55
                 ]
             ],
-            "L04|MA,MEA1,MEE4": [
+            "L04|MEIC-A,MEA1,MEE4": [
                 [
                     0,
                     3,
@@ -1727,7 +1727,7 @@ tutorials :
     },
     {
         "4": {
-            "L02|MA": [
+            "L02|MEIC-A": [
                 [
                     0,
                     0,
@@ -1736,7 +1736,7 @@ tutorials :
                     47
                 ]
             ],
-            "L03|MA": [
+            "L03|MEIC-A": [
                 [
                     0,
                     1,
@@ -1758,7 +1758,7 @@ tutorials :
     },
     {
         "4": {
-            "L02|MA": [
+            "L02|MEIC-A": [
                 [
                     0,
                     4,
@@ -1767,7 +1767,7 @@ tutorials :
                     42
                 ]
             ],
-            "L03|MA": [
+            "L03|MEIC-A": [
                 [
                     0,
                     0,
@@ -1776,7 +1776,7 @@ tutorials :
                     47
                 ]
             ],
-            "L04|MA": [
+            "L04|MEIC-A": [
                 [
                     0,
                     4,
