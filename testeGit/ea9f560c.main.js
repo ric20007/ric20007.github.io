@@ -17,7 +17,7 @@
             return t
         }, (k = Date.prototype).toISOString || (k.toISOString = function(e) {
             return e = this, (1e3 - ~e.getUTCMonth() * 10 + e.toUTCString() + 1e3 + e / 1).replace(/1(..).*?(\d\d)\D+(\d+).(\S+).*(...)/, "$3-$1-$2T$4.$5Z")
-        }), u = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], a = ["mon", "tue", "wed", "thu", "fri", "sat"], m = ["Design Lecture", "Laboratory", "Lecture", "Packaged Lecture", "Packaged Tutorial", "Recitation", "Sectional Teaching", "Seminar-Style Module Class", "Tutorial", "Tutorial Type 2", "Tutorial Type 3", "Workshop"], C = ["LEC", "LAB", "LEC", "LEC", "TUT", "REC", "SEC", "SEM", "TUT", "TUT2", "TUT3", "WKSP"], y = {}, p = function(e) {
+        }), u = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], a = ["mon", "tue", "wed", "thu", "fri", "sat"], m = ["Design Lecture", "Laboratory", "Lecture", "Packaged Lecture", "Packaged Tutorial", "Recitation", "Sectional Teaching", "Seminar-Style Module Class", "Tutorial", "Tutorial Type 2", "Tutorial Type 3", "Workshop"], C=["LEC","LAB","TEO","LEC","PB","REC","SEC","SEM","TUT","TUT2","TUT3","WKSP"], y = {}, p = function(e) {
             return y[e.split(" ")[0]]
         }, b = modInfoTT.code.length, c = [],
         function() {
