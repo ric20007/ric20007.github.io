@@ -1517,6 +1517,12 @@ body {
     color: #333;
     background-color: #fff;
 }
+
+table a {
+    color: #1694d2;
+    text-decoration: underline;
+}
+
 a {
     color: #f60;
     text-decoration: none;
