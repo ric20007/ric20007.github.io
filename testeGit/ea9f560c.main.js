@@ -312,7 +312,7 @@
             }
             // CHANGES CHANGES 
             var href =  '<a href="URL">NAME</a>';
-            href = href.replace("URL", "https://fenix.tecnico.ulisboa.pt/disciplinas/"+e+"/2016-2017/1-semestre");
+            href = href.replace("URL", "https://fenix.tecnico.ulisboa.pt/disciplinas/"+e+"/2016-2017/2-semestre");
             href = href.replace("NAME", e);
             
             O = $("<tr class='color" + i + "'><td>" + href + "<td>" + A + "<td>" + L + "</tr>"), r != null && (O.addClass("clash"), k.children().eq(r).addClass("clash"), s++), d === h.length ? k.append(O) : k.children().eq(d).before(O), h.splice(d, 0, {
